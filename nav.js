@@ -243,6 +243,8 @@
       transition:background .2s,transform .2s;
     }
     .footer-socials a:hover{background:#FFB800;transform:translateY(-2px)}
+    .footer-legal a{color:inherit;text-decoration:none;transition:color .2s}
+    .footer-legal a:hover{color:#FFB800}
     .footer-bottom{
       border-top:1px solid rgba(255,246,228,.1);
       padding-top:24px;
@@ -577,7 +579,7 @@ ${cursosDropdown}
       </div>
       <div class="footer-bottom">
         <span>© 1973 – 2026 Sprint Idiomes · Sant Cugat del Vallès</span>
-        <span>Avís legal · Privacitat · Cookies</span>
+        <span class="footer-legal"><a href="avis-legal.html">Avís legal</a> · <a href="privacitat.html">Privacitat</a> · <a href="cookies.html">Cookies</a></span>
       </div>
       <div class="footer-proto">
         Prototip confidencial · Disseny i desenvolupament <a href="https://sheisdigitalab.com">She's Digital</a> · Tots els drets reservats
