@@ -282,19 +282,19 @@
       </a>
       <div class="nav-dropdown">
         <a href="kids-planet.html"${page==='kids-planet.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet <span style="font-size:12px;opacity:.55;font-weight:600">3–6 anys</span>
+          <span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet <span style="font-size:12px;opacity:.55;font-weight:600">Infantil i 1r Primària</span>
         </a>
         <a href="kids.html"${page==='kids.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#FF6B35"></span>Kids <span style="font-size:12px;opacity:.55;font-weight:600">7–12 anys</span>
+          <span class="nav-dd-dot" style="background:#FF6B35"></span>Kids <span style="font-size:12px;opacity:.55;font-weight:600">Primària</span>
         </a>
         <a href="teens.html"${page==='teens.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#26A69A"></span>Teens <span style="font-size:12px;opacity:.55;font-weight:600">13–17 anys</span>
+          <span class="nav-dd-dot" style="background:#26A69A"></span>Teens <span style="font-size:12px;opacity:.55;font-weight:600">ESO</span>
         </a>
         <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}>
           <span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge &amp; IELTS
         </a>
         <a href="adults.html"${page==='adults.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults <span style="font-size:12px;opacity:.55;font-weight:600">18+</span>
+          <span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults <span style="font-size:12px;opacity:.55;font-weight:600">+18 anys</span>
         </a>
         <div class="nav-dd-sep"></div>
         <a href="frances.html"${page==='frances.html'?' class="active"':''}>
@@ -466,11 +466,11 @@ ${cursosDropdown}
     <div class="nav-mobile-item">
       <div class="nav-mobile-heading">Cursos</div>
       <div class="nav-mobile-sub">
-        <a href="kids-planet.html"${page==='kids-planet.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet · 3–6 anys</a>
-        <a href="kids.html"${page==='kids.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#FF6B35"></span>Kids · 7–12 anys</a>
-        <a href="teens.html"${page==='teens.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#26A69A"></span>Teens · 13–17 anys</a>
+        <a href="kids-planet.html"${page==='kids-planet.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet · Infantil i 1r Primària</a>
+        <a href="kids.html"${page==='kids.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#FF6B35"></span>Kids · Primària</a>
+        <a href="teens.html"${page==='teens.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#26A69A"></span>Teens · ESO</a>
         <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge &amp; IELTS</a>
-        <a href="adults.html"${page==='adults.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults · 18+</a>
+        <a href="adults.html"${page==='adults.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults · +18 anys</a>
         <a href="frances.html"${page==='frances.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#FFB800"></span>L'École de Français</a>
         <a href="business.html"${page==='business.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#9B72CF"></span>BLA Business</a>
         <a href="particular.html"${page==='particular.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#036896"></span>Classes Particulars</a>
@@ -538,17 +538,17 @@ ${cursosDropdown}
           <div class="footer-socials">
             <a href="https://www.instagram.com/sprintidiomes" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#FFF6E4" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#FFF6E4" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FFF6E4"/></svg></a>
             <a href="https://www.facebook.com/EscolaSprintIdiomes" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 4h-2.5C10 4 9 5.5 9 8v2H6.5v3H9v8h3v-8h2.5l.5-3H12V8c0-.7.3-1 1-1h2V4z" fill="#FFF6E4"/></svg></a>
-            <a href="https://wa.me/34935892264" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 20l1.5-4.5A8 8 0 1 1 9 19.5L4 20z" stroke="#FFF6E4" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+            <a href="https://wa.me/34640679888" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 20l1.5-4.5A8 8 0 1 1 9 19.5L4 20z" stroke="#FFF6E4" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
         <div class="footer-col">
           <h6>Cursos</h6>
           <ul>
-            <li><a href="cursos.html#kids-planet">Kids Planet (3–6)</a></li>
-            <li><a href="cursos.html#kids">Kids 1–6 (7–12)</a></li>
-            <li><a href="cursos.html#teens">Teens (12+)</a></li>
+            <li><a href="cursos.html#kids-planet">Kids Planet · Infantil i 1r Primària</a></li>
+            <li><a href="cursos.html#kids">Kids · Primària</a></li>
+            <li><a href="cursos.html#teens">Teens · ESO</a></li>
             <li><a href="cursos.html#cambridge">Cambridge &amp; IELTS</a></li>
-            <li><a href="cursos.html#adults">Adults (18+)</a></li>
+            <li><a href="cursos.html#adults">Adults · +18 anys</a></li>
             <li><a href="cursos.html#business">BLA Business</a></li>
             <li><a href="cursos.html#frances">L'École de Français</a></li>
             <li><a href="particular.html">Classes Particulars</a></li>
