@@ -348,7 +348,7 @@ ${cursosDropdown}
      al final del body, aixi que ja trobaran aquests elements al DOM. */
   const COURSES = [
     { href:'kids-planet.html', dot:'#EC1E8C', label:'Kids Planet' },
-    { href:'kids.html',        dot:'#FF6B35', label:'Kids 7–12' },
+    { href:'kids.html',        dot:'#FF6B35', label:'Kids' },
     { href:'teens.html',       dot:'#26A69A', label:'Teens' },
     { href:'cambridge.html',   dot:'#E1000F', label:'Cambridge' },
     { href:'adults.html',      dot:'#1B5E3A', label:'Adults' },
@@ -374,7 +374,7 @@ ${cursosDropdown}
     'cambridge.html': [
       { href:'#titols', text:'Els títols' },
       { href:'#perque', text:'Per què Sprint?' },
-      { href:'#examens', text:'Examens 2026' },
+      { href:'#examens', text:'Convocatòries' },
       { href:'#horaris', text:'Horaris' },
     ],
     'adults.html': [
