@@ -855,9 +855,9 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   function update(){
     var range = pin.offsetHeight - innerHeight;
     var p = clamp(-pin.getBoundingClientRect().top / range);
-    var z = clamp(p / .7);
-    mask.style.transform = 'scale(' + Math.pow(80, Math.pow(z, 1.4)) + ')';
-    mask.style.opacity = 1 - clamp((p - .6) / .12);
+    var z = clamp(p / .8);
+    mask.style.transform = 'scale(' + Math.pow(70, Math.pow(z, 1.0)) + ')';
+    mask.style.opacity = 1 - clamp((p - .65) / .18);
     hint.style.opacity = top.style.opacity = 1 - clamp(p * 6);
     var c = clamp((p - .62) / .25);
     content.style.opacity = c; shade.style.opacity = c;
