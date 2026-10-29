@@ -20,3 +20,9 @@ npm-debug.log*
 
 # Claude Code launch config (local-only)
 .claude/
+
+# Impeccable design-tool cache (local-only, never publish)
+.impeccable/
+
+# Product briefs (ask before committing)
+PRODUCT.md
