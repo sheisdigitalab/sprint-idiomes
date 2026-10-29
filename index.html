@@ -16,6 +16,7 @@
     });
   }
 </script>
+<link rel="preload" as="image" href="img-portada/sprint-entrada.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -803,13 +804,13 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 <div class="hB-pin">
 <div class="hB">
   <div class="portada-slideshow" aria-hidden="true">
-    <div class="portada-slide is-active" style="background-image:url('img-portada/sprint-entrada.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/adults-1.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/kids-2.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/teens-1.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/adults-2.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/kids-3.jpg')"></div>
-    <div class="portada-slide" style="background-image:url('img-portada/teens-4.jpg')"></div>
+    <div class="portada-slide is-active" style="background-image:url('img-portada/sprint-entrada.webp')"></div>
+    <div class="portada-slide" data-bg="img-portada/adults-1.webp"></div>
+    <div class="portada-slide" data-bg="img-portada/kids-2.webp"></div>
+    <div class="portada-slide" data-bg="img-portada/teens-1.webp"></div>
+    <div class="portada-slide" data-bg="img-portada/adults-2.webp"></div>
+    <div class="portada-slide" data-bg="img-portada/kids-3.webp"></div>
+    <div class="portada-slide" data-bg="img-portada/teens-4.webp"></div>
   </div>
   <div class="hB-shade"></div>
   <div class="hB-mask" aria-hidden="true"><span class="w">SPR<span class="o">I</span>NT<br>IDIOMES</span></div>
@@ -829,6 +830,14 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 <script>
 (function(){
   var slides = document.querySelectorAll('.portada-slide');
+  /* Només la primera foto es carrega d'entrada; la resta, quan la pàgina ja ha carregat */
+  function loadRest(){
+    [].forEach.call(document.querySelectorAll('.portada-slide[data-bg]'), function(s){
+      s.style.backgroundImage = "url('" + s.getAttribute('data-bg') + "')";
+      s.removeAttribute('data-bg');
+    });
+  }
+  if (document.readyState === 'complete') loadRest(); else window.addEventListener('load', loadRest);
   if(slides.length < 2) return;
   var current = 0;
   setInterval(function(){
