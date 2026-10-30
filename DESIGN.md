@@ -62,6 +62,11 @@ typography:
     fontSize: "12px"
     fontWeight: 700
     letterSpacing: "0.1em"
+  sticker:
+    fontFamily: "Caveat, cursive"
+    fontSize: "26px"
+    fontWeight: 700
+    note: "Decorative only — .cf-sticker handwritten label on the contact form"
 rounded:
   pill: "100px"
   card: "20px"
@@ -142,6 +147,7 @@ Each course track owns exactly one accent; the chassis (ink, cream, blue, yellow
 
 **Display Font:** Bricolage Grotesque (fallback: ui-sans-serif, system-ui, sans-serif)
 **Body Font:** Nunito (fallback: ui-sans-serif, system-ui, sans-serif)
+**Accent Handwriting Font:** Caveat 700 (fallback: cursive) — used exclusively for decorative sticker labels (`.cf-sticker`); never for body copy or headings.
 
 **Character:** A geometric, slightly quirky display face (used only at large sizes, tight tracking, heavy weight) paired with a rounded, friendly body face — confident headline, approachable body copy. The pairing is what keeps "50 years of institutional trust" from reading as cold.
 
