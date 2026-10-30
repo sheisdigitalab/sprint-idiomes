@@ -691,8 +691,8 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 
 /* =================== MILLORES DE DISSENY (home) =================== */
 /* Bombolles: més petites, text més gran i senyal clar que es poden clicar */
-.audience{grid-template-columns:repeat(4,230px);justify-content:center;gap:28px 24px;max-width:1080px;margin:40px auto 0}
-.bubble{width:230px;height:230px;max-width:230px;background:var(--bc);color:var(--bt,#fff);box-shadow:0 0 0 0 var(--bc);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.audience{grid-template-columns:repeat(4,minmax(0,230px));justify-content:center;gap:28px 24px;max-width:1080px;margin:40px auto 0}
+.bubble{width:100%;height:auto;aspect-ratio:1/1;max-width:230px;background:var(--bc);color:var(--bt,#fff);box-shadow:0 0 0 0 var(--bc);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
 .bubble .b-name{font-size:24px}
 .bubble .b-sub{font-size:15px}
 .b-go{font-size:13px;font-weight:800;margin-top:10px;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
