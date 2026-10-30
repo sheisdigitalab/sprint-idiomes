@@ -10,186 +10,162 @@
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="shared.css?v=6">
 <style>
+/* ==========================================================================
+   QUI SOM — pàgina editorial: la història de l'escola com a fil conductor.
+   Arxiu fotogràfic dels anys 70 al hero, línia del temps que s'omple en fer
+   scroll (l'únic efecte de la pàgina) i equip amb targetes compactes.
+   ========================================================================== */
 :root{
-  --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;
-  --blue:#2547D9;--yellow:#FFB800;--line:rgba(21,32,61,.1);
-  --fd:"Bricolage Grotesque",ui-sans-serif,sans-serif;
-  --fb:"Nunito",ui-sans-serif,sans-serif;
+  --cream:#FAF5EA;--cream-2:#F3EBDA;--ink:#15203D;--ink-soft:#4A5878;
+  --blue:#2547D9;--yellow:#FFB800;--yellow-soft:#FFEFA8;--line:rgba(21,32,61,.1);
+  --fd:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --fb:"Nunito",ui-sans-serif,system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:#fff;color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden;font-weight:500}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
+.h2{font-family:var(--fd);font-weight:800;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-0.04em;margin-top:14px;text-wrap:balance}
+.h2 em{font-style:normal;color:var(--blue)}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:100px;font-size:14px;font-weight:600;transition:all .22s;border:1px solid transparent;font-family:var(--fb);cursor:pointer}
-.btn-yellow{background:var(--yellow);color:var(--ink)}
-.btn-yellow:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,184,0,.28)}
-.arrow{width:15px;height:15px;flex-shrink:0;transition:transform .22s}
-.btn:hover .arrow{transform:translateX(3px)}
-
-/* HERO */
-.hero{position:relative;min-height:56vh;background:var(--ink);display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('img-historia/imgi_3_418569_370971246246361_833552655_n.jpg');background-size:cover;background-position:center 30%;filter:grayscale(20%) brightness(.42);transform:scale(1.04)}
-.hero-content{position:relative;z-index:2;max-width:1480px;margin:0 auto;padding:56px 32px;width:100%}
-.eyebrow{font-size:var(--fs-label);font-weight:700;letter-spacing:.04em;color:var(--yellow);margin-bottom:10px;display:block}
-.hero h1{font-family:var(--fd);font-size:var(--fs-h1);font-weight:700;line-height:1.04;color:#fff;margin-bottom:8px}
-.hero p{font-size:17px;color:rgba(255,255,255,.88);max-width:460px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
-
-/* SECTION ANCHORS */
-.section-anchor{position:relative;padding:52px 0 24px;border-bottom:1.5px solid var(--line);margin-bottom:48px;overflow:visible}
-.section-anchor .num{position:absolute;right:-12px;top:50%;transform:translateY(-55%);font-family:var(--fd);font-size:120px;font-weight:700;color:var(--ink);opacity:.05;line-height:1;pointer-events:none;letter-spacing:-.02em;user-select:none}
-.section-anchor h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--ink);position:relative;z-index:1}
-
-/* WRAP */
-.wrap{max-width:1480px;margin:0 auto;padding:0 32px}
-
-/* ── HISTORIA ── */
-.historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding-bottom:56px}
-.historia-text p{font-size:17px;color:var(--ink-soft);line-height:1.78;margin-bottom:16px}
-.historia-text p:last-child{margin-bottom:0}
-.pull{background:var(--cream);padding:24px 28px;border-radius:16px;margin:24px 0}
-.pull p{font-family:var(--fd);font-size:19px;font-style:italic;color:var(--ink);line-height:1.5;margin:0}
-.stats-card{border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.sc-row{padding:20px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px}
-.sc-row:last-child{border-bottom:none}
-.sc-n{font-family:var(--fd);font-size:38px;font-weight:700;color:var(--blue);min-width:90px;line-height:1}
-.sc-label{font-size:14px;font-weight:700;color:var(--ink)}
-.sc-desc{font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.5}
-
-
-/* Gallery */
-.gallery-wrap{padding-bottom:56px}
-.g-eyebrow{font-size:var(--fs-label);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
-.gallery{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
-.gallery-right{display:grid;grid-template-rows:1fr 1fr;gap:12px}
-.gi{position:relative;border-radius:14px;overflow:hidden;background:var(--ink)}
-.gi img{width:100%;object-fit:cover;filter:sepia(.12) brightness(.86);transition:transform .5s,filter .4s}
-.gi:hover img{transform:scale(1.04);filter:sepia(.02) brightness(.96)}
-.gi-main img{aspect-ratio:3/4}
-.gi-side{min-height:0}
-.gi-side img{width:100%;height:100%}
-.gc{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(21,32,61,.92) 20%,transparent);padding:64px 24px 24px}
-.gc-y{font-size:15px;font-weight:700;color:var(--yellow);letter-spacing:.08em;display:block;margin-bottom:8px}
-.gc-t{font-size:28px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.15}
-.gc-s{font-size:16px;color:rgba(255,255,255,.85)}
-
-/* ── EQUIP ── */
-.equip-section{padding-bottom:72px}
-.equip-intro{font-size:17px;color:var(--ink-soft);line-height:1.75;max-width:600px;margin-bottom:44px}
-.e-divider{display:flex;align-items:center;gap:16px;margin-bottom:24px}
-.e-divider h3{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--ink);white-space:nowrap}
-.e-divider::after{content:"";flex:1;height:1px;background:var(--line)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.pc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .22s,box-shadow .22s}
-.pc .badge{align-self:flex-start}
-.pc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(21,32,61,.07)}
-.av{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
-.pc h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2}
-.pc .role{font-size:13px;color:var(--ink-soft);line-height:1.55}
-.badge{display:inline-block;font-size:var(--fs-label);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:100px;margin-top:2px}
-.teachers{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;
+/* ---------- HERO ---------- */
+.qs-hero{position:relative;background:var(--cream);overflow:hidden}
+.qs-hero::before{ /* any de fundació, gegant i en contorn */
+  content:"1973";position:absolute;right:-2vw;bottom:-6vw;
+  font-family:var(--fd);font-weight:800;font-size:clamp(160px,26vw,420px);line-height:1;letter-spacing:-0.06em;
+  color:transparent;-webkit-text-stroke:2px rgba(21,32,61,.07);pointer-events:none;
 }
-.teacher{
-  position:relative;border:1px solid var(--line);
-  border-radius:20px;overflow:hidden;aspect-ratio:4/5;
-  box-shadow:0 6px 18px rgba(21,32,61,.05);
-  transition:all .3s;
-}
-.teacher:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(21,32,61,.1);border-color:var(--line-strong)}
-.teacher .photo{
-  position:absolute;inset:0;
-}
-.teacher.t-1 .photo{background:linear-gradient(160deg,#EC1E8C,#15203D)}
-.teacher.t-2 .photo{background:linear-gradient(160deg,#26A69A,#0E1530)}
-.teacher.t-3 .photo{background:linear-gradient(160deg,#E1000F,#15203D)}
-.teacher.t-4 .photo{background:linear-gradient(160deg,#B0125F,#0E1530)}
-.teacher.t-5 .photo{background:linear-gradient(160deg,#B45309,#15203D)}
-.teacher.t-6 .photo{background:linear-gradient(160deg,#9B72CF,#1A0B2E)}
-.teacher .photo::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.7) 100%);
-}
-.teacher .badge{
-  position:absolute;top:16px;left:16px;z-index:2;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(8px);
-  color:var(--ink);
-  font-size:var(--fs-label);letter-spacing:.12em;text-transform:uppercase;font-weight:700;
-  padding:6px 10px;border-radius:100px;
-  border:1px solid rgba(255,255,255,.5);
-}
-.teacher .info{
-  position:absolute;left:22px;right:22px;bottom:22px;
-  color:#fff;z-index:2;
-}
-.teacher .info h4{
-  font-family:var(--fd);font-weight:600;
-  font-size:24px;line-height:1.05;letter-spacing:-0.02em;
-}
-.teacher .info p{font-size:13px;opacity:.85;margin-top:6px}
+.qs-hero-in{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding:72px 32px 96px;max-width:1280px;margin:0 auto}
+.qs-crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:28px}
+.qs-crumbs a:hover{color:var(--blue)}
+.qs-hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(46px,6.4vw,92px);line-height:.96;letter-spacing:-0.045em;margin:18px 0 26px;text-wrap:balance}
+.qs-hero h1 .hl{position:relative;display:inline-block;color:var(--blue)}
+.qs-hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.2em;background:var(--yellow);z-index:-1;border-radius:2px}
+.qs-hero .lead{font-size:19px;color:var(--ink-soft);max-width:520px;font-weight:600}
+.qs-hero .lead strong{color:var(--ink)}
+.qs-founders{display:flex;align-items:center;gap:14px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:15px;color:var(--ink-soft);max-width:520px}
+.qs-founders b{display:block;color:var(--ink);font-family:var(--fd);font-size:17px;letter-spacing:-0.01em}
+.qs-founders .dot{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--yellow);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:15px}
 
-/* ── FITES ── */
-.fites-section{padding-bottom:80px}
-.fites-stats{background:var(--ink);width:100vw;margin-left:calc(50% - 50vw);padding:48px max(32px,calc(50vw - 640px + 32px));display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:56px}
-.fs{text-align:center}
-.fs-n{font-family:var(--fd);font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--yellow);line-height:1}
-.fs-l{font-size:var(--fs-label);color:rgba(255,255,255,.80);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
-.fites-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+/* polaroids de l'arxiu */
+.qs-album{position:relative;height:min(62vh,560px);min-height:420px}
+.pol{position:absolute;background:#fff;padding:12px 12px 46px;border-radius:6px;box-shadow:0 24px 50px rgba(21,32,61,.18),0 2px 6px rgba(21,32,61,.08);margin:0}
+.pol img{width:100%;height:100%;object-fit:cover;border-radius:2px;filter:sepia(.12) saturate(.95)}
+.pol figcaption{position:absolute;left:14px;right:14px;bottom:12px;font-size:13px;font-weight:700;color:var(--ink-soft);letter-spacing:.01em}
+.pol figcaption span{color:var(--ink)}
+.pol-1{width:58%;height:78%;left:0;top:4%;transform:rotate(-4deg);z-index:2}
+.pol-2{width:46%;height:50%;right:0;top:0;transform:rotate(5deg);z-index:1}
+.pol-3{width:44%;height:48%;right:4%;bottom:0;transform:rotate(-2deg);z-index:3}
+.pol-tag{position:absolute;z-index:4;left:44%;top:-10px;background:var(--ink);color:#fff;font-family:var(--fd);font-weight:700;font-size:14px;padding:8px 14px;border-radius:99px;transform:rotate(6deg)}
 
-/* Timeline */
-.tl{position:relative;padding-left:32px}
-.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--yellow),var(--blue))}
-.tl-item{position:relative;padding-bottom:32px}
-.tl-item:last-child{padding-bottom:0}
-.dot{position:absolute;left:-27px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:2.5px solid var(--blue);box-shadow:0 0 0 3px rgba(37,71,217,.1)}
-.tl-item.hi .dot{background:var(--yellow);border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,184,0,.15)}
-.tl-y{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.08em;margin-bottom:4px}
-.tl-item.hi .tl-y{color:#8A6000}
-.tl-t{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:5px}
-.tl-d{font-size:14px;color:var(--ink-soft);line-height:1.65}
+/* ---------- XIFRES ---------- */
+.qs-facts{background:var(--ink);color:#fff}
+.qs-facts-in{max-width:1280px;margin:0 auto;padding:34px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fact{display:flex;align-items:baseline;gap:14px}
+.fact b{font-family:var(--fd);font-weight:800;font-size:clamp(30px,3.4vw,44px);letter-spacing:-0.03em;color:var(--yellow);line-height:1;white-space:nowrap}
+.fact span{font-size:14px;color:rgba(255,255,255,.78);line-height:1.3;font-weight:600}
 
-/* Diferenciadors */
-.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.diff{background:var(--cream);border-radius:14px;padding:24px;display:flex;gap:14px;align-items:flex-start}
-.diff-ic{width:42px;height:42px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.diff-ic svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.diff h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.diff p{font-size:14px;color:var(--ink-soft);line-height:1.6}
+/* ---------- HISTÒRIA (línia del temps) ---------- */
+.qs-story{padding:110px 0 60px}
+.qs-story-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:64px}
+.qs-story-head p{font-size:18px;color:var(--ink-soft);max-width:560px}
+.tl{position:relative;--p:0}
+.tl::before,.tl::after{content:"";position:absolute;left:calc(160px + 23px);top:8px;bottom:8px;width:3px;border-radius:3px}
+.tl::before{background:var(--line)}
+.tl::after{background:linear-gradient(var(--yellow),var(--blue));transform-origin:top;transform:scaleY(var(--p))}
+.tl-row{position:relative;display:grid;grid-template-columns:160px 48px 1fr;gap:0;padding:0 0 64px}
+.tl-row:last-child{padding-bottom:0}
+.tl-year{font-family:var(--fd);font-weight:800;font-size:clamp(30px,3.2vw,44px);letter-spacing:-0.03em;line-height:1;text-align:right;color:rgba(21,32,61,.22);transition:color .5s}
+.tl-dot{position:relative;z-index:2;width:17px;height:17px;border-radius:50%;background:#fff;border:3px solid rgba(21,32,61,.2);margin:10px auto 0;transition:border-color .5s,background .5s,transform .5s}
+.tl-row.on .tl-year{color:var(--ink)}
+.tl-row.on .tl-dot{border-color:var(--yellow);background:var(--yellow);transform:scale(1.15)}
+.tl-body{max-width:640px}
+.tl-body h3{font-family:var(--fd);font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px}
+.tl-body p{color:var(--ink-soft);font-size:16.5px}
+.tl-body em{font-style:normal;font-weight:700;color:var(--ink)}
+.tl-photos{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;margin-top:22px}
+.tl-photos figure{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#ddd}
+.tl-photos figure:first-child{grid-row:span 2;aspect-ratio:auto}
+.tl-photos img{width:100%;height:100%;object-fit:cover}
+.tl-photos figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(transparent,rgba(6,15,54,.75))}
+.tl-now .tl-year{color:var(--blue)}
 
-/* CTA */
-.cta{background:var(--ink);border-radius:20px;padding:52px 40px;text-align:center;margin:56px 0;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:var(--blue);opacity:.12;pointer-events:none}
-.cta::after{content:"";position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:var(--yellow);opacity:.08;pointer-events:none}
-.cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:700;color:#fff;margin-bottom:8px;position:relative;z-index:1}
-.cta p{font-size:16px;color:rgba(255,255,255,.82);margin-bottom:24px;position:relative;z-index:1}
+/* ---------- CITA ---------- */
+.qs-quote{background:var(--yellow);margin:70px 0 0}
+.qs-quote-in{max-width:1100px;margin:0 auto;padding:84px 32px;position:relative}
+.qs-quote blockquote{font-family:var(--fd);font-weight:800;font-size:clamp(30px,4.4vw,58px);line-height:1.04;letter-spacing:-0.035em;color:var(--ink);text-wrap:balance}
+.qs-quote blockquote::before{content:"“";display:block;font-size:2.2em;line-height:.6;color:#fff;margin-bottom:14px}
+.qs-quote p{margin-top:22px;font-weight:700;color:rgba(21,32,61,.75)}
 
-/* RESPONSIVE */
-@media(max-width:960px){
-  .historia-grid,.fites-grid{grid-template-columns:1fr;gap:36px}
-  .grid4{grid-template-columns:1fr 1fr}
-  .grid3{grid-template-columns:1fr 1fr}
-  .teachers{grid-template-columns:1fr 1fr}
-  .fites-stats{grid-template-columns:1fr 1fr;gap:20px;padding:36px max(20px,calc(50vw - 640px + 32px))}
-  .gallery{grid-template-columns:1fr}
-  .gallery-right{grid-template-rows:unset;grid-template-columns:1fr 1fr}
-  .gi-main img{aspect-ratio:4/3}
-  .gi-side img{height:auto;aspect-ratio:4/3}
-}
-@media(max-width:720px){
-  .nav-links,.nav-cta .btn-ghost{display:none}
-  .hero h1{font-size:clamp(36px,8vw,60px)}
-  .teachers{grid-template-columns:1fr}
-}
-@media(max-width:520px){
+/* ---------- EQUIP ---------- */
+.qs-team{padding:110px 0;background:var(--cream)}
+.qs-team .intro{font-size:18px;color:var(--ink-soft);max-width:620px;margin-top:16px}
+.team-label{margin:56px 0 18px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:14px}
+.team-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.people.teach{grid-template-columns:repeat(3,1fr)}
+.person{background:#fff;border-radius:20px;padding:22px;display:flex;gap:16px;align-items:center;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.person:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(21,32,61,.08)}
+/* Quan hi hagi fotos: substituir .av per <img class="av" src="..." alt="Nom"> */
+.av{width:58px;height:58px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:18px;letter-spacing:-0.02em;color:#fff;background:var(--c,#2547D9);object-fit:cover}
+.person h3{font-family:var(--fd);font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2}
+.person .role{font-size:14px;color:var(--ink-soft);line-height:1.35;margin-top:2px}
+.person .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--c,#2547D9) 14%,#fff);color:color-mix(in srgb,var(--c,#2547D9) 80%,#000)}
+
+/* ---------- PER QUÈ ---------- */
+.qs-why{padding:110px 0 120px}
+.why6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:48px}
+.w{background:#fff;padding:34px 30px}
+.w .n{font-family:var(--fd);font-weight:800;font-size:15px;color:var(--blue);letter-spacing:.02em}
+.w h3{font-family:var(--fd);font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:10px 0 8px;line-height:1.15}
+.w p{color:var(--ink-soft);font-size:15.5px}
+
+/* ---------- CTA ---------- */
+.qs-cta{max-width:1280px;margin:0 auto 110px;padding:0 32px}
+.qs-cta-in{background:var(--ink);border-radius:32px;padding:72px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.qs-cta-in::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:var(--blue);opacity:.45}
+.qs-cta h2{font-family:var(--fd);font-weight:800;font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-0.035em;color:#fff;position:relative;z-index:1;text-wrap:balance}
+.qs-cta p{color:rgba(255,255,255,.8);font-size:17px;margin-bottom:22px}
+.qs-cta-right{position:relative;z-index:1}
+.btn-y{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font-weight:800;font-size:15px;padding:15px 26px;border-radius:99px;transition:transform .2s,box-shadow .2s}
+.btn-y:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,184,0,.35)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:960px){
   .wrap{padding:0 22px}
-  .grid4,.grid3{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .fites-stats{grid-template-columns:1fr 1fr;padding:32px 20px}
-  .diff-grid{grid-template-columns:1fr}
-  .cta{padding:36px 22px}
+  .qs-hero-in{grid-template-columns:1fr;gap:40px;padding:44px 22px 70px}
+  .qs-album{height:440px;min-height:0}
+  .qs-facts-in{grid-template-columns:1fr 1fr;padding:28px 22px}
+  .qs-story{padding:80px 0 40px}
+  .qs-story-head{grid-template-columns:1fr;gap:16px;margin-bottom:44px}
+  .people{grid-template-columns:1fr 1fr}
+  .people.teach{grid-template-columns:1fr 1fr}
+  .why6{grid-template-columns:1fr 1fr}
+  .qs-cta-in{grid-template-columns:1fr;padding:52px 28px}
+}
+@media (max-width:600px){
+  .qs-album{height:360px}
+  .pol{padding:8px 8px 34px}
+  .pol figcaption{font-size:11px;bottom:9px;left:10px;right:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fact{flex-direction:column;gap:6px}
+  .fact span{font-size:13px}
+  .tl::before,.tl::after{left:9px}
+  .tl-row{grid-template-columns:20px 1fr;column-gap:16px;padding-bottom:48px}
+  .tl-dot{grid-column:1;grid-row:1;margin:6px 0 0 0}
+  .tl-year{grid-column:2;grid-row:1;text-align:left;font-size:30px;margin-bottom:8px}
+  .tl-body{grid-column:2;grid-row:2}
+  .tl-photos{grid-template-columns:1fr 1fr}
+  .people,.people.teach,.why6{grid-template-columns:1fr}
+  .qs-quote-in{padding:60px 22px}
+  .qs-cta{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tl{--p:1 !important}
+  .tl-year,.tl-dot{transition:none}
 }
 </style>
 
@@ -250,273 +226,185 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
-<script src="nav.js?v=20"></script>
+<script src="nav.js?v=21"></script>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <span class="eyebrow">Sant Cugat del Vallès · Primera escola d'idiomes · Fundada el 1973</span>
-    <h1>Qui som</h1>
-    <p>Cinquanta anys ensenyant idiomes a Sant Cugat. Una escola on es nota la diferència des del primer dia.</p>
+<!-- ===================== HERO ===================== -->
+<header class="qs-hero">
+  <div class="qs-hero-in">
+    <div>
+      <nav class="qs-crumbs" aria-label="Ruta"><a href="index.html">Inici</a> › Qui som</nav>
+      <span class="kicker">Qui som</span>
+      <h1>Una escola de Sant Cugat, <span class="hl">des de 1973</span>.</h1>
+      <p class="lead">Tres generacions de famílies han passat per les nostres aules. <strong>Aquesta continuïtat és el que millor ens defineix.</strong></p>
+      <div class="qs-founders">
+        <span class="dot" aria-hidden="true">’73</span>
+        <div><b>Montserrat Obiols i Alphonsus van Campen</b>van obrir l'escola al carrer Santiago Rusiñol.</div>
+      </div>
+    </div>
+    <div class="qs-album">
+      <figure class="pol pol-1">
+        <img src="img-historia/imgi_3_418569_370971246246361_833552655_n.jpg" alt="Façana original de Sprint Idiomes al carrer Santiago Rusiñol, anys 70">
+        <figcaption><span>C. 1973</span> · Carrer Santiago Rusiñol</figcaption>
+      </figure>
+      <figure class="pol pol-2">
+        <img src="img-historia/imgi_4_1003246_626130697397080_292604397_n.jpg" alt="Una de les primeres classes de Sprint Idiomes, anys 70">
+        <figcaption><span>C. 1975</span> · Les primeres classes</figcaption>
+      </figure>
+      <figure class="pol pol-3">
+        <img src="img-historia/imgi_5_1017048_626131107397039_1914191658_n.jpg" alt="Alumnes estudiant a Sprint Idiomes, anys 70">
+        <figcaption><span>C. 1976</span> · A l'aula</figcaption>
+      </figure>
+      <span class="pol-tag" aria-hidden="true">Arxiu Sprint</span>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- ═══════════════════════ -->
-<!-- 01 · LA NOSTRA HISTORIA -->
-<!-- ═══════════════════════ -->
-<div id="historia">
+<!-- ===================== XIFRES ===================== -->
+<section class="qs-facts" aria-label="Sprint Idiomes en xifres">
+  <div class="qs-facts-in">
+    <div class="fact"><b>1973</b><span>Any de fundació</span></div>
+    <div class="fact"><b>+20</b><span>Professionals a l'equip</span></div>
+    <div class="fact"><b>P3→C2</b><span>Tots els nivells</span></div>
+    <div class="fact"><b>3</b><span>Generacions d'alumnes</span></div>
+  </div>
+</section>
+
+<!-- ===================== HISTÒRIA ===================== -->
+<section class="qs-story" id="historia">
   <div class="wrap">
-    <div class="section-anchor">
-      <span class="num">01</span>
-      <h2>La nostra història</h2>
-    </div>
-    <div class="historia-grid">
-      <div class="historia-text">
-        <p>El <strong>1973</strong>, <strong>Montserrat Obiols i Alphonsus van Campen</strong> van obrir les portes del que seria la primera escola d'idiomes de Sant Cugat del Vallès. El que va néixer amb vocació de barri es va convertir, amb els anys, en un referent per a tota la comarca.</p>
-        <div class="pull"><p>"Cinquanta anys no es fan sols: es fan classe a classe, alumne a alumne."</p></div>
-        <p>Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada. Vam ser dels primers a tenir laboratori d'idiomes al Vallès i a incorporar les tendències pedagògiques europees.</p>
-        <p>Avui som un equip de més de 20 professionals. Tres generacions de famílies han passat per les nostres aules — i aquesta continuïtat és el que millor ens defineix.</p>
+    <div class="qs-story-head">
+      <div>
+        <span class="kicker">La nostra història</span>
+        <h2 class="h2">Més de 50 anys, <em>classe a classe</em>.</h2>
       </div>
-      <div class="stats-card">
-        <div class="sc-row">
-          <div class="sc-n">1973</div>
-          <div><div class="sc-label">Any de fundació</div><div class="sc-desc">Primera escola d'idiomes de Sant Cugat del Vallès.</div></div>
-        </div>
-        <div class="sc-row">
-          <div class="sc-n">+20</div>
-          <div><div class="sc-label">Professionals</div><div class="sc-desc">Equip estable any rere any, que coneix cada alumne.</div></div>
-        </div>
-        <div class="sc-row">
-          <div class="sc-n">53</div>
-          <div><div class="sc-label">Anys d'evolució</div><div class="sc-desc">Escola de referència municipal amb metodologia sempre actualitzada.</div></div>
-        </div>
-        <div class="sc-row">
-          <div class="sc-n">P3→C2</div>
-          <div><div class="sc-label">Cobertura completa</div><div class="sc-desc">Des de P3 fins al nivell C2 (Proficiency).</div></div>
-        </div>
-      </div>
+      <p>El que va néixer amb vocació de barri es va convertir en una escola de referència per a tota la comarca. Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada.</p>
     </div>
 
-    <!-- Fotos arxiu -->
-    <div class="gallery-wrap">
-      <div class="g-eyebrow">Arxiu fotogràfic · 1973 – 1980</div>
-      <div class="gallery">
-        <div class="gi gi-main">
-          <img src="img-historia/imgi_3_418569_370971246246361_833552655_n.jpg" alt="Façana original de Sprint Idiomes, carrer Santiago Rusiñol, anys 70"/>
-          <div class="gc"><span class="gc-y">C. 1973 · Sant Cugat</span><div class="gc-t">Carrer Santiago Rusiñol</div><div class="gc-s">L'edifici original — primera escola d'idiomes del municipi</div></div>
+    <div class="tl" id="tl">
+      <div class="tl-row">
+        <div class="tl-year">1973</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>Neix l'escola</h3>
+          <p>Montserrat Obiols i Alphonsus van Campen obren el <em>Centre d'Estudi de Llengues</em> al carrer Santiago Rusiñol. És la primera escola d'idiomes de Sant Cugat del Vallès.</p>
         </div>
-        <div class="gallery-right">
-          <div class="gi gi-side">
-            <img src="img-historia/imgi_4_1003246_626130697397080_292604397_n.jpg" alt="Primera classe de Sprint Idiomes, anys 70"/>
-            <div class="gc"><span class="gc-y">C. 1975 · Aula</span><div class="gc-t">Les primeres classes</div><div class="gc-s">Grups reduïts des del primer dia</div></div>
-          </div>
-          <div class="gi gi-side">
-            <img src="img-historia/imgi_5_1017048_626131107397039_1914191658_n.jpg" alt="Alumnes estudiant a Sprint Idiomes, anys 70"/>
-            <div class="gc"><span class="gc-y">C. 1976 · Aula</span><div class="gc-t">El mateix esperit, des de sempre</div><div class="gc-s">Atenció personalitzada a cada alumne</div></div>
-          </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">80s</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>Primer laboratori d'idiomes del Vallès</h3>
+          <p>Innovació tecnològica i assistència a fires europees per incorporar les últimes metodologies pedagògiques.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">90s</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>Centre preparador oficial Cambridge</h3>
+          <p>L'escola s'acredita com a centre preparador dels exàmens Cambridge i comença a acompanyar alumnes cap als títols internacionals d'anglès.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2000s</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>L'École de Français</h3>
+          <p>Neix el departament de francès, amb professorat nadiu i preparació dels exàmens oficials DELF i DALF.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-year">2010s</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>Formació per a empreses</h3>
+          <p>Comencen les classes a mida per a empreses i professionals, amb el nom de Sprint Trade. Avui és <em>BLA Business Language Academy</em>.</p>
+        </div>
+      </div>
+      <div class="tl-row tl-now">
+        <div class="tl-year">Avui</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>Més de 50 anys a Sant Cugat</h3>
+          <p>Un equip de més de 20 professionals que continua acompanyant infants, joves i adults en l'aprenentatge d'idiomes. Els fills dels primers alumnes ara hi porten els seus fills.</p>
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
+</section>
 
-<!-- ════════════════════ -->
-<!-- 02 · EL NOSTRE EQUIP -->
-<!-- ════════════════════ -->
-<div id="equip" style="border-top:1px solid var(--line);background:var(--cream)">
+<!-- ===================== CITA ===================== -->
+<section class="qs-quote" aria-label="La nostra manera de fer">
+  <div class="qs-quote-in">
+    <blockquote>Cinquanta anys no es fan sols: es fan classe a classe, alumne a alumne.</blockquote>
+    <p>Sprint Idiomes · Sant Cugat del Vallès</p>
+  </div>
+</section>
+
+<!-- ===================== EQUIP ===================== -->
+<section class="qs-team" id="equip">
   <div class="wrap">
-    <div class="section-anchor">
-      <span class="num">02</span>
-      <h2>El nostre equip</h2>
-    </div>
-    <div class="equip-section">
-      <p class="equip-intro">Tots els nostres professors tenen titulació universitària i formació especialitzada per ensenyar a infants, joves i adults. Un equip estable que coneix cada alumne pel seu nom — i pel seu ritme.</p>
+    <span class="kicker">El nostre equip</span>
+    <h2 class="h2">Les persones que <em>fan l'escola</em>.</h2>
+    <p class="intro">Tots els nostres professors tenen titulació universitària i formació especialitzada per ensenyar a infants, joves i adults. Un equip estable que coneix cada alumne pel seu nom, i pel seu ritme.</p>
 
-      <div class="grid4">
-        <div class="pc">
-          <div class="av" style="background:#2547D9">JvC</div>
-          <h3>Jordi van Campen</h3>
-          <div class="role">Director General · Director Financer</div>
-          <span class="badge" style="background:rgba(37,71,217,.1);color:#2547D9">Direcció</span>
-        </div>
-        <div class="pc">
-          <div class="av" style="background:#7CBCAD;color:var(--ink)">AsR</div>
-          <h3>Asun Ricart</h3>
-          <div class="role">Directora d'Estudis · Cap Dept. Anglès</div>
-          <span class="badge" style="background:rgba(124,188,173,.18);color:#2F6259">Estudis</span>
-        </div>
-        <div class="pc">
-          <div class="av" style="background:#FFB800;color:var(--ink)">ÀR</div>
-          <h3>Àngels Reche</h3>
-          <div class="role">Subdirectora</div>
-          <span class="badge" style="background:rgba(255,184,0,.15);color:#7A5500">Direcció</span>
-        </div>
-        <div class="pc">
-          <div class="av" style="background:#C2255C">CW</div>
-          <h3>Chenqi Wang</h3>
-          <div class="role">Coordinadora administrativa</div>
-          <span class="badge" style="background:rgba(232,75,122,.1);color:#C0305A">Administració</span>
-        </div>
-      </div>
-      <div class="e-divider"><h3>Professorat</h3></div>
-      <div class="teachers">
-        <article class="teacher t-1">
-          <div class="photo"></div>
-          <span class="badge">Kids Planet</span>
-          <div class="info">
-            <h4>Anna Kanalas</h4>
-            <p>Responsable de Kids Planet</p>
-          </div>
-        </article>
-        <article class="teacher t-2">
-          <div class="photo"></div>
-          <span class="badge">Kids · Teens</span>
-          <div class="info">
-            <h4>Yolanda Navarro</h4>
-            <p>Responsable de Kids i Teens</p>
-          </div>
-        </article>
-        <article class="teacher t-3">
-          <div class="photo"></div>
-          <span class="badge">Cambridge · First</span>
-          <div class="info">
-            <h4>George Goode</h4>
-            <p>Responsable de First (FCE)</p>
-          </div>
-        </article>
-        <article class="teacher t-4">
-          <div class="photo"></div>
-          <span class="badge">Cambridge · CAE/CPE</span>
-          <div class="info">
-            <h4>Joe Harrison</h4>
-            <p>Responsable de CAE i CPE</p>
-          </div>
-        </article>
-        <article class="teacher t-5">
-          <div class="photo"></div>
-          <span class="badge">Français · Nativa</span>
-          <div class="info">
-            <h4>Silvaine Tatin</h4>
-            <p>L'École de Français</p>
-          </div>
-        </article>
-        <article class="teacher t-6">
-          <div class="photo"></div>
-          <span class="badge">BLA Business</span>
-          <div class="info">
-            <h4>Laura Ortiz</h4>
-            <p>Business · Classes in-company</p>
-          </div>
-        </article>
-      </div>
+    <div class="team-label">Direcció i coordinació</div>
+    <div class="people">
+      <article class="person" style="--c:#2547D9"><div class="av" aria-hidden="true">JvC</div><div><h3>Jordi van Campen</h3><div class="role">Director General · Director Financer</div><span class="tag">Direcció</span></div></article>
+      <article class="person" style="--c:#26A69A"><div class="av" aria-hidden="true">AR</div><div><h3>Asun Ricart</h3><div class="role">Directora d'Estudis · Cap Dept. Anglès</div><span class="tag">Estudis</span></div></article>
+      <article class="person" style="--c:#C98A00"><div class="av" aria-hidden="true">ÀR</div><div><h3>Àngels Reche</h3><div class="role">Subdirectora</div><span class="tag">Direcció</span></div></article>
+      <article class="person" style="--c:#C2255C"><div class="av" aria-hidden="true">CW</div><div><h3>Chenqi Wang</h3><div class="role">Coordinadora administrativa</div><span class="tag">Administració</span></div></article>
+    </div>
+
+    <div class="team-label">Responsables de curs</div>
+    <div class="people teach">
+      <article class="person" style="--c:#EC1E8C"><div class="av" aria-hidden="true">AK</div><div><h3>Anna Kanalas</h3><div class="role">Responsable de Kids Planet</div><span class="tag">Kids Planet</span></div></article>
+      <article class="person" style="--c:#FF6B35"><div class="av" aria-hidden="true">YN</div><div><h3>Yolanda Navarro</h3><div class="role">Responsable de Kids i Teens</div><span class="tag">Kids · Teens</span></div></article>
+      <article class="person" style="--c:#E1000F"><div class="av" aria-hidden="true">GG</div><div><h3>George Goode</h3><div class="role">Responsable de First (FCE)</div><span class="tag">Cambridge</span></div></article>
+      <article class="person" style="--c:#6B3FAA"><div class="av" aria-hidden="true">JH</div><div><h3>Joe Harrison</h3><div class="role">Responsable de CAE i CPE</div><span class="tag">Cambridge</span></div></article>
+      <article class="person" style="--c:#C98A00"><div class="av" aria-hidden="true">ST</div><div><h3>Silvaine Tatin</h3><div class="role">L'École de Français</div><span class="tag">Français</span></div></article>
+      <article class="person" style="--c:#9B72CF"><div class="av" aria-hidden="true">LO</div><div><h3>Laura Ortiz</h3><div class="role">Classes per a empreses i in-company</div><span class="tag">BLA Business</span></div></article>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════════════════════ -->
-<!-- 03 · PER QUÈ SPRINT IDIOMES? -->
-<!-- ══════════════════════════════ -->
-<div id="per-que" style="border-top:1px solid var(--line)">
+<!-- ===================== PER QUÈ ===================== -->
+<section class="qs-why" id="per-que">
   <div class="wrap">
-    <div class="section-anchor">
-      <span class="num">03</span>
-      <h2>Per què Sprint Idiomes?</h2>
-    </div>
-    <div class="fites-section">
-
-      <!-- Stats -->
-      <div class="fites-stats">
-        <div class="fs"><div class="fs-n">53</div><div class="fs-l">Anys de trajectòria</div></div>
-        <div class="fs"><div class="fs-n">+20</div><div class="fs-l">Professionals</div></div>
-        <div class="fs"><div class="fs-n">P3→C2</div><div class="fs-l">Cobertura completa</div></div>
-        <div class="fs"><div class="fs-n">3</div><div class="fs-l">Generacions d'alumnes</div></div>
-      </div>
-
-      <div class="fites-grid">
-        <!-- Timeline -->
-        <div>
-          <div class="tl">
-            <div class="tl-item hi">
-              <div class="dot"></div>
-              <div class="tl-y">1973</div>
-              <div class="tl-t">Fundació de l'escola</div>
-              <div class="tl-d">Montserrat Obiols i Alphonsus van Campen obren el <em>Centre d'Estudi de Llengues</em> al carrer Santiago Rusiñol. Primera escola d'idiomes de Sant Cugat del Vallès.</div>
-            </div>
-            <div class="tl-item">
-              <div class="dot"></div>
-              <div class="tl-y">Anys 80</div>
-              <div class="tl-t">Primer laboratori d'idiomes del Vallès</div>
-              <div class="tl-d">Innovació tecnològica pionera i assistència a fires europees per incorporar les últimes metodologies pedagògiques.</div>
-            </div>
-            <div class="tl-item">
-              <div class="dot"></div>
-              <div class="tl-y">Anys 90</div>
-              <div class="tl-t">Centre preparador oficial Cambridge</div>
-              <div class="tl-d">Acreditació oficial com a centre preparador dels exàmens Cambridge. Un referent al Vallès per als títols internacionals d'anglès.</div>
-            </div>
-            <div class="tl-item">
-              <div class="dot"></div>
-              <div class="tl-y">Anys 2000</div>
-              <div class="tl-t">L'École de Français</div>
-              <div class="tl-d">Neix el departament de francès amb professors nadius. Programa DELF i DALF reconegut internacionalment.</div>
-            </div>
-            <div class="tl-item">
-              <div class="dot"></div>
-              <div class="tl-y">Anys 2010</div>
-              <div class="tl-t">Sprint Trade · Classes empresarials</div>
-              <div class="tl-d">Formació d'idiomes per a empreses i professionals. Classes a mida per a l'entorn laboral. Avui és BLA Business Language Academy.</div>
-            </div>
-            <div class="tl-item hi">
-              <div class="dot"></div>
-              <div class="tl-y">2026</div>
-              <div class="tl-t">53 anys, escola de referència municipal</div>
-              <div class="tl-d">Amb més de 20 professionals i tres generacions de famílies, Sprint Idiomes segueix sent l'escola d'idiomes de referència de Sant Cugat del Vallès.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Diferenciadors -->
-        <div class="diff-grid">
-          <div class="diff">
-            <div class="diff-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><h3>Grups reduïts</h3><p>Màxim 10–12 alumnes. Atenció personal. Ningú queda enrere.</p></div>
-          </div>
-          <div class="diff">
-            <div class="diff-ic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div><h3>Resultats reals</h3><p>Alta taxa d'aprovats als exàmens Cambridge i DELF/DALF.</p></div>
-          </div>
-          <div class="diff">
-            <div class="diff-ic"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-            <div><h3>Professors estables</h3><p>El mateix equip any rere any. Coneixen cada alumne i el seu ritme.</p></div>
-          </div>
-          <div class="diff">
-            <div class="diff-ic"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-            <div><h3>Gramàtica + comunicació oral</h3><p>Treballem la base gramatical i la pràctica real. Parleu, no només estudieu.</p></div>
-          </div>
-          <div class="diff">
-            <div class="diff-ic" style="background:var(--yellow)"><svg viewBox="0 0 24 24" style="stroke:var(--ink)"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-            <div><h3>Flexibilitat</h3><p>Cada alumne és diferent. Ens adaptem als vostres horaris, necessitats i objectius.</p></div>
-          </div>
-          <div class="diff">
-            <div class="diff-ic" style="background:var(--yellow)"><svg viewBox="0 0 24 24" style="stroke:var(--ink)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-            <div><h3>3 generacions</h3><p>Els fills dels primers alumnes porten ara els seus fills. La millor prova que funciona.</p></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="cta">
-        <h2>La propera generació pot ser la vostra.</h2>
-        <p>Vine a conèixer-nos. Et mostrem com treballem i resolem tots els dubtes.</p>
-        <a href="index.html#contacte" class="btn btn-yellow">Reserva una visita <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-
+    <span class="kicker">Per què Sprint Idiomes</span>
+    <h2 class="h2">El que no ha canviat <em>en 50 anys</em>.</h2>
+    <div class="why6">
+      <div class="w"><div class="n">01</div><h3>Grups reduïts</h3><p>Entre 8 i 12 alumnes segons el curs. Atenció personal i ningú queda enrere.</p></div>
+      <div class="w"><div class="n">02</div><h3>Professors estables</h3><p>El mateix equip any rere any. Coneixen cada alumne i el seu ritme.</p></div>
+      <div class="w"><div class="n">03</div><h3>Exàmens oficials</h3><p>Centre preparador oficial Cambridge i preparació DELF i DALF, amb seguiment durant tot el procés.</p></div>
+      <div class="w"><div class="n">04</div><h3>Gramàtica i conversa</h3><p>Treballem la base gramatical i la pràctica oral. Aquí es parla, no només s'estudia.</p></div>
+      <div class="w"><div class="n">05</div><h3>Flexibilitat</h3><p>Cada alumne és diferent. Ens adaptem als vostres horaris, necessitats i objectius.</p></div>
+      <div class="w"><div class="n">06</div><h3>Tres generacions</h3><p>Els fills dels primers alumnes ara hi porten els seus fills.</p></div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="qs-cta">
+  <div class="qs-cta-in">
+    <h2>La propera generació pot ser la vostra.</h2>
+    <div class="qs-cta-right">
+      <p>Vine a conèixer-nos. Et mostrem com treballem i resolem tots els dubtes.</p>
+      <a href="index.html#contacte" class="btn-y">Reserva una visita <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Línia del temps: la línia s'omple i els anys s'encenen a mesura que es fa scroll */
+(function(){
+  var tl = document.getElementById('tl'); if (!tl) return;
+  var rows = [].slice.call(tl.querySelectorAll('.tl-row'));
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { rows.forEach(function(r){ r.classList.add('on'); }); return; }
+  function update(){
+    var b = tl.getBoundingClientRect(), mid = innerHeight * 0.6;
+    var p = Math.max(0, Math.min(1, (mid - b.top) / b.height));
+    tl.style.setProperty('--p', p.toFixed(3));
+    rows.forEach(function(r){ r.classList.toggle('on', r.getBoundingClientRect().top < mid); });
+  }
+  addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+  addEventListener('resize', update); update();
+})();
+</script>
 
 </body>
 </html>
