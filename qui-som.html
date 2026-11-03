@@ -54,6 +54,7 @@ a{color:inherit;text-decoration:none}
 .pol img{width:100%;height:100%;object-fit:cover;border-radius:2px;filter:sepia(.12) saturate(.95)}
 .pol figcaption{position:absolute;left:14px;right:14px;bottom:12px;font-size:13px;font-weight:700;color:var(--ink-soft);letter-spacing:.01em}
 .pol figcaption span{color:var(--ink)}
+.pol-2 figcaption{left:auto;text-align:right}
 .pol-1{width:58%;height:78%;left:0;top:4%;transform:rotate(-4deg);z-index:2}
 .pol-2{width:46%;height:50%;right:0;top:0;transform:rotate(5deg);z-index:1}
 .pol-3{width:44%;height:48%;right:4%;bottom:0;transform:rotate(-2deg);z-index:3}
@@ -68,8 +69,10 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- HISTÒRIA (línia del temps) ---------- */
 .qs-story{padding:110px 0 60px}
-.qs-story-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:64px}
-.qs-story-head p{font-size:18px;color:var(--ink-soft);max-width:560px}
+.qs-story-head{margin-bottom:64px}
+.story-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
+.story-aside{position:sticky;top:130px;padding:32px;border-left:3px solid var(--yellow);background:#F6F8FF;border-radius:0 20px 20px 0}
+.story-intro{font-size:19px;line-height:1.6;color:var(--ink)}
 .tl{position:relative;--p:0}
 .tl::before,.tl::after{content:"";position:absolute;left:calc(160px + 23px);top:8px;bottom:8px;width:3px;border-radius:3px}
 .tl::before{background:var(--line)}
@@ -93,9 +96,9 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- CITA ---------- */
 .qs-quote{margin:70px 0 0;background:var(--ink);color:#fff;position:relative;overflow:clip}
-.qs-quote::before{content:"50";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--fd);font-weight:800;font-size:clamp(260px,38vw,560px);line-height:.8;letter-spacing:-0.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.08);pointer-events:none}
+.qs-quote::before{content:"50";position:absolute;right:-4vw;top:50%;transform:translateY(-50%);font-family:var(--fd);font-weight:800;font-size:clamp(260px,38vw,560px);line-height:.8;letter-spacing:-0.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.08);pointer-events:none}
 .qs-quote-in{max-width:1100px;margin:0 auto;padding:130px 32px;position:relative;z-index:1}
-.qs-quote blockquote{font-family:var(--fd);font-weight:800;font-size:clamp(34px,5vw,72px);line-height:1.04;letter-spacing:-0.035em;text-wrap:balance}
+.qs-quote blockquote{max-width:780px;font-family:var(--fd);font-weight:800;font-size:clamp(34px,4.6vw,66px);line-height:1.04;letter-spacing:-0.035em;text-wrap:balance}
 .qs-quote blockquote em{font-style:normal}
 .qs-quote .qw{color:rgba(255,255,255,.14);transition:color .35s ease}
 .qs-quote .qw.on{color:#fff}
@@ -110,7 +113,7 @@ a{color:inherit;text-decoration:none}
 .team-label{margin:56px 0 18px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:14px}
 .team-label::after{content:"";flex:1;height:1px;background:var(--line)}
 .people{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.people.teach{grid-template-columns:repeat(3,1fr)}
+.people.teach{grid-template-columns:repeat(4,1fr)}
 .person{background:#fff;border-radius:20px;padding:22px;display:flex;gap:16px;align-items:center;border:1px solid var(--line);box-shadow:0 4px 14px rgba(21,32,61,.05);transition:transform .25s,box-shadow .25s}
 .person:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(21,32,61,.08)}
 /* Quan hi hagi fotos: substituir .av per <img class="av" src="..." alt="Nom"> */
@@ -120,13 +123,18 @@ a{color:inherit;text-decoration:none}
 .person .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--c,#2547D9) 14%,#fff);color:color-mix(in srgb,var(--c,#2547D9) 80%,#000)}
 
 /* ---------- PER QUÈ ---------- */
-.qs-why{padding:110px 0 120px}
-.why6{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:transparent;border:none;border-radius:0;overflow:visible;margin-top:52px}
-.w{background:#fff;padding:36px 32px;border-radius:20px;border:1.5px solid var(--line);position:relative;transition:border-color .22s,box-shadow .22s}
-.w:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(37,71,217,.09)}
-.w .n{font-family:var(--fd);font-weight:800;font-size:42px;color:var(--blue);opacity:.12;letter-spacing:-0.04em;line-height:1;margin-bottom:18px}
-.w h3{font-family:var(--fd);font-weight:700;font-size:22px;letter-spacing:-0.02em;margin:0 0 10px;line-height:1.2;color:var(--ink)}
-.w p{color:var(--ink-soft);font-size:15px;line-height:1.55}
+.qs-why{padding:90px 0 110px}
+.why-list{list-style:none;margin-top:48px;border-top:1px solid var(--line)}
+.why-list li{display:grid;grid-template-columns:120px 1fr 1.2fr;gap:32px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .35s cubic-bezier(.2,.8,.2,1)}
+.why-list li::before{content:"";position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--c);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.why-list li:hover{padding-left:16px}
+.why-list li:hover::before{width:100%}
+.why-list .num{font-family:var(--fd);font-weight:800;font-size:60px;line-height:1;letter-spacing:-0.05em;color:transparent;-webkit-text-stroke:1.5px var(--c);transition:color .35s}
+.why-list li:hover .num{color:var(--c)}
+.why-list h3{font-family:var(--fd);font-weight:700;font-size:clamp(23px,2.3vw,30px);letter-spacing:-0.025em;line-height:1.1}
+.why-list p{color:var(--ink-soft);font-size:16px;max-width:460px}
+@media (max-width:960px){.why-list li{grid-template-columns:72px 1fr;gap:4px 18px;padding:24px 0}.why-list li p{grid-column:2}.why-list .num{font-size:42px;grid-row:span 2}}
+@media (max-width:600px){.why-list li{grid-template-columns:52px 1fr}.why-list .num{font-size:34px}.why-list li:hover{padding-left:0}}
 
 /* ---------- CTA ---------- */
 .qs-cta{max-width:1280px;margin:0 auto 110px;padding:0 32px}
@@ -138,6 +146,19 @@ a{color:inherit;text-decoration:none}
 .btn-y{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font-weight:800;font-size:15px;padding:15px 26px;border-radius:99px;transition:transform .2s,box-shadow .2s}
 .btn-y:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,184,0,.35)}
 
+/* ---------- EFECTES EN FER SCROLL ---------- */
+/* Menú compacte (només en aquesta pàgina; nav.js no es toca) */
+.nav{transition:box-shadow .3s,background .3s}
+.nav-inner{transition:padding .3s ease}
+.nav .logo img{transition:height .3s ease}
+body.is-scrolled .nav{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(21,32,61,.08)}
+body.is-scrolled .nav-inner{padding-top:10px;padding-bottom:10px}
+body.is-scrolled .nav .logo img{height:30px}
+/* Elements que apareixen en arribar-hi */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:960px){
   .wrap{padding:0 22px}
@@ -145,16 +166,19 @@ a{color:inherit;text-decoration:none}
   .qs-album{height:440px;min-height:0}
   .qs-facts-in{grid-template-columns:1fr 1fr;padding:28px 22px}
   .qs-story{padding:80px 0 40px}
-  .qs-story-head{grid-template-columns:1fr;gap:16px;margin-bottom:44px}
+  .qs-story-head{margin-bottom:28px}
+  .story-grid{grid-template-columns:1fr;gap:0}
+  .story-aside{position:static;order:-1;margin-bottom:44px;padding:22px}
+  .story-intro{font-size:17px}
   .people{grid-template-columns:1fr 1fr}
   .people.teach{grid-template-columns:1fr 1fr}
-  .why6{grid-template-columns:1fr 1fr}
   .qs-cta-in{grid-template-columns:1fr;padding:52px 28px}
 }
 @media (max-width:600px){
   .qs-album{height:360px}
-  .pol{padding:8px 8px 34px}
-  .pol figcaption{font-size:11px;bottom:9px;left:10px;right:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pol{padding:8px 8px 40px}
+  .pol figcaption{font-size:11px;line-height:1.25;bottom:7px;left:10px;right:10px}
+  .pol figcaption span{display:block}
   .fact{flex-direction:column;gap:6px}
   .fact span{font-size:13px}
   .tl::before,.tl::after{left:9px}
@@ -163,10 +187,17 @@ a{color:inherit;text-decoration:none}
   .tl-year{grid-column:2;grid-row:1;text-align:left;font-size:30px;margin-bottom:8px}
   .tl-body{grid-column:2;grid-row:2}
   .tl-photos{grid-template-columns:1fr 1fr}
-  .people,.people.teach,.why6{grid-template-columns:1fr}
+  .people,.people.teach{grid-template-columns:1fr 1fr;gap:10px}
+  .person{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}
+  .person .av{width:44px;height:44px;font-size:15px}
+  .person h3{font-size:16px}
+  .person .role{font-size:13px}
+  .person .tag{font-size:10px;padding:2px 7px}
+  .team-label{margin-top:40px}
   .qs-quote{margin-top:40px}
-  .qs-quote::after{display:none}
-  .qs-quote-in{padding:84px 22px}
+  .qs-quote::before{font-size:190px;top:18px;right:-24px;transform:none}
+  .qs-quote-in{padding-top:150px}
+  .qs-quote-in{padding-left:22px;padding-right:22px;padding-bottom:84px}
   .qs-quote p{font-size:11px;letter-spacing:.12em}
   .qs-cta{padding:0 16px}
 }
@@ -313,9 +344,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="kicker">La nostra història</span>
         <h2 class="h2">Més de 50 anys, <em>classe a classe</em></h2>
       </div>
-      <p>El que va néixer amb vocació de barri es va convertir en una escola de referència per a tota la comarca. Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada.</p>
     </div>
 
+    <div class="story-grid">
     <div class="tl" id="tl">
       <div class="tl-row">
         <div class="tl-year">1973</div><div class="tl-dot"></div>
@@ -360,6 +391,8 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
     </div>
+    <aside class="story-aside"><p class="story-intro">El que va néixer amb vocació de barri es va convertir en una escola de referència per a tota la comarca. Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada.</p></aside>
+    </div>
   </div>
 </section>
 
@@ -401,15 +434,13 @@ document.addEventListener('DOMContentLoaded', function(){
 <section class="qs-why" id="per-que">
   <div class="wrap">
     <span class="kicker">Per què Sprint Idiomes</span>
-    <h2 class="h2">El que no ha canviat <em>en 50 anys</em></h2>
-    <div class="why6">
-      <div class="w"><div class="n">01</div><h3>Grups reduïts</h3><p>Entre 8 i 12 alumnes segons el curs. Atenció personal i ningú queda enrere.</p></div>
-      <div class="w"><div class="n">02</div><h3>Professors estables</h3><p>El mateix equip any rere any. Coneixen cada alumne i el seu ritme.</p></div>
-      <div class="w"><div class="n">03</div><h3>Exàmens oficials</h3><p>Centre preparador oficial Cambridge i preparació DELF i DALF, amb seguiment durant tot el procés.</p></div>
-      <div class="w"><div class="n">04</div><h3>Gramàtica i conversa</h3><p>Treballem la base gramatical i la pràctica oral. Aquí es parla, no només s'estudia.</p></div>
-      <div class="w"><div class="n">05</div><h3>Flexibilitat</h3><p>Cada alumne és diferent. Ens adaptem als vostres horaris, necessitats i objectius.</p></div>
-      <div class="w"><div class="n">06</div><h3>Tres generacions</h3><p>Els fills dels primers alumnes ara hi porten els seus fills.</p></div>
-    </div>
+    <h2 class="h2">Com <em>treballem</em></h2>
+    <ol class="why-list">
+      <li style="--c:#F5A800"><span class="num" aria-hidden="true">01</span><h3>Grups reduïts</h3><p>Entre 8 i 12 alumnes segons el curs. Atenció personal i ningú queda enrere.</p></li>
+      <li style="--c:#2547D9"><span class="num" aria-hidden="true">02</span><h3>Professors estables</h3><p>El mateix equip any rere any. Coneixen cada alumne i el seu ritme.</p></li>
+      <li style="--c:#EC1E8C"><span class="num" aria-hidden="true">03</span><h3>Gramàtica i conversa</h3><p>Treballem la base gramatical i la pràctica oral. Aquí es parla, no només s'estudia.</p></li>
+      <li style="--c:#26A69A"><span class="num" aria-hidden="true">04</span><h3>Flexibilitat</h3><p>Cada alumne és diferent. Ens adaptem als vostres horaris, necessitats i objectius.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -441,5 +472,29 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 
+<script>
+/* Menú compacte i aparició dels blocs en fer scroll */
+document.addEventListener('DOMContentLoaded', function(){
+  function onScroll(){ document.body.classList.toggle('is-scrolled', scrollY > 40); }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var groups = ['.qs-facts .fact', '.qs-story-head', '.story-aside', '.qs-team .kicker, .qs-team .h2, .qs-team .intro', '.team-label', '.person', '.qs-why .kicker, .qs-why .h2', '.why-list li', '.qs-cta-in'];
+  var els = [];
+  groups.forEach(function(sel){
+    [].slice.call(document.querySelectorAll(sel)).forEach(function(el, i){
+      el.classList.add('rv'); el.style.setProperty('--d', Math.min(i, 6) * 0.07 + 's'); els.push(el);
+    });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target; el.classList.add('in'); io.unobserve(el);
+      /* un cop ha aparegut, treu les classes perquè els efectes hover vagin a la seva velocitat */
+      setTimeout(function(){ el.classList.remove('rv','in'); el.style.removeProperty('--d'); }, 1300);
+    });
+  }, {rootMargin:'0px 0px -10% 0px'});
+  els.forEach(function(el){ io.observe(el); });
+});
+</script>
 </body>
 </html>
