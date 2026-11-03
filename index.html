@@ -732,8 +732,11 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 .contact-form h3{max-width:none}
 .contact-form .lead{max-width:440px;margin-bottom:26px}
 .cf-step{border:0;margin:0 0 26px;padding:0;min-width:0}
-.cf-step legend{display:flex;align-items:center;gap:10px;padding:0;margin-bottom:14px;font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-0.01em;color:var(--ink)}
+.cf-step legend{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:0;margin-bottom:14px;font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-0.01em;color:var(--ink)}
 .cf-n{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700;flex-shrink:0}
+.contact-form .cf-body > h3{margin-bottom:28px}
+.contact-info-card h3 em{padding-right:.12em}
+.cf-hint{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--ink-soft);letter-spacing:0}
 .cf-opt{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:#F1F3F8;padding:8px 12px;border-radius:99px}
 .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .chip{position:relative;display:block;cursor:pointer}
@@ -797,10 +800,10 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 .ar-dot{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin-top:2px}
 .ar-dot::before{content:"";width:16px;height:0;border-top:4px dotted currentColor}
 .ar-train{background:#EEF1FF;color:#2547D9}
-.ar-vila{background:#FDEBF4;color:#EC1E8C}
+.ar-bus{background:#FDEBF4;color:#EC1E8C}
 .ar-pin{background:#FFF6D6;color:#C98A00}
-.ar-car{background:#2547D9;color:#fff;font-family:var(--font-display);font-weight:800;font-size:17px;border-radius:10px}
-.ar-car::before{display:none}
+.ar-car{background:#2547D9;color:#fff;border-radius:10px}
+.ar-car::before{content:"P";display:block;width:auto;height:auto;border:0;font-family:var(--font-display);font-weight:800;font-size:17px;line-height:1;color:#fff}
 .ar-pin::before{width:12px;height:12px;border:0;border-radius:50%;background:currentColor}
 .arribar .map-btns{display:flex;flex-wrap:wrap;gap:10px}
 .arribar .map-load-out{background:var(--blue);color:#fff;font-weight:700;font-size:14px;padding:11px 20px;border-radius:99px;transition:background .2s}
@@ -994,7 +997,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   <div class="hB-hint" aria-hidden="true">Fes scroll<i>↓</i></div>
   <div class="hB-content">
     <span class="portada-badge"><span class="portada-dot"></span>Curs 2026–2027 · Places limitades</span>
-    <h1 class="portada-title">Aprendre idiomes<br>obre portes.</h1>
+    <h1 class="portada-title">Aprendre idiomes<br>obre portes</h1>
     <p class="portada-sub">Acompanyem infants, joves i adults en l'aprenentatge d'idiomes a Sant Cugat del Vallès des de 1973.</p>
     <div class="portada-ctas">
       <a href="cursos.html" class="portada-cta">Coneix els nostres cursos <span>→</span></a>
@@ -1061,7 +1064,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   <div class="section-head">
     <div>
       <span class="eyebrow">Per a qui ho fem</span>
-      <h2 class="section-title">Tria el teu <span class="hl">camí</span>.</h2>
+      <h2 class="section-title">Tria el teu <span class="hl">camí</span></h2>
     </div>
     <p class="section-lead">Cada edat, una manera d'aprendre.</p>
   </div>
@@ -1070,42 +1073,42 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     <a href="kids-planet.html" class="bubble a1">
       <div class="b-name">Kids Planet</div>
       <div class="b-sub">Infantil i 1r de Primària</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="kids.html" class="bubble a2">
       <div class="b-name">Kids</div>
       <div class="b-sub">Primària</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="teens.html" class="bubble a3">
       <div class="b-name">Teens</div>
       <div class="b-sub">ESO</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="cambridge.html" class="bubble a5">
       <div class="b-name">Cambridge</div>
       <div class="b-sub">Exàmens oficials</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="adults.html" class="bubble a4">
       <div class="b-name">Adults</div>
       <div class="b-sub">Anglès i conversa</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="frances.html" class="bubble a6">
       <div class="b-name">Français</div>
       <div class="b-sub">Joves i adults</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="business.html" class="bubble a7">
       <div class="b-name">Business</div>
       <div class="b-sub">Empreses</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
     <a href="particular.html" class="bubble a9">
       <div class="b-name">Particulars</div>
       <div class="b-sub">Classes a mida</div>
-      <span class="b-go" aria-hidden="true">Veure el curs →</span>
+      <span class="b-go" aria-hidden="true">Vols saber-ne més?</span>
     </a>
   </div>
 </section>
@@ -1122,7 +1125,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   <div class="section-head">
     <div>
       <span class="eyebrow">Per què Sprint?</span>
-      <h2 class="section-title">Molt més que una <span class="hl">escola d'idiomes</span>.</h2>
+      <h2 class="section-title">Molt més que una <span class="hl">escola d'idiomes</span></h2>
     </div>
   </div>
 
@@ -1167,13 +1170,13 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   <div class="section-head">
     <div>
       <span class="eyebrow">Vine a conèixer-nos</span>
-      <h2 class="section-title" data-default="Reserva la teva <span class=&quot;hl&quot;>classe de prova gratuïta</span>." data-nivell="Fes la <span class=&quot;hl&quot;>prova de nivell</span> gratuïta.">Reserva la teva <span class="hl">classe de prova gratuïta</span>.</h2>
+      <h2 class="section-title" data-default="Reserva la teva <span class=&quot;hl&quot;>classe de prova gratuïta</span>" data-nivell="Fes la <span class=&quot;hl&quot;>prova de nivell</span> gratuïta">Reserva la teva <span class="hl">classe de prova gratuïta</span></h2>
     </div>
   </div>
 
   <div class="contact">
     <div class="contact-info-card">
-      <h3>Som <span class="blue">al cor</span> de Sant Cugat.</h3>
+      <h3>Som <em class="blue">al cor</em> de Sant Cugat</h3>
 
       <div class="info-block">
         <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1209,23 +1212,22 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     <form class="contact-form" id="form-prova" novalidate>
       <span class="cf-sticker" aria-hidden="true">És gratuït!</span>
       <div class="cf-body">
-      <h3 data-default="Tres passos <em>i et truquem</em>." data-nivell="Fes la <em>prova de nivell</em> gratuïta.">Tres passos <em>i et truquem</em>.</h3>
-      <p class="lead" data-default="Ens dius qui vindria a classe, ens deixes les teves dades i et contactem en menys de 24h." data-nivell="Ens deixes les teves dades i et contactem en menys de 24h per fer-te la prova de nivell, sense compromís.">Ens dius qui vindria a classe, ens deixes les teves dades i et contactem en menys de 24h.</p>
+      <h3 data-default="Tres passos i et contactem <em>en menys de 24 hores</em>" data-nivell="Fes la <em>prova de nivell</em> gratuïta">Tres passos i et contactem <em>en menys de 24 hores</em></h3>
 
       <fieldset class="cf-step">
-        <legend><span class="cf-n" aria-hidden="true">1</span>Per a qui és la classe?</legend>
+        <legend><span class="cf-n" aria-hidden="true">1</span>Per a qui és la classe? <span class="cf-hint">Pots triar-ne més d'una</span></legend>
         <div class="chips">
-          <label class="chip" style="--c:#EC1E8C;--t:#fff"><input type="radio" name="curs" value="Kids Planet" required><span class="chip-in"><b>Kids Planet</b><small>Infantil i 1r</small></span></label>
-          <label class="chip" style="--c:#FF6B35;--t:#fff"><input type="radio" name="curs" value="Kids"><span class="chip-in"><b>Kids</b><small>Primària</small></span></label>
-          <label class="chip" style="--c:#26A69A;--t:#fff"><input type="radio" name="curs" value="Teens"><span class="chip-in"><b>Teens</b><small>ESO</small></span></label>
-          <label class="chip" style="--c:#1B5E3A;--t:#fff"><input type="radio" name="curs" value="Adults"><span class="chip-in"><b>Adults</b><small>Anglès i conversa</small></span></label>
-          <label class="chip" style="--c:#E1000F;--t:#fff"><input type="radio" name="curs" value="Cambridge"><span class="chip-in"><b>Cambridge</b><small>Exàmens oficials</small></span></label>
-          <label class="chip" style="--c:#FFB800;--t:#15203D"><input type="radio" name="curs" value="Français"><span class="chip-in"><b>Français</b><small>Joves i adults</small></span></label>
-          <label class="chip" style="--c:#9B72CF;--t:#fff"><input type="radio" name="curs" value="Business"><span class="chip-in"><b>Business</b><small>Empreses</small></span></label>
-          <label class="chip" style="--c:#4FC3F7;--t:#15203D"><input type="radio" name="curs" value="Particulars"><span class="chip-in"><b>Particulars</b><small>Classes a mida</small></span></label>
-          <label class="chip chip-wide"><input type="radio" name="curs" value="Prova de nivell"><span class="chip-in"><b>Encara no ho sé</b><small>Fem una prova de nivell, sense compromís</small></span></label>
+          <label class="chip" style="--c:#EC1E8C;--t:#fff"><input type="checkbox" name="curs" value="Kids Planet"><span class="chip-in"><b>Kids Planet</b><small>Infantil i 1r</small></span></label>
+          <label class="chip" style="--c:#FF6B35;--t:#fff"><input type="checkbox" name="curs" value="Kids"><span class="chip-in"><b>Kids</b><small>Primària</small></span></label>
+          <label class="chip" style="--c:#26A69A;--t:#fff"><input type="checkbox" name="curs" value="Teens"><span class="chip-in"><b>Teens</b><small>ESO</small></span></label>
+          <label class="chip" style="--c:#1B5E3A;--t:#fff"><input type="checkbox" name="curs" value="Adults"><span class="chip-in"><b>Adults</b><small>Anglès i conversa</small></span></label>
+          <label class="chip" style="--c:#E1000F;--t:#fff"><input type="checkbox" name="curs" value="Cambridge"><span class="chip-in"><b>Cambridge</b><small>Exàmens oficials</small></span></label>
+          <label class="chip" style="--c:#FFB800;--t:#15203D"><input type="checkbox" name="curs" value="Français"><span class="chip-in"><b>Français</b><small>Joves i adults</small></span></label>
+          <label class="chip" style="--c:#9B72CF;--t:#fff"><input type="checkbox" name="curs" value="Business"><span class="chip-in"><b>Business</b><small>Empreses</small></span></label>
+          <label class="chip" style="--c:#4FC3F7;--t:#15203D"><input type="checkbox" name="curs" value="Particulars"><span class="chip-in"><b>Particulars</b><small>Classes a mida</small></span></label>
+          <label class="chip chip-wide"><input type="checkbox" name="curs" value="Prova de nivell"><span class="chip-in"><b>Encara no ho sé</b><small>Fem una prova de nivell, sense compromís</small></span></label>
         </div>
-        <p class="cf-err" id="err-curs" hidden>Tria una opció i t'orientem.</p>
+        <p class="cf-err" id="err-curs" hidden>Tria almenys una opció i t'orientem.</p>
       </fieldset>
 
       <fieldset class="cf-step">
@@ -1247,7 +1249,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
       </fieldset>
 
       <fieldset class="cf-step">
-        <legend><span class="cf-n" aria-hidden="true">3</span>Quan et truquem? <span class="cf-opt">Opcional</span></legend>
+        <legend><span class="cf-n" aria-hidden="true">3</span>Quan et contactem? <span class="cf-opt">Opcional</span></legend>
         <div class="chips chips-time">
           <label class="chip chip-sm"><input type="radio" name="hora" value="Matí"><span class="chip-in"><b>Matí</b></span></label>
           <label class="chip chip-sm"><input type="radio" name="hora" value="Tarda"><span class="chip-in"><b>Tarda</b></span></label>
@@ -1255,19 +1257,12 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
         </div>
       </fieldset>
 
-      <div class="field-check">
-        <input type="checkbox" id="contacte-privacitat" required>
-        <label for="contacte-privacitat">He llegit i accepto la <a href="privacitat.html" target="_blank">política de privacitat</a>.</label>
-      </div>
 
-      <button type="submit" class="btn-submit" data-default="Reservar la meva prova" data-nivell="Reservar la prova de nivell">
-        Reservar la meva prova
+      <button type="submit" class="btn-submit" data-default="Reserva la meva prova sense compromís" data-nivell="Reserva la prova de nivell sense compromís">
+        Reserva la meva prova sense compromís
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <ul class="cf-trust">
-        <li>Gratuïta</li><li>Sense compromís</li><li>Resposta en menys de 24h</li>
-      </ul>
-      <p class="form-legal">Responsable: [RAÓ SOCIAL]. Finalitat: respondre la teva consulta i organitzar la classe de prova. Drets: accés, rectificació, supressió i altres, tal com s'explica a la <a href="privacitat.html">política de privacitat</a>.</p>
+      <p class="form-legal">Sprint Idiomes farà servir les teves dades només per contactar-te. Més informació a la <a href="privacitat.html">política de privacitat</a>.</p>
       </div>
 
       <div class="cf-done" hidden tabindex="-1">
@@ -1475,9 +1470,9 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 <text x="740" y="236" transform="rotate(-27 740 236)" dy="20" text-anchor="middle" class="hm-street" font-size="19" fill="#4A5878">C. Dos de Maig</text>
 <text x="354" y="319" transform="rotate(-81 354 319)" dy="-8" text-anchor="middle" class="hm-street" font-size="19" fill="#4A5878">C. Valldoreix</text>
 <text x="229" y="160" transform="rotate(-69 229 160)" dy="-9" text-anchor="middle" class="hm-street" font-size="19" fill="#4A5878">Av. Lluís Companys</text>
-<g transform="translate(542 401)" filter="url(#hm-rough)"><rect x="-14" y="-14" width="28" height="28" rx="7" fill="#2547D9" stroke="#15203D" stroke-width="2"/><text y="8" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#fff">P</text></g>
-<text x="520" y="400" text-anchor="end" class="hm-place" font-size="20" fill="#15203D">Aparcament</text>
-<text x="520" y="418" text-anchor="end" class="hm-street" font-size="17" fill="#26A69A">Pl. Can Quitèria</text>
+<g transform="translate(537 84)" filter="url(#hm-rough)"><rect x="-14" y="-14" width="28" height="28" rx="7" fill="#2547D9" stroke="#15203D" stroke-width="2"/><text y="8" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#fff">P</text></g>
+<text x="515" y="83" text-anchor="end" class="hm-place" font-size="20" fill="#15203D">Parking</text>
+<text x="515" y="101" text-anchor="end" class="hm-street" font-size="17" fill="#4A5878">Quatre Cantons</text>
 <g transform="translate(187 467)"><rect x="-22" y="-20" width="44" height="34" rx="9" fill="#fff" stroke="#15203D" stroke-width="2.4" filter="url(#hm-rough)"/><rect x="-15" y="-13" width="12" height="10" rx="2" fill="#4FC3F7"/><rect x="3" y="-13" width="12" height="10" rx="2" fill="#4FC3F7"/><circle cx="-11" cy="8" r="3" fill="#15203D"/><circle cx="11" cy="8" r="3" fill="#15203D"/></g>
 <text x="157" y="509" class="hm-place" font-size="24" fill="#15203D">Estació FGC</text>
 <text x="157" y="529" class="hm-street" font-size="18" fill="#4A5878">Sant Cugat Centre · S1 i S2</text>
@@ -1494,11 +1489,11 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     <p class="arribar-hint" aria-hidden="true">← Llisca per veure tot el plànol</p>
     <div class="arribar-txt">
       <span class="eyebrow">Com arribar</span>
-      <h3>A peu, <span class="blue">en un moment</span>.</h3>
+      <h3>A peu, <span class="blue">en un moment</span></h3>
       <ol class="arribar-list">
         <li><span class="ar-dot ar-train" aria-hidden="true"></span><div><strong>En tren</strong>FGC Sant Cugat Centre (S1 i S2). Uns 9 minuts a peu.</div></li>
-        <li><span class="ar-dot ar-vila" aria-hidden="true"></span><div><strong>Des de la Plaça de la Vila</strong>Uns 5 minuts a peu, pel carrer del Dos de Maig.</div></li>
-        <li><span class="ar-dot ar-car" aria-hidden="true">P</span><div><strong>Amb cotxe</strong>Aparcament de la Plaça de Can Quitèria, just davant de l'escola.</div></li>
+        <li><span class="ar-dot ar-bus" aria-hidden="true"></span><div><strong>En autobús</strong>Parada Pl. dels Quatre Cantons, al carrer de Francesc Moragas. Uns 4 minuts a peu.</div></li>
+        <li><span class="ar-dot ar-car" aria-hidden="true"></span><div><strong>Amb cotxe</strong>Parking Quatre Cantons (Telpark), obert 24 h. Uns 5 minuts a peu.</div></li>
         <li><span class="ar-dot ar-pin" aria-hidden="true"></span><div><strong>L'adreça</strong>C/ Francesc Moragas, 8 · 08172 Sant Cugat del Vallès</div></li>
       </ol>
       <div class="map-btns">
@@ -1561,6 +1556,12 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   var form = document.getElementById('form-prova'); if (!form) return;
   var err = document.getElementById('err-curs');
   form.addEventListener('change', function(e){ if (e.target.name === 'curs') err.hidden = true; });
+  /* Pas 3 (opcional): tornar a clicar una opció marcada la desmarca */
+  form.querySelectorAll('input[name="hora"]').forEach(function(r){
+    var was = false;
+    r.closest('label').addEventListener('pointerdown', function(){ was = r.checked; });
+    r.addEventListener('click', function(){ if (was) { r.checked = false; was = false; } });
+  });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var curs = form.querySelector('input[name="curs"]:checked');
