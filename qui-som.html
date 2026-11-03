@@ -93,8 +93,8 @@ a{color:inherit;text-decoration:none}
 .tl-now .tl-year{color:var(--blue)}
 
 /* ---------- CITA ---------- */
-.qs-quote{margin:70px 0 0;background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.qs-quote::before{content:"50";position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:var(--fd);font-weight:800;font-size:clamp(260px,38vw,560px);line-height:.8;letter-spacing:-0.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.08);pointer-events:none}
+.qs-quote{margin:70px 0 0;background:var(--ink);color:#fff;position:relative;overflow:clip}
+.qs-quote::before{content:"50";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--fd);font-weight:800;font-size:clamp(260px,38vw,560px);line-height:.8;letter-spacing:-0.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.08);pointer-events:none}
 .qs-quote-in{max-width:1100px;margin:0 auto;padding:130px 32px;position:relative;z-index:1}
 .qs-quote blockquote{font-family:var(--fd);font-weight:800;font-size:clamp(34px,5vw,72px);line-height:1.04;letter-spacing:-0.035em;text-wrap:balance}
 .qs-quote blockquote em{font-style:normal}
@@ -121,12 +121,16 @@ a{color:inherit;text-decoration:none}
 .person .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--c,#2547D9) 14%,#fff);color:color-mix(in srgb,var(--c,#2547D9) 80%,#000)}
 
 /* ---------- PER QUÈ ---------- */
-.qs-why{padding:110px 0 120px}
-.why6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:48px}
-.w{background:#fff;padding:34px 30px}
-.w .n{font-family:var(--fd);font-weight:800;font-size:15px;color:var(--blue);letter-spacing:.02em}
-.w h3{font-family:var(--fd);font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:10px 0 8px;line-height:1.15}
-.w p{color:var(--ink-soft);font-size:15.5px}
+.qs-why{padding:110px 0 120px;background:var(--ink)}
+.qs-why .kicker{color:var(--yellow)}
+.qs-why .h2{color:#fff}
+.qs-why .h2 em{color:var(--yellow)}
+.why6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;margin-top:48px}
+.w{background:var(--ink);padding:34px 30px;transition:background .2s}
+.w:hover{background:rgba(255,255,255,.05)}
+.w .n{font-family:var(--fd);font-weight:800;font-size:15px;color:var(--yellow);letter-spacing:.02em}
+.w h3{font-family:var(--fd);font-weight:700;font-size:23px;letter-spacing:-0.02em;margin:10px 0 8px;line-height:1.15;color:#fff}
+.w p{color:rgba(255,255,255,.65);font-size:15.5px}
 
 /* ---------- CTA ---------- */
 .qs-cta{max-width:1280px;margin:0 auto 110px;padding:0 32px}
@@ -367,7 +371,6 @@ document.addEventListener('DOMContentLoaded', function(){
 <section class="qs-quote" aria-label="La nostra manera de fer">
   <div class="qs-quote-in">
     <blockquote>Cinquanta anys no es fan sols: es fan <em>classe a classe, alumne a alumne</em></blockquote>
-    <p>Sprint Idiomes · Sant Cugat del Vallès</p>
   </div>
 </section>
 
