@@ -16,7 +16,8 @@
     });
   }
 </script>
-<link rel="preload" as="image" href="img-portada/sprint-entrada.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img-home/escola-entrada.webp" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="image" href="img-home/escola-entrada-960.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
@@ -77,6 +78,7 @@ main, nav, footer{position:relative;z-index:1}
   transition:opacity 1.8s ease-in-out;
 }
 .portada-slide.is-active{opacity:1}
+@media (max-width:700px){.portada-slide.first{background-image:url('img-home/escola-entrada-960.webp') !important}}
 .portada{
   position:relative;
   height:95vh;
@@ -659,7 +661,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
    i apareix el títol. Les fotos fan un zoom lent (Ken Burns). */
 .portada-slide{transform:scale(1.1);transition:opacity 1.8s ease-in-out, transform 7s linear}
 .portada-slide.is-active{transform:scale(1)}
-.hB-pin{position:relative;height:200vh}
+.hB-pin{position:relative;height:100vh}
 .hB{position:sticky;top:0;height:100vh;overflow:hidden;background:#060F36}
 .hB .portada-slideshow{position:absolute;inset:0}
 .hB-shade{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;
@@ -788,19 +790,18 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 
 /* ---------- COM ARRIBAR (plànol dibuixat a mà) ---------- */
 .arribar{display:grid;grid-template-columns:1.55fr 1fr;gap:48px;align-items:center;margin-top:56px}
-.arribar-map{margin:0;position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#FFFDF8;aspect-ratio:3/2;box-shadow:0 10px 30px rgba(21,32,61,.06)}
-.arribar-map .hand-map{display:block;position:relative;width:100%;container-type:inline-size}
+.arribar-map{margin:0;position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#FEFBF8;aspect-ratio:1448/1086;box-shadow:0 10px 30px rgba(21,32,61,.06)}
+.arribar-map .hand-map{display:block;position:relative;width:100%}
 .arribar-map .hand-map img{display:block;width:100%;height:auto}
-/* Noms del plànol: font de la web, en etiquetes blanques perquè es llegeixin sobre el dibuix */
-.gl{position:absolute;font-family:var(--font-body);font-weight:800;color:var(--ink);line-height:1.1;white-space:nowrap;font-size:clamp(12px,1.55cqw,19px);
+.hm-over{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+/* Plànol: noms */
+.hm-st{font-family:var(--font-body);font-weight:800;fill:#15203D;paint-order:stroke;stroke:#FDEAC7;stroke-width:9px;stroke-linejoin:round}
+.hm-st-out{stroke:#FEFBF8}
+.hm-sub-dark{fill:#fff;stroke:none}
+.hm-pl{font-family:var(--font-display);font-weight:700;fill:#15203D;paint-order:stroke;stroke:#FEFBF8;stroke-width:9px;stroke-linejoin:round}
+.hm-sub{font-family:var(--font-body);font-weight:700;fill:#4A5878;paint-order:stroke;stroke:#FEFBF8;stroke-width:7px;stroke-linejoin:round}
+.hm-badge{font-family:var(--font-display);font-weight:700}
   background:#fff;border:1.5px solid rgba(21,32,61,.18);border-radius:.6em;padding:.32em .6em .36em;box-shadow:0 3px 10px rgba(21,32,61,.10)}
-.gl small{display:block;font-size:.78em;font-weight:600;color:#4A5878;margin-top:.12em}
-/* Noms de carrer escrits dins del carrer, seguint-ne el traçat */
-.hm-streets{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.gst{font-family:var(--font-body);font-weight:800;font-size:28px;letter-spacing:0;fill:#15203D;stroke:#FEF1D2;stroke-width:8px;stroke-linejoin:round;paint-order:stroke}
-.gl-badge{position:absolute;background:var(--ink);color:#fff;border-radius:.6em;padding:.45em .75em .5em;font-family:var(--font-body);font-weight:700;line-height:1.15;font-size:clamp(12px,1.55cqw,19px);white-space:nowrap;box-shadow:0 6px 16px rgba(21,32,61,.2)}
-.gl-badge b{display:block;color:var(--yellow);font-family:var(--font-display);font-weight:700;font-size:1.2em;letter-spacing:-.01em}
-.gl-badge small{display:block;font-size:.85em;margin-top:.15em}
 .arribar-map iframe{display:block;width:100%;height:100%;border:0}
 .arribar-txt h3{font-family:var(--font-display);font-weight:500;font-size:34px;line-height:1.05;letter-spacing:-0.025em;margin:10px 0 22px}
 .arribar-txt h3 .blue{color:var(--blue)}
@@ -884,8 +885,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   .audience{margin-top:28px}
 }
 @media (max-width:600px){
-  .arribar-map .hand-map{width:600px}
-  .gst{font-size:32px;stroke-width:8px}
+  .arribar-map .hand-map{width:640px;max-width:none}
   .arribar-hint{margin:-14px 0 0}
 }
 </style>
@@ -999,18 +999,18 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 <div class="hB-pin">
 <div class="hB">
   <div class="portada-slideshow" aria-hidden="true">
-    <div class="portada-slide is-active" style="background-image:url('img-portada/sprint-entrada.webp')"></div>
-    <div class="portada-slide" data-bg="img-portada/adults-1.webp"></div>
-    <div class="portada-slide" data-bg="img-portada/kids-2.webp"></div>
-    <div class="portada-slide" data-bg="img-portada/teens-1.webp"></div>
-    <div class="portada-slide" data-bg="img-portada/adults-2.webp"></div>
-    <div class="portada-slide" data-bg="img-portada/kids-3.webp"></div>
-    <div class="portada-slide" data-bg="img-portada/teens-4.webp"></div>
+    <div class="portada-slide is-active first" style="background-image:url('img-home/escola-entrada.webp')"></div>
+    <div class="portada-slide" data-bg="img-home/kids-planet-1.webp"></div>
+    <div class="portada-slide" data-bg="img-home/teens-1.webp"></div>
+    <div class="portada-slide" data-bg="img-home/kids-1.webp"></div>
+    <div class="portada-slide" data-bg="img-home/professora-1.webp"></div>
+    <div class="portada-slide" data-bg="img-home/kids-2.webp"></div>
+    <div class="portada-slide" data-bg="img-home/teens-2.webp"></div>
+    <div class="portada-slide" data-bg="img-home/adults-1.webp"></div>
   </div>
   <div class="hB-shade"></div>
   <div class="hB-mask" aria-hidden="true"><span class="w">SPR<span class="o">I</span>NT<br>IDIOMES</span></div>
   <div class="hB-top" aria-hidden="true">Escola d'idiomes · Sant Cugat · des de 1973</div>
-  <div class="hB-hint" aria-hidden="true">Fes scroll<i>↓</i></div>
   <div class="hB-content">
     <span class="portada-badge"><span class="portada-dot"></span>Curs 2026–2027 · Places limitades</span>
     <h1 class="portada-title">Aprendre idiomes<br>obre portes</h1>
@@ -1028,7 +1028,9 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   /* Només la primera foto es carrega d'entrada; la resta, quan la pàgina ja ha carregat */
   function loadRest(){
     [].forEach.call(document.querySelectorAll('.portada-slide[data-bg]'), function(s){
-      s.style.backgroundImage = "url('" + s.getAttribute('data-bg') + "')";
+      var src = s.getAttribute('data-bg');
+      if (innerWidth <= 700) src = src.replace('.webp', '-960.webp'); /* mòbil: versió lleugera */
+      s.style.backgroundImage = "url('" + src + "')";
       s.removeAttribute('data-bg');
     });
   }
@@ -1048,7 +1050,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   var pin = document.querySelector('.hB-pin'), mask = document.querySelector('.hB-mask'),
       o = mask.querySelector('.o'), shade = document.querySelector('.hB-shade'),
       content = document.querySelector('.hB-content'),
-      hint = document.querySelector('.hB-hint'), top = document.querySelector('.hB-top');
+      top = document.querySelector('.hB-top');
   function origin(){
     mask.style.transform = 'none';
     var m = mask.getBoundingClientRect(), r = o.getBoundingClientRect();
@@ -1056,21 +1058,33 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     update();
   }
   function clamp(v){ return Math.max(0, Math.min(1, v)); }
+  /* L'obertura del logo es reprodueix sola en carregar (abans anava amb el scroll) */
+  var p = 0, t0 = null, DELAY = 900, DUR = 2600, started = false;
+  function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
   function update(){
-    var range = pin.offsetHeight - innerHeight;
-    var p = clamp(-pin.getBoundingClientRect().top / range);
     var z = clamp(p / .8);
-    mask.style.transform = 'scale(' + Math.pow(70, Math.pow(z, 1.0)) + ')';
+    mask.style.transform = 'scale(' + Math.pow(70, z) + ')';
     mask.style.opacity = 1 - clamp((p - .65) / .18);
-    hint.style.opacity = top.style.opacity = 1 - clamp(p * 6);
+    top.style.opacity = 1 - clamp(p * 6);
     var c = clamp((p - .62) / .25);
     content.style.opacity = c; shade.style.opacity = c;
     content.style.transform = 'translateY(' + (30 * (1 - c)) + 'px)';
     content.classList.toggle('live', c > .5);
   }
-  addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+  function tick(now){
+    if (t0 === null) t0 = now;
+    p = ease(clamp((now - t0 - DELAY) / DUR));
+    update();
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  function start(){ if (started) return; started = true; requestAnimationFrame(tick); }
+  /* Si la persona fa scroll abans que acabi, s'obre de seguida */
+  function skip(){ if (p < 1) { DELAY = 0; DUR = 400; t0 = performance.now() - p * DUR; } }
+  addEventListener('wheel', skip, {passive:true, once:true});
+  addEventListener('touchmove', skip, {passive:true, once:true});
+  addEventListener('keydown', skip, {once:true});
   addEventListener('resize', origin);
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(origin);
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function(){ origin(); start(); });
   origin();
 })();
 </script>
@@ -1134,7 +1148,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 <section id="perque">
   <div class="why-wrap">
   <figure class="why-photo">
-    <img src="img-portada/kids-3.webp" alt="Alumnes de Sprint Idiomes a classe" loading="lazy">
+    <img src="img-home/professora-alumnes.webp" alt="Una professora de Sprint Idiomes ajudant un grup d'alumnes a classe" width="880" height="1100" loading="lazy">
     <span class="why-sticker">Des de<b>1973</b></span>
   </figure>
   <div class="why-main">
@@ -1297,13 +1311,8 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   <div class="arribar" id="com-arribar">
     <figure class="arribar-map" data-src="https://www.google.com/maps?q=Sprint+Idiomes,+Carrer+de+Francesc+Moragas+8,+08172+Sant+Cugat+del+Vall%C3%A8s&amp;z=16&amp;output=embed">
       <div class="hand-map">
-        <img src="img-portada/mapa-com-arribar-960.webp" srcset="img-portada/mapa-com-arribar-960.webp 960w, img-portada/mapa-com-arribar.webp 1536w" sizes="(max-width:600px) 600px, 50vw" width="1536" height="1024" loading="lazy" alt="Plànol il·lustrat del centre de Sant Cugat: l'estació de FGC Sant Cugat Centre a baix a l'esquerra, Sprint Idiomes al carrer de Francesc Moragas, 8, al costat de la Plaça dels Quatre Cantons, amb el Parking Quatre Cantons i la parada de bus, el Monestir a dalt i l'Ajuntament a la dreta, al final de la Rambla del Celler.">
-        <svg class="hm-streets" viewBox="0 0 1536 1024" aria-hidden="true" focusable="false"><defs><path id="hm-sm" d="M348.5,787.1 Q354.5,784.4 357.5,783.0 Q360.4,781.6 366.4,778.8 Q372.4,776.0 378.5,773.7 Q384.7,771.3 390.4,767.9 Q396.1,764.6 401.7,761.0 Q407.3,757.4 412.7,753.5 Q418.1,749.7 423.3,745.5 Q428.6,741.4 433.8,737.2 Q439.0,733.0 444.2,728.9 Q449.4,724.9 453.7,719.4 Q458.1,714.0 463.2,709.8 Q468.3,705.6 473.5,701.5 Q478.6,697.3 483.6,693.0 Q488.5,688.6 493.6,684.9 Q498.8,681.1 505.0,679.0 Q511.1,676.9 516.6,674.0 Q522.1,671.0 527.0,667.1 Q532.0,663.2 537.4,660.3 Q542.8,657.3 548.4,654.8 Q554.0,652.2 559.7,649.7 Q565.3,647.1 570.9,644.5 Q576.5,642.0 582.7,640.5 Q588.9,639.0 594.8,636.7 Q600.8,634.4 606.7,632.0 Q612.7,629.6 618.7,627.3 Q624.8,624.9 631.0,622.5 Q637.1,620.1 643.4,618.2 Q649.7,616.2 656.1,614.5 Q662.5,612.8 668.9,611.1 Q675.3,609.5 678.5,608.7 Q681.7,607.8 685.0,607.3 L688.3,606.8"/><path id="hm-fm" d="M682.4,257.7 Q691.6,265.9 694.0,269.6 Q696.3,273.4 700.1,281.0 Q703.9,288.5 705.6,301.8 Q707.4,315.1 708.7,327.2 Q709.9,339.3 706.6,351.8 Q703.3,364.4 700.3,377.0 Q697.3,389.7 694.8,402.4 Q692.3,415.2 691.9,422.3 Q691.5,429.4 690.1,436.6 Q688.7,443.8 689.8,450.7 Q690.9,457.7 693.2,465.9 Q695.4,474.2 697.7,482.4 Q700.1,490.6 702.2,498.9 Q704.2,507.2 706.5,515.5 Q708.7,523.7 710.9,532.0 Q713.0,540.3 714.8,547.2 Q716.5,554.1 717.6,561.1 Q718.8,568.1 720.0,575.0 Q721.1,582.0 723.0,588.8 Q724.9,595.7 726.8,602.5 Q728.6,609.4 730.2,616.2 Q731.9,623.1 733.8,630.0 Q735.8,636.8 737.3,640.2 Q738.8,643.5 739.4,647.0 L740.0,650.5"/><path id="hm-rus" d="M811.9,354.8 Q821.1,356.9 823.7,354.9 Q826.3,352.8 832.1,349.5 Q837.9,346.2 843.5,342.7 Q849.1,339.3 854.7,335.7 Q860.3,332.2 864.4,326.4 Q868.5,320.5 876.3,315.5 Q884.1,310.4 892.0,305.6 Q899.8,300.8 907.7,296.1 Q915.6,291.5 923.3,286.9 Q931.1,282.3 938.9,278.0 Q946.7,273.7 952.1,270.8 Q957.5,267.9 964.5,265.4 Q971.5,262.9 978.2,260.1 Q985.0,257.2 991.9,254.5 Q998.7,251.8 1005.4,248.7 Q1012.0,245.6 1019.8,244.0 Q1027.5,242.4 1033.6,240.5 Q1039.8,238.5 1043.0,237.7 Q1046.2,237.0 1049.6,236.4 L1053.0,235.8"/><path id="hm-cel" d="M793.0,632.6 Q800.2,630.9 803.9,630.5 Q807.6,630.1 816.0,628.6 Q824.4,627.2 832.2,625.7 Q840.0,624.2 847.0,622.9 Q854.0,621.6 860.9,620.9 Q867.8,620.1 875.6,618.4 Q883.5,616.7 890.2,615.8 Q896.8,614.9 903.4,614.0 Q909.9,613.1 918.0,612.8 Q926.2,612.5 933.7,611.1 Q941.3,609.7 947.8,609.5 Q954.3,609.3 961.6,607.8 Q968.9,606.3 976.3,605.2 Q983.6,604.2 993.9,602.1 Q1004.3,600.1 1014.1,599.0 Q1023.9,597.9 1035.2,598.3 Q1046.6,598.8 1055.4,598.5 Q1064.2,598.3 1073.2,597.8 L1082.2,597.3"/></defs><text class="gst"><textPath href="#hm-sm" startOffset="50%" text-anchor="middle">C. de Santa Maria</textPath></text><text class="gst"><textPath href="#hm-fm" startOffset="50%" text-anchor="middle">C. Francesc Moragas</textPath></text><text class="gst"><textPath href="#hm-rus" startOffset="50%" text-anchor="middle">C. Santiago Rusiñol</textPath></text><text class="gst gst-cel" dy="6"><textPath href="#hm-cel" startOffset="50%" text-anchor="middle">Rambla del Celler</textPath></text></svg>
-        <span class="gl" style="left:14%;top:84%">Estació FGC<small>Sant Cugat Centre · S1 i S2</small></span>
-        <span class="gl-badge" style="right:58.5%;top:43%"><b>Sprint Idiomes</b><small>C/ Francesc Moragas, 8</small></span>
-        <span class="gl" style="left:54.5%;top:47.5%">Parking i parada de bus<small>Pl. dels Quatre Cantons</small></span>
-        <span class="gl" style="left:70%;top:21.5%">Monestir</span>
-        <span class="gl" style="left:81.5%;top:57%">Ajuntament<small>Plaça de la Vila</small></span>
+        <img src="img-home/mapa-com-arribar-960.webp" srcset="img-home/mapa-com-arribar-960.webp 960w, img-home/mapa-com-arribar.webp 1448w" sizes="(max-width:600px) 640px, 50vw" width="1448" height="1086" loading="lazy" alt="Plànol il·lustrat del centre de Sant Cugat: des de l'estació de FGC Sant Cugat Centre, a baix a l'esquerra, el camí puja pel carrer de Santa Maria fins a la Plaça dels Quatre Cantons, on hi ha el Parking Quatre Cantons i la parada d'autobús. Sprint Idiomes és just a sota, al carrer de Francesc Moragas, 8. El carrer de Santiago Rusiñol porta al Monestir i la Rambla del Celler a l'Ajuntament.">
+        <svg class="hm-over" viewBox="0 0 1448 1086" aria-hidden="true" focusable="false"><defs><filter id="g2-sh" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#15203D" flood-opacity=".22"/></filter><path id="g2-sm" d="M155.2,798.3 Q159.2,795.3 161.3,793.9 Q163.4,792.5 166.0,790.5 Q168.5,788.5 172.9,784.8 Q177.3,781.2 182.2,777.0 Q187.0,772.7 192.1,768.7 Q197.1,764.7 203.1,761.8 Q209.1,758.9 214.0,754.7 Q218.9,750.6 223.9,746.5 Q228.9,742.5 233.3,738.8 Q237.7,735.2 243.2,732.8 Q248.7,730.5 252.4,727.1 Q256.1,723.7 260.1,720.6 Q264.1,717.5 266.9,713.0 Q269.8,708.6 274.8,704.3 Q279.9,700.1 285.3,695.1 Q290.7,690.1 297.0,686.2 Q303.4,682.4 308.1,676.4 Q312.8,670.5 318.5,665.7 Q324.2,660.9 330.3,655.5 Q336.4,650.0 343.2,644.2 Q350.0,638.5 356.6,635.0 Q363.3,631.5 368.4,627.3 Q373.6,623.1 377.8,617.6 Q382.0,612.1 387.2,607.9 Q392.4,603.7 397.6,599.4 Q402.8,595.1 407.6,591.7 Q412.5,588.2 416.6,584.9 Q420.6,581.6 423.8,577.0 Q427.0,572.4 430.9,568.8 Q434.8,565.2 439.0,562.0 Q443.1,558.8 447.0,555.1 Q450.8,551.5 455.3,548.7 Q459.8,546.0 463.6,542.2 Q467.3,538.4 471.7,535.6 Q476.2,532.7 478.2,531.0 Q480.2,529.4 482.5,528.1 Q484.8,526.8 487.1,525.4 L489.4,524.0"/><path id="g2-rus" d="M689.9,450.7 Q694.1,447.6 696.2,446.0 Q698.3,444.5 700.4,442.9 Q702.5,441.4 706.8,438.4 Q711.1,435.3 715.3,432.3 Q719.6,429.3 723.9,426.3 Q728.2,423.2 732.4,420.1 Q736.6,417.0 740.8,413.9 Q745.0,410.9 749.3,407.8 Q753.5,404.7 757.7,401.7 Q761.9,398.6 766.1,395.5 Q770.3,392.4 774.5,389.3 Q778.6,386.2 782.7,383.1 Q786.8,379.9 790.8,376.8 Q794.9,373.7 799.0,370.7 Q803.2,367.6 807.2,364.5 Q811.2,361.4 815.3,358.4 Q819.4,355.3 823.5,352.2 Q827.5,349.2 831.6,346.1 Q835.7,343.1 839.8,340.1 Q843.9,337.1 848.0,334.1 Q852.1,331.1 856.1,328.0 Q860.2,324.9 864.4,322.0 Q868.5,319.0 872.5,315.9 Q876.6,312.9 880.7,309.9 Q884.9,307.0 888.9,303.9 Q893.0,300.9 897.0,297.8 Q901.1,294.7 905.1,291.7 Q909.1,288.6 913.2,285.6 Q917.3,282.6 921.3,279.5 Q925.3,276.5 929.3,273.4 Q933.3,270.3 937.2,267.2 Q941.2,264.1 943.2,262.5 Q945.2,261.0 947.2,259.5 Q949.2,257.9 951.3,256.4 L953.3,254.9"/><path id="g2-fm" d="M637.9,615.1 Q639.0,620.1 639.1,622.6 Q639.2,625.1 639.1,627.6 Q638.9,630.1 639.2,635.1 Q639.6,640.1 639.6,645.1 Q639.7,650.1 639.4,655.2 Q639.0,660.2 639.0,665.2 Q639.1,670.2 638.7,675.2 Q638.3,680.3 638.1,685.3 Q638.0,690.3 638.2,695.3 Q638.4,700.3 638.4,705.3 Q638.5,710.3 638.8,715.3 Q639.1,720.3 639.3,725.3 Q639.5,730.3 639.9,735.3 Q640.2,740.3 641.3,745.2 Q642.3,750.2 643.4,755.2 Q644.6,760.1 645.7,765.1 Q646.9,770.0 647.2,775.0 Q647.4,780.0 648.6,785.0 Q649.7,789.9 649.9,795.0 Q650.0,800.0 650.2,805.0 Q650.3,810.0 649.7,815.0 Q649.2,820.0 648.5,825.0 Q647.7,830.1 647.0,835.1 Q646.2,840.2 646.2,845.2 Q646.3,850.2 645.5,855.2 Q644.7,860.3 644.8,865.3 Q645.0,870.3 645.1,875.3 Q645.2,880.3 645.3,885.3 Q645.5,890.3 645.6,895.3 Q645.7,900.3 645.9,905.3 Q646.1,910.3 646.4,915.3 Q646.6,920.3 646.8,925.3 Q647.0,930.3 647.3,935.3 Q647.5,940.3 647.9,945.3 Q648.2,950.3 648.4,955.3 Q648.5,960.3 649.0,965.3 Q649.5,970.3 649.8,975.3 Q650.1,980.3 650.2,985.3 Q650.4,990.3 650.7,995.3 Q650.9,1000.3 651.2,1005.3 Q651.4,1010.3 651.5,1012.8 Q651.5,1015.3 651.7,1017.8 Q651.9,1020.3 651.9,1022.8 L651.9,1025.3"/><path id="g2-cel" d="M683.7,713.8 Q688.6,712.1 691.0,711.3 Q693.5,710.4 696.0,710.1 Q698.5,709.8 703.6,708.8 Q708.6,707.9 713.6,707.0 Q718.6,706.0 723.7,705.2 Q728.7,704.4 733.8,703.5 Q738.8,702.6 743.9,702.0 Q749.0,701.4 754.1,701.0 Q759.2,700.6 764.2,699.6 Q769.2,698.6 774.4,698.3 Q779.5,698.1 784.4,696.2 Q789.2,694.3 794.2,693.2 Q799.2,692.2 804.2,691.1 Q809.1,690.1 814.1,689.0 Q819.1,688.0 824.1,686.8 Q829.1,685.6 834.0,684.5 Q839.0,683.3 843.9,681.6 Q848.7,679.9 853.9,679.8 Q859.0,679.7 864.7,678.5 Q870.3,677.3 876.0,676.1 Q881.6,675.0 887.3,673.8 Q892.9,672.6 898.5,671.4 Q904.2,670.2 909.8,669.2 Q915.5,668.2 921.1,667.0 Q926.8,665.8 932.4,664.5 Q938.0,663.3 943.0,662.3 Q948.0,661.3 953.0,660.9 Q958.0,660.5 962.9,659.0 Q967.8,657.5 972.8,656.7 Q977.8,655.9 980.3,655.4 Q982.7,655.0 985.2,654.6 Q987.7,654.2 990.2,653.9 L992.7,653.5"/></defs><text class="hm-st hm-st-out" font-size="30" dy="10"><textPath href="#g2-sm" startOffset="50%" text-anchor="middle">C. de Santa Maria</textPath></text><text class="hm-st" font-size="30" dy="10"><textPath href="#g2-rus" startOffset="50%" text-anchor="middle">C. de Santiago Rusiñol</textPath></text><text class="hm-st" font-size="28" dy="10"><textPath href="#g2-fm" startOffset="64%" text-anchor="middle">C. Francesc Moragas</textPath></text><text class="hm-st hm-st-out" font-size="30" dy="10"><textPath href="#g2-cel" startOffset="50%" text-anchor="middle">Rambla del Celler</textPath></text><text x="210" y="1028" text-anchor="start" class="hm-pl" font-size="36">Estació FGC</text><text x="210" y="1058" text-anchor="start" class="hm-sub" font-size="24">Sant Cugat Centre · S1 i S2</text><text x="940" y="128" text-anchor="end" class="hm-pl" font-size="36">Monestir</text><text x="872" y="1000" text-anchor="middle" class="hm-pl" font-size="36">Ajuntament</text><text x="872" y="1030" text-anchor="middle" class="hm-sub" font-size="24">Plaça de la Vila</text><text x="798" y="518" text-anchor="start" class="hm-pl" font-size="30">Parking</text><text x="798" y="594" text-anchor="start" class="hm-pl" font-size="30">Bus</text><path d="M548 456 Q585 470 598 498" fill="none" stroke="#138A7E" stroke-width="3" stroke-dasharray="6 6"/><g filter="url(#g2-sh)"><rect x="196" y="432" width="356" height="50" rx="25" fill="#138A7E"/><text x="374" y="466" text-anchor="middle" class="hm-badge" font-size="27" fill="#fff">Pl. dels Quatre Cantons</text></g><path d="M560 790 L586 690" stroke="#15203D" stroke-width="3" stroke-dasharray="6 6" fill="none"/><g filter="url(#g2-sh)"><rect x="318" y="790" width="270" height="84" rx="20" fill="#15203D"/><text x="342" y="828" class="hm-badge" font-size="32" fill="#FFB800">Sprint Idiomes</text><text x="342" y="858" class="hm-sub hm-sub-dark" font-size="22">C/ Francesc Moragas, 8</text></g></svg>
       </div>
     </figure>
     <p class="arribar-hint" aria-hidden="true">← Llisca per veure tot el plànol</p>
@@ -1342,7 +1351,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
   /* Mòbil: el plànol es pot desplaçar; el centrem a l'escola i Quatre Cantons (l'estació queda a l'esquerra) */
   function centra(){ if (!box || box.classList.contains('is-live')) return;
     var svg = box.querySelector('.hand-map'); if (!svg || svg.clientWidth <= box.clientWidth) return;
-    box.scrollLeft = svg.clientWidth * 0.45 - box.clientWidth / 2; }
+    box.scrollLeft = svg.clientWidth * 0.36 - box.clientWidth / 2; }
   centra(); addEventListener('resize', centra);
 })();
 (function(){
