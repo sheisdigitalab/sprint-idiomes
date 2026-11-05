@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=6">
+<link rel="stylesheet" href="shared.css?v=7">
 <style>
 :root{
   --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;--blue:#2547D9;--yellow:#FFB800;
@@ -86,23 +86,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .rf-text{font-size:13px;color:var(--ink-soft);line-height:1.5}
 
 
-.horaris-wrap{background:var(--kp-pale);border:1.5px solid rgba(236,30,140,.14);border-radius:32px;padding:48px;color:var(--ink);margin-top:48px;box-shadow:none}
-.horaris-title{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-0.03em;color:var(--ink);margin-bottom:6px}
-.horaris-sub{font-size:14px;color:var(--ink-soft);margin-bottom:32px}
-.horaris-table-wrap{overflow-x:auto}
-.horaris-table{width:100%;border-collapse:collapse;min-width:480px}
-.horaris-table th{font-size:var(--fs-label);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--kp);padding:0 16px 14px;text-align:left}
-.horaris-table td{padding:14px 16px;font-size:14px;font-weight:600;color:var(--ink);border-top:1px solid rgba(21,32,61,.08);vertical-align:middle}
-.nivel-name{font-weight:800;color:var(--ink);font-size:15px}
-.hora-pill{display:inline-flex;align-items:center;background:rgba(236,30,140,.12);color:var(--kp);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:800;white-space:nowrap}
-.horaris-note{margin-top:20px;font-size:13px;color:var(--ink-soft);opacity:.75;display:flex;align-items:center;gap:8px}
-.horaris-cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
 .btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--kp);color:#fff;font-family:var(--font-body);font-size:15px;font-weight:800;border-radius:50px;padding:16px 32px;transition:transform .15s,box-shadow .2s}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(236,30,140,.3)}
 .cta-band .btn-white{background:#fff;color:var(--kp);box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
-.horaris-cta .btn-ghost-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-soft);font-family:var(--font-body);font-size:14px;font-weight:700;border-radius:100px;padding:13px 24px;border:1px solid rgba(21,32,61,.15);transition:border-color .2s,color .2s}
-.horaris-cta .btn-ghost-white:hover{border-color:var(--ink);color:var(--ink)}
 
 .cta-band{background:linear-gradient(135deg,#4C0836 0%,#8A0F4A 50%,#4C0836 100%);padding:88px 40px;text-align:center;position:relative;overflow:hidden}
 .cta-band-inner{max-width:580px;margin:0 auto}
@@ -118,7 +105,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .metodo-card:nth-child(even),.metodo-card:nth-child(even):hover{transform:none}
   .metodo-card{padding:26px 24px 28px}
   .metodo-num{font-size:52px}
-  .horaris-wrap{padding:32px 22px;border-radius:16px}
   .cta-band{padding:56px 22px}
 }
 
@@ -184,8 +170,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:960px){.kp-hero h1,.hero-stats,.kp-hero-sub{max-width:none}}
 /* Aula Rainbow: mosaic de fotos */
 /* Nivells i horaris */
-.hora-o{font-size:13px;font-weight:700;color:var(--ink-soft);margin:0 6px}
-.horaris-title{margin-bottom:24px}
 /* Secció final: fúcsia, amb paraules i bombolles que suren */
 .cta-band{background:linear-gradient(120deg,#EC1E8C,#FF5FA8,#F0359A,#FF7AB8);background-size:300% 300%;animation:cb-grad 14s ease infinite;padding:110px 40px}
 @keyframes cb-grad{50%{background-position:100% 50%}}
@@ -213,10 +197,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .kp-hero{padding-top:0}
   .kp-hero-photo{position:relative;width:auto;height:300px;margin:0 -22px 32px;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent);background-image:url('img-kids-planet/kp-portada-960.webp');background-position:center 30%}
   .cta-band{padding:80px 22px}
-  .horaris-table{min-width:0}
-  .horaris-table td{padding:14px 8px}
-  .horaris-table td:last-child .hora-pill{display:flex;width:max-content;margin:3px 0}
-  .hora-o{display:block;margin:2px 0 2px 14px}
   .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}.cf-4{bottom:6%}
 }
 @media(prefers-reduced-motion:reduce){.cta-band,.cf-w,.cf-s{animation:none}}
@@ -366,7 +346,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=21"></script>
+<script src="nav.js?v=22"></script>
 
 <section class="kp-hero">
   <div class="kp-hero-photo" aria-hidden="true"></div>
@@ -430,16 +410,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>L'espai</div>
     <h2>L'aula <em style="color:var(--kp);font-style:normal">Rainbow</em></h2>
     <p class="section-lead">Un espai pensat per als més petits, ple de colors i recursos que conviden a jugar i aprendre anglès en un ambient acollidor i estimulant.</p>
-    <!-- Fotos provisionals: quan l'escola enviï les fotos de Kids Planet (KP1, KP2...), substituir els fitxers de img-kids-planet/ -->
         <div class="rb-count" aria-live="polite"><b>01</b><span> / 05</span></div>
         <div class="rb-btns"><button class="rb-arrow rb-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="rb-arrow rb-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
       </div>
       <div class="rb-deck" aria-roledescription="carrusel" aria-label="Fotos de l'aula Rainbow" tabindex="0">
-        <figure class="rb-card"><img src="img-kids-planet/kp-aula-1-700.webp" srcset="img-kids-planet/kp-aula-1-700.webp 700w, img-kids-planet/kp-aula-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Infants de Kids Planet treballant junts en una taula de l'aula" draggable="false"></figure>
-        <figure class="rb-card"><img src="img-kids-planet/kp-aula-2-700.webp" srcset="img-kids-planet/kp-aula-2-700.webp 700w, img-kids-planet/kp-aula-2.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una classe de Kids Planet asseguda al voltant d'una taula rodona" draggable="false"></figure>
-        <figure class="rb-card"><img src="img-kids-planet/kp-aula-3-700.webp" srcset="img-kids-planet/kp-aula-3-700.webp 700w, img-kids-planet/kp-aula-3.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una nena de Kids Planet fent una activitat a classe" draggable="false"></figure>
-        <figure class="rb-card"><img src="img-kids-planet/kp-aula-4-700.webp" srcset="img-kids-planet/kp-aula-4-700.webp 700w, img-kids-planet/kp-aula-4.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dues nenes somrient mentre treballen a classe" draggable="false"></figure>
-        <figure class="rb-card"><img src="img-kids-planet/kp-aula-5-700.webp" srcset="img-kids-planet/kp-aula-5-700.webp 700w, img-kids-planet/kp-aula-5.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una nena escrivint i somrient a l'aula" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-1-700.webp" srcset="img-kids-planet/kp-aula-1-700.webp 700w, img-kids-planet/kp-aula-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="La professora jugant amb els infants de Kids Planet al voltant d'una taula" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-2-700.webp" srcset="img-kids-planet/kp-aula-2-700.webp 700w, img-kids-planet/kp-aula-2.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="L'aula Rainbow, amb colors vius, taules petites i un tobogan" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-3-700.webp" srcset="img-kids-planet/kp-aula-3-700.webp 700w, img-kids-planet/kp-aula-3.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una professora treballant un conte en anglès amb un grup d'infants" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-4-700.webp" srcset="img-kids-planet/kp-aula-4-700.webp 700w, img-kids-planet/kp-aula-4.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Tres nenes fent una fitxa d'anglès a classe" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-5-700.webp" srcset="img-kids-planet/kp-aula-5-700.webp 700w, img-kids-planet/kp-aula-5.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Un grup d'infants asseguts en rotllana a l'aula" draggable="false"></figure>
       </div>
     </div>
   </div>
@@ -477,30 +456,26 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <section class="section" id="horaris" style="background:#FFFDF0">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Horaris</div>
-    <h2>Trobeu l'horari que us <em style="color:var(--kp);font-style:normal">encaixi millor</em></h2>
-    <p class="section-lead">Consulta els horaris disponibles per a Kids Planet i Kids 1.</p>
-    <div class="horaris-wrap">
-      <div class="horaris-title">Horaris setmanals</div>
-      <div class="horaris-table-wrap">
-      <table class="horaris-table">
-        <thead>
-          <tr><th>Nivell</th><th>Dia i hora</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="nivel-name">Kids Planet</span><br><span style="font-size:12px;opacity:.8">Infantil</span></td>
-            <td><span class="hora-pill">Dilluns · 17:30–18:30</span></td>
-          </tr>
-          <tr>
-            <td><span class="nivel-name">Kids 1</span><br><span style="font-size:12px;opacity:.8">1r de Primària</span></td>
-            <td><span class="hora-pill">Dimecres · 17:30–18:30</span> <span class="hora-o">o</span> <span class="hora-pill">Dijous · 17:15–18:15</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="hs hs-wrap" style="--hs-c:var(--kp)">
+      <div class="hs-side">
+        <h2>Trobeu l'horari que us <em style="color:var(--kp);font-style:normal">encaixi millor</em></h2>
+        <p class="section-lead">Una classe d'una hora a la setmana. A Kids 1 podeu triar dimecres o dijous.</p>
+        <div class="hs-ctas">
+          <a href="#contacte" class="btn-kp">Reserva la classe de prova →</a>
+          <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
+        </div>
       </div>
-      <div class="horaris-cta">
-        <a href="index.html#contacte" class="btn-white">Reserva la teva classe de prova →</a>
-        <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
+      <div class="hs-main">
+        <!-- Horaris: una fila per grup. data-days = dies (dl dt dc dj dv). Al WordPress serà un repetidor amb aquests mateixos camps. -->
+        <table class="hs-source">
+          <caption class="sr-only">Horaris setmanals de Kids Planet i Kids 1</caption>
+          <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
+          <tbody>
+            <tr data-days="dl"><td>Kids Planet<small>Infantil</small></td><td>Dilluns</td><td>17:30–18:30</td></tr>
+            <tr data-days="dc"><td>Kids 1<small>1r de Primària</small></td><td>Dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dj"><td>Kids 1<small>1r de Primària</small></td><td>Dijous</td><td>17:15–18:15</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -540,7 +515,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   var deck = document.querySelector('.rb-deck'); if (!deck) return;
   var cards = [].slice.call(deck.children), order = cards.map(function(_, i){ return i; }),
       num = document.querySelector('.rb-count b'), ROT = [-2, 5, -4, 3, -6],
-      T = 5000, t = null, busy = false, paused = false, visible = false,
+      T = 4000, t = null, busy = false, paused = false, visible = false,
       still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function lay(){
     order.forEach(function(ci, pos){

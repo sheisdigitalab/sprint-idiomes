@@ -139,3 +139,52 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* ---------- BREADCRUMB ---------- */
 .breadcrumb span{opacity:.4}
+
+/* ---------- HORARIS (component comú a tots els cursos) ----------
+   La font de dades és una taula senzilla .hs-source (Nivell · Dies · Hora), una fila per grup:
+     <tr data-days="dl dc"><td>Nom del nivell<small>subtítol</small></td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+   nav.js la converteix en una setmana visual. Sense JS es veu la taula tal qual.
+   Pensat perquè al WordPress sigui un repetidor: nivell, subtítol, dies (dl dt dc dj dv), hora. */
+.hs{--hs-c:var(--blue);--hs-ink:#15203D}
+.hs-wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:56px;align-items:start}
+.hs-side{position:sticky;top:170px;padding-top:12px}
+.hs-side h2{margin-bottom:20px}
+.hs-side .section-lead{margin-bottom:30px}
+.hs-ctas{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hs-phone{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:var(--ink);border-bottom:2px solid rgba(21,32,61,.2);padding-bottom:3px;text-decoration:none;transition:border-color .2s,color .2s}
+.hs-phone:hover{border-color:var(--hs-c)}
+.hs-phone svg{color:var(--hs-c)}
+.hs-note{margin-top:14px;font-size:13px;color:var(--ink-soft);text-align:center}
+/* taula font (sense JS) */
+.hs-source{width:100%;border-collapse:collapse;background:#fff;border-radius:24px;overflow:hidden}
+.hs-source th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--hs-c);text-align:left;padding:14px 18px}
+.hs-source td{padding:14px 18px;border-top:1px solid rgba(21,32,61,.08);font-weight:600}
+.hs-source small{display:block;font-size:12px;opacity:.7;font-weight:600}
+.hs.is-built .hs-source{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* per nivell: cada nivell és una fila; cada grup, un tiquet amb la mini-setmana i l'hora */
+.hs-card{background:#fff;border-radius:22px;padding:4px 20px;border:1px solid rgba(21,32,61,.08)}
+.hs-row{display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:center;padding:14px 0}
+.hs-row + .hs-row{border-top:1px solid rgba(21,32,61,.07)}
+.hs-level{display:flex;flex-direction:column;gap:2px}
+.hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink)}
+.hs-name::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hs-c);flex-shrink:0}
+.hs-sub{font-size:12.5px;font-weight:600;color:var(--ink-soft);padding-left:17px}
+.hs-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(208px,1fr));gap:6px}
+.hs-opt{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 11px 6px 6px;border-radius:11px;background:#F5F6F9;transition:background .2s}
+.hs-opt:hover{background:color-mix(in srgb,var(--hs-c) 9%,#fff)}
+.hs-days{display:flex;gap:2px}
+.hs-days span{width:21px;height:21px;border-radius:6px;display:grid;place-items:center;font-size:9.5px;font-weight:800;letter-spacing:.02em;color:rgba(21,32,61,.28);background:#fff}
+.hs-days span.on{background:var(--hs-c);color:#fff}
+.hs-time{font-weight:800;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+/* entrada suau */
+.hs.is-anim .hs-row{opacity:0;translate:0 10px}
+.hs.is-anim.is-in .hs-row{opacity:1;translate:0 0;transition:opacity .5s ease,translate .5s ease;transition-delay:calc(var(--d,0) * 80ms)}
+@media(max-width:1100px){.hs-wrap{grid-template-columns:1fr;gap:40px}.hs-side{position:static;padding:0}}
+@media(max-width:700px){
+  .hs-card{padding:4px 16px;border-radius:18px}
+  .hs-row{grid-template-columns:1fr;gap:10px;padding:14px 0}
+  .hs-opts{grid-template-columns:1fr}
+  .hs-ctas{flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media(prefers-reduced-motion:reduce){.hs.is-anim .hs-row{transition:none!important;translate:none!important;opacity:1}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
