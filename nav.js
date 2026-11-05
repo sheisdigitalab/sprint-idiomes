@@ -505,7 +505,7 @@ ${cursosDropdown}
   const footer = document.createElement('footer');
   footer.innerHTML = `
     <div class="footer-inner">
-      <div class="footer-huge" aria-hidden="true"><span class="y">Hello,</span> <span class="p">Hi,</span> <span class="s">Hola</span><span class="c">.</span></div>
+      <div class="footer-huge" aria-hidden="true"><span class="y">Hello,</span> <span class="p">Bonjour,</span> <span class="s">Hola</span><span class="c">.</span></div>
       <div class="footer-cols">
         <div class="footer-col">
           <h2 class="fh">Sprint Idiomes</h2>
@@ -519,13 +519,13 @@ ${cursosDropdown}
         <div class="footer-col">
           <h2 class="fh">Cursos</h2>
           <ul>
-            <li><a href="cursos.html#kids-planet">Kids Planet · Infantil i 1r Primària</a></li>
-            <li><a href="cursos.html#kids">Kids · Primària</a></li>
-            <li><a href="cursos.html#teens">Teens · ESO</a></li>
-            <li><a href="cursos.html#cambridge">Cambridge &amp; IELTS</a></li>
-            <li><a href="cursos.html#adults">Adults · +18 anys</a></li>
-            <li><a href="cursos.html#business">BLA Business</a></li>
-            <li><a href="cursos.html#frances">L'École de Français</a></li>
+            <li><a href="kids-planet.html">Kids Planet · Infantil i 1r de Primària</a></li>
+            <li><a href="kids.html">Kids · Primària</a></li>
+            <li><a href="teens.html">Teens · ESO</a></li>
+            <li><a href="cambridge.html">Cambridge &amp; IELTS</a></li>
+            <li><a href="adults.html">Adults · +18 anys</a></li>
+            <li><a href="frances.html">L'École de Français</a></li>
+            <li><a href="business.html">BLA Business</a></li>
             <li><a href="particular.html">Classes Particulars</a></li>
           </ul>
         </div>
@@ -535,27 +535,27 @@ ${cursosDropdown}
             <li><a href="qui-som.html">Qui som</a></li>
             <li><a href="index.html#perque">Per què Sprint?</a></li>
             <li><a href="qui-som.html#historia">Història des de 1973</a></li>
-            <li><a href="qui-som.html#equip">Equip docent</a></li>
+            <li><a href="qui-som.html#equip">Equip</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h2 class="fh">Contacte</h2>
           <ul>
-            <li>C/ Francesc Moragas 8</li>
-            <li>08172 Sant Cugat del Vallès</li>
+            <li><a href="index.html#contacte">C/ Francesc Moragas 8</a></li>
+            <li><a href="index.html#contacte">08172 Sant Cugat del Vallès</a></li>
             <li><a href="tel:+34935892264">93 589 22 64</a></li>
             <li><a href="https://wa.me/34640679888" target="_blank" rel="noopener">640 67 98 88 (WhatsApp)</a></li>
             <li><a href="mailto:info@sprintidiomes.com">info@sprintidiomes.com</a></li>
-            <li>Dl–Dj · 9h–21h · Dv · 9h–20h</li>
+            <li>Secretaria: dl–dj 9–21 h · dv 9–20 h</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 1973 – 2026 Sprint Idiomes · Sant Cugat del Vallès</span>
+        <span>© 2026 Sprint Idiomes · Sant Cugat del Vallès</span>
         <span class="footer-legal"><a href="avis-legal.html">Avís legal</a> · <a href="privacitat.html">Privacitat</a> · <a href="cookies.html">Cookies</a></span>
       </div>
       <div class="footer-proto">
-        Prototip confidencial · Disseny i desenvolupament <a href="https://sheisdigitalab.com">She's Digital</a> · Tots els drets reservats
+        Disseny i desenvolupament: <a href="https://sheisdigitalab.com">She is Digital Lab</a>
       </div>
     </div>
   `;
