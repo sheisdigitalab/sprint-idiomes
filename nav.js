@@ -264,6 +264,8 @@
     }
     @media(max-width:540px){
       .footer-cols{grid-template-columns:1fr}
+      .footer-col ul.fc-cursos{columns:2;column-gap:20px}
+      .footer-col ul.fc-cursos li{break-inside:avoid}
     }
   `;
   document.head.appendChild(style);
@@ -518,7 +520,7 @@ ${cursosDropdown}
         </div>
         <div class="footer-col">
           <h2 class="fh">Cursos</h2>
-          <ul>
+          <ul class="fc-cursos">
             <li><a href="kids-planet.html">Kids Planet · Infantil i 1r de Primària</a></li>
             <li><a href="kids.html">Kids · Primària</a></li>
             <li><a href="teens.html">Teens · ESO</a></li>
