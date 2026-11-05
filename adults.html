@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=6">
+<link rel="stylesheet" href="shared.css?v=9">
 <style>
 :root{
   --cream:#FAF5EA;
@@ -352,7 +352,7 @@ h1 em{
 </head>
 <body>
 
-<script src="nav.js?v=21"></script>
+<script src="nav.js?v=24"></script>
 
 <!-- =================== HERO =================== -->
 <section class="hero">
@@ -533,23 +533,27 @@ h1 em{
 <section class="section" id="horaris">
   <div class="section-inner">
     <div class="section-label">Horaris</div>
-    <h2>Horaris <em>pensats per als que treballen</em></h2>
-    <p class="section-lead">Tots els grups d'adults funcionen a la tarda, quan el dia laboral acaba. Alguns grups de conversa també de matí per a qui té la flexibilitat.</p>
-    <div class="horaris-wrap">
-      <div>
-        <div class="hor-block-label">Tarda (tots els nivells)</div>
-        <div class="hor-block-time">18:00 – 21:00</div>
-        <div class="hor-block-sub">Dilluns a dijous · C/ Francesc Moragas 8</div>
+    <div class="hs hs-wrap" style="--hs-c:var(--adults)">
+      <div class="hs-side">
+        <h2>Horaris <em>pensats per als que treballen</em></h2>
+        <p class="section-lead">Tots els grups d'adults funcionen a la tarda, quan el dia laboral acaba. Alguns grups de conversa també de matí per a qui té la flexibilitat.</p>
+        <div class="hs-ctas">
+          <a href="index.html#contacte" class="btn-adults">Prova una classe gratuïta →</a>
+          <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
+        </div>
       </div>
-      <div>
-        <div class="hor-block-label">Matí (conversa i alguns nivells)</div>
-        <div class="hor-block-time">09:30 – 11:30</div>
-        <div class="hor-block-sub">Dimarts i dijous · Per a qui té flexibilitat horària</div>
-      </div>
-      <div>
-        <div class="hor-block-label">Intensiu de juliol</div>
-        <div class="hor-block-time">09:00 – 13:00</div>
-        <div class="hor-block-sub">Dilluns a dijous · 4 setmanes · Consulta les dates</div>
+      <div class="hs-main">
+        <!-- Horaris: una fila per grup. data-days = dies (dl dt dc dj dv). Al WordPress serà un repetidor amb aquests mateixos camps. -->
+        <table class="hs-source">
+          <caption class="sr-only">Horaris setmanals d'Adults</caption>
+          <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
+          <tbody>
+            <tr data-days="dl dt dc dj"><td>Tarda<small>Tots els nivells</small></td><td>Dilluns, dimarts, dimecres i dijous</td><td>18:00–21:00</td></tr>
+            <tr data-days="dt dj"><td>Matí<small>Conversa i alguns nivells</small></td><td>Dimarts i dijous</td><td>09:30–11:30</td></tr>
+            <tr data-days="dl dt dc dj"><td>Intensiu de juliol<small>4 setmanes</small></td><td>Dilluns, dimarts, dimecres i dijous</td><td>09:00–13:00</td></tr>
+          </tbody>
+        </table>
+        <p class="hs-note">L'intensiu de juliol dura 4 setmanes: consulta'ns les dates. Els horaris poden variar.</p>
       </div>
     </div>
   </div>

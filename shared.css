@@ -165,31 +165,44 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
 .hs-source th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--hs-c);text-align:left;padding:14px 18px}
 .hs-source td{padding:14px 18px;border-top:1px solid rgba(21,32,61,.08);font-weight:600}
 .hs-source small{display:block;font-size:12px;opacity:.7;font-weight:600}
-.hs.is-built .hs-source{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hs-main{position:relative;overflow:hidden}
+.hs.is-built .hs-source{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 /* per nivell: cada nivell és una fila; cada grup, un tiquet amb la mini-setmana i l'hora */
-.hs-card{background:#fff;border-radius:22px;padding:4px 20px;border:1px solid rgba(21,32,61,.08)}
-.hs-row{display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:center;padding:14px 0}
-.hs-row + .hs-row{border-top:1px solid rgba(21,32,61,.07)}
-.hs-level{display:flex;flex-direction:column;gap:2px}
-.hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink)}
+.hs-card{background:#fff;border-radius:22px;padding:8px 8px 10px;border:1px solid rgba(21,32,61,.08)}
+/* graella setmanal: nivells a les files, dies de la setmana a dalt */
+.hs-grid{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.hs-grid th{font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-align:center;padding:14px 6px 12px;border-bottom:2px solid rgba(21,32,61,.08)}
+.hs-grid th:first-child{width:24%;text-align:left;padding-left:14px;color:var(--ink-soft)}
+.hs-grid td{padding:10px 5px;text-align:center;vertical-align:middle;border-bottom:1px solid rgba(21,32,61,.06)}
+.hs-grid tr:last-child td{border-bottom:none}
+.hs-grid td:first-child{text-align:left;padding-left:14px}
+.hs-grid tbody tr:hover td{background:color-mix(in srgb,var(--hs-c) 4%,#fff)}
+.hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
 .hs-name::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hs-c);flex-shrink:0}
-.hs-sub{font-size:13px;font-weight:600;color:var(--ink-soft);padding-left:17px}
-.hs-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(222px,1fr));gap:6px}
-.hs-opt{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 11px 6px 6px;border-radius:11px;background:#F5F6F9;transition:background .2s}
-.hs-opt:hover{background:color-mix(in srgb,var(--hs-c) 9%,#fff)}
-.hs-days{display:flex;gap:2px}
-.hs-days span{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:0;color:#6B7489;background:#fff}
-.hs-days span.on{background:var(--hs-c);color:#fff}
-.hs-time{font-weight:800;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hs-sub{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);padding-left:17px;margin-top:2px}
+.hs-t{display:block;font-weight:800;font-size:14.5px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;background:color-mix(in srgb,var(--hs-c) 10%,#fff);border-radius:9px;padding:7px 4px}
+.hs-t + .hs-t{margin-top:5px}
+.hs-none{color:rgba(21,32,61,.25);font-weight:700}
+.hs-list{display:none}
 /* entrada suau */
-.hs.is-anim .hs-row{opacity:0;translate:0 10px}
-.hs.is-anim.is-in .hs-row{opacity:1;translate:0 0;transition:opacity .5s ease,translate .5s ease;transition-delay:calc(var(--d,0) * 80ms)}
+.hs.is-anim .hs-grid tbody tr,.hs.is-anim .hs-lv{opacity:0;translate:0 8px}
+.hs.is-anim.is-in .hs-grid tbody tr,.hs.is-anim.is-in .hs-lv{opacity:1;translate:0 0;transition:opacity .5s ease,translate .5s ease;transition-delay:calc(var(--d,0) * 70ms)}
 @media(max-width:1100px){.hs-wrap{grid-template-columns:1fr;gap:40px}.hs-side{position:static;padding:0}}
+/* mòbil: cada nivell amb els seus dies en llista */
 @media(max-width:700px){
   .hs-card{padding:4px 16px;border-radius:18px}
-  .hs-row{grid-template-columns:1fr;gap:10px;padding:14px 0}
-  .hs-opts{grid-template-columns:1fr}
+  .hs-grid{display:none}
+  .hs-list{display:block}
+  .hs-lv{padding:16px 0}
+  .hs-lv + .hs-lv{border-top:1px solid rgba(21,32,61,.08)}
+  .hs-lv .hs-sub{margin-bottom:8px}
+  .hs-li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-top:1px dashed rgba(21,32,61,.1)}
+  .hs-li:first-of-type{border-top:none}
+  .hs-li b{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  .hs-li span{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  .hs-li .hs-t{display:inline-block;padding:6px 10px;font-size:15px}
+  .hs-li .hs-t + .hs-t{margin-top:0}
   .hs-ctas{flex-direction:column;align-items:flex-start;gap:18px}
 }
-@media(prefers-reduced-motion:reduce){.hs.is-anim .hs-row{transition:none!important;translate:none!important;opacity:1}}
+@media(prefers-reduced-motion:reduce){.hs.is-anim .hs-grid tbody tr,.hs.is-anim .hs-lv{transition:none!important;translate:none!important;opacity:1}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}

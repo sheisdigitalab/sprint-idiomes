@@ -572,10 +572,10 @@ ${cursosDropdown}
 
 /* ── HORARIS: converteix la taula .hs-source de cada curs en files per nivell ──
    Cada fila de la taula: data-days="dl dc" (dies), 1a cel·la = nivell (+ <small> opcional), 3a cel·la = hora.
-   Els grups del mateix nivell s'agrupen; cada grup es mostra com un tiquet amb la mini-setmana i l'hora. */
+   Es mostra com una graella: nivells a les files, dies de la setmana a dalt (en mòbil, llista per nivell). */
 (function(){
   function build(){
-    var DAYS = [['dl','Dl'],['dt','Dt'],['dc','Dc'],['dj','Dj'],['dv','Dv']];
+    var DAYS = [['dl','Dl','Dilluns'],['dt','Dt','Dimarts'],['dc','Dc','Dimecres'],['dj','Dj','Dijous'],['dv','Dv','Divendres']];
     [].forEach.call(document.querySelectorAll('.hs'), function(hs){
       var src = hs.querySelector('.hs-source'); if (!src || hs.classList.contains('is-built')) return;
       var levels = [], by = {};
@@ -585,17 +585,24 @@ ${cursosDropdown}
         if (!by[name]) { by[name] = {sub: sub ? sub.textContent.trim() : '', opts: []}; levels.push(name); }
         by[name].opts.push({days: (tr.getAttribute('data-days') || '').toLowerCase().split(/[\s,]+/), time: td[2].textContent.trim().replace(/\s*[–-]\s*/, '–')});
       });
-      var order = function(o){ for (var i = 0; i < DAYS.length; i++) if (o.days.indexOf(DAYS[i][0]) >= 0) return i * 10000 + parseInt(o.time.replace(':', ''), 10); return 1e9; };
       var card = document.createElement('div'); card.className = 'hs-card'; card.setAttribute('aria-hidden', 'true');
-      levels.forEach(function(name, i){
-        var L = by[name]; L.opts.sort(function(a, b){ return order(a) - order(b); });
-        var row = document.createElement('div'); row.className = 'hs-row'; row.style.setProperty('--d', i);
-        row.innerHTML = '<div class="hs-level"><span class="hs-name">' + name + '</span>' + (L.sub ? '<span class="hs-sub">' + L.sub + '</span>' : '') + '</div>'
-          + '<div class="hs-opts">' + L.opts.map(function(o){
-              return '<span class="hs-opt"><span class="hs-days">' + DAYS.map(function(D){ return '<span' + (o.days.indexOf(D[0]) >= 0 ? ' class="on"' : '') + '>' + D[1] + '</span>'; }).join('') + '</span><span class="hs-time">' + o.time + '</span></span>';
-            }).join('') + '</div>';
-        card.appendChild(row);
-      });
+      function cell(L, d){
+        var t = L.opts.filter(function(o){ return o.days.indexOf(d) >= 0; }).map(function(o){ return o.time; })
+          .sort(function(a, b){ return a.localeCompare(b); });
+        return t.map(function(x){ return '<span class="hs-t">' + x.replace('–', ' – ') + '</span>'; }).join('');
+      }
+      var head = '<thead><tr><th>Nivell</th>' + DAYS.map(function(D){ return '<th>' + D[2] + '</th>'; }).join('') + '</tr></thead>';
+      var body = levels.map(function(name, i){
+        var L = by[name];
+        return '<tr style="--d:' + i + '"><td><span class="hs-name">' + name + '</span>' + (L.sub ? '<span class="hs-sub">' + L.sub + '</span>' : '') + '</td>'
+          + DAYS.map(function(D){ var c = cell(L, D[0]); return '<td>' + (c || '<span class="hs-none">—</span>') + '</td>'; }).join('') + '</tr>';
+      }).join('');
+      var list = levels.map(function(name, i){
+        var L = by[name];
+        return '<div class="hs-lv" style="--d:' + i + '"><span class="hs-name">' + name + '</span>' + (L.sub ? '<span class="hs-sub">' + L.sub + '</span>' : '')
+          + DAYS.map(function(D){ var c = cell(L, D[0]); return c ? '<div class="hs-li"><b>' + D[2] + '</b><span>' + c + '</span></div>' : ''; }).join('') + '</div>';
+      }).join('');
+      card.innerHTML = '<table class="hs-grid">' + head + '<tbody>' + body + '</tbody></table><div class="hs-list">' + list + '</div>';
       src.parentNode.insertBefore(card, src);
       hs.classList.add('is-built');
       if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

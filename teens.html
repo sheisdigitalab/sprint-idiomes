@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=6">
+<link rel="stylesheet" href="shared.css?v=9">
 <style>
 :root{
   --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;--blue:#2547D9;--yellow:#FFB800;
@@ -218,7 +218,7 @@ h1 em{font-style:normal;color:var(--teens)}
   </script>
 </head>
 <body>
-<script src="nav.js?v=21"></script>
+<script src="nav.js?v=24"></script>
 
 <!-- HERO -->
 <section class="hero">
@@ -316,65 +316,37 @@ h1 em{font-style:normal;color:var(--teens)}
 <section class="section" id="horaris">
   <div class="section-inner">
     <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Horaris</div>
-    <h2>Horaris.</h2>
-    <p class="section-lead">De dilluns a divendres, a la tarda. Tria l'horari que et va millor.</p>
-    <div class="horaris-wrap">
-      <div class="horaris-title">Teens · Horaris setmanals</div>
-      <div class="horaris-sub">Dl–Dv · Francesc Moragas 8, Sant Cugat</div>
-      <div class="horaris-table-wrap">
-      <table class="horaris-table">
-        <thead>
-          <tr><th>Nivell</th><th>Dl / Dc</th><th>Dt / Dj</th><th>Divendres</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="nivel-name">Junior</span></td>
-            <td><span class="hora-pill">16:15–17:30</span></td>
-            <td><span class="hora-pill">18:15–19:30</span></td>
-            <td><span class="hora-pill">17:30–19:30</span></td>
-          </tr>
-          <tr>
-            <td><span class="nivel-name">Level 2</span></td>
-            <td>
-              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
-                <span class="hora-pill">16:15–17:30</span>
-                <span class="hora-pill">18:30–20:00</span>
-              </div>
-            </td>
-            <td>
-              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
-                <span class="hora-pill">16:00–17:15</span>
-                <span class="hora-pill">17:45–19:15</span>
-              </div>
-            </td>
-            <td><span class="hora-pill">18:00–20:00</span></td>
-          </tr>
-          <tr>
-            <td><span class="nivel-name">Level 3 – Pre First</span></td>
-            <td>
-              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
-                <span class="hora-pill">16:00–17:30</span>
-                <span class="hora-pill">18:30–20:00</span>
-              </div>
-            </td>
-            <td>
-              <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">
-                <span class="hora-pill">15:45–17:15</span>
-                <span class="hora-pill">17:45–19:15</span>
-              </div>
-            </td>
-            <td><span class="hora-pill">17:30–20:00</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="hs hs-wrap" style="--hs-c:var(--teens)">
+      <div class="hs-side">
+        <h2>Horaris.</h2>
+        <p class="section-lead">De dilluns a divendres, a la tarda. Tria l'horari que et va millor.</p>
+        <div class="hs-ctas">
+          <a href="index.html#contacte" class="btn-teens">Prova una classe gratuïta →</a>
+          <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
+        </div>
       </div>
-      <p class="horaris-note">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="rgba(21,32,61,.35)" stroke-width="1.2"/><path d="M7 5v3M7 9.5v.5" stroke="rgba(21,32,61,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
-        Els horaris poden variar. Contacta'ns per confirmar disponibilitat i nivell adequat per al teu fill.
-      </p>
-      <div class="horaris-cta">
-        <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-        <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
+      <div class="hs-main">
+        <!-- Horaris: una fila per grup. data-days = dies (dl dt dc dj dv). Al WordPress serà un repetidor amb aquests mateixos camps. -->
+        <table class="hs-source">
+          <caption class="sr-only">Horaris setmanals de Teens</caption>
+          <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
+          <tbody>
+            <tr data-days="dl dc"><td>Junior</td><td>Dilluns i dimecres</td><td>16:15–17:30</td></tr>
+            <tr data-days="dt dj"><td>Junior</td><td>Dimarts i dijous</td><td>18:15–19:30</td></tr>
+            <tr data-days="dv"><td>Junior</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dl dc"><td>Level 2</td><td>Dilluns i dimecres</td><td>16:15–17:30</td></tr>
+            <tr data-days="dl dc"><td>Level 2</td><td>Dilluns i dimecres</td><td>18:30–20:00</td></tr>
+            <tr data-days="dt dj"><td>Level 2</td><td>Dimarts i dijous</td><td>16:00–17:15</td></tr>
+            <tr data-days="dt dj"><td>Level 2</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
+            <tr data-days="dv"><td>Level 2</td><td>Divendres</td><td>18:00–20:00</td></tr>
+            <tr data-days="dl dc"><td>Level 3 – Pre First</td><td>Dilluns i dimecres</td><td>16:00–17:30</td></tr>
+            <tr data-days="dl dc"><td>Level 3 – Pre First</td><td>Dilluns i dimecres</td><td>18:30–20:00</td></tr>
+            <tr data-days="dt dj"><td>Level 3 – Pre First</td><td>Dimarts i dijous</td><td>15:45–17:15</td></tr>
+            <tr data-days="dt dj"><td>Level 3 – Pre First</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
+            <tr data-days="dv"><td>Level 3 – Pre First</td><td>Divendres</td><td>17:30–20:00</td></tr>
+          </tbody>
+        </table>
+        <p class="hs-note">Els horaris poden variar. Contacta'ns per confirmar disponibilitat i nivell.</p>
       </div>
     </div>
   </div>
