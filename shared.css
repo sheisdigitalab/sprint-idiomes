@@ -76,7 +76,7 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
   scroll-margin-top:130px;
 }
 .section-inner{max-width:1480px;margin:0 auto}
-.section-lead{font-size:17px;color:var(--ink-soft);line-height:1.6;max-width:580px;margin-bottom:48px}
+.section-lead{font-size:18px;color:var(--ink-soft);line-height:1.6;max-width:620px;margin-bottom:48px}
 
 /* ---------- SUBNAV (navegacio interna de la pagina, per ancores) ---------- */
 .subnav-inner{
@@ -177,9 +177,9 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
 .hs-grid tr:last-child td{border-bottom:none}
 .hs-grid td:first-child{text-align:left;padding-left:14px}
 .hs-grid tbody tr:hover td{background:color-mix(in srgb,var(--hs-c) 4%,#fff)}
-.hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
+.hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-0.01em;color:var(--ink);line-height:1.2}
 .hs-name::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hs-c);flex-shrink:0}
-.hs-sub{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);padding-left:17px;margin-top:2px}
+.hs-sub{display:block;font-size:15.5px;font-weight:600;color:var(--ink-soft);padding-left:17px;margin-top:3px}
 .hs-t{display:block;font-weight:800;font-size:14.5px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;background:color-mix(in srgb,var(--hs-c) 10%,#fff);border-radius:9px;padding:7px 4px}
 .hs-t + .hs-t{margin-top:5px}
 .hs-none{color:rgba(21,32,61,.25);font-weight:700}
