@@ -224,7 +224,8 @@
       color:rgba(255,246,228,.07);
       margin-bottom:40px;user-select:none;
     }
-    .footer-col h6{
+    .footer-col .fh{
+      margin-top:0;line-height:1.3;
       font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;font-size:15px;font-weight:700;
       letter-spacing:.04em;text-transform:uppercase;
       color:#FAF5EA;margin-bottom:16px;
@@ -232,7 +233,7 @@
     .footer-col p{font-size:15px;color:rgba(255,246,228,.7);line-height:1.55}
     .footer-col ul{list-style:none}
     .footer-col ul li{margin-bottom:9px;font-size:15px;font-weight:600}
-    .footer-col ul li a{color:rgba(255,246,228,.75);text-decoration:none;transition:color .2s}
+    .footer-col ul li a{color:rgba(255,246,228,.75);text-decoration:none;transition:color .2s;display:inline-block;padding:2px 0}
     .footer-col ul li a:hover{color:#FFB800}
     .footer-col ul li:not(:has(a)){color:rgba(255,246,228,.5)}
     .footer-socials{display:flex;gap:10px;margin-top:14px}
@@ -254,9 +255,9 @@
     }
     .footer-proto{
       margin-top:18px;text-align:center;font-size:15px;
-      color:rgba(255,246,228,.35);font-weight:600;letter-spacing:.05em;
+      color:rgba(255,246,228,.62);font-weight:600;letter-spacing:.05em;
     }
-    .footer-proto a{color:rgba(255,246,228,.5);text-decoration:underline}
+    .footer-proto a{color:rgba(255,246,228,.85);text-decoration:underline}
     @media(max-width:960px){
       footer{padding:64px 22px 28px}
       .footer-cols{grid-template-columns:1fr 1fr;gap:28px}
@@ -285,19 +286,19 @@
       </a>
       <div class="nav-dropdown">
         <a href="kids-planet.html"${page==='kids-planet.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet <span style="font-size:12px;opacity:.55;font-weight:600">Infantil i 1r Primària</span>
+          <span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet <span style="font-size:13px;opacity:.72;font-weight:600">Infantil i 1r Primària</span>
         </a>
         <a href="kids.html"${page==='kids.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#FF6B35"></span>Kids <span style="font-size:12px;opacity:.55;font-weight:600">Primària</span>
+          <span class="nav-dd-dot" style="background:#FF6B35"></span>Kids <span style="font-size:13px;opacity:.72;font-weight:600">Primària</span>
         </a>
         <a href="teens.html"${page==='teens.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#26A69A"></span>Teens <span style="font-size:12px;opacity:.55;font-weight:600">ESO</span>
+          <span class="nav-dd-dot" style="background:#26A69A"></span>Teens <span style="font-size:13px;opacity:.72;font-weight:600">ESO</span>
         </a>
         <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}>
           <span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge &amp; IELTS
         </a>
         <a href="adults.html"${page==='adults.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults <span style="font-size:12px;opacity:.55;font-weight:600">+18 anys</span>
+          <span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults <span style="font-size:13px;opacity:.72;font-weight:600">+18 anys</span>
         </a>
         <div class="nav-dd-sep"></div>
         <a href="frances.html"${page==='frances.html'?' class="active"':''}>
@@ -342,6 +343,15 @@ ${cursosDropdown}
 
   document.body.insertBefore(nav, document.body.firstChild);
 
+  /* Accessibilitat: enllaç per saltar el menú amb el teclat (només si la pàgina té <main>) */
+  function addSkip(){
+    if (!document.getElementById('contingut') || document.querySelector('.skip-link')) return;
+    const skip = document.createElement('a');
+    skip.href = '#contingut'; skip.className = 'skip-link'; skip.textContent = 'Salta al contingut';
+    document.body.insertBefore(skip, document.body.firstChild);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addSkip); else addSkip();
+
   /* ── BARRA DE CURSOS + SUBNAV (menu generic, compartit a totes les pagines) ──
      Es munta ara mateix (no en DOMContentLoaded) perque ha d'anar just despres
      del <nav>, que es on ja hi es en aquest punt de l'execucio. Els scripts
@@ -366,6 +376,8 @@ ${cursosDropdown}
   if (COURSES.some(function(c){ return c.href === page; })) {
     courseNavEl = document.createElement('div');
     courseNavEl.className = 'course-nav';
+    courseNavEl.setAttribute('role', 'navigation');
+    courseNavEl.setAttribute('aria-label', 'Cursos');
     courseNavEl.innerHTML = `
       <div class="course-nav-inner">
         ${COURSES.map(function(c){
@@ -493,10 +505,10 @@ ${cursosDropdown}
   const footer = document.createElement('footer');
   footer.innerHTML = `
     <div class="footer-inner">
-      <div class="footer-huge"><span class="y">Hello,</span> <span class="p">Hi,</span> <span class="s">Hola</span><span class="c">.</span></div>
+      <div class="footer-huge" aria-hidden="true"><span class="y">Hello,</span> <span class="p">Hi,</span> <span class="s">Hola</span><span class="c">.</span></div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h6>Sprint Idiomes</h6>
+          <h2 class="fh">Sprint Idiomes</h2>
           <p>Escola d'anglès i de francès a Sant Cugat des de 1973. Centre preparador oficial Cambridge. DELF i DALF amb professorat nadiu.</p>
           <div class="footer-socials">
             <a href="https://www.instagram.com/sprintidiomes" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#FFF6E4" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#FFF6E4" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FFF6E4"/></svg></a>
@@ -505,7 +517,7 @@ ${cursosDropdown}
           </div>
         </div>
         <div class="footer-col">
-          <h6>Cursos</h6>
+          <h2 class="fh">Cursos</h2>
           <ul>
             <li><a href="cursos.html#kids-planet">Kids Planet · Infantil i 1r Primària</a></li>
             <li><a href="cursos.html#kids">Kids · Primària</a></li>
@@ -518,7 +530,7 @@ ${cursosDropdown}
           </ul>
         </div>
         <div class="footer-col">
-          <h6>L'escola</h6>
+          <h2 class="fh">L'escola</h2>
           <ul>
             <li><a href="qui-som.html">Qui som</a></li>
             <li><a href="index.html#perque">Per què Sprint?</a></li>
@@ -527,7 +539,7 @@ ${cursosDropdown}
           </ul>
         </div>
         <div class="footer-col">
-          <h6>Contacte</h6>
+          <h2 class="fh">Contacte</h2>
           <ul>
             <li>C/ Francesc Moragas 8</li>
             <li>08172 Sant Cugat del Vallès</li>

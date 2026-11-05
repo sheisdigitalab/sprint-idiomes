@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=6">
+<link rel="stylesheet" href="shared.css?v=8">
 <style>
 /* ==========================================================================
    QUI SOM — pàgina editorial: la història de l'escola com a fil conductor.
@@ -46,7 +46,7 @@ a{color:inherit;text-decoration:none}
 .qs-hero .lead strong{color:var(--ink)}
 .qs-founders{display:flex;align-items:center;gap:14px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:15px;color:var(--ink-soft);max-width:520px}
 .qs-founders b{display:block;color:var(--ink);font-family:var(--fd);font-size:17px;letter-spacing:-0.01em}
-.qs-founders .dot{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--yellow);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:15px}
+.qs-founders .dot{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:15px}
 
 /* polaroids de l'arxiu */
 .qs-album{position:relative;height:min(62vh,560px);min-height:420px}
@@ -117,10 +117,10 @@ a{color:inherit;text-decoration:none}
 .person{background:#fff;border-radius:20px;padding:22px;display:flex;gap:16px;align-items:center;border:1px solid var(--line);box-shadow:0 4px 14px rgba(21,32,61,.05);transition:transform .25s,box-shadow .25s}
 .person:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(21,32,61,.08)}
 /* Quan hi hagi fotos: substituir .av per <img class="av" src="..." alt="Nom"> */
-.av{width:58px;height:58px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:18px;letter-spacing:-0.02em;color:#fff;background:var(--c,#2547D9);object-fit:cover}
+.av{width:58px;height:58px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:18px;letter-spacing:-0.02em;color:#fff;background:color-mix(in srgb,var(--c,#2547D9) 74%,#000);object-fit:cover}
 .person h3{font-family:var(--fd);font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2}
 .person .role{font-size:14px;color:var(--ink-soft);line-height:1.35;margin-top:2px}
-.person .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--c,#2547D9) 14%,#fff);color:color-mix(in srgb,var(--c,#2547D9) 80%,#000)}
+.person .tag{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--c,#2547D9) 14%,#fff);color:color-mix(in srgb,var(--c,#2547D9) 62%,#000)}
 
 /* ---------- PER QUÈ ---------- */
 .qs-why{padding:90px 0 110px}
@@ -177,7 +177,7 @@ body.is-scrolled .nav .logo img{height:30px}
 @media (max-width:600px){
   .qs-album{height:360px}
   .pol{padding:8px 8px 40px}
-  .pol figcaption{font-size:11px;line-height:1.25;bottom:7px;left:10px;right:10px}
+  .pol figcaption{font-size:12.5px;line-height:1.25;bottom:7px;left:10px;right:10px}
   .pol figcaption span{display:block}
   .fact{flex-direction:column;gap:6px}
   .fact span{font-size:13px}
@@ -192,13 +192,13 @@ body.is-scrolled .nav .logo img{height:30px}
   .person .av{width:44px;height:44px;font-size:15px}
   .person h3{font-size:16px}
   .person .role{font-size:13px}
-  .person .tag{font-size:11px;padding:2px 7px}
+  .person .tag{font-size:12px;padding:2px 8px}
   .team-label{margin-top:40px}
   .qs-quote{margin-top:40px}
   .qs-quote::before{font-size:190px;top:18px;right:-24px;transform:none}
   .qs-quote-in{padding-top:150px}
   .qs-quote-in{padding-left:22px;padding-right:22px;padding-bottom:84px}
-  .qs-quote p{font-size:11px;letter-spacing:.12em}
+  .qs-quote p{font-size:13px;letter-spacing:.1em}
   .qs-cta{padding:0 16px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -294,9 +294,10 @@ document.addEventListener('DOMContentLoaded', function(){
 </head>
 <body>
 
-<script src="nav.js?v=21"></script>
+<script src="nav.js?v=23"></script>
 
 <!-- ===================== HERO ===================== -->
+<main id="contingut" tabindex="-1">
 <header class="qs-hero">
   <div class="qs-hero-in">
     <div>
@@ -391,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
     </div>
-    <aside class="story-aside"><p class="story-intro">El que va néixer amb vocació de barri es va convertir en una escola de referència per a tota la comarca. Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada.</p></aside>
+    <div class="story-aside"><p class="story-intro">El que va néixer amb vocació de barri es va convertir en una escola de referència per a tota la comarca. Des del primer dia, l'aposta va ser clara: grups petits, professors qualificats i metodologia actualitzada.</p></div>
     </div>
   </div>
 </section>
@@ -454,6 +455,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 </section>
+</main>
 
 <script>
 /* Línia del temps: la línia s'omple i els anys s'encenen a mesura que es fa scroll */

@@ -21,7 +21,7 @@
   /* Tokens tipografics — escala real usada al lloc (no una escala generica).
      --fs-h1 nomes l'usen les pagines interiors (index.html te la seva propia,
      mes gran, per ser pagina de campanya). */
-  --fs-label:12px;
+  --fs-label:13px;
   --fs-nav:12px;
   --fs-h2:clamp(28px,4vw,48px);
   --fs-h1:clamp(44px,6.4vw,76px);
@@ -35,7 +35,12 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* ---------- FOCUS (teclat) ---------- */
-:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;border-radius:inherit}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:1000;background:#15203D;color:#fff;font-weight:800;padding:12px 18px;border-radius:10px;transition:top .2s}
+.skip-link:focus{top:12px}
+main:focus{outline:none}
+:focus-visible{outline:3px solid #2547D9;outline-offset:3px;border-radius:inherit}
+footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color:#FFB800}
+.cta-band :focus-visible{outline-color:#fff}
 
 /* ---------- ESCALA TIPOGRAFICA UNIFICADA ---------- */
 /* Titol de seccio (h2 dins .section) i titol del banner CTA final:
@@ -168,12 +173,12 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .hs-level{display:flex;flex-direction:column;gap:2px}
 .hs-name{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink)}
 .hs-name::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hs-c);flex-shrink:0}
-.hs-sub{font-size:12.5px;font-weight:600;color:var(--ink-soft);padding-left:17px}
-.hs-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(208px,1fr));gap:6px}
+.hs-sub{font-size:13px;font-weight:600;color:var(--ink-soft);padding-left:17px}
+.hs-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(222px,1fr));gap:6px}
 .hs-opt{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 11px 6px 6px;border-radius:11px;background:#F5F6F9;transition:background .2s}
 .hs-opt:hover{background:color-mix(in srgb,var(--hs-c) 9%,#fff)}
 .hs-days{display:flex;gap:2px}
-.hs-days span{width:21px;height:21px;border-radius:6px;display:grid;place-items:center;font-size:9.5px;font-weight:800;letter-spacing:.02em;color:rgba(21,32,61,.28);background:#fff}
+.hs-days span{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:0;color:#6B7489;background:#fff}
 .hs-days span.on{background:var(--hs-c);color:#fff}
 .hs-time{font-weight:800;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 /* entrada suau */

@@ -8,11 +8,11 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=7">
+<link rel="stylesheet" href="shared.css?v=8">
 <style>
 :root{
   --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;--blue:#2547D9;--yellow:#FFB800;
-  --kp:#EC1E8C;--kp-dark:#B0125F;--kp-pale:#FFF0F8;--line:rgba(21,32,61,.1);--line-strong:rgba(21,32,61,.2);
+  --kp:#DE137F;--kp-dark:#B0125F;--kp-pale:#FFF0F8;--line:rgba(21,32,61,.1);--line-strong:rgba(21,32,61,.2);
   --font-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --font-body:"Nunito",ui-sans-serif,system-ui,sans-serif;
 }
@@ -28,7 +28,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-hero{background:linear-gradient(160deg,#FFD6EC 0%,#FFEDD6 28%,#D6F0FF 58%,#D6FFE2 82%,#F5D6FF 100%);border-bottom:4px solid #fff;padding:88px 32px 80px;position:relative;overflow:hidden}
 .kp-hero::before{content:'Hi!';position:absolute;right:32px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-size:clamp(120px,20vw,260px);font-weight:900;letter-spacing:-0.06em;color:rgba(236,30,140,.12);pointer-events:none;user-select:none;line-height:1}
 .kp-hero-inner{max-width:1480px;margin:0 auto;position:relative;z-index:1}
-.kp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--kp);margin-bottom:16px}
+.kp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--kp-dark);margin-bottom:16px}
 .kp-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--kp)}
 .kp-hero h1{font-family:var(--font-display);font-size:var(--fs-h1);font-weight:800;letter-spacing:-0.03em;line-height:1.0;color:var(--ink);margin-bottom:20px}
 .kp-hero h1 em{font-style:normal;color:var(--kp)}
@@ -112,10 +112,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-blob-1{width:350px;height:350px;background:radial-gradient(circle,rgba(236,30,140,.18),transparent 70%);top:-80px;right:10%}
 .kp-blob-2{width:250px;height:250px;background:radial-gradient(circle,rgba(255,200,0,.15),transparent 70%);bottom:-60px;right:25%}
 .kp-blob-3{width:200px;height:200px;background:radial-gradient(circle,rgba(100,180,255,.15),transparent 70%);top:30%;left:-60px}
-.mc-1{--mc-color:#D4157C;--mc-bg:#FFE1EF;--mc-shadow:rgba(236,30,140,.45)}
-.mc-2{--mc-color:#C27C00;--mc-bg:#FFF0C7;--mc-shadow:rgba(230,160,0,.45)}
-.mc-3{--mc-color:#1A8FD0;--mc-bg:#DCF1FD;--mc-shadow:rgba(30,150,220,.4)}
-.mc-4{--mc-color:#2E9150;--mc-bg:#DDF4E4;--mc-shadow:rgba(46,145,80,.4)}
+.mc-1{--mc-color:#C8126F;--mc-bg:#FFE1EF;--mc-shadow:rgba(236,30,140,.45)}
+.mc-2{--mc-color:#9B6A00;--mc-bg:#FFF0C7;--mc-shadow:rgba(230,160,0,.45)}
+.mc-3{--mc-color:#1474AA;--mc-bg:#DCF1FD;--mc-shadow:rgba(30,150,220,.4)}
+.mc-4{--mc-color:#257A42;--mc-bg:#DDF4E4;--mc-shadow:rgba(46,145,80,.4)}
 #nivells.section{background:#F0FBFF}
 /* Nivells: un camí de 3 parades (Kids Planet → Kids 1 → Kids) */
 .kp-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr .85fr;gap:28px;position:relative}
@@ -125,10 +125,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .ks-dot{position:absolute;top:0;left:0;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
   font-family:var(--font-display);font-weight:800;font-size:24px;color:#fff;background:var(--ks-c);
   border:5px solid #F0FBFF;box-shadow:0 8px 20px -6px var(--ks-sh)}
-.ks-1{--ks-c:#EC1E8C;--ks-sh:rgba(236,30,140,.55);--ks-bg:#FFE1EF}
+.ks-1{--ks-c:#DE137F;--ks-t:#B0125F;--ks-sh:rgba(236,30,140,.55);--ks-bg:#FFE1EF}
 .ks-2{--ks-c:#B0125F;--ks-sh:rgba(176,18,95,.5);--ks-bg:#F9DCEB}
-.ks-next{--ks-c:#E0531E;--ks-sh:rgba(255,107,53,.5)}
-.ks-age{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ks-c);margin-bottom:8px}
+.ks-next{--ks-c:#E0531E;--ks-t:#B83F12;--ks-sh:rgba(255,107,53,.5)}
+.ks-age{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ks-t,var(--ks-c));margin-bottom:8px}
 .ks-name{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 12px;color:var(--ink)}
 .ks-desc{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin:0;max-width:420px}
 .ks-1,.ks-2{background:var(--ks-bg);border-radius:30px;padding:30px 30px 32px;margin-top:78px}
@@ -346,8 +346,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=22"></script>
+<script src="nav.js?v=23"></script>
 
+<main id="contingut" tabindex="-1">
 <section class="kp-hero">
   <div class="kp-hero-photo" aria-hidden="true"></div>
   <div class="kp-hero-inner">
@@ -499,6 +500,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     </div>
   </div>
 </section>
+</main>
 
 <script>
 /* Secció final: el contingut entra amb animació en arribar-hi */
