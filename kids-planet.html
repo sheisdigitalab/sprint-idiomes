@@ -46,12 +46,32 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .section{padding:80px 32px;border-bottom:1px solid var(--line)}
 .section-lead{font-size:16px;color:var(--ink-soft);line-height:1.65;max-width:560px;margin-bottom:48px}
 
-.metodo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.metodo-card{padding:32px;border-radius:28px;border:1.5px solid rgba(21,32,61,.06);border-top:4px solid var(--mc-color,var(--kp));background:#fff;transition:transform .25s,box-shadow .25s}
-.metodo-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 48px rgba(0,0,0,.1)}
-.metodo-icon{margin-bottom:18px;line-height:1;width:60px;height:60px;border-radius:16px;background:var(--mc-bg,rgba(236,30,140,.1));color:var(--mc-color,var(--kp));display:flex;align-items:center;justify-content:center}
-.metodo-title{font-weight:800;font-size:18px;margin-bottom:10px;color:var(--ink)}
-.metodo-text{font-size:14px;color:var(--ink-soft);line-height:1.6}
+/* Metodologia: text fix a l'esquerra, targetes de colors a la dreta, una mica esglaonades */
+.metodo-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.metodo-side{position:sticky;top:170px}
+.metodo-side h2{margin-bottom:20px}
+.metodo-side .section-lead{margin-bottom:28px;font-size:17px}
+.metodo-link{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:var(--kp-dark);border-bottom:2px solid rgba(236,30,140,.3);padding-bottom:3px;transition:gap .2s,border-color .2s}
+.metodo-link:hover{gap:14px;border-color:var(--kp)}
+.metodo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding-bottom:48px}
+.metodo-card{position:relative;padding:30px 30px 34px;border-radius:30px;background:var(--mc-bg);overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.metodo-card:nth-child(even){transform:translateY(48px)}
+.metodo-card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 22px 44px -18px var(--mc-shadow)}
+.metodo-card:nth-child(even):hover{transform:translateY(42px) rotate(1deg)}
+.metodo-num{position:absolute;top:14px;right:22px;font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;letter-spacing:-0.04em;color:var(--mc-color);opacity:.16}
+.metodo-icon{margin-bottom:22px;width:62px;height:62px;border-radius:50%;background:#fff;color:var(--mc-color);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px var(--mc-shadow);transform:rotate(-8deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.metodo-card:hover .metodo-icon{transform:rotate(0) scale(1.08)}
+.metodo-title{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-0.01em;margin-bottom:10px;color:var(--ink)}
+.metodo-text{font-size:15.5px;color:var(--ink);opacity:.78;line-height:1.6}
+/* entrada en fer scroll */
+.metodo-grid.js .metodo-card{opacity:0;translate:0 30px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .7s ease,translate .7s cubic-bezier(.2,.8,.2,1)}
+.metodo-grid.js.is-in .metodo-card{opacity:1;translate:0 0}
+.metodo-grid.js.is-in .metodo-card:nth-child(2){transition-delay:0s,0s,.12s,.12s}
+.metodo-grid.js.is-in .metodo-card:nth-child(3){transition-delay:0s,0s,.24s,.24s}
+.metodo-grid.js.is-in .metodo-card:nth-child(4){transition-delay:0s,0s,.36s,.36s}
+@media(max-width:1100px){.metodo-wrap{grid-template-columns:1fr;gap:40px}.metodo-side{position:static}.metodo-side .section-lead{max-width:640px}}
+@media(prefers-reduced-motion:reduce){.metodo-card,.metodo-icon,.metodo-grid.js .metodo-card{transition:none;opacity:1;translate:none}}
 
 .rainbow-section{background:linear-gradient(135deg,#FFF0F9,#FFFAE0)}
 .rainbow-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -65,16 +85,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .rf-title{font-weight:800;font-size:14px;margin-bottom:3px}
 .rf-text{font-size:13px;color:var(--ink-soft);line-height:1.5}
 
-.nivells-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
-.nivel-card{background:var(--cream);border-radius:28px;padding:28px;border:none;transition:transform .25s,box-shadow .25s}
-.nivel-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.14)}
-.nc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.nc-badge{font-size:var(--fs-label);font-weight:800;background:rgba(236,30,140,.15);color:var(--kp);border-radius:6px;padding:4px 10px}
-.nc-age{font-size:12px;font-weight:700;color:var(--ink-soft);background:#fff;border-radius:6px;padding:4px 10px}
-.nc-name{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
-.nc-desc{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:14px}
-.nc-pills{display:flex;flex-wrap:wrap;gap:6px}
-.nc-pills span{font-size:var(--fs-label);font-weight:700;padding:3px 9px;border-radius:5px;background:rgba(236,30,140,.1);color:var(--kp);border:1px solid rgba(236,30,140,.2)}
 
 .horaris-wrap{background:var(--kp-pale);border:1.5px solid rgba(236,30,140,.14);border-radius:32px;padding:48px;color:var(--ink);margin-top:48px;box-shadow:none}
 .horaris-title{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-0.03em;color:var(--ink);margin-bottom:6px}
@@ -104,8 +114,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .kp-hero{padding:48px 22px 40px}
   .section{padding:56px 22px}
   .rainbow-grid{grid-template-columns:1fr}
-  .metodo-grid{grid-template-columns:1fr}
-  .nivells-grid{grid-template-columns:1fr}
+  .metodo-grid{grid-template-columns:1fr;gap:16px;padding-bottom:0}
+  .metodo-card:nth-child(even),.metodo-card:nth-child(even):hover{transform:none}
+  .metodo-card{padding:26px 24px 28px}
+  .metodo-num{font-size:52px}
   .horaris-wrap{padding:32px 22px;border-radius:16px}
   .cta-band{padding:56px 22px}
 }
@@ -114,13 +126,51 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-blob-1{width:350px;height:350px;background:radial-gradient(circle,rgba(236,30,140,.18),transparent 70%);top:-80px;right:10%}
 .kp-blob-2{width:250px;height:250px;background:radial-gradient(circle,rgba(255,200,0,.15),transparent 70%);bottom:-60px;right:25%}
 .kp-blob-3{width:200px;height:200px;background:radial-gradient(circle,rgba(100,180,255,.15),transparent 70%);top:30%;left:-60px}
-.mc-1{--mc-color:#EC1E8C;--mc-bg:rgba(236,30,140,.1)}
-.mc-2{--mc-color:#F5A300;--mc-bg:rgba(255,184,0,.14)}
-.mc-3{--mc-color:#3DB8F5;--mc-bg:rgba(61,184,245,.12)}
-.mc-4{--mc-color:#3FAE63;--mc-bg:rgba(93,209,121,.14)}
-.nivel-card:first-child{background:#fff;border:1.5px solid rgba(236,30,140,.16);border-top:4px solid var(--kp);box-shadow:none}
-.nivel-card:last-child{background:#fff;border:1.5px solid rgba(176,18,95,.16);border-top:4px solid var(--kp);box-shadow:none}
+.mc-1{--mc-color:#D4157C;--mc-bg:#FFE1EF;--mc-shadow:rgba(236,30,140,.45)}
+.mc-2{--mc-color:#C27C00;--mc-bg:#FFF0C7;--mc-shadow:rgba(230,160,0,.45)}
+.mc-3{--mc-color:#1A8FD0;--mc-bg:#DCF1FD;--mc-shadow:rgba(30,150,220,.4)}
+.mc-4{--mc-color:#2E9150;--mc-bg:#DDF4E4;--mc-shadow:rgba(46,145,80,.4)}
 #nivells.section{background:#F0FBFF}
+/* Nivells: un camí de 3 parades (Kids Planet → Kids 1 → Kids) */
+.kp-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr .85fr;gap:28px;position:relative}
+.kp-path::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:4px;border-radius:4px;
+  background:linear-gradient(90deg,#EC1E8C,#B0125F 55%,#FF6B35);opacity:.9}
+.kp-step{position:relative;padding-top:78px}
+.ks-dot{position:absolute;top:0;left:0;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--font-display);font-weight:800;font-size:24px;color:#fff;background:var(--ks-c);
+  border:5px solid #F0FBFF;box-shadow:0 8px 20px -6px var(--ks-sh)}
+.ks-1{--ks-c:#EC1E8C;--ks-sh:rgba(236,30,140,.55);--ks-bg:#FFE1EF}
+.ks-2{--ks-c:#B0125F;--ks-sh:rgba(176,18,95,.5);--ks-bg:#F9DCEB}
+.ks-next{--ks-c:#E0531E;--ks-sh:rgba(255,107,53,.5)}
+.ks-age{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ks-c);margin-bottom:8px}
+.ks-name{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 12px;color:var(--ink)}
+.ks-desc{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin:0;max-width:420px}
+.ks-1,.ks-2{background:var(--ks-bg);border-radius:30px;padding:30px 30px 32px;margin-top:78px}
+.ks-1 .ks-dot,.ks-2 .ks-dot{top:-78px;left:0}
+.ks-1{padding-top:30px}.ks-2{padding-top:30px}
+.ks-next{margin-top:78px;padding:28px 28px 30px;border-radius:30px;border:2px dashed rgba(224,83,30,.4);background:rgba(255,255,255,.6)}
+.ks-next .ks-dot{top:-78px;left:0}
+.ks-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:800;font-size:15px;color:#B83F12;border-bottom:2px solid rgba(224,83,30,.35);padding-bottom:3px;transition:gap .2s,border-color .2s}
+.ks-link:hover{gap:14px;border-color:#E0531E}
+.ks-1,.ks-2,.ks-next{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.ks-1:hover,.ks-2:hover{transform:translateY(-6px);box-shadow:0 22px 44px -20px var(--ks-sh)}
+/* entrada: la línia es dibuixa i les parades apareixen en ordre */
+.kp-path.js::before{transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.6,0,.2,1)}
+.kp-path.js .kp-step{opacity:0;translate:0 24px;transition:opacity .6s ease,translate .6s cubic-bezier(.2,.8,.2,1),transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.kp-path.js.is-in::before{transform:none}
+.kp-path.js.is-in .kp-step{opacity:1;translate:0 0}
+.kp-path.js.is-in .ks-2{transition-delay:.3s,.3s,0s,0s}
+.kp-path.js.is-in .ks-next{transition-delay:.6s,.6s,0s,0s}
+@media(max-width:960px){
+  .kp-path{grid-template-columns:1fr;gap:20px;padding-left:0}
+  .kp-path::before{left:27px;right:auto;top:28px;bottom:60px;width:4px;height:auto;background:linear-gradient(180deg,#EC1E8C,#B0125F 55%,#FF6B35)}
+  .kp-path.js::before{transform:scaleY(0);transform-origin:top}
+  .kp-step{margin-top:0!important;margin-left:76px}
+  .kp-step .ks-dot{top:22px!important;left:-76px!important}
+  .ks-name{font-size:24px}
+  .ks-1,.ks-2,.ks-next{padding:24px 22px 26px}
+}
+@media(prefers-reduced-motion:reduce){.kp-path.js::before,.kp-path.js .kp-step{transition:none;transform:none;opacity:1;translate:none}}
 
 /* ===== Canvis KP (nov 2026) ===== */
 /* Portada amb foto de fons a la dreta */
@@ -134,9 +184,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:960px){.kp-hero h1,.hero-stats,.kp-hero-sub{max-width:none}}
 /* Aula Rainbow: mosaic de fotos */
 /* Nivells i horaris */
-.nc-header{justify-content:flex-start}
-.nivel-card .nc-age{background:var(--kp-pale);color:var(--kp-dark);border:1px solid rgba(236,30,140,.2);font-size:13px;padding:5px 12px;border-radius:99px}
-.nc-desc{margin-bottom:0}
 .hora-o{font-size:13px;font-weight:700;color:var(--ink-soft);margin:0 6px}
 .horaris-title{margin-bottom:24px}
 /* Secció final: fúcsia, amb paraules i bombolles que suren */
@@ -344,29 +391,34 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <section class="section" id="metode" style="background:#FFF5F9">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Metodologia</div>
+    <div class="metodo-wrap">
+    <div class="metodo-side">
     <h2>Aprofitem l'energia d'aquesta edat <em style="color:var(--kp);font-style:normal">per aprendre</em></h2>
-    <p class="section-lead">A Kids Planet descobrim la llengua anglesa a través del joc, de la cançó i del conte.<br>Sense pressió i amb ganes de tornar cada setmana.</p>
+    <p class="section-lead">A Kids Planet descobrim la llengua anglesa a través del joc, de la cançó i del conte. Sense pressió i amb ganes de tornar cada setmana.</p>
+    <a href="#contacte" class="metodo-link">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
+    </div>
     <div class="metodo-grid">
-      <div class="metodo-card mc-1">
+      <div class="metodo-card mc-1"><span class="metodo-num" aria-hidden="true">01</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div>
         <div class="metodo-title">Grups reduïts</div>
         <p class="metodo-text">Classes d'un màxim de 8 infants que afavoreixen la participació i una atenció propera.</p>
       </div>
-      <div class="metodo-card mc-2">
+      <div class="metodo-card mc-2"><span class="metodo-num" aria-hidden="true">02</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
         <div class="metodo-title">Aprenem jugant</div>
         <p class="metodo-text">Jocs, cançons, contes i activitats dinàmiques per descobrir l'anglès d'una manera divertida.</p>
       </div>
-      <div class="metodo-card mc-3">
+      <div class="metodo-card mc-3"><span class="metodo-num" aria-hidden="true">03</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></div>
         <div class="metodo-title">Entorn proper i acollidor</div>
         <p class="metodo-text">Un ambient agradable on els infants poden participar, experimentar i guanyar confiança. Les famílies poden acompanyar l'infant durant els primers dies.</p>
       </div>
-      <div class="metodo-card mc-4">
+      <div class="metodo-card mc-4"><span class="metodo-num" aria-hidden="true">04</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
         <div class="metodo-title">Progressió natural</div>
         <p class="metodo-text">Activitats pensades per a les diferents etapes, des d'Infantil fins a 1r de Primària.</p>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -398,19 +450,27 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>2 nivells</div>
     <h2>Creixem <em style="color:var(--kp);font-style:normal">en anglès</em></h2>
     <p class="section-lead">Kids Planet per a Infantil i Kids 1 per a 1r de Primària. A 2n de Primària, el pas natural és als cursos Kids.</p>
-    <div class="nivells-grid">
-      <div class="nivel-card">
-        <div class="nc-header"><span class="nc-age">Infantil</span></div>
-        <div class="nc-name">Kids Planet</div>
-        <p class="nc-desc">Els més petits descobreixen l'anglès a través de jocs, cançons, contes i activitats dinàmiques, familiaritzant-se amb l'idioma d'una manera divertida i natural.</p>
-      </div>
-      <div class="nivel-card">
-        <div class="nc-header"><span class="nc-age">1r de Primària</span></div>
-        <div class="nc-name">Kids 1</div>
-        <p class="nc-desc">Consolidació de les rutines orals i inici de la lectoescriptura en anglès.</p>
-      </div>
-    </div>
-    <p style="font-size:14px;color:var(--ink-soft);text-align:center;margin-top:4px">Ja fan 2n de Primària. Continuen a <a href="kids.html" style="color:var(--blue);font-weight:700;text-decoration:underline">Kids (2n a 6è de Primària) →</a></p>
+    <ol class="kp-path">
+      <li class="kp-step ks-1">
+        <span class="ks-dot" aria-hidden="true">1</span>
+        <span class="ks-age">Infantil</span>
+        <h3 class="ks-name">Kids Planet</h3>
+        <p class="ks-desc">Els més petits descobreixen l'anglès a través de jocs, cançons, contes i activitats dinàmiques, familiaritzant-se amb l'idioma d'una manera divertida i natural.</p>
+      </li>
+      <li class="kp-step ks-2">
+        <span class="ks-dot" aria-hidden="true">2</span>
+        <span class="ks-age">1r de Primària</span>
+        <h3 class="ks-name">Kids 1</h3>
+        <p class="ks-desc">Consolidació de les rutines orals i inici de la lectoescriptura en anglès.</p>
+      </li>
+      <li class="kp-step ks-next">
+        <span class="ks-dot" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="ks-age">2n a 6è de Primària</span>
+        <h3 class="ks-name">I després, Kids</h3>
+        <p class="ks-desc">Quan arriben a 2n de Primària, continuen el camí als cursos Kids.</p>
+        <a href="kids.html" class="ks-link">Veure els cursos Kids <span aria-hidden="true">→</span></a>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -510,6 +570,26 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
   else { visible = true; restart(); }
   lay();
+})();
+</script>
+<script>
+/* Metodologia: les targetes entren una rere l'altra en arribar-hi */
+(function(){
+  var g = document.querySelector('.metodo-grid'); if (!g || !('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  g.classList.add('js');
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { g.classList.add('is-in'); io.disconnect(); } }); }, {threshold:.15});
+  io.observe(g);
+})();
+</script>
+<script>
+/* Nivells: la línia del camí es dibuixa en arribar-hi */
+(function(){
+  var p = document.querySelector('.kp-path'); if (!p || !('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  p.classList.add('js');
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { p.classList.add('is-in'); io.disconnect(); } }); }, {threshold:.2});
+  io.observe(p);
 })();
 </script>
 </body>
