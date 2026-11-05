@@ -358,44 +358,9 @@ ${cursosDropdown}
     { href:'particular.html',  dot:'#036896', label:'Particulars' },
   ];
 
-  const SUBNAV = {
-    'kids.html': [
-      { href:'#kids-712', text:'Els nivells' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'teens.html': [
-      { href:'#nivells', text:'Els nivells' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'cambridge.html': [
-      { href:'#titols', text:'Els títols' },
-      { href:'#perque', text:'Per què Sprint?' },
-      { href:'#examens', text:'Convocatòries' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'adults.html': [
-      { href:'#nivells', text:'Els nivells' },
-      { href:'#modalitats', text:'Com fer-ho' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'frances.html': [
-      { href:'#nivells', text:'Els nivells' },
-      { href:'#delf', text:'DELF &amp; DALF' },
-      { href:'#professors', text:'Professors nadius' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'business.html': [
-      { href:'#bla', text:'BLA Business' },
-      { href:'#programes', text:'Programes' },
-      { href:'#fundae', text:'FUNDAE' },
-      { href:'#sectors', text:'Sectors' },
-      { href:'#horaris', text:'Horaris' },
-    ],
-    'particular.html': [
-      { href:'#perque-particular', text:'Per què nosaltres' },
-      { href:'#com-funciona', text:'Com funciona' },
-    ],
-  };
+  /* Submenú intern de cada curs: tret a totes les pàgines (la barra de cursos ja fa de menú).
+     Si es vol tornar a posar en alguna pàgina, s'hi afegeix aquí: 'pagina.html': [{ href:'#id', text:'Text' }] */
+  const SUBNAV = {};
 
   let courseNavEl = null;
   if (COURSES.some(function(c){ return c.href === page; })) {
