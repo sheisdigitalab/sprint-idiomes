@@ -359,11 +359,6 @@ ${cursosDropdown}
   ];
 
   const SUBNAV = {
-    'kids-planet.html': [
-      { href:'#rainbow', text:'Aula Rainbow' },
-      { href:'#nivells', text:'2 grups' },
-      { href:'#horaris', text:'Horaris' },
-    ],
     'kids.html': [
       { href:'#kids-712', text:'Els nivells' },
       { href:'#horaris', text:'Horaris' },

@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Kids Planet · Anglès per a Infantil i 1r de Primària · Sprint Idiomes Sant Cugat</title>
-<meta name="description" content="Kids Planet: anglès per a infants d'Infantil (P3 a P5) i 1r de Primària a Sant Cugat. Dos professors nadius, aula Rainbow i immersió total des de P3." />
+<meta name="description" content="Kids Planet: els primers passos en anglès per a Infantil i 1r de Primària a Sant Cugat. Jocs, cançons i contes, grups de màxim 8 infants i l'aula Rainbow." />
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
@@ -121,6 +121,132 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .nivel-card:first-child{background:#fff;border:1.5px solid rgba(236,30,140,.16);border-top:4px solid var(--kp);box-shadow:none}
 .nivel-card:last-child{background:#fff;border:1.5px solid rgba(176,18,95,.16);border-top:4px solid var(--kp);box-shadow:none}
 #nivells.section{background:#F0FBFF}
+
+/* ===== Canvis KP (nov 2026) ===== */
+/* Portada amb foto de fons a la dreta */
+.kp-hero::before{display:none}
+.kp-hero-photo{position:absolute;top:0;right:0;bottom:0;width:56%;background:url('img-kids-planet/kp-portada.webp') 45% center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%);z-index:0}
+.kp-hero-inner{z-index:2}
+.kp-hero-sub{max-width:560px}
+.kp-hero h1{max-width:min(640px,48%)}
+.hero-stats,.kp-hero-sub{max-width:min(560px,46%)}
+@media(max-width:960px){.kp-hero h1,.hero-stats,.kp-hero-sub{max-width:none}}
+/* Aula Rainbow: mosaic de fotos */
+/* Nivells i horaris */
+.nc-header{justify-content:flex-start}
+.nivel-card .nc-age{background:var(--kp-pale);color:var(--kp-dark);border:1px solid rgba(236,30,140,.2);font-size:13px;padding:5px 12px;border-radius:99px}
+.nc-desc{margin-bottom:0}
+.hora-o{font-size:13px;font-weight:700;color:var(--ink-soft);margin:0 6px}
+.horaris-title{margin-bottom:24px}
+/* Secció final: fúcsia, amb paraules i bombolles que suren */
+.cta-band{background:linear-gradient(120deg,#EC1E8C,#FF5FA8,#F0359A,#FF7AB8);background-size:300% 300%;animation:cb-grad 14s ease infinite;padding:110px 40px}
+@keyframes cb-grad{50%{background-position:100% 50%}}
+.cta-band h2{color:#fff;font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
+.cta-hl{display:inline-block;background:var(--yellow,#FFB800);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
+.cta-band p{color:rgba(255,255,255,.95);font-size:18px}
+.cta-band-inner{max-width:700px;position:relative;z-index:2}
+.cta-band .btn-white{color:var(--kp)}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:var(--font-body);font-size:15px;font-weight:800;border-radius:50px;padding:16px 28px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.cta-float{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.cf-w{position:absolute;font-family:var(--font-display);font-weight:800;color:rgba(255,255,255,.22);font-size:clamp(28px,4vw,56px);letter-spacing:-0.03em;animation:cf-float 9s ease-in-out infinite}
+.cf-s{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:cf-float 11s ease-in-out infinite}
+.cf-1{left:6%;top:18%;transform:rotate(-8deg)}
+.cf-2{right:8%;top:14%;animation-delay:-3s}
+.cf-3{right:12%;bottom:16%;animation-delay:-5s}
+.cf-4{right:12%;bottom:18%;animation-delay:-2s}
+.cf-5{width:90px;height:90px;left:28%;top:-30px}
+.cf-6{width:40px;height:40px;right:30%;bottom:22%;animation-delay:-4s;background:rgba(255,184,0,.55)}
+.cf-7{width:22px;height:22px;left:22%;top:58%;animation-delay:-6s;background:rgba(255,255,255,.5)}
+.cf-8{width:130px;height:130px;right:-30px;top:40%;animation-delay:-2s}
+@keyframes cf-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -18px;rotate:4deg}}
+@media(max-width:960px){
+  .kp-hero{padding-top:0}
+  .kp-hero-photo{position:relative;width:auto;height:300px;margin:0 -22px 32px;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent);background-image:url('img-kids-planet/kp-portada-960.webp');background-position:center 30%}
+  .cta-band{padding:80px 22px}
+  .horaris-table{min-width:0}
+  .horaris-table td{padding:14px 8px}
+  .horaris-table td:last-child .hora-pill{display:flex;width:max-content;margin:3px 0}
+  .hora-o{display:block;margin:2px 0 2px 14px}
+  .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}.cf-4{bottom:6%}
+}
+@media(prefers-reduced-motion:reduce){.cta-band,.cf-w,.cf-s{animation:none}}
+
+/* Secció final: més moviment */
+.cf-w{animation:cf-drift 7s ease-in-out infinite}
+@keyframes cf-drift{0%,100%{translate:0 0;rotate:-6deg;scale:1}25%{translate:14px -22px;rotate:4deg;scale:1.08}50%{translate:-6px -34px;rotate:-2deg;scale:1}75%{translate:-16px -12px;rotate:6deg;scale:1.06}}
+.cf-b{position:absolute;bottom:-40px;left:var(--x);width:var(--z);height:var(--z);border-radius:50%;border:2px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);animation:cf-rise var(--t) linear infinite;animation-delay:var(--d)}
+@keyframes cf-rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(18px,-260px)}90%{opacity:.9}100%{transform:translate(-10px,-560px);opacity:0}}
+.cf-star{position:absolute;color:#FFE27A;font-size:30px;animation:cf-twinkle 2.4s ease-in-out infinite;text-shadow:0 0 12px rgba(255,226,122,.8)}
+.cf-s1{left:22%;top:20%}.cf-s2{right:24%;top:30%;animation-delay:-.8s;font-size:22px}.cf-s3{left:30%;bottom:16%;animation-delay:-1.6s;color:#fff;font-size:34px}
+@keyframes cf-twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.4}50%{transform:scale(1.25) rotate(20deg);opacity:1}}
+.cta-hl{animation:cb-wiggle 3.2s ease-in-out infinite}
+@keyframes cb-wiggle{0%,70%,100%{transform:rotate(-2deg) scale(1)}78%{transform:rotate(3deg) scale(1.08)}86%{transform:rotate(-4deg) scale(1.04)}94%{transform:rotate(1deg) scale(1)}}
+.btn-wa{animation:cb-pulse 2.6s ease-out infinite}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.cta-band .btn-white{animation:cb-bob 3s ease-in-out infinite}
+@keyframes cb-bob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.cb-in{opacity:0;transform:translateY(34px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.25,1.3);transition-delay:calc(var(--i)*.15s)}
+.cta-band.is-in .cb-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.cf-w,.cf-b,.cf-star,.cta-hl,.btn-wa,.cta-band .btn-white{animation:none}.cf-b{display:none}.cb-in{opacity:1;transform:none;transition:none}}
+
+/* El conill de Sprint (del web actual): treu el cap i salta */
+.kp-bunny{position:absolute;left:5%;bottom:0;width:190px;height:auto;z-index:2;transform-origin:50% 100%;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(76,8,54,.25))}
+.cta-band.is-in .kp-bunny{transform:none;animation:kp-hop 3.4s ease-in-out 1.6s infinite}
+.kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
+@keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
+@keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
+@media(max-width:1100px){.kp-bunny{width:150px;left:2%}}
+@media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
+@media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
+
+/* Revisió secció final */
+/* 1) fúcsia una mica més fosc perquè el text blanc es llegeixi bé */
+.cta-band{background:linear-gradient(120deg,#D4157C,#E0197F,#C21174,#DA1A82);background-size:300% 300%}
+/* 2) WhatsApp en un verd amb prou contrast */
+.btn-wa{background:#128049}
+.btn-wa:hover{background:#0F6E3F}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+/* 6) el conill de peu sobre un terra dibuixat */
+.kp-bunny{bottom:34px}
+.kp-ground{position:absolute;left:calc(5% - 30px);bottom:22px;width:250px;height:auto;z-index:2}
+@media(max-width:1100px){.kp-ground{left:calc(2% - 26px);width:200px}}
+/* 7) menys moviment a la vegada: el protagonisme és del conill i del WhatsApp */
+.cta-hl,.cta-band .btn-white{animation:none}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+/* 3) mòbil: sense paraules ni estrelles, i bombolles només als costats, per darrere del text */
+@media(max-width:760px){
+  .cf-w,.cf-star,.cf-s{display:none}
+  .cf-b:nth-child(n+8):nth-child(-n+11){display:none}
+  .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
+  .kp-bunny{bottom:30px}
+}
+
+/* Aula Rainbow: baralla de fotos (la de dalt surt volant i passa a la següent) */
+.rb-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.rb-side .section-lead{margin-bottom:28px}
+.rb-count{font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;letter-spacing:-0.04em;color:var(--kp);margin-bottom:22px;font-variant-numeric:tabular-nums}
+.rb-count span{font-size:22px;color:var(--ink-soft);letter-spacing:0}
+.rb-btns{display:flex;gap:12px}
+.rb-arrow{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--kp);border:1.5px solid rgba(236,30,140,.25);box-shadow:0 6px 18px rgba(236,30,140,.15);transition:transform .2s,background .2s,color .2s}
+.rb-arrow:hover{background:var(--kp);color:#fff;transform:scale(1.08)}
+.rb-deck{position:relative;aspect-ratio:3/2;width:100%;max-width:620px;justify-self:center;cursor:pointer;touch-action:pan-y;outline:none;margin-bottom:30px}
+.rb-card{position:absolute;inset:0;margin:0;border-radius:22px;overflow:hidden;background:#fff;padding:10px;box-shadow:0 18px 40px -14px rgba(21,32,61,.35);transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.rb-card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;user-select:none;-webkit-user-drag:none}
+.rb-card.out{transform:translate(120%,-8%) rotate(16deg)!important;opacity:0}
+@media(max-width:960px){
+  .rb-wrap{grid-template-columns:1fr;gap:28px}
+  .rb-side{display:contents}
+  .rainbow-section{overflow-x:clip}
+  .rb-wrap{grid-template-columns:1fr auto;gap:18px 12px}
+  .rb-side > *:not(.rb-count):not(.rb-btns){grid-column:1/-1}
+  .rb-deck{order:5;grid-column:1/-1;width:calc(100% - 44px);justify-self:start;max-width:none;margin:10px 0 18px}
+  .rb-count{order:6;font-size:40px;margin:0;align-self:center}
+  .rb-btns{order:7;align-self:center}
+}
+@media(prefers-reduced-motion:reduce){.rb-card{transition:none}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -129,14 +255,14 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   <meta property="og:site_name" content="Sprint Idiomes">
   <meta property="og:url" content="https://www.sprintidiomes.com/kids-planet/">
   <meta property="og:title" content="Kids Planet · Anglès per a Infantil i 1r de Primària · Sprint Idiomes Sant Cugat">
-  <meta property="og:description" content="Anglès per a Infantil i 1r de Primària a Sant Cugat. Dos professors nadius per aula, grups reduïts i immersió total des de P3.">
+  <meta property="og:description" content="Els primers passos en anglès per a Infantil i 1r de Primària a Sant Cugat. Jocs, cançons i contes, en grups de màxim 8 infants.">
   <meta property="og:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kids Planet · Anglès per a Infantil i 1r de Primària · Sprint Idiomes Sant Cugat">
-  <meta name="twitter:description" content="Anglès des de P3 a Sant Cugat. Immersió total, 2 professors nadius i grups reduïts.">
+  <meta name="twitter:description" content="Els primers passos en anglès a Sant Cugat, d'Infantil a 1r de Primària. Grups de màxim 8 infants.">
   <meta name="twitter:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.sprintidiomes.com/kids-planet/">
@@ -150,7 +276,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     {
       "@type": "Course",
       "name": "Kids Planet — Anglès per a Infantil i 1r de Primària",
-      "description": "Programa d'immersió total en anglès per a Infantil i 1r de Primària a Sant Cugat. Dos professors nadius per grup, grups reduïts i metodologia basada en el joc.",
+      "description": "Programa d'anglès per a Infantil i 1r de Primària a Sant Cugat: jocs, cançons, contes i activitats dinàmiques en grups de màxim 8 infants.",
       "url": "https://www.sprintidiomes.com/kids-planet/",
       "provider": {
         "@id": "https://www.sprintidiomes.com/#school"
@@ -159,7 +285,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student",
-        "audienceType": "Children (3-6 years)"
+        "audienceType": "Infants d'Infantil i 1r de Primària"
       },
       "hasCourseInstance": {
         "@type": "CourseInstance",
@@ -196,15 +322,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <script src="nav.js?v=21"></script>
 
 <section class="kp-hero">
+  <div class="kp-hero-photo" aria-hidden="true"></div>
   <div class="kp-hero-inner">
     <div class="kp-eyebrow"><span class="kp-eyebrow-dot"></span>Infantil i 1r de Primària</div>
-    <h1>L'anglès comença<br>als <em>3 anys</em>.</h1>
-    <p class="kp-hero-sub">Kids Planet és el programa d'immersió total per als més petits. Dos professors nadius per grup, l'aula Rainbow i un mètode que fa que l'anglès sigui el joc favorit dels nens.</p>
+    <h1>Els primers passos <em>en anglès</em></h1>
+    <p class="kp-hero-sub">Kids Planet és el nostre programa d'anglès per als més petits, des d'Infantil fins a 1r de Primària. A través de jocs, cançons i activitats dinàmiques, els infants descobreixen l'anglès d'una manera natural i adaptada a la seva edat.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">2</div><div class="hero-stat-label">professors per grup</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">8–10</div><div class="hero-stat-label">alumnes per grup</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">Màx. 8</div><div class="hero-stat-label">alumnes per grup</div></div>
       <div class="hero-stat"><div class="hero-stat-num">60 min</div><div class="hero-stat-label">per sessió</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Des de 1973</div><div class="hero-stat-label">més de 50 anys d'experiència</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">Des d'Infantil</div><div class="hero-stat-label">fins a 1r de Primària</div></div>
     </div>
     <div class="hero-ctas">
       <a href="#horaris" class="btn-kp">Veure horaris →</a>
@@ -217,29 +343,29 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <section class="section" id="metode" style="background:#FFF5F9">
   <div class="section-inner">
-    <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Com funciona</div>
-    <h2>El mètode que fa que l'anglès <em style="color:var(--kp);font-style:normal">surti sol</em>.</h2>
-    <p class="section-lead">Els nens no aprenen anglès: l'adquireixen. Igual que el català o el castellà. Sense memoritzar, sense pressió, amb ganes de tornar cada dia.</p>
+    <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Metodologia</div>
+    <h2>Aprofitem l'energia d'aquesta edat <em style="color:var(--kp);font-style:normal">per aprendre</em></h2>
+    <p class="section-lead">A Kids Planet descobrim la llengua anglesa a través del joc, de la cançó i del conte.<br>Sense pressió i amb ganes de tornar cada setmana.</p>
     <div class="metodo-grid">
       <div class="metodo-card mc-1">
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div>
-        <div class="metodo-title">Sempre dos professors nadius</div>
-        <p class="metodo-text">Un professor dirigeix la sessió, l'altre dona suport individual. Cap nen es perd. L'input és constant, personalitzat i en anglès des del primer segon.</p>
+        <div class="metodo-title">Grups reduïts</div>
+        <p class="metodo-text">Classes d'un màxim de 8 infants que afavoreixen la participació i una atenció propera.</p>
       </div>
       <div class="metodo-card mc-2">
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <div class="metodo-title">Joc, cançons i contes</div>
-        <p class="metodo-text">Cada activitat crea un context real per comunicar-se en anglès. Mímica, teatre, rutines cantades i jocs de rol activen la llengua de manera natural.</p>
+        <div class="metodo-title">Aprenem jugant</div>
+        <p class="metodo-text">Jocs, cançons, contes i activitats dinàmiques per descobrir l'anglès d'una manera divertida.</p>
       </div>
       <div class="metodo-card mc-3">
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></div>
-        <div class="metodo-title">Adaptació emocional</div>
-        <p class="metodo-text">Els pares poden acompanyar els primers dies fins que el nen o nena es trobi còmode. Sense presses, sense plors, sense pressió de cap tipus.</p>
+        <div class="metodo-title">Entorn proper i acollidor</div>
+        <p class="metodo-text">Un ambient agradable on els infants poden participar, experimentar i guanyar confiança. Les famílies poden acompanyar l'infant durant els primers dies.</p>
       </div>
       <div class="metodo-card mc-4">
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
         <div class="metodo-title">Progressió natural</div>
-        <p class="metodo-text">De Kids Planet (P3 i P4) a Kids Planet Plus (P5 i 1r de Primària). A 2n de Primària, el pas natural és als <a href="kids.html" style="color:var(--blue);font-weight:800">cursos Kids →</a></p>
+        <p class="metodo-text">Activitats pensades per a les diferents etapes, des d'Infantil fins a 1r de Primària.</p>
       </div>
     </div>
   </div>
@@ -247,39 +373,21 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <section class="section rainbow-section" id="rainbow">
   <div class="section-inner">
+    <div class="rb-wrap">
+      <div class="rb-side">
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>L'espai</div>
-    <h2>L'aula <em style="color:var(--kp);font-style:normal">Rainbow</em>.</h2>
-    <p class="section-lead">Un espai dissenyat exclusivament per als més petits. Colorit, estimulant i 100% en anglès. Quan entren per la porta, el món canvia.</p>
-    <div class="rainbow-grid">
-      <div class="rainbow-visual">
-        <svg width="120" height="72" viewBox="0 0 120 72" fill="none" stroke-linecap="round">
-          <path d="M6 72a54 54 0 0 1 108 0" stroke="#EC1E8C" stroke-width="10"/>
-          <path d="M20 72a40 40 0 0 1 80 0" stroke="#FFB800" stroke-width="10"/>
-          <path d="M34 72a26 26 0 0 1 52 0" stroke="#3DB8F5" stroke-width="10"/>
-        </svg>
-        <!-- Substitueix per foto real de l'aula Rainbow -->
-        <div class="rainbow-badge">
-          <div class="rb-text">C/ Francesc Moragas 8, 1a planta</div>
-          <div class="rb-addr">Sant Cugat del Vallès</div>
-        </div>
+    <h2>L'aula <em style="color:var(--kp);font-style:normal">Rainbow</em></h2>
+    <p class="section-lead">Un espai pensat per als més petits, ple de colors i recursos que conviden a jugar i aprendre anglès en un ambient acollidor i estimulant.</p>
+    <!-- Fotos provisionals: quan l'escola enviï les fotos de Kids Planet (KP1, KP2...), substituir els fitxers de img-kids-planet/ -->
+        <div class="rb-count" aria-live="polite"><b>01</b><span> / 05</span></div>
+        <div class="rb-btns"><button class="rb-arrow rb-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="rb-arrow rb-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
       </div>
-      <div class="rainbow-features">
-        <div class="rf-item">
-          <div class="rf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H16a5 5 0 0 0 5-5c0-4-4-7-9-7z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8" r="1" fill="currentColor" stroke="none"/></svg></div>
-          <div><div class="rf-title">Entorn 100% immersiu</div><p class="rf-text">Tot a l'aula —cartells, materials, rutines— és en anglès. El cervell del nen s'activa de forma natural.</p></div>
-        </div>
-        <div class="rf-item">
-          <div class="rf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
-          <div><div class="rf-title">Materials per a cada edat</div><p class="rf-text">Flashcards, titelles, jocs de taula i recursos audiovisuals pensats específicament per a la seva edat.</p></div>
-        </div>
-        <div class="rf-item">
-          <div class="rf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-          <div><div class="rf-title">Grups molt reduïts</div><p class="rf-text">Entre 8 i 10 alumnes per grup, segons el nivell. Cada nen té la seva atenció i el professor el coneix pel nom des del primer dia.</p></div>
-        </div>
-        <div class="rf-item">
-          <div class="rf-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="rf-title">Al cor de Sant Cugat</div><p class="rf-text">C/ Francesc Moragas 8, 1a planta. Fàcil accés, aparcament proper i parada de bus davant.</p></div>
-        </div>
+      <div class="rb-deck" aria-roledescription="carrusel" aria-label="Fotos de l'aula Rainbow" tabindex="0">
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-1-700.webp" srcset="img-kids-planet/kp-aula-1-700.webp 700w, img-kids-planet/kp-aula-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Infants de Kids Planet treballant junts en una taula de l'aula" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-2-700.webp" srcset="img-kids-planet/kp-aula-2-700.webp 700w, img-kids-planet/kp-aula-2.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una classe de Kids Planet asseguda al voltant d'una taula rodona" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-3-700.webp" srcset="img-kids-planet/kp-aula-3-700.webp 700w, img-kids-planet/kp-aula-3.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una nena de Kids Planet fent una activitat a classe" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-4-700.webp" srcset="img-kids-planet/kp-aula-4-700.webp 700w, img-kids-planet/kp-aula-4.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dues nenes somrient mentre treballen a classe" draggable="false"></figure>
+        <figure class="rb-card"><img src="img-kids-planet/kp-aula-5-700.webp" srcset="img-kids-planet/kp-aula-5-700.webp 700w, img-kids-planet/kp-aula-5.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una nena escrivint i somrient a l'aula" draggable="false"></figure>
       </div>
     </div>
   </div>
@@ -287,58 +395,51 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <section class="section" id="nivells">
   <div class="section-inner">
-    <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Els grups</div>
-    <h2>2 grups, un camí <em style="color:var(--kp);font-style:normal">continu</em>.</h2>
-    <p class="section-lead">Kids Planet (P3 i P4) i Kids Planet Plus (P5 i 1r de Primària). A 2n de Primària, el pas natural és als cursos Kids.</p>
+    <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>2 nivells</div>
+    <h2>Creixem <em style="color:var(--kp);font-style:normal">en anglès</em></h2>
+    <p class="section-lead">Kids Planet per a Infantil i Kids 1 per a 1r de Primària. A 2n de Primària, el pas natural és als cursos Kids.</p>
     <div class="nivells-grid">
       <div class="nivel-card">
-        <div class="nc-header"><span class="nc-badge">Pre-A1</span><span class="nc-age">P3 i P4</span></div>
+        <div class="nc-header"><span class="nc-age">Infantil</span></div>
         <div class="nc-name">Kids Planet</div>
-        <p class="nc-desc">Primeres paraules i estructures en anglès a través del joc i la música. Dos professors nadius per grup. Rutines orals i vocabulari bàsic en un entorn lúdic i segur.</p>
-        <div class="nc-pills"><span>Pre-A1</span><span>60 min</span><span>2 profs/grup</span><span>Màx. 8</span></div>
+        <p class="nc-desc">Els més petits descobreixen l'anglès a través de jocs, cançons, contes i activitats dinàmiques, familiaritzant-se amb l'idioma d'una manera divertida i natural.</p>
       </div>
       <div class="nivel-card">
-        <div class="nc-header"><span class="nc-badge">Pre-A1+</span><span class="nc-age">P5 i 1r de Primària</span></div>
-        <div class="nc-name">Kids Planet Plus</div>
-        <p class="nc-desc">Consolidació de les rutines orals i inici de la lectoescriptura en anglès de manera lúdica. Preparació Cambridge Young Learners Starters. Transició natural cap a Kids.</p>
-        <div class="nc-pills"><span>Pre-A1+</span><span>60 min</span><span>YLE Starters</span><span>Màx. 10</span></div>
+        <div class="nc-header"><span class="nc-age">1r de Primària</span></div>
+        <div class="nc-name">Kids 1</div>
+        <p class="nc-desc">Consolidació de les rutines orals i inici de la lectoescriptura en anglès.</p>
       </div>
     </div>
-    <p style="font-size:14px;color:var(--ink-soft);text-align:center;margin-top:4px">A 2n de Primària continuen a <a href="kids.html" style="color:var(--blue);font-weight:700;text-decoration:underline">Kids (2n a 6è de Primària) →</a></p>
+    <p style="font-size:14px;color:var(--ink-soft);text-align:center;margin-top:4px">Ja fan 2n de Primària. Continuen a <a href="kids.html" style="color:var(--blue);font-weight:700;text-decoration:underline">Kids (2n a 6è de Primària) →</a></p>
   </div>
 </section>
 
 <section class="section" id="horaris" style="background:#FFFDF0">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kp-dark)"><span class="section-label-dot" style="background:var(--kp)"></span>Horaris</div>
-    <h2>Horaris.</h2>
-    <p class="section-lead">De dilluns a divendres, a la tarda. C/ Francesc Moragas 8, 1a planta, Sant Cugat del Vallès.</p>
+    <h2>Trobeu l'horari que us <em style="color:var(--kp);font-style:normal">encaixi millor</em></h2>
+    <p class="section-lead">Consulta els horaris disponibles per a Kids Planet i Kids 1.</p>
     <div class="horaris-wrap">
-      <div class="horaris-title">Kids Planet · Horaris setmanals</div>
-      <div class="horaris-sub">Dl–Dv · Francesc Moragas 8, 1a planta, Sant Cugat</div>
+      <div class="horaris-title">Horaris setmanals</div>
       <div class="horaris-table-wrap">
       <table class="horaris-table">
         <thead>
-          <tr>
-            <th>Grup</th><th>Dilluns</th><th>Dimarts</th><th>Divendres</th>
-          </tr>
+          <tr><th>Nivell</th><th>Dia i hora</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="nivel-name">Kids Planet</span><br><span style="font-size:12px;opacity:.8">P3 a 1r de Primària</span></td>
-            <td><span class="hora-pill">17:30–18:30</span></td>
-            <td><span class="hora-pill">17:15–18:15</span></td>
-            <td><span class="hora-pill">17:00–18:00</span><br><span style="font-size:11px;opacity:.7">P5 i 1r</span></td>
+            <td><span class="nivel-name">Kids Planet</span><br><span style="font-size:12px;opacity:.8">Infantil</span></td>
+            <td><span class="hora-pill">Dilluns · 17:30–18:30</span></td>
+          </tr>
+          <tr>
+            <td><span class="nivel-name">Kids 1</span><br><span style="font-size:12px;opacity:.8">1r de Primària</span></td>
+            <td><span class="hora-pill">Dimecres · 17:30–18:30</span> <span class="hora-o">o</span> <span class="hora-pill">Dijous · 17:15–18:15</span></td>
           </tr>
         </tbody>
       </table>
       </div>
-      <p class="horaris-note">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="rgba(21,32,61,.35)" stroke-width="1.2"/><path d="M7 5v3M7 9.5v.5" stroke="rgba(21,32,61,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
-        Els horaris poden variar. Contacta'ns per confirmar disponibilitat i places lliures.
-      </p>
       <div class="horaris-cta">
-        <a href="index.html#contacte" class="btn-white">Reserva la teva plaça →</a>
+        <a href="index.html#contacte" class="btn-white">Reserva la teva classe de prova →</a>
         <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
       </div>
     </div>
@@ -346,15 +447,70 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 </section>
 
 <section class="cta-band" id="contacte">
+  <div class="cta-float" aria-hidden="true">
+    <span class="cf-w cf-1">Hello!</span><span class="cf-w cf-2">ABC</span><span class="cf-w cf-3">Hi!</span>
+    <span class="cf-s cf-5"></span><span class="cf-s cf-7"></span>
+    <span class="cf-b" style="--x:8%;--d:0s;--t:9s;--z:18px"></span><span class="cf-b" style="--x:18%;--d:-3s;--t:11s;--z:10px"></span><span class="cf-b" style="--x:31%;--d:-6s;--t:8s;--z:26px"></span><span class="cf-b" style="--x:44%;--d:-1s;--t:12s;--z:12px"></span><span class="cf-b" style="--x:57%;--d:-4s;--t:9s;--z:20px"></span><span class="cf-b" style="--x:69%;--d:-7s;--t:10s;--z:14px"></span><span class="cf-b" style="--x:80%;--d:-2s;--t:8s;--z:24px"></span><span class="cf-b" style="--x:91%;--d:-5s;--t:11s;--z:12px"></span>
+    <span class="cf-star cf-s1">★</span><span class="cf-star cf-s2">★</span><span class="cf-star cf-s3">♪</span>
+  </div>
+  <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
+  <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cta-band-inner">
-    <h2>Primera classe gratuïta, sense compromís.</h2>
-    <p>Els pares de Kids Planet poden acompanyar els fills fins que es trobin còmodes. Vine a conèixer l'aula Rainbow.</p>
-    <div class="cta-band-btns">
+    <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cta-hl">sense compromís</span></h2>
+    <p class="cb-in" style="--i:1">Voleu saber més sobre Kids Planet? Contacteu amb nosaltres i us informarem. Veniu a conèixer l'Aula Rainbow!</p>
+    <div class="cta-band-btns cb-in" style="--i:2">
       <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-      <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
+      <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20Planet%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
     </div>
   </div>
 </section>
 
+<script>
+/* Secció final: el contingut entra amb animació en arribar-hi */
+(function(){
+  var band = document.querySelector('.cta-band'); if (!band) return;
+  if (!('IntersectionObserver' in window)) { band.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { band.classList.add('is-in'); io.disconnect(); } }); }, {threshold:.25});
+  io.observe(band);
+})();
+</script>
+<script>
+/* Aula Rainbow: baralla de fotos. Passa sola, s'atura en passar-hi el ratolí; es pot clicar, lliscar o fer servir les fletxes */
+(function(){
+  var deck = document.querySelector('.rb-deck'); if (!deck) return;
+  var cards = [].slice.call(deck.children), order = cards.map(function(_, i){ return i; }),
+      num = document.querySelector('.rb-count b'), ROT = [-2, 5, -4, 3, -6],
+      T = 5000, t = null, busy = false, paused = false, visible = false,
+      still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function lay(){
+    order.forEach(function(ci, pos){
+      var c = cards[ci]; c.style.zIndex = 10 - pos; c.setAttribute('aria-hidden', pos ? 'true' : 'false');
+      c.style.transform = pos === 0 ? 'rotate(-2deg)' : 'translate(' + (pos * 14) + 'px,' + (pos * 10) + 'px) rotate(' + ROT[pos % ROT.length] + 'deg) scale(' + (1 - pos * .04) + ')';
+      c.style.opacity = pos > 3 ? 0 : 1;
+    });
+    num.textContent = String(order[0] + 1).padStart(2, '0');
+  }
+  function next(){
+    if (busy) return; busy = true; var top = cards[order[0]]; top.classList.add('out');
+    setTimeout(function(){ order.push(order.shift()); top.classList.remove('out'); lay(); busy = false; }, still ? 0 : 450);
+    restart();
+  }
+  function prev(){ if (busy) return; order.unshift(order.pop()); lay(); restart(); }
+  function restart(){ clearTimeout(t); if (!paused && visible && !still) t = setTimeout(next, T); }
+  document.querySelector('.rb-next').addEventListener('click', next);
+  document.querySelector('.rb-prev').addEventListener('click', prev);
+  var x0 = null, moved = false;
+  deck.addEventListener('pointerdown', function(e){ x0 = e.clientX; moved = false; });
+  deck.addEventListener('pointerup', function(e){ if (x0 === null) return; var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { moved = true; dx < 0 ? prev() : next(); } });
+  deck.addEventListener('click', function(){ if (!moved) next(); });
+  deck.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') { e.preventDefault(); next(); } if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); } });
+  deck.addEventListener('mouseenter', function(){ paused = true; clearTimeout(t); });
+  deck.addEventListener('mouseleave', function(){ paused = false; restart(); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
+  else { visible = true; restart(); }
+  lay();
+})();
+</script>
 </body>
 </html>
