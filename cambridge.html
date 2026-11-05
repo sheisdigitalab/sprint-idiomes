@@ -254,35 +254,31 @@ h1 em{
   letter-spacing:-0.03em;color:#fff;margin-bottom:6px;
 }
 .horaris-sub{font-size:14px;color:rgba(255,255,255,.78);margin-bottom:32px}
-.ht-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.ht{width:100%;border-collapse:collapse;min-width:500px}
-.ht thead th{
-  padding-bottom:16px;text-align:center;white-space:nowrap;
+.horaris-rows{display:flex;flex-direction:column}
+.h-level{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:13px 0;border-top:1px solid rgba(255,255,255,.08);
 }
-.ht thead th:first-child{text-align:left;min-width:60px;padding-right:12px}
-.ht-day{
-  font-size:13px;font-weight:800;color:rgba(255,255,255,.88);
-  letter-spacing:-.01em;display:block;
-}
-.ht-day-abbr{
-  font-size:11px;font-weight:700;color:rgba(255,255,255,.4);
-  letter-spacing:.1em;text-transform:uppercase;display:block;margin-top:1px;
-}
-.ht tbody td{
-  padding:12px 8px;border-top:1px solid rgba(255,255,255,.07);
-  vertical-align:top;text-align:center;
-}
-.ht tbody td:first-child{text-align:left;padding-left:0;vertical-align:middle}
-.ht tbody tr:last-child td{border-bottom:1px solid rgba(255,255,255,.07)}
-.ht-nivel{
+.h-level:first-child{border-top:none;padding-top:0}
+.h-nivel{
   font-family:var(--font-display);font-size:15px;font-weight:800;
-  color:#fff;white-space:nowrap;
+  color:#fff;letter-spacing:-0.01em;padding-top:5px;
+  min-width:52px;flex-shrink:0;
 }
-.ht-times{display:flex;flex-direction:column;gap:5px;align-items:center}
-.ht-pill{
-  font-size:12px;font-weight:700;color:#fff;
+.h-slots{display:flex;flex-wrap:wrap;gap:7px;flex:1}
+.h-slot{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.13);
+  border-radius:20px;padding:5px 12px;
+}
+.h-days{
+  font-size:11px;font-weight:700;color:rgba(255,255,255,.6);
+  letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;
+}
+.h-sep{color:rgba(255,255,255,.25);font-size:10px}
+.h-time{
+  font-size:13px;font-weight:800;color:#fff;
   font-variant-numeric:tabular-nums;white-space:nowrap;
-  background:rgba(255,255,255,.14);border-radius:12px;padding:4px 10px;
 }
 .horaris-note{
   margin-top:20px;font-size:13px;color:rgba(255,255,255,.78);
@@ -335,6 +331,9 @@ h1 em{
 }
 @media(max-width:600px){
   .horaris-wrap{padding:28px 20px}
+  .h-level{flex-direction:column;gap:8px;padding:14px 0}
+  .h-nivel{padding-top:0}
+  .h-slots{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 }
 @media(max-width:640px){
   .level-grid{grid-template-columns:1fr}
@@ -639,61 +638,59 @@ h1 em{
     <div class="horaris-wrap">
       <div class="horaris-title">Cambridge · Horaris setmanals</div>
       <div class="horaris-sub">C/ Francesc Moragas 8, Sant Cugat del Vallès</div>
-      <div class="ht-wrap">
-      <table class="ht">
-        <thead>
-          <tr>
-            <th></th>
-            <th><span class="ht-day">Dilluns</span><span class="ht-day-abbr">Dl</span></th>
-            <th><span class="ht-day">Dimarts</span><span class="ht-day-abbr">Dt</span></th>
-            <th><span class="ht-day">Dimecres</span><span class="ht-day-abbr">Dc</span></th>
-            <th><span class="ht-day">Dijous</span><span class="ht-day-abbr">Dj</span></th>
-            <th><span class="ht-day">Divendres</span><span class="ht-day-abbr">Dv</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="ht-nivel">FCE 1</span></td>
-            <td><div class="ht-times"><span class="ht-pill">18:30–21:30</span><span class="ht-pill">16:00–18:00</span><span class="ht-pill">18:00–19:30</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">18:15–19:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">16:00–18:00</span><span class="ht-pill">18:00–19:30</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">18:15–19:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">16:30–19:30</span></div></td>
-          </tr>
-          <tr>
-            <td><span class="ht-nivel">FCE 2</span></td>
-            <td><div class="ht-times"><span class="ht-pill">18:00–19:30</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">18:15–19:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">18:30–21:30</span><span class="ht-pill">18:00–19:30</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">18:15–19:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">16:30–19:30</span></div></td>
-          </tr>
-          <tr>
-            <td><span class="ht-nivel">CAE 1</span></td>
-            <td><div class="ht-times"><span class="ht-pill">18:30–21:30</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">19:15–20:45</span></div></td>
-            <td></td>
-            <td><div class="ht-times"><span class="ht-pill">15:45–17:45</span><span class="ht-pill">19:15–20:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">16:30–19:30</span></div></td>
-          </tr>
-          <tr>
-            <td><span class="ht-nivel">CAE 2</span></td>
-            <td><div class="ht-times"><span class="ht-pill">16:00–18:00</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">19:15–20:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">18:30–21:30</span><span class="ht-pill">16:00–18:00</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">19:15–20:45</span></div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><span class="ht-nivel">CPE</span></td>
-            <td><div class="ht-times"><span class="ht-pill">19:30–21:00</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">19:15–20:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">19:30–21:00</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">19:15–20:45</span></div></td>
-            <td><div class="ht-times"><span class="ht-pill">16:30–19:30</span></div></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="horaris-rows">
+
+        <div class="h-level">
+          <div class="h-nivel">FCE 1</div>
+          <div class="h-slots">
+            <div class="h-slot"><span class="h-days">Dl</span><span class="h-sep">·</span><span class="h-time">18:30–21:30</span></div>
+            <div class="h-slot"><span class="h-days">Dl + Dc</span><span class="h-sep">·</span><span class="h-time">16:00–18:00</span></div>
+            <div class="h-slot"><span class="h-days">Dl + Dc</span><span class="h-sep">·</span><span class="h-time">18:00–19:30</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">15:45–17:45</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">18:15–19:45</span></div>
+            <div class="h-slot"><span class="h-days">Dv</span><span class="h-sep">·</span><span class="h-time">16:30–19:30</span></div>
+          </div>
+        </div>
+
+        <div class="h-level">
+          <div class="h-nivel">FCE 2</div>
+          <div class="h-slots">
+            <div class="h-slot"><span class="h-days">Dl + Dc</span><span class="h-sep">·</span><span class="h-time">18:00–19:30</span></div>
+            <div class="h-slot"><span class="h-days">Dc</span><span class="h-sep">·</span><span class="h-time">18:30–21:30</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">15:45–17:45</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">18:15–19:45</span></div>
+            <div class="h-slot"><span class="h-days">Dv</span><span class="h-sep">·</span><span class="h-time">16:30–19:30</span></div>
+          </div>
+        </div>
+
+        <div class="h-level">
+          <div class="h-nivel">CAE 1</div>
+          <div class="h-slots">
+            <div class="h-slot"><span class="h-days">Dl</span><span class="h-sep">·</span><span class="h-time">18:30–21:30</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">15:45–17:45</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">19:15–20:45</span></div>
+            <div class="h-slot"><span class="h-days">Dv</span><span class="h-sep">·</span><span class="h-time">16:30–19:30</span></div>
+          </div>
+        </div>
+
+        <div class="h-level">
+          <div class="h-nivel">CAE 2</div>
+          <div class="h-slots">
+            <div class="h-slot"><span class="h-days">Dl + Dc</span><span class="h-sep">·</span><span class="h-time">16:00–18:00</span></div>
+            <div class="h-slot"><span class="h-days">Dc</span><span class="h-sep">·</span><span class="h-time">18:30–21:30</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">19:15–20:45</span></div>
+          </div>
+        </div>
+
+        <div class="h-level">
+          <div class="h-nivel">CPE</div>
+          <div class="h-slots">
+            <div class="h-slot"><span class="h-days">Dl + Dc</span><span class="h-sep">·</span><span class="h-time">19:30–21:00</span></div>
+            <div class="h-slot"><span class="h-days">Dt + Dj</span><span class="h-sep">·</span><span class="h-time">19:15–20:45</span></div>
+            <div class="h-slot"><span class="h-days">Dv</span><span class="h-sep">·</span><span class="h-time">16:30–19:30</span></div>
+          </div>
+        </div>
+
       </div>
       <p class="horaris-note">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/><path d="M7 5v3M7 9.5v.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
