@@ -115,24 +115,24 @@ main, nav, footer{position:relative;z-index:1}
   /* Trama suau: només enfosqueix la franja del text perquè la foto es vegi clara */
   background:
     linear-gradient(to top, rgba(6,15,54,.72) 0%, rgba(6,15,54,.38) 30%, rgba(6,15,54,0) 60%),
-    linear-gradient(to right, rgba(6,15,54,.22) 0%, transparent 50%);
+    linear-gradient(to bottom, rgba(6,15,54,.48) 0%, rgba(6,15,54,0) 55%),
+    linear-gradient(to right, rgba(6,15,54,.32) 0%, transparent 55%);
   pointer-events:none;
 }
 .portada-title,.portada-sub{text-shadow:0 2px 18px rgba(6,15,54,.45)}
 .portada-badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,184,0,.1);
-  border:1px solid rgba(255,184,0,.35);
-  color:#FFD54F;
+  background:#FFB800;
+  border:none;
+  color:#15203D;
   font-family:var(--font-body);
   font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   border-radius:99px;padding:8px 14px;
   margin-bottom:18px;
-  backdrop-filter:blur(6px);
 }
 .portada-dot{
   width:6px;height:6px;border-radius:50%;
-  background:#FFD54F;
+  background:#15203D;
   animation:pd-pulse 2s ease-in-out infinite;
   flex-shrink:0;
 }
@@ -173,13 +173,13 @@ main, nav, footer{position:relative;z-index:1}
   display:inline-flex;align-items:center;gap:10px;
   color:#fff;
   font-family:var(--font-body);font-size:17px;font-weight:700;
-  border:1.5px solid rgba(255,255,255,.55);
+  border:1.5px solid rgba(255,255,255,.9);
   border-radius:100px;padding:15px 28px;
   text-decoration:none;
   white-space:nowrap;
   transition:border-color .2s,background .2s;
 }
-.portada-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.portada-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 .portada-cta:hover{background:#FFD000;transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,184,0,.45)}
 .portada-cta:hover span{transform:translateX(4px)}
 .portada-cta-sec{
@@ -670,7 +670,10 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 .hB{position:sticky;top:0;height:100vh;overflow:hidden;background:#060F36}
 .hB .portada-slideshow{position:absolute;inset:0}
 .hB-shade{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;
-  background:linear-gradient(to top, rgba(6,15,54,.72) 0%, rgba(6,15,54,.38) 30%, rgba(6,15,54,0) 60%)}
+  /* Accessibilitat: enfosqueix prou la zona del text perquè es llegeixi sobre qualsevol foto (mínim 4,5:1) */
+  background:
+    linear-gradient(to top, rgba(6,15,54,.8) 0%, rgba(6,15,54,.62) 30%, rgba(6,15,54,.3) 52%, rgba(6,15,54,0) 70%),
+    linear-gradient(to right, rgba(6,15,54,.4) 0%, rgba(6,15,54,.12) 45%, rgba(6,15,54,0) 62%)}
 .hB-mask{position:absolute;inset:0;z-index:3;background:#fff;mix-blend-mode:screen;
   display:flex;align-items:center;justify-content:center;pointer-events:none;will-change:transform}
 .hB-mask .w{font-family:var(--font-display);font-weight:800;color:#000;
@@ -685,10 +688,17 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
 .hB-content{position:absolute;left:0;right:0;bottom:0;z-index:5;opacity:0;transform:translateY(30px);
   max-width:1480px;margin:0 auto;padding:0 32px 72px;pointer-events:none}
 .hB-content.live{pointer-events:auto}
+.hB-pause{position:absolute;right:24px;top:20px;z-index:6;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(6,15,54,.6);color:#fff;border:1.5px solid rgba(255,255,255,.7);cursor:pointer;transition:background .2s}
+.hB-pause:hover{background:rgba(6,15,54,.85)}
+.hB-pause .i-play{display:none}
+.hB-pause[aria-pressed="true"] .i-play{display:block}
+.hB-pause[aria-pressed="true"] .i-pause{display:none}
+@media (max-width:700px){.hB-pause{right:16px;top:14px}}
 .hB .portada-title{max-width:820px}
 @media (max-width:960px){.hB-content{padding:0 22px 56px}}
 @media (max-width:700px){.hB-mask .w{font-size:min(25vw,29vh)}}
 @media (prefers-reduced-motion:reduce){
+  .portada-dot{animation:none}
   .hB-pin{height:auto}.hB{position:relative;height:90vh}
   .hB-mask,.hB-top,.hB-hint{display:none}.hB-shade{opacity:1}
   .hB-content{opacity:1;transform:none;pointer-events:auto}
@@ -1015,6 +1025,7 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     <div class="portada-slide" data-bg="img-home/adults-1.webp"></div>
   </div>
   <div class="hB-shade"></div>
+  <button class="hB-pause" type="button" aria-pressed="false" aria-label="Atura el passi de fotos"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect class="i-pause" x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect class="i-pause" x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/><path class="i-play" d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
   <div class="hB-mask" aria-hidden="true"><span class="w">SPR<span class="o">I</span>NT<br>IDIOMES</span></div>
   <div class="hB-top" aria-hidden="true">Escola d'idiomes · Sant Cugat · des de 1973</div>
   <div class="hB-content">
@@ -1041,13 +1052,19 @@ section{padding:96px 32px;max-width:1480px;margin:0 auto;position:relative}
     });
   }
   if (document.readyState === 'complete') loadRest(); else window.addEventListener('load', loadRest);
-  if(slides.length < 2) return;
-  var current = 0;
-  setInterval(function(){
+  var btn = document.querySelector('.hB-pause');
+  if(slides.length < 2){ if (btn) btn.hidden = true; return; }
+  var current = 0, timer = null;
+  function step(){
     slides[current].classList.remove('is-active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('is-active');
-  }, 5000);
+  }
+  function play(){ timer = setInterval(step, 5000); btn.setAttribute('aria-pressed','false'); btn.setAttribute('aria-label','Atura el passi de fotos'); }
+  function stop(){ clearInterval(timer); timer = null; btn.setAttribute('aria-pressed','true'); btn.setAttribute('aria-label','Reprèn el passi de fotos'); }
+  btn.addEventListener('click', function(){ timer ? stop() : play(); });
+  /* Accessibilitat: si l'usuari ha demanat menys moviment, les fotos no passen soles */
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) stop(); else play();
 })();
 </script>
 <script>
