@@ -199,48 +199,38 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* ── 5 NIVELLS ── */
 .k-section{background:#EBF4FF}
 
-/* Escala de nivells (5 caixetes en graó) */
-.levels-stair{
-  display:flex;align-items:flex-end;gap:16px;
-  margin-bottom:40px;min-height:260px;
-}
-.stair-card{
-  flex:1;
-  border-radius:18px;padding:20px 16px 18px;
-  background:#fff;border:2px solid var(--sc,var(--kids));
-  position:relative;overflow:hidden;
-  transition:transform .25s,box-shadow .25s;
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-}
-.stair-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:5px;
-  background:var(--sc,var(--kids));border-radius:18px 18px 0 0;
-}
-.stair-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
-.stair-label{
-  font-family:var(--font-display);font-size:28px;font-weight:800;
-  letter-spacing:-0.02em;color:var(--sc,var(--kids));
-  text-align:center;line-height:1;
-}
-/* Heights progressives: escala visual de K2 (baix) a K6 (dalt) */
-.stair-card:nth-child(1){height:100px;--sc:#15803D}
-.stair-card:nth-child(2){height:140px;--sc:#0369A1}
-.stair-card:nth-child(3){height:180px;--sc:#2563EB}
-.stair-card:nth-child(4){height:220px;--sc:#7C3AED}
-.stair-card:nth-child(5){height:260px;--sc:#CC3300}
-
-@media(max-width:680px){
-  .levels-stair{
-    display:grid;grid-template-columns:repeat(5,1fr);
-    align-items:flex-end;gap:8px;min-height:160px;
-  }
-  .stair-card:nth-child(1){height:60px}
-  .stair-card:nth-child(2){height:85px}
-  .stair-card:nth-child(3){height:110px}
-  .stair-card:nth-child(4){height:135px}
-  .stair-card:nth-child(5){height:160px}
-  .stair-label{font-size:20px}
-}
+/* Nivells de Kids: mapa de joc amb el conill de Sprint */
+.k-section .section-inner{display:block}
+.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/440}
+.kg-stage svg{width:100%;height:auto;display:block}
+.kg-stage text{font-family:var(--font-display);font-weight:800;text-anchor:middle;dominant-baseline:central;fill:#15203D}
+.kg-stage .lv{transform-box:fill-box;transform-origin:center;transition:filter .4s,opacity .4s}
+.kg-stage .lv.locked{filter:saturate(.15) brightness(1.08);opacity:.7}
+.kg-stage .lv.bump{animation:kg-bump .5s cubic-bezier(.3,1.8,.5,1)}
+.kg-stage .ring{transform-box:fill-box;transform-origin:center;opacity:0}
+.kg-stage .ring.go{animation:kg-ring .7s ease-out}
+.kg-stage .cloud{animation:kg-drift 16s ease-in-out infinite alternate}
+.kg-stage .cloud.c2{animation-duration:21s;animation-direction:alternate-reverse}
+.kg-stage .sunhalo{transform-box:fill-box;transform-origin:center;animation:kg-halo 3s ease-in-out infinite alternate}
+.kg-stage .bob{animation:kg-bob 1.2s ease-in-out infinite alternate}
+.kg-stage .goalglow{transform-box:fill-box;transform-origin:center;animation:kg-gg 1.6s ease-in-out infinite}
+.kg-stage .carrot{transform-box:fill-box;transform-origin:center;animation:kg-cbob 1.4s ease-in-out infinite alternate}
+.kg-stage .carrot.got{animation:kg-cgot .5s ease-in forwards}
+.kg-stage .crown{opacity:0;translate:0 -140px}
+.kg-stage .crown.on{opacity:1;translate:0 0;transition:translate .7s cubic-bezier(.3,1.5,.5,1),opacity .2s}
+.kg-stage .conf{transform-box:fill-box;transform-origin:center;opacity:0}
+.kg-stage .conf.go{animation:kg-conf 1.4s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes kg-bump{0%{scale:1}45%{scale:1.16}100%{scale:1}}
+@keyframes kg-ring{0%{opacity:.8;scale:1}100%{opacity:0;scale:1.7}}
+@keyframes kg-drift{to{transform:translateX(70px)}}
+@keyframes kg-halo{to{scale:1.15;opacity:.15}}
+@keyframes kg-bob{to{transform:translateY(-8px)}}
+@keyframes kg-gg{0%,100%{opacity:.9;scale:1}50%{opacity:.35;scale:1.08}}
+@keyframes kg-cbob{to{translate:0 -8px}}
+@keyframes kg-cgot{0%{scale:1;opacity:1}40%{scale:1.4}100%{scale:0;opacity:0}}
+@keyframes kg-conf{0%{opacity:1;translate:0 0;rotate:0deg}80%{opacity:1}100%{opacity:0;translate:var(--dx) var(--dy);rotate:var(--r)}}
+@media(max-width:639px){.kg-stage{aspect-ratio:360/820;border-radius:24px;margin-top:28px}}
+@media(prefers-reduced-motion:reduce){.kg-stage *{transition:none!important;animation:none!important}}
 
 /* ── HORARIS ── */
 .horaris-wrap{
@@ -301,14 +291,57 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* ── CTA BAND ── */
 .cta-band{
-  background:linear-gradient(120deg,#8B2500,#B53300,#8B2500);
+  background:linear-gradient(120deg,#FFB65E,#FF8E3C,#FFA94D,#FF8E3C);
   background-size:300% 300%;
   animation:cb-grad 14s ease infinite;
   padding:110px 40px;text-align:center;
   position:relative;overflow:hidden;
 }
 @keyframes cb-grad{50%{background-position:100% 50%}}
-.cta-band-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+/* CTA final de Kids: text + collage de fotos amb moviment */
+.cta-band{text-align:left}
+.cb-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
+.cb-text h2{font-size:clamp(34px,4.4vw,60px)}
+.cb-hl{display:inline-block;background:var(--yellow);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
+.cta-band .cb-text p{font-size:18px;color:#fff;max-width:480px}
+.cta-band .cta-band-btns{justify-content:flex-start}
+/* formes de fons que es mouen a poc a poc */
+.cb-shapes i{position:absolute;border-radius:50%;pointer-events:none}
+.cb-s1{width:520px;height:520px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(255,184,0,.28),transparent 65%);animation:cb-drift 16s ease-in-out infinite}
+.cb-s2{width:380px;height:380px;left:-120px;bottom:-160px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 65%);animation:cb-drift 20s ease-in-out infinite reverse}
+.cb-s3{width:14px;height:14px;left:46%;top:18%;background:var(--yellow);box-shadow:120px 260px 0 -3px rgba(255,255,255,.5),-260px 200px 0 -4px rgba(255,184,0,.7);animation:cb-bob 5s ease-in-out infinite}
+@keyframes cb-drift{50%{transform:translate(-40px,30px) scale(1.08)}}
+/* collage */
+.cb-photos{position:relative;height:440px}
+.cb-ph{position:absolute;margin:0;background:#fff;padding:10px 10px 34px;border-radius:6px;box-shadow:0 22px 50px -14px rgba(0,0,0,.45)}
+.cb-ph img{display:block;width:100%;height:100%;object-fit:cover;border-radius:3px}
+.cb-ph1{width:300px;height:250px;left:2%;top:40px;--r:-7deg;transform:rotate(var(--r));animation:cb-float 7s ease-in-out infinite}
+.cb-ph2{width:270px;height:225px;right:4%;top:0;--r:6deg;transform:rotate(var(--r));animation:cb-float 8s ease-in-out -2s infinite}
+.cb-ph3{width:290px;height:240px;left:30%;bottom:0;--r:-2deg;transform:rotate(var(--r));animation:cb-float 9s ease-in-out -4s infinite;z-index:2}
+@keyframes cb-float{50%{transform:rotate(calc(var(--r) * -0.4)) translateY(-12px)}}
+.cb-bub{position:absolute;z-index:3;font-family:var(--font-display);font-weight:800;font-size:20px;color:var(--ink);background:#fff;padding:10px 18px;border-radius:22px;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);animation:cb-bob 4s ease-in-out infinite}
+.cb-bub::after{content:"";position:absolute;bottom:-8px;left:22px;border:9px solid transparent;border-top-color:#fff;border-bottom:0}
+.cb-b1{left:-4%;top:6px;transform:rotate(-6deg)}
+.cb-b2{right:0;bottom:70px;background:var(--yellow);transform:rotate(5deg);animation-delay:-1.3s}
+.cb-b2::after{border-top-color:var(--yellow);left:auto;right:24px}
+.cb-b3{left:44%;top:-10px;transform:rotate(3deg);animation-delay:-2.6s}
+@keyframes cb-bob{50%{translate:0 -8px}}
+.cb-plane{position:absolute;left:-12%;bottom:24px;width:220px;opacity:.9;z-index:1}
+.cb-trail{animation:cb-dash 3s linear infinite}
+@keyframes cb-dash{to{stroke-dashoffset:-48}}
+/* entrada de les fotos */
+.cb-photos .cb-ph,.cb-photos .cb-bub{opacity:0;scale:.85;transition:opacity .7s ease,scale .8s cubic-bezier(.3,1.5,.5,1)}
+.cta-band.is-in .cb-photos .cb-ph,.cta-band.is-in .cb-photos .cb-bub{opacity:1;scale:1}
+.cta-band.is-in .cb-ph2{transition-delay:.15s}.cta-band.is-in .cb-ph3{transition-delay:.3s}
+.cta-band.is-in .cb-b1{transition-delay:.5s}.cta-band.is-in .cb-b3{transition-delay:.65s}.cta-band.is-in .cb-b2{transition-delay:.8s}
+@media(max-width:960px){
+  .cb-grid{grid-template-columns:1fr;gap:36px}
+  .cb-photos{order:-1;height:300px;max-width:440px;width:100%;margin:0 auto}
+  .cb-ph1{width:200px;height:170px}.cb-ph2{width:180px;height:155px}.cb-ph3{width:200px;height:165px;left:22%}
+  .cb-bub{font-size:16px;padding:8px 14px}
+  .cb-plane{display:none}
+}
+@media(prefers-reduced-motion:reduce){.cb-shapes i,.cb-ph,.cb-bub,.cb-trail{animation:none!important}.cb-photos .cb-ph,.cb-photos .cb-bub{opacity:1;scale:1;transition:none}}
 .cta-band h2{
   color:#fff;font-family:var(--font-display);font-weight:800;
   font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;
@@ -318,6 +351,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .cta-band .btn-white{background:#fff;color:var(--kids-dark);box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
+/* fons taronja clar i alegre: text fosc perquè es llegeixi bé (contrast AA) */
+.cta-band h2,.cta-band .cb-text p{color:#15203D}
+.cta-band .btn-white{color:#B53300;box-shadow:0 6px 24px rgba(160,60,0,.25)}
 .btn-wa{
   display:inline-flex;align-items:center;gap:10px;
   background:#128049;color:#fff;
@@ -540,30 +576,16 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <!-- ── FINS A 5 NIVELLS ── -->
 <section class="section k-section" id="kids-712">
   <div class="section-inner">
+    <div class="k-intro">
     <div class="section-label" style="color:var(--kids-dark)">
       <span class="section-label-dot" style="background:var(--kids)"></span>
       Fins a 5 nivells
     </div>
     <h2>Cada pas compta en <em style="color:var(--kids-dark);font-style:normal">l'aprenentatge</em></h2>
     <p class="section-lead">Cinc nivells per avançar en l'aprenentatge de l'anglès, respectant el punt de partida de cada alumne.</p>
-
-    <div class="levels-stair" role="list">
-      <div class="stair-card" role="listitem">
-        <div class="stair-label">K2</div>
-      </div>
-      <div class="stair-card" role="listitem">
-        <div class="stair-label">K3</div>
-      </div>
-      <div class="stair-card" role="listitem">
-        <div class="stair-label">K4</div>
-      </div>
-      <div class="stair-card" role="listitem">
-        <div class="stair-label">K5</div>
-      </div>
-      <div class="stair-card" role="listitem">
-        <div class="stair-label">K6</div>
-      </div>
     </div>
+
+    <div class="kg-stage" id="kg-stage"></div>
 
   </div>
 </section>
@@ -610,12 +632,24 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
-  <div class="cta-band-inner">
-    <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span style="display:inline-block;background:var(--yellow);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)">sense compromís</span></h2>
-    <p class="cb-in" style="--i:1">Voleu saber més sobre Kids? Contacteu amb nosaltres i us informarem.</p>
-    <div class="cta-band-btns cb-in" style="--i:2">
-      <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-      <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
+  <div class="cb-shapes" aria-hidden="true"><i class="cb-s1"></i><i class="cb-s2"></i><i class="cb-s3"></i></div>
+  <div class="cb-grid">
+    <div class="cb-text">
+      <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cb-hl">sense compromís</span></h2>
+      <p class="cb-in" style="--i:1">Voleu saber més sobre Kids? Contacteu amb nosaltres i us informarem.</p>
+      <div class="cta-band-btns cb-in" style="--i:2">
+        <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
+        <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
+      </div>
+    </div>
+    <div class="cb-photos" aria-hidden="true">
+      <figure class="cb-ph cb-ph1"><img src="img-kids/kids-foto-2-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
+      <figure class="cb-ph cb-ph2"><img src="img-kids/kids-foto-4-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
+      <figure class="cb-ph cb-ph3"><img src="img-kids/kids-foto-5-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
+      <span class="cb-bub cb-b1">Hello!</span>
+      <span class="cb-bub cb-b2">Let's go!</span>
+      <span class="cb-bub cb-b3">Hi! 👋</span>
+      <svg class="cb-plane" viewBox="0 0 220 120" fill="none"><path class="cb-trail" d="M6 110 C 60 100, 70 40, 120 50 S 190 70, 196 20" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 10"/><path d="M188 12 l26 -6 -12 24 -5 -10z" fill="#fff"/></svg>
     </div>
   </div>
 </section>
@@ -667,6 +701,105 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
   else { visible = true; restart(); }
   lay();
+})();
+</script>
+<script>
+/* Nivells de Kids: mapa de joc amb el conill de Sprint */
+
+(function(){
+  var NS='http://www.w3.org/2000/svg',LV=['K2','K3','K4','K5','K6'];
+  var COL=['#FFC23D','#FFA62B','#FF8A2A','#FF6B35','#E8521F'];
+  var LIGHT=['#FFE08A','#FFC873','#FFB06A','#FF9468','#FF7A4A'];
+  var DARK=['#D99A12','#D98110','#D9650F','#C94A1C','#B23A10'];
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function mob(){return innerWidth<640}
+  function curve(P){var d='M'+P[0][0]+' '+P[0][1];for(var i=0;i<P.length-1;i++){var p0=P[i-1]||P[i],p1=P[i],p2=P[i+1],p3=P[i+2]||p2;
+    d+=' C'+(p1[0]+(p2[0]-p0[0])/6)+' '+(p1[1]+(p2[1]-p0[1])/6)+','+(p2[0]-(p3[0]-p1[0])/6)+' '+(p2[1]-(p3[1]-p1[1])/6)+','+p2[0]+' '+p2[1]}return d}
+  function star(p,x,y,r,attrs){var d='';for(var i=0;i<10;i++){var a=Math.PI/5*i-Math.PI/2,rr=i%2?r*.47:r;d+=(i?'L':'M')+(x+rr*Math.cos(a)).toFixed(1)+' '+(y+rr*Math.sin(a)).toFixed(1)}attrs.d=d+'Z';return el('path',attrs,p)}
+  function cloud(p,x,y,s,cls){var g=el('g',{class:cls},p);el('path',{d:'M'+x+' '+y+' a'+26*s+' '+26*s+' 0 0 1 '+48*s+' '+(-10*s)+' a'+20*s+' '+20*s+' 0 0 1 '+34*s+' '+14*s+' a'+16*s+' '+16*s+' 0 0 1 '+(-2*s)+' '+32*s+' h'+(-72*s)+' a'+18*s+' '+18*s+' 0 0 1 '+(-8*s)+' '+(-36*s)+'z',fill:'#fff'},g)}
+  function hopTo(g,a,b,h,ms,cb){var t0=null;function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/ms),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      g.setAttribute('transform','translate('+(a[0]+(b[0]-a[0])*e)+','+(a[1]+(b[1]-a[1])*e-Math.sin(Math.PI*k)*h)+')');if(k<1)requestAnimationFrame(f);else cb()}requestAnimationFrame(f)}
+  var runs={};
+
+  function build(id){
+    var my=(runs[id]=(runs[id]||0)+1);function later(fn,ms){setTimeout(function(){if(my===runs[id])fn()},ms)}
+    var box=document.getElementById(id);box.innerHTML='';var m=mob();
+    var W=m?360:1000,H=m?820:440;
+    var P=m?[[105,130],[255,280],[105,430],[255,580],[175,725]]:[[115,320],[305,170],[505,300],[705,155],[890,265]];
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Cinc nivells de Kids: K2, K3, K4, K5 i K6. El conill de Sprint avança de nivell en nivell fins a K6.'},box);
+    var defs=el('defs',{},svg),pre=id+'-';
+    COL.forEach(function(c,i){var g=el('radialGradient',{id:pre+'b'+i,cx:.4,cy:.3,r:.75},defs);el('stop',{offset:0,'stop-color':LIGHT[i]},g);el('stop',{offset:1,'stop-color':c},g)});
+    function grad(n,c1,c2){var g=el('linearGradient',{id:pre+n,x1:0,y1:0,x2:0,y2:1},defs);el('stop',{offset:0,'stop-color':c1},g);el('stop',{offset:1,'stop-color':c2},g);return 'url(#'+pre+n+')'}
+    var d=curve(P),dark=false;
+    if(true){
+    el('rect',{width:W,height:H,fill:grad('sky','#BFE3FF','#EAF6FF')},svg);
+    var sx=m?300:625,sy=m?58:62;
+    el('circle',{cx:sx,cy:sy,r:46,fill:'#FFE07A',opacity:.35,class:'sunhalo'},svg);el('circle',{cx:sx,cy:sy,r:30,fill:'#FFD04A'},svg);
+    if(m){cloud(svg,22,42,.5,'cloud');cloud(svg,170,62,.45,'cloud c2')}else{cloud(svg,80,80,1,'cloud');cloud(svg,430,40,.8,'cloud c2');}
+    var hd=m?['M0 330 Q 140 250 360 340','M0 520 Q 220 430 360 520','M0 700 Q 160 640 360 690']:['M0 250 Q 230 140 500 240 T 1000 210','M0 330 Q 280 250 580 330 T 1000 300','M0 400 Q 300 350 640 400 T 1000 385'];
+    var hc=['#D3F0C2','#BDE7A6','#A6DC8C'],tc=[['#6DB85A','#8FD17A'],['#55AC43','#7CC864'],['#43A033','#6CC052']];
+    var road=[],rp=el('path',{d:d,fill:'none'},svg),rl=rp.getTotalLength();for(var q=0;q<=rl;q+=8)road.push(rp.getPointAtLength(q));rp.remove();
+    function clear(x,y,pad){for(var k=0;k<road.length;k++)if(Math.hypot(road[k].x-x,road[k].y-y)<pad)return false;for(k=0;k<P.length;k++)if(Math.hypot(P[k][0]-x,P[k][1]+12-y)<(m?78:92))return false;return true}
+    var tx=m?[[330],[30],[40,325]]:[[975],[250],[40,400,760]];
+    var fx=m?[[60,150,300],[90,200,330]]:[[90,300,480,680,880],[120,260,450,600,840,960]];
+    var tcount=0;
+    hd.forEach(function(hpath,h){var hp=el('path',{d:hpath+' V '+H+' H 0Z',fill:hc[h]},svg);
+      var pts=[],tl=hp.getTotalLength();for(var q=0;q<tl;q+=3){var pt=hp.getPointAtLength(q);if(pt.y<H-2&&pt.x>0&&pt.x<W)pts.push(pt)}
+      function gy(x){var b=null;pts.forEach(function(pt){if(Math.abs(pt.x-x)<3&&(!b||pt.y<b))b=pt.y});return b}
+      tx[h].forEach(function(x0,n){var s=[.7,.9,1.1][h]*(n%2?1:.9),x,y,ok=false;[0,25,-25,50,-50,75,-75].some(function(dx){x=Math.max(20,Math.min(W-20,x0+dx));y=gy(x);if(y==null)return false;y+=6+h*4;return ok=clear(x,y-20*s,(m?20:24)+22*s)});if(!ok)return;
+        el('ellipse',{cx:x,cy:y,rx:17*s,ry:4*s,fill:'rgba(0,0,0,.12)'},svg);el('rect',{x:x-4*s,y:y-22*s,width:8*s,height:22*s,rx:3,fill:'#8B5A2B'},svg);
+        el('circle',{cx:x,cy:y-30*s,r:21*s,fill:tc[h][0]},svg);el('circle',{cx:x-7*s,cy:y-37*s,r:8*s,fill:tc[h][1]},svg)});
+    });
+    el('path',{d:d,fill:'none',stroke:'#E6D3A8','stroke-width':m?32:38,'stroke-linecap':'round'},svg);
+    el('path',{d:d,fill:'none',stroke:'#FFF8E6','stroke-width':m?24:29,'stroke-linecap':'round'},svg);
+    var cp=el('path',{d:d,fill:'none'},svg),cl=cp.getTotalLength();for(var q=60;q<cl-40;q+=70){var p1=cp.getPointAtLength(q),p2=cp.getPointAtLength(q+1),an=Math.atan2(p2.y-p1.y,p2.x-p1.x)*180/Math.PI;
+      el('path',{d:'M-4,-6 L3,0 L-4,6',fill:'none',stroke:'#FFB347','stroke-width':4,'stroke-linecap':'round','stroke-linejoin':'round',transform:'translate('+p1.x.toFixed(1)+','+p1.y.toFixed(1)+') rotate('+an.toFixed(1)+')'},svg)}cp.remove();
+    }
+    var r=m?40:48,stars=[],lv=[],rings=[];
+    if(true){var F=P[4],R6=Math.round(r*1.15);
+    }
+    var goal=null,carrot=null,spark=[];
+    P.forEach(function(p,i){var r0=r;if(i===4&&true){r=Math.round(r0*1.15);
+        goal=el('circle',{cx:p[0],cy:p[1],r:r+12,fill:'none',stroke:'#FFC23D','stroke-width':6,class:'goalglow'},svg);}
+      var ring=el('circle',{cx:p[0],cy:p[1],r:r+4,fill:'none',stroke:'#fff','stroke-width':5,class:'ring'},svg);rings.push(ring);
+      var g=el('g',{class:'lv'+(still||i===0?'':' locked')},svg);lv.push(g);
+      el('circle',{cx:p[0],cy:p[1]+7,r:r,fill:DARK[i]},g);
+      el('circle',{cx:p[0],cy:p[1],r:r,fill:'url(#'+pre+'b'+i+')',stroke:'#fff','stroke-width':5},g);
+      el('ellipse',{cx:p[0]-r*.22,cy:p[1]-r*.5,rx:r*.42,ry:r*.17,fill:'rgba(255,255,255,.5)'},g);
+      var t=el('text',{x:p[0],y:p[1]+3,'font-size':(m?30:38)*(r/r0)},g);t.textContent=LV[i];
+      var row=[],sr=m?12:14,sp=m?25:30;[].forEach(function(k){row.push(star(svg,p[0]+k*sp,p[1]+r+(k?16:23),sr,{fill:dark?'#46558F':'#D5DDEA',stroke:dark?'#8E9BD0':'#fff','stroke-width':3,'stroke-linejoin':'round',class:'star'+(still?' on':'')}))});stars.push(row);r=r0});
+    if(true){var cy=P[4][1]-Math.round(r*1.15)+2-(m?34:42);carrot=el('g',{class:'carrot'+(still?' got':'')},svg);
+      var cg=el('g',{transform:'translate('+P[4][0]+','+cy+') rotate(18) scale('+(m?.85:1)+')'},carrot);
+      el('ellipse',{cx:-7,cy:-26,rx:5,ry:12,fill:'#4FA83D',transform:'rotate(-25 -7 -26)'},cg);el('ellipse',{cx:7,cy:-26,rx:5,ry:12,fill:'#4FA83D',transform:'rotate(25 7 -26)'},cg);el('ellipse',{cx:0,cy:-30,rx:5,ry:13,fill:'#6CC052'},cg);
+      el('path',{d:'M-14,-18 Q0,-26 14,-18 L3,28 Q0,33 -3,28 Z',fill:'#FF8A2A',stroke:'#D9650F','stroke-width':3,'stroke-linejoin':'round'},cg);
+      el('path',{d:'M-8,-6 h7 M3,6 h6 M-5,16 h5',stroke:'#D9650F','stroke-width':2.5,'stroke-linecap':'round'},cg);
+    }
+    var fin=P[4],confs=[];
+    for(var c=0;c<22;c++){var a=Math.PI*2*c/22,dist=(m?70:100)+(c%4)*18;var q=el('rect',{x:fin[0]-4,y:fin[1]-7,width:8,height:14,rx:2,fill:['#FFB800','#2547D9','#FF6B35','#4FA83D','#FF8FB8'][c%5],class:'conf'},svg);
+      q.style.setProperty('--dx',(Math.cos(a)*dist).toFixed(0)+'px');q.style.setProperty('--dy',(Math.sin(a)*dist-30).toFixed(0)+'px');q.style.setProperty('--r',(c%2?1:-1)*(200+c*20)+'deg');confs.push(q)}
+    var pin=el('g',{},svg),inner=el('g',{},pin),ps=m?.9:1.05;
+    if(true){var S=m?.2:.245,fl=el('g',{},inner);pin.flip=fl;
+      el('ellipse',{cx:0,cy:0,rx:m?24:30,ry:5,fill:'rgba(0,0,0,.15)'},pin);
+      var BH=m?100:122,BW=BH*517/914;el('image',{href:'img-kids/conill-joc.webp?v=1',x:-BW*.5,y:-BH+4,width:BW,height:BH},fl);
+      var crown=el('g',{class:'crown'+(still?' on':'')},fl);pin.crown=crown;var cg2=el('g',{transform:'translate('+(-0.16*BW)+','+(-0.79*BH+2)+') rotate(-8) scale('+(m?.75:.9)+')'},crown);
+      el('path',{d:'M-16,0 L-17,-15 L-8,-7 L0,-20 L8,-7 L17,-15 L16,0 Z',fill:'#FFC23D',stroke:'#C98E10','stroke-width':2,'stroke-linejoin':'round'},cg2);el('rect',{x:-16,y:-3,width:32,height:5,rx:2,fill:'#F0A800'},cg2);
+      [[-17,-15,'#2547D9'],[0,-20,'#E8521F'],[17,-15,'#2547D9']].forEach(function(g){el('circle',{cx:g[0],cy:g[1],r:2.6,fill:g[2]},cg2)});
+    }
+    var top=P.map(function(p,i){return[p[0],p[1]-(i===4&&true?Math.round(r*1.15):r)+(true?2:-6)]});
+    function land(i){lv[i].classList.remove('locked');lv[i].classList.remove('bump');void lv[i].getBBox();lv[i].classList.add('bump');
+      rings[i].classList.remove('go');void rings[i].getBBox();rings[i].classList.add('go');
+      stars[i].forEach(function(s,k){later(function(){s.classList.add('on')},150+k*130)})}
+    if(still){pin.setAttribute('transform','translate('+top[4][0]+','+top[4][1]+')');return}
+    pin.setAttribute('transform','translate('+top[0][0]+','+(top[0][1]-60)+')');pin.style.opacity=0;
+    later(function(){pin.style.opacity=1;hopTo(pin,[top[0][0],top[0][1]-60],top[0],0,350,function(){land(0);var i=0;
+      (function step(){if(i>=4){if(pin.crown)later(function(){pin.crown.classList.add('on')},350);if(carrot){carrot.classList.add('got');spark.forEach(function(x){x.style.display='none'})}later(function(){confs.forEach(function(q){q.classList.add('go')});inner.classList.add('bob')},250);return}
+        var a=top[i],b=top[i+1];i++;later(function(){if(pin.flip)pin.flip.setAttribute('transform',b[0]<a[0]?'scale(-1,1)':'');hopTo(pin,a,b,m?55:75,650,function(){land(i);step()})},450)})()})},400);
+  }
+
+  var box=document.getElementById('kg-stage');if(!box)return;var on=false;
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!on){on=true;io.disconnect();build('kg-stage')}},{threshold:.3});io.observe(box)}else{on=true;build('kg-stage')}
+  var w=mob();addEventListener('resize',function(){if(mob()!==w){w=mob();if(on)build('kg-stage')}});
 })();
 </script>
 </body>
