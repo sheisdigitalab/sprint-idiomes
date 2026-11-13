@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Kids · Anglès per a Primària · Sprint Idiomes Sant Cugat</title>
-<meta name="description" content="Anglès per a nens de 2n a 6è de Primària a Sant Cugat. Kids 2–6, cinc nivells progressius fins a l'A2–B1. Grups de màxim 12, Young Learners Cambridge. Sprint Idiomes des de 1973." />
+<meta name="description" content="Anglès per a nens de 2n a 6è de Primària a Sant Cugat. Kids K2–K6, cinc nivells progressius fins a l'A2–B1. Grups de màxim 12, Young Learners Cambridge. Sprint Idiomes des de 1973." />
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
@@ -39,19 +39,26 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kids-hero{
   background:linear-gradient(180deg, #FFEEE5 0%, var(--cream) 100%);
   border-bottom:1px solid var(--line);
-  padding:72px 32px 64px;
+  padding:88px 32px 80px;
   position:relative;overflow:hidden;
 }
-.kids-hero-inner{max-width:1480px;margin:0 auto;position:relative;z-index:1}
-.kids-hero-grid{max-width:640px}
+.kids-hero-photo{
+  position:absolute;top:0;right:0;bottom:0;width:52%;
+  background:url('img-kids/kids-hero.webp') center 30%/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 32%);
+  z-index:0;
+}
+.kids-hero-inner{max-width:1480px;margin:0 auto;position:relative;z-index:2}
+.kids-hero-grid{max-width:min(600px,46%)}
 .hero-stats{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
 .hero-stat{background:#fff;border:1px solid rgba(204,51,0,.1);box-shadow:0 4px 16px rgba(204,51,0,.06);border-radius:16px;padding:14px 20px}
-.hero-stat-num{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-0.02em;color:var(--kids);line-height:1}
+.hero-stat-num{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-0.02em;color:var(--kids-dark);line-height:1}
 .hero-stat-label{font-size:12px;color:var(--ink-soft);margin-top:3px;font-weight:600}
 .kids-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--kids);margin-bottom:16px;
+  color:var(--kids-dark);margin-bottom:16px;
 }
 .kids-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--kids)}
 .kids-hero h1{
@@ -60,7 +67,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   font-weight:800;letter-spacing:-0.02em;line-height:1.04;
   color:var(--ink);margin-bottom:22px;
 }
-.kids-hero h1 em{font-style:normal;color:var(--kids)}
+.kids-hero h1 em{font-style:normal;color:var(--kids-dark)}
 .kids-hero-sub{
   font-size:17px;color:var(--ink-soft);line-height:1.65;
   max-width:520px;margin-bottom:32px;
@@ -96,79 +103,143 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   max-width:620px;margin-bottom:48px;
 }
 
-/* ── KIDS PLANET SECTION ── */
-.kp-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+/* ── METODOLOGIA (secció nova) ── */
+.metodo-wrap-kids{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start;
 }
-.kp-img-wrap{position:relative}
-.kp-img-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.kp-img-badge{
-  position:absolute;bottom:-16px;right:-16px;
-  background:#fff;border:1px solid var(--line);border-radius:16px;
-  padding:16px 20px;
-  box-shadow:0 8px 32px rgba(21,32,61,.08);
+.metodo-side-kids{position:sticky;top:170px}
+.metodo-side-kids h2{margin-bottom:20px}
+.metodo-side-kids .section-lead{margin-bottom:28px;font-size:18px}
+.metodo-link-kids{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:800;font-size:15px;color:var(--kids-dark);
+  border-bottom:2px solid rgba(204,51,0,.3);padding-bottom:3px;
+  transition:gap .2s,border-color .2s;
 }
-.kp-img-badge-num{
-  font-family:var(--font-display);font-size:28px;font-weight:800;
-  letter-spacing:-0.03em;color:var(--kp);line-height:1;
+.metodo-link-kids:hover{gap:14px;border-color:var(--kids)}
+.metodo-cards-kids{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding-bottom:48px}
+.metodo-card-kids{
+  position:relative;padding:30px 30px 34px;border-radius:30px;
+  background:var(--mck-bg);overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
 }
-.kp-img-badge-label{font-size:12px;color:var(--ink-soft);margin-top:3px;font-weight:600}
-.kp-features{display:flex;flex-direction:column;gap:20px;margin-bottom:32px}
-.kp-feature{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:18px;border-radius:14px;
-  background:var(--cream);
-  border-left:3px solid var(--kp);
+.metodo-card-kids:nth-child(even){transform:translateY(32px)}
+.metodo-card-kids:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 22px 44px -18px var(--mck-shadow)}
+.metodo-card-kids:nth-child(even):hover{transform:translateY(26px) rotate(1deg)}
+.mck-num{
+  position:absolute;top:14px;right:22px;
+  font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;
+  letter-spacing:-0.04em;color:var(--mck-color);opacity:.16;
 }
-.kp-feature-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(236,30,140,.12);
+.mck-icon{
+  margin-bottom:22px;width:62px;height:62px;border-radius:50%;
+  background:#fff;color:var(--mck-color);
   display:flex;align-items:center;justify-content:center;
-  font-size:18px;flex-shrink:0;
+  box-shadow:0 8px 20px -8px var(--mck-shadow);
+  transform:rotate(-8deg);transition:transform .35s cubic-bezier(.2,.8,.2,1);
 }
-.kp-feature-title{font-weight:800;font-size:15px;margin-bottom:3px}
-.kp-feature-text{font-size:14px;color:var(--ink-soft);line-height:1.5}
+.metodo-card-kids:hover .mck-icon{transform:rotate(0) scale(1.08)}
+.mck-title{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-0.01em;margin-bottom:10px;color:var(--ink)}
+.mck-text{font-size:17px;color:var(--ink-soft);line-height:1.6}
+.mck-1{--mck-color:#CC3300;--mck-bg:#FFF0EA;--mck-shadow:rgba(204,51,0,.45)}
+.mck-2{--mck-color:#9B6A00;--mck-bg:#FFF0C7;--mck-shadow:rgba(230,160,0,.45)}
+.mck-3{--mck-color:#1474AA;--mck-bg:#DCF1FD;--mck-shadow:rgba(30,150,220,.4)}
+.mck-4{--mck-color:#257A42;--mck-bg:#DDF4E4;--mck-shadow:rgba(46,145,80,.4)}
+@media(max-width:1100px){.metodo-wrap-kids{grid-template-columns:1fr;gap:40px}.metodo-side-kids{position:static}}
+@media(max-width:960px){
+  .metodo-cards-kids{grid-template-columns:1fr;gap:16px;padding-bottom:0}
+  .metodo-card-kids:nth-child(even),.metodo-card-kids:nth-child(even):hover{transform:none}
+  .metodo-card-kids{padding:26px 24px 28px}
+  .mck-num{font-size:52px}
+}
+@media(prefers-reduced-motion:reduce){.metodo-card-kids,.mck-icon{transition:none}}
 
-/* ── KIDS 7-12 SECTION ── */
+/* ── FOTOS KIDS (secció mitja pàgina) ── */
+.fotos-section{background:linear-gradient(135deg,#FFF5EE,#FFFAE0)}
+.fotos-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.fotos-side .section-lead{margin-bottom:28px}
+.fotos-count{
+  font-family:var(--font-display);font-weight:800;
+  font-size:64px;line-height:1;letter-spacing:-0.04em;
+  color:var(--kids-dark);margin-bottom:22px;font-variant-numeric:tabular-nums;
+}
+.fotos-count span{font-size:22px;color:var(--ink-soft);letter-spacing:0}
+.fotos-btns{display:flex;gap:12px}
+.fotos-arrow{
+  width:50px;height:50px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#fff;color:var(--kids-dark);
+  border:1.5px solid rgba(204,51,0,.25);
+  box-shadow:0 6px 18px rgba(255,107,53,.15);
+  transition:transform .2s,background .2s,color .2s;
+}
+.fotos-arrow:hover{background:var(--kids);color:#fff;transform:scale(1.08)}
+.fotos-deck{
+  position:relative;aspect-ratio:3/2;width:100%;max-width:620px;
+  justify-self:center;cursor:pointer;touch-action:pan-y;outline:none;margin-bottom:30px;
+}
+.fotos-card{
+  position:absolute;inset:0;margin:0;border-radius:22px;overflow:hidden;
+  background:#fff;padding:10px;
+  box-shadow:0 18px 40px -14px rgba(21,32,61,.35);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s;
+}
+.fotos-card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;user-select:none;-webkit-user-drag:none}
+.fotos-card.out{transform:translate(120%,-8%) rotate(16deg)!important;opacity:0}
+@media(max-width:960px){
+  .fotos-wrap{grid-template-columns:1fr auto;gap:18px 12px}
+  .fotos-side{display:contents}
+  .fotos-side > *:not(.fotos-count):not(.fotos-btns){grid-column:1/-1}
+  .fotos-deck{order:5;grid-column:1/-1;width:calc(100% - 44px);justify-self:start;max-width:none;margin:10px 0 18px}
+  .fotos-count{order:6;font-size:40px;margin:0;align-self:center}
+  .fotos-btns{order:7;align-self:center}
+}
+@media(prefers-reduced-motion:reduce){.fotos-card{transition:none}}
+
+/* ── 5 NIVELLS ── */
 .k-section{background:#EBF4FF}
-.levels-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  margin-bottom:40px;
+
+/* Escala de nivells (5 caixetes en graó) */
+.levels-stair{
+  display:flex;align-items:flex-end;gap:16px;
+  margin-bottom:40px;min-height:260px;
 }
-.level-card{
-  background:var(--lc-light,#F8FAFF);border:none;
-  border-radius:22px;
-  padding:26px;position:relative;overflow:hidden;
+.stair-card{
+  flex:1;
+  border-radius:18px;padding:20px 16px 18px;
+  background:#fff;border:2px solid var(--sc,var(--kids));
+  position:relative;overflow:hidden;
   transition:transform .25s,box-shadow .25s;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
 }
-.level-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:6px;
-  background:var(--lc,var(--kids));border-radius:22px 22px 0 0;
+.stair-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:5px;
+  background:var(--sc,var(--kids));border-radius:18px 18px 0 0;
 }
-.level-card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 20px 48px rgba(0,0,0,.12);
+.stair-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.stair-label{
+  font-family:var(--font-display);font-size:28px;font-weight:800;
+  letter-spacing:-0.02em;color:var(--sc,var(--kids));
+  text-align:center;line-height:1;
 }
-.lc-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
-.lc-cefr{
-  font-family:var(--font-display);font-size:13px;font-weight:800;
-  background:var(--lc,var(--kids));color:#fff;
-  border-radius:20px;padding:6px 14px;line-height:1;
-}
-.lc-age{
-  font-size:12px;font-weight:700;color:var(--ink-soft);
-  background:rgba(0,0,0,.06);border-radius:20px;padding:6px 12px;line-height:1;
-}
-.lc-name{
-  font-family:var(--font-display);font-size:19px;font-weight:800;
-  letter-spacing:-0.02em;color:var(--ink);margin-bottom:8px;
-}
-.lc-desc{font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px}
-.lc-pills{display:flex;flex-wrap:wrap;gap:5px}
-.lc-pills span{
-  font-size:var(--fs-label);font-weight:700;padding:4px 10px;border-radius:20px;
-  background:rgba(0,0,0,.06);color:var(--ink-soft);
-  border:none;
+/* Heights progressives: escala visual de K2 (baix) a K6 (dalt) */
+.stair-card:nth-child(1){height:100px;--sc:#15803D}
+.stair-card:nth-child(2){height:140px;--sc:#0369A1}
+.stair-card:nth-child(3){height:180px;--sc:#2563EB}
+.stair-card:nth-child(4){height:220px;--sc:#7C3AED}
+.stair-card:nth-child(5){height:260px;--sc:#CC3300}
+
+@media(max-width:680px){
+  .levels-stair{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    align-items:flex-end;gap:8px;min-height:160px;
+  }
+  .stair-card:nth-child(1){height:60px}
+  .stair-card:nth-child(2){height:85px}
+  .stair-card:nth-child(3){height:110px}
+  .stair-card:nth-child(4){height:135px}
+  .stair-card:nth-child(5){height:160px}
+  .stair-label{font-size:20px}
 }
 
 /* ── HORARIS ── */
@@ -207,10 +278,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   font-size:13px;font-weight:800;
   white-space:nowrap;
 }
-.horaris-note{
-  margin-top:20px;font-size:13px;color:rgba(255,255,255,.78);
-  display:flex;align-items:center;gap:8px;
-}
 .horaris-cta{
   margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;
 }
@@ -232,75 +299,76 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .btn-ghost-white:hover{border-color:rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.18)}
 
-/* ── METODOLOGIA ── */
-.metodo-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  margin-top:8px;
-}
-.metodo-card{
-  padding:32px;border-radius:24px;
-  border:none;background:#fff;
-  transition:transform .25s,box-shadow .25s;
-  position:relative;overflow:hidden;
-}
-.metodo-card:hover{transform:translateY(-5px);box-shadow:0 18px 48px rgba(0,0,0,.13)}
-
-.metodo-card:nth-child(1){background:var(--kids-dark);color:#fff}
-.metodo-card:nth-child(2){background:#0062EE;color:#fff}
-.metodo-card:nth-child(3){background:#15803D;color:#fff}
-.metodo-card:nth-child(4){background:#7C3AED;color:#fff}
-
-.metodo-num{
-  font-family:var(--font-display);
-  font-size:64px;font-weight:900;letter-spacing:-0.06em;
-  color:rgba(255,255,255,.2);line-height:1;
-  margin-bottom:18px;
-  display:block;
-}
-.metodo-title{font-weight:800;font-size:18px;margin-bottom:8px;color:inherit}
-.metodo-text{font-size:14px;color:inherit;opacity:.85;line-height:1.6}
-
 /* ── CTA BAND ── */
 .cta-band{
-  background:linear-gradient(135deg,#7A2200 0%,#A52B00 50%,#7A2200 100%);
-  padding:88px 40px;text-align:center;
+  background:linear-gradient(120deg,#8B2500,#B53300,#8B2500);
+  background-size:300% 300%;
+  animation:cb-grad 14s ease infinite;
+  padding:110px 40px;text-align:center;
   position:relative;overflow:hidden;
 }
-.cta-band-inner{max-width:600px;margin:0 auto}
-.cta-band p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:32px}
+@keyframes cb-grad{50%{background-position:100% 50%}}
+.cta-band-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+.cta-band h2{
+  color:#fff;font-family:var(--font-display);font-weight:800;
+  font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;
+  margin-bottom:18px;
+}
+.cta-band p{font-size:16px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:32px}
 .cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cta-band .btn-white{background:#fff;color:var(--kids-dark);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#128049;color:#fff;
+  font-family:var(--font-body);font-size:17px;font-weight:800;
+  border-radius:50px;padding:16px 28px;
+  box-shadow:0 6px 24px rgba(0,0,0,.18);
+  transition:transform .2s,box-shadow .2s,background .2s;
+  animation:wa-pulse 2.6s ease-out infinite;
+}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25);background:#0F6E3F}
+@keyframes wa-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+.cb-in{opacity:0;transform:translateY(28px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.2,1);transition-delay:calc(var(--i)*.15s)}
+.cta-band.is-in .cb-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.cta-band,.btn-wa{animation:none}.cb-in{opacity:1;transform:none;transition:none}}
 
+/* ── WHATSAPP FLOTANT ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:60px;height:60px;border-radius:50%;
+  background:#128049;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);
+  transition:transform .2s,box-shadow .2s,background .2s;
+  animation:wa-float-pulse 2.8s ease-out infinite;
+  text-decoration:none;
+}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(0,0,0,.35);background:#0F6E3F}
+@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,0)}}
+@media(max-width:540px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
 
 /* ── RESPONSIVE ── */
-
-/* Level progression colors -- green A1 to gold A2-B1 */
-.level-card:nth-child(1){--lc:#15803D;--lc-light:#F0FDF4}
-.level-card:nth-child(2){--lc:#0369A1;--lc-light:#F0F9FF}
-.level-card:nth-child(3){--lc:#2563EB;--lc-light:#EFF6FF}
-.level-card:nth-child(4){--lc:#7C3AED;--lc-light:#F5F3FF}
-.level-card:nth-child(5){--lc:#C2410C;--lc-light:#FFF7ED}
-.level-card:nth-child(6){--lc:#B45309;--lc-light:#FFFBEB}
-
 @media(max-width:960px){
-.kids-hero{padding:48px 22px 40px}
-  .kids-hero-grid{grid-template-columns:1fr}
-  .hero-badges{display:none}
+  .kids-hero{padding:0 0 48px}
+  .kids-hero-photo{position:relative;width:auto;height:280px;margin-bottom:32px;
+    -webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);
+    mask-image:linear-gradient(180deg,#000 70%,transparent);
+    background-position:center 30%;
+  }
+  .kids-hero-grid{max-width:none;padding:0 22px}
   .section{padding:56px 22px}
-  .kp-grid{grid-template-columns:1fr}
-  .levels-grid{grid-template-columns:1fr 1fr}
-  .metodo-grid{grid-template-columns:1fr 1fr}
   .horaris-wrap{padding:32px 22px;border-radius:16px}
+  .cta-band{padding:80px 22px}
 }
 @media(max-width:540px){
-  .levels-grid{grid-template-columns:1fr}
-  .metodo-grid{grid-template-columns:1fr}
   .cta-band{padding:56px 22px}
 }
+@media(max-width:480px){.btn-wa{font-size:16px;padding:16px 22px}}
 
-/* --- kids orange btn override --- */
-.kids-hero .btn-kp,.cta-band .btn-kp{background:var(--kids);color:var(--ink);box-shadow:0 8px 28px rgba(255,107,53,.4)}
+/* --- kids orange btn override for hs section --- */
 .hs .btn-kp{background:var(--kids);color:var(--ink);box-shadow:0 8px 28px rgba(255,107,53,.4)}
-.kids-hero .btn-kp:hover,.cta-band .btn-kp:hover{box-shadow:0 14px 40px rgba(255,107,53,.55)}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -372,22 +440,30 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=26"></script>
+<script src="nav.js?v=27"></script>
+
+<!-- ── WHATSAPP FLOTANT ── -->
+<a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
+   target="_blank" rel="noopener" class="wa-float" aria-label="Contactar per WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>
+</a>
+
+<main id="contingut" tabindex="-1">
 
 <!-- ── HERO ── -->
 <section class="kids-hero">
+  <div class="kids-hero-photo" aria-hidden="true"></div>
   <div class="kids-hero-inner">
     <div class="kids-hero-grid">
       <div class="kids-eyebrow">
         <span class="kids-eyebrow-dot"></span>2n a 6è de Primària
       </div>
-      <h1>5 nivells, de 2n<br>a <em>6è</em>.</h1>
-      <p class="kids-hero-sub">De Kids 2 a Kids 6, de 2n a 6è de Primària. Lectoescriptura integrada, preparació Young Learners de Cambridge i grups de màxim 12 alumnes.</p>
+      <h1>Construim les bases d'un bon <em>anglès</em></h1>
+      <p class="kids-hero-sub">Al departament de Kids, els alumnes de 2n a 6è de Primària desenvolupen les seves habilitats en anglès a través de classes dinàmiques, participatives i adaptades a la seva edat.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">Màx. 12</div><div class="hero-stat-label">alumnes per grup</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">A2–B1</div><div class="hero-stat-label">en acabar 6è</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">Young Learners</div><div class="hero-stat-label">Cambridge oficial</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">Des de 1973</div><div class="hero-stat-label">més de 50 anys d'experiència</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">Màxim 12</div><div class="hero-stat-label">alumnes</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">2n–6è</div><div class="hero-stat-label">de Primària</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">5 nivells</div><div class="hero-stat-label">de KIDS</div></div>
       </div>
       <div class="hero-ctas">
         <a href="#horaris" class="btn-kp">Veure horaris →</a>
@@ -396,71 +472,103 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </div>
 </section>
 
-<!-- ── KIDS 7-12 ── -->
+<!-- ── METODOLOGIA ── -->
+<section class="section" id="metode" style="background:#FFF8F5">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--kids-dark)"><span class="section-label-dot" style="background:var(--kids)"></span>Metodologia</div>
+    <div class="metodo-wrap-kids">
+      <div class="metodo-side-kids">
+        <h2>Com ho fem perquè <em style="color:var(--kids-dark);font-style:normal">funcioni</em>?</h2>
+        <p class="section-lead">A Kids, combinem activitats dinàmiques amb el desenvolupament progressiu de les habilitats lingüístiques, adaptant l'aprenentatge a cada edat i nivell.</p>
+        <a href="#contacte" class="metodo-link-kids">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="metodo-cards-kids">
+        <div class="metodo-card-kids mck-1">
+          <span class="mck-num" aria-hidden="true">01</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="mck-title">Comunicació en anglès</div>
+          <p class="mck-text">Fomentem la interacció oral perquè els alumnes guanyin confiança i aprenguin a comunicar-se en anglès.</p>
+        </div>
+        <div class="metodo-card-kids mck-2">
+          <span class="mck-num" aria-hidden="true">02</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="mck-title">Aprenentatge dinàmic</div>
+          <p class="mck-text">Combinem jocs, activitats participatives i projectes de classe relacionats amb la cultura anglosaxona per fer de l'aprenentatge una experiència participativa i motivadora.</p>
+        </div>
+        <div class="metodo-card-kids mck-3">
+          <span class="mck-num" aria-hidden="true">03</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="mck-title">Grups reduïts</div>
+          <p class="mck-text">Màxim 12 alumnes. Cada estudiant té temps de parlar i participar.</p>
+        </div>
+        <div class="metodo-card-kids mck-4">
+          <span class="mck-num" aria-hidden="true">04</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="mck-title">Aprenentatge estructurat</div>
+          <p class="mck-text">Treballem amb llibres de text adaptats a cada nivell, que complementem amb activitats audiovisuals i dinàmiques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOTOS KIDS ── -->
+<section class="section fotos-section" id="aula">
+  <div class="section-inner">
+    <div class="fotos-wrap">
+      <div class="fotos-side">
+        <div class="section-label" style="color:var(--kids-dark)"><span class="section-label-dot" style="background:var(--kids)"></span>Les nostres classes</div>
+        <h2>Classes on aprendre <em style="color:var(--kids-dark);font-style:normal">és divertit</em></h2>
+        <p class="section-lead">Classes dinàmiques i participatives, en grups de màxim 12 alumnes.</p>
+        <div class="fotos-count" aria-live="polite"><b>01</b><span> / 05</span></div>
+        <div class="fotos-btns">
+          <button class="fotos-arrow fotos-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="fotos-arrow fotos-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="fotos-deck" aria-roledescription="carrusel" aria-label="Fotos de les classes de Kids" tabindex="0">
+        <figure class="fotos-card"><img src="img-kids/kids-foto-1-700.webp" srcset="img-kids/kids-foto-1-700.webp 700w, img-kids/kids-foto-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Alumnes de Kids xerrant al passadís de l'escola" draggable="false"></figure>
+        <figure class="fotos-card"><img src="img-kids/kids-foto-2-700.webp" srcset="img-kids/kids-foto-2-700.webp 700w, img-kids/kids-foto-2.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dues alumnes de Kids somrient amb un llibre a la mà" draggable="false"></figure>
+        <figure class="fotos-card"><img src="img-kids/kids-foto-3-700.webp" srcset="img-kids/kids-foto-3-700.webp 700w, img-kids/kids-foto-3.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dues alumnes de Kids escrivint a classe" draggable="false"></figure>
+        <figure class="fotos-card"><img src="img-kids/kids-foto-4-700.webp" srcset="img-kids/kids-foto-4-700.webp 700w, img-kids/kids-foto-4.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una alumna de Kids somrient mentre treballa a classe" draggable="false"></figure>
+        <figure class="fotos-card"><img src="img-kids/kids-foto-5-700.webp" srcset="img-kids/kids-foto-5-700.webp 700w, img-kids/kids-foto-5.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Un professor treballant amb dues alumnes de Kids" draggable="false"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINS A 5 NIVELLS ── -->
 <section class="section k-section" id="kids-712">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kids-dark)">
       <span class="section-label-dot" style="background:var(--kids)"></span>
-      Kids · 2n a 6è de Primària
+      Fins a 5 nivells
     </div>
-    <h2>5 nivells, un camí <em style="color:var(--kids);font-style:normal">clar</em>.</h2>
-    <p class="section-lead">Kids 2 a Kids 6, continuació natural de Kids Planet. Lectoescriptura integrada i preparació Young Learners de Cambridge al ritme de cada alumne. Grups de màxim 12 nens.</p>
+    <h2>Cada pas compta en <em style="color:var(--kids-dark);font-style:normal">l'aprenentatge</em></h2>
+    <p class="section-lead">Cinc nivells per avançar en l'aprenentatge de l'anglès, respectant el punt de partida de cada alumne.</p>
 
-    <div class="levels-grid">
-      <div class="level-card">
-        <div class="lc-row">
-          <span class="lc-cefr">A1</span>
-          <span class="lc-age">2n de Primària</span>
-        </div>
-        <div class="lc-name">Kids 2</div>
-        <p class="lc-desc">Ampliació del vocabulari actiu i consolidació de les estructures orals. Gramàtica contextualitzada. Preparació Starters–Movers.</p>
-        <div class="lc-pills"><span>A1</span><span>2 h/setmana</span><span>YLE Movers</span></div>
+    <div class="levels-stair" role="list">
+      <div class="stair-card" role="listitem">
+        <div class="stair-label">K2</div>
       </div>
-
-      <div class="level-card">
-        <div class="lc-row">
-          <span class="lc-cefr">A1–A2</span>
-          <span class="lc-age">3r de Primària</span>
-        </div>
-        <div class="lc-name">Kids 3</div>
-        <p class="lc-desc">Transició cap a l'A2. Textos més llargs, producció escrita guiada i conversa activa. Preparació Movers oficial.</p>
-        <div class="lc-pills"><span>A1–A2</span><span>2 h/setmana</span><span>YLE Movers</span></div>
+      <div class="stair-card" role="listitem">
+        <div class="stair-label">K3</div>
       </div>
-
-      <div class="level-card">
-        <div class="lc-row">
-          <span class="lc-cefr">A2</span>
-          <span class="lc-age">4t de Primària</span>
-        </div>
-        <div class="lc-name">Kids 4</div>
-        <p class="lc-desc">Consolidació A2. Comprensió lectora i expressió escrita autònoma. Inici preparació Flyers. Vocabulari temàtic.</p>
-        <div class="lc-pills"><span>A2</span><span>2 h/setmana</span><span>YLE Flyers</span></div>
+      <div class="stair-card" role="listitem">
+        <div class="stair-label">K4</div>
       </div>
-
-      <div class="level-card">
-        <div class="lc-row">
-          <span class="lc-cefr">A2</span>
-          <span class="lc-age">5è de Primària</span>
-        </div>
-        <div class="lc-name">Kids 5</div>
-        <p class="lc-desc">Nivell A2 sòlid. Producció oral i escrita en contextos variats. Preparació Flyers i introducció als continguts pre-B1.</p>
-        <div class="lc-pills"><span>A2</span><span>2 h/setmana</span><span>YLE Flyers</span></div>
+      <div class="stair-card" role="listitem">
+        <div class="stair-label">K5</div>
       </div>
-
-      <div class="level-card">
-        <div class="lc-row">
-          <span class="lc-cefr">A2–B1</span>
-          <span class="lc-age">6è de Primària</span>
-        </div>
-        <div class="lc-name">Kids 6</div>
-        <p class="lc-desc">Últim nivell Kids. Transició natural cap a Teens. Flyers i primers passos cap al B1 i la preparació KET.</p>
-        <div class="lc-pills"><span>A2–B1</span><span>2 h/setmana</span><span>Flyers / KET</span></div>
+      <div class="stair-card" role="listitem">
+        <div class="stair-label">K6</div>
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- ── HORARIS ── -->
 <section class="section" id="horaris">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kids-dark)"><span class="section-label-dot" style="background:var(--kids)"></span>Horaris</div>
@@ -474,55 +582,27 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         </div>
       </div>
       <div class="hs-main">
-        <!-- Horaris: una fila per grup. data-days = dies (dl dt dc dj dv). Al WordPress serà un repetidor amb aquests mateixos camps. -->
         <table class="hs-source">
           <caption class="sr-only">Horaris setmanals de Kids</caption>
           <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
           <tbody>
-            <tr data-days="dl dc"><td>Kids 2 – Kids 5</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
-            <tr data-days="dt dj"><td>Kids 2 – Kids 5</td><td>Dimarts i dijous</td><td>17:15–18:15</td></tr>
-            <tr data-days="dv"><td>Kids 2 – Kids 5</td><td>Divendres</td><td>17:30–19:30</td></tr>
-            <tr data-days="dl dc"><td>Kids 6</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
-            <tr data-days="dt dj"><td>Kids 6</td><td>Dimarts i dijous</td><td>18:15–19:15</td></tr>
-            <tr data-days="dv"><td>Kids 6</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dl dc"><td>K2</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dt dj"><td>K2</td><td>Dimarts i dijous</td><td>17:15–18:15</td></tr>
+            <tr data-days="dl dc"><td>K3</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dt dj"><td>K3</td><td>Dimarts i dijous</td><td>17:15–18:15</td></tr>
+            <tr data-days="dl dc"><td>K4</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dt dj"><td>K4</td><td>Dimarts i dijous</td><td>17:15–18:15</td></tr>
+            <tr data-days="dl dc"><td>K5</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dt dj"><td>K5</td><td>Dimarts i dijous</td><td>17:15–18:15</td></tr>
+            <tr data-days="dl dc"><td>K6</td><td>Dilluns i dimecres</td><td>17:30–18:30</td></tr>
+            <tr data-days="dt dj"><td>K6</td><td>Dimarts i dijous</td><td>18:15–19:15</td></tr>
+            <tr data-days="dv"><td>K2</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dv"><td>K3</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dv"><td>K4</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dv"><td>K5</td><td>Divendres</td><td>17:30–19:30</td></tr>
+            <tr data-days="dv"><td>K6</td><td>Divendres</td><td>17:30–19:30</td></tr>
           </tbody>
         </table>
-        <p class="hs-note">Els horaris poden variar lleugerament. Contacta'ns per confirmar la disponibilitat del curs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── METODOLOGIA ── -->
-<section class="section" id="metode">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--blue)">
-      <span class="section-label-dot" style="background:var(--blue)"></span>
-      El nostre mètode
-    </div>
-    <h2>Com ho fem perquè <em style="color:var(--blue);font-style:normal">funcioni</em>.</h2>
-    <p class="section-lead">No memoritzen regles. Aprenen com van aprendre el català o el castellà: envoltats de llengua, de manera natural i progressiva.</p>
-
-    <div class="metodo-grid">
-      <div class="metodo-card">
-        <div class="metodo-num">01</div>
-        <div class="metodo-title">Immersió comunicativa</div>
-        <p class="metodo-text">L'anglès és la llengua exclusiva de l'aula des del primer minut. Els professors mai tradueixen — el context ho explica tot.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">02</div>
-        <div class="metodo-title">Activitats variades</div>
-        <p class="metodo-text">Jocs, cançons, mímica, teatre, contes i jocs de rol. Cada activitat crea un escenari real per comunicar-se en anglès.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">03</div>
-        <div class="metodo-title">Grups reduïts</div>
-        <p class="metodo-text">Màxim 12 alumnes. Cada nen té temps de parlar, participar i ser corregit sense por. El professor els coneix pel nom des del primer dia.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">04</div>
-        <div class="metodo-title">Professors estables</div>
-        <p class="metodo-text">Els mateixos professors any rere any. La continuïtat és clau per a la confiança i el progrés. No hi ha rotació d'interins.</p>
       </div>
     </div>
   </div>
@@ -531,15 +611,63 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
   <div class="cta-band-inner">
-    <h2>Vine a conèixer l'escola sense compromís.</h2>
-    <p>Primera classe gratuïta per a nous alumnes. Els pares de Kids Planet poden acompanyar fins que el nen es trobi còmode.</p>
-    <div class="cta-band-btns">
+    <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span style="display:inline-block;background:var(--yellow);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)">sense compromís</span></h2>
+    <p class="cb-in" style="--i:1">Voleu saber més sobre Kids? Contacteu amb nosaltres i us informarem.</p>
+    <div class="cta-band-btns cb-in" style="--i:2">
       <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-      <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
+      <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
     </div>
   </div>
 </section>
 
+</main>
 
+<script>
+/* CTA band: entra amb animació */
+(function(){
+  var band = document.querySelector('.cta-band'); if (!band) return;
+  if (!('IntersectionObserver' in window)) { band.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { band.classList.add('is-in'); io.disconnect(); } }); }, {threshold:.25});
+  io.observe(band);
+})();
+</script>
+<script>
+/* Fotos KIDS: baralla de fotos. Passa sola, s'atura en passar-hi el ratolí */
+(function(){
+  var deck = document.querySelector('.fotos-deck'); if (!deck) return;
+  var cards = [].slice.call(deck.children), order = cards.map(function(_, i){ return i; }),
+      num = document.querySelector('.fotos-count b'), ROT = [-2, 5, -4, 3, -6],
+      T = 4000, t = null, busy = false, paused = false, visible = false,
+      still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function lay(){
+    order.forEach(function(ci, pos){
+      var c = cards[ci]; c.style.zIndex = 10 - pos; c.setAttribute('aria-hidden', pos ? 'true' : 'false');
+      c.style.transform = pos === 0 ? 'rotate(-2deg)' : 'translate(' + (pos * 14) + 'px,' + (pos * 10) + 'px) rotate(' + ROT[pos % ROT.length] + 'deg) scale(' + (1 - pos * .04) + ')';
+      c.style.opacity = pos > 3 ? 0 : 1;
+    });
+    num.textContent = String(order[0] + 1).padStart(2, '0');
+  }
+  function next(){
+    if (busy) return; busy = true; var top = cards[order[0]]; top.classList.add('out');
+    setTimeout(function(){ order.push(order.shift()); top.classList.remove('out'); lay(); busy = false; }, still ? 0 : 450);
+    restart();
+  }
+  function prev(){ if (busy) return; order.unshift(order.pop()); lay(); restart(); }
+  function restart(){ clearTimeout(t); if (!paused && visible && !still) t = setTimeout(next, T); }
+  document.querySelector('.fotos-next').addEventListener('click', next);
+  document.querySelector('.fotos-prev').addEventListener('click', prev);
+  var x0 = null, moved = false;
+  deck.addEventListener('pointerdown', function(e){ x0 = e.clientX; moved = false; });
+  deck.addEventListener('pointerup', function(e){ if (x0 === null) return; var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { moved = true; dx < 0 ? prev() : next(); } });
+  deck.addEventListener('click', function(){ if (!moved) next(); });
+  deck.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') { e.preventDefault(); next(); } if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); } });
+  deck.addEventListener('mouseenter', function(){ paused = true; clearTimeout(t); });
+  deck.addEventListener('mouseleave', function(){ paused = false; restart(); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
+  else { visible = true; restart(); }
+  lay();
+})();
+</script>
 </body>
 </html>
