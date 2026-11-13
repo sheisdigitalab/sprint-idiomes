@@ -291,7 +291,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* ── CTA BAND ── */
 .cta-band{
-  background:linear-gradient(120deg,#FFB65E,#FF8E3C,#FFA94D,#FF8E3C);
+  background:linear-gradient(120deg,#D2460A,#C8420A,#CF450C,#C8420A);
   background-size:300% 300%;
   animation:cb-grad 14s ease infinite;
   padding:110px 40px;text-align:center;
@@ -351,9 +351,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .cta-band .btn-white{background:#fff;color:var(--kids-dark);box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
-/* fons taronja clar i alegre: text fosc perquè es llegeixi bé (contrast AA) */
-.cta-band h2,.cta-band .cb-text p{color:#15203D}
-.cta-band .btn-white{color:#B53300;box-shadow:0 6px 24px rgba(160,60,0,.25)}
+/* taronja viu amb contrast AA per al text blanc (mínim 4,5:1 a tot el degradat), com el fúcsia de Kids Planet */
+.cta-band h2,.cta-band .cb-text p{color:#fff}
+.cta-band .btn-white{color:#B53300;box-shadow:0 6px 24px rgba(90,25,0,.3)}
 .btn-wa{
   display:inline-flex;align-items:center;gap:10px;
   background:#128049;color:#fff;
@@ -365,6 +365,19 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25);background:#0F6E3F}
 @keyframes wa-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+/* El conill de Sprint a la secció final (com a Kids Planet): treu el cap, salta i diu "Us esperem!" */
+.kc-bunny{position:absolute;left:max(20px,calc(50% - 690px));bottom:34px;width:190px;height:auto;z-index:3;transform-origin:50% 100%;transform:translateY(130%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(120,40,0,.3))}
+.cta-band.is-in .kc-bunny{transform:none;animation:kc-hop 3.4s ease-in-out 1.6s infinite}
+.kc-bunny:hover{animation:kc-wiggle .6s ease-in-out}
+.kc-ground{position:absolute;left:calc(max(20px,calc(50% - 690px)) - 30px);bottom:22px;width:250px;height:auto;z-index:2}
+.cb-grid{padding-left:240px}
+.cb-text h2{font-size:clamp(30px,3.3vw,50px)}.cb-hl{white-space:nowrap}
+@keyframes kc-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
+@keyframes kc-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
+@media(max-width:1300px){.kc-bunny{width:160px}.kc-ground{width:210px}.cb-grid{padding-left:190px;gap:40px}}
+@media(max-width:1100px){.cb-grid{padding-left:0}section.cta-band{padding-bottom:300px}.kc-bunny{left:50%;margin-left:-75px;width:150px;bottom:30px}.kc-ground{left:50%;margin-left:-110px;width:220px;bottom:18px}}
+@media(max-width:760px){section.cta-band{padding-bottom:250px}.kc-bunny{width:125px;margin-left:-62px}.kc-ground{width:190px;margin-left:-95px}}
+@media(prefers-reduced-motion:reduce){.kc-bunny{transform:none;transition:none}.cta-band.is-in .kc-bunny{animation:none}}
 .cb-in{opacity:0;transform:translateY(28px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.2,1);transition-delay:calc(var(--i)*.15s)}
 .cta-band.is-in .cb-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.cta-band,.btn-wa{animation:none}.cb-in{opacity:1;transform:none;transition:none}}
@@ -633,6 +646,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
   <div class="cb-shapes" aria-hidden="true"><i class="cb-s1"></i><i class="cb-s2"></i><i class="cb-s3"></i></div>
+  <svg class="kc-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
+  <img class="kc-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cb-grid">
     <div class="cb-text">
       <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cb-hl">sense compromís</span></h2>
