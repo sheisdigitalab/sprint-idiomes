@@ -201,7 +201,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Nivells de Kids: mapa de joc amb el conill de Sprint */
 .k-section .section-inner{display:block}
-.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/260}
+.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/360}
 .kg-stage svg{width:100%;height:auto;display:block}
 .kg-stage text{font-family:var(--font-display);font-weight:800;text-anchor:middle;dominant-baseline:central;fill:#15203D}
 .kg-stage .lv{transform-box:fill-box;transform-origin:center;transition:filter .4s,opacity .4s}
@@ -229,7 +229,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @keyframes kg-cbob{to{translate:0 -8px}}
 @keyframes kg-cgot{0%{scale:1;opacity:1}40%{scale:1.4}100%{scale:0;opacity:0}}
 @keyframes kg-conf{0%{opacity:1;translate:0 0;rotate:0deg}80%{opacity:1}100%{opacity:0;translate:var(--dx) var(--dy);rotate:var(--r)}}
-@media(max-width:639px){.kg-stage{aspect-ratio:360/820;border-radius:24px;margin-top:28px}}
+@media(max-width:639px){.kg-stage{aspect-ratio:360/920;border-radius:24px;margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.kg-stage *{transition:none!important;animation:none!important}}
 
 /* ── HORARIS ── */
@@ -740,8 +740,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   function build(id){
     var my=(runs[id]=(runs[id]||0)+1);function later(fn,ms){setTimeout(function(){if(my===runs[id])fn()},ms)}
     var box=document.getElementById(id);box.innerHTML='';var m=mob();
-    var W=m?360:1000,H=m?820:260;
-    var P=m?[[105,130],[255,280],[105,430],[255,580],[175,725]]:[[110,192],[305,104],[505,180],[705,96],[890,160]];
+    var W=m?360:1000,H=m?920:360;
+    var P=m?[[105,230],[255,380],[105,530],[255,680],[175,825]]:[[110,292],[305,204],[505,280],[705,196],[890,260]];
     var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Cinc nivells de Kids: K2, K3, K4, K5 i K6. El conill de Sprint avança de nivell en nivell fins a K6.'},box);
     var defs=el('defs',{},svg),pre=id+'-';
     COL.forEach(function(c,i){var g=el('radialGradient',{id:pre+'b'+i,cx:.4,cy:.3,r:.75},defs);el('stop',{offset:0,'stop-color':LIGHT[i]},g);el('stop',{offset:1,'stop-color':c},g)});
@@ -752,7 +752,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     var sx=m?300:600,sy=m?58:40;
     el('circle',{cx:sx,cy:sy,r:46,fill:'#FFE07A',opacity:.35,class:'sunhalo'},svg);el('circle',{cx:sx,cy:sy,r:30,fill:'#FFD04A'},svg);
     if(m){cloud(svg,22,42,.5,'cloud');cloud(svg,170,62,.45,'cloud c2')}else{cloud(svg,70,50,.8,'cloud');cloud(svg,400,34,.65,'cloud c2');}
-    var hd=m?['M0 330 Q 140 250 360 340','M0 520 Q 220 430 360 520','M0 700 Q 160 640 360 690']:['M0 148 Q 230 83 500 142 T 1000 124','M0 195 Q 280 148 580 195 T 1000 177','M0 236 Q 300 207 640 236 T 1000 227'];
+    var hd=m?['M0 430 Q 140 350 360 440','M0 620 Q 220 530 360 620','M0 800 Q 160 740 360 790']:['M0 248 Q 230 183 500 242 T 1000 224','M0 295 Q 280 248 580 295 T 1000 277','M0 336 Q 300 307 640 336 T 1000 327'];
     var hc=['#D3F0C2','#BDE7A6','#A6DC8C'],tc=[['#6DB85A','#8FD17A'],['#55AC43','#7CC864'],['#43A033','#6CC052']];
     var road=[],rp=el('path',{d:d,fill:'none'},svg),rl=rp.getTotalLength();for(var q=0;q<=rl;q+=8)road.push(rp.getPointAtLength(q));rp.remove();
     function clear(x,y,pad){for(var k=0;k<road.length;k++)if(Math.hypot(road[k].x-x,road[k].y-y)<pad)return false;for(k=0;k<P.length;k++)if(Math.hypot(P[k][0]-x,P[k][1]+12-y)<(m?78:92))return false;return true}
