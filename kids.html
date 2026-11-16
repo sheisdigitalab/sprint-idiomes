@@ -201,7 +201,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Nivells de Kids: mapa de joc amb el conill de Sprint */
 .k-section .section-inner{display:block}
-.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/310}
+.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/272}
 .kg-stage svg{width:100%;height:auto;display:block}
 .kg-stage text{font-family:var(--font-display);font-weight:800;text-anchor:middle;dominant-baseline:central;fill:#15203D}
 .kg-stage .lv{transform-box:fill-box;transform-origin:center;transition:filter .4s,opacity .4s}
@@ -229,7 +229,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @keyframes kg-cbob{to{translate:0 -8px}}
 @keyframes kg-cgot{0%{scale:1;opacity:1}40%{scale:1.4}100%{scale:0;opacity:0}}
 @keyframes kg-conf{0%{opacity:1;translate:0 0;rotate:0deg}80%{opacity:1}100%{opacity:0;translate:var(--dx) var(--dy);rotate:var(--r)}}
-@media(max-width:639px){.kg-stage{aspect-ratio:360/830;border-radius:24px;margin-top:28px}}
+@media(max-width:639px){.kg-stage{aspect-ratio:360/820;border-radius:24px;margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.kg-stage *{transition:none!important;animation:none!important}}
 
 /* ── HORARIS ── */
@@ -740,8 +740,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   function build(id){
     var my=(runs[id]=(runs[id]||0)+1);function later(fn,ms){setTimeout(function(){if(my===runs[id])fn()},ms)}
     var box=document.getElementById(id);box.innerHTML='';var m=mob();
-    var W=m?360:1000,H=m?830:310;
-    var P=m?[[105,140],[255,290],[105,440],[255,590],[175,735]]:[[110,242],[305,154],[505,230],[705,146],[890,210]];
+    var W=m?360:1000,H=m?820:272;
+    var P=m?[[105,130],[255,280],[105,430],[255,580],[175,725]]:[[110,204],[305,116],[505,192],[705,108],[890,172]];
     var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Cinc nivells de Kids: K2, K3, K4, K5 i K6. El conill de Sprint avança de nivell en nivell fins a K6.'},box);
     var defs=el('defs',{},svg),pre=id+'-';
     COL.forEach(function(c,i){var g=el('radialGradient',{id:pre+'b'+i,cx:.4,cy:.3,r:.75},defs);el('stop',{offset:0,'stop-color':LIGHT[i]},g);el('stop',{offset:1,'stop-color':c},g)});
@@ -752,7 +752,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     var sx=m?300:600,sy=m?58:40;
     el('circle',{cx:sx,cy:sy,r:46,fill:'#FFE07A',opacity:.35,class:'sunhalo'},svg);el('circle',{cx:sx,cy:sy,r:30,fill:'#FFD04A'},svg);
     if(m){cloud(svg,22,42,.5,'cloud');cloud(svg,170,62,.45,'cloud c2')}else{cloud(svg,70,50,.8,'cloud');cloud(svg,400,34,.65,'cloud c2');}
-    var hd=m?['M0 340 Q 140 260 360 350','M0 530 Q 220 440 360 530','M0 710 Q 160 650 360 700']:['M0 198 Q 230 133 500 192 T 1000 174','M0 245 Q 280 198 580 245 T 1000 227','M0 286 Q 300 257 640 286 T 1000 277'];
+    var hd=m?['M0 330 Q 140 250 360 340','M0 520 Q 220 430 360 520','M0 700 Q 160 640 360 690']:['M0 160 Q 230 95 500 154 T 1000 136','M0 207 Q 280 160 580 207 T 1000 189','M0 248 Q 300 219 640 248 T 1000 239'];
     var hc=['#D3F0C2','#BDE7A6','#A6DC8C'],tc=[['#6DB85A','#8FD17A'],['#55AC43','#7CC864'],['#43A033','#6CC052']];
     var road=[],rp=el('path',{d:d,fill:'none'},svg),rl=rp.getTotalLength();for(var q=0;q<=rl;q+=8)road.push(rp.getPointAtLength(q));rp.remove();
     function clear(x,y,pad){for(var k=0;k<road.length;k++)if(Math.hypot(road[k].x-x,road[k].y-y)<pad)return false;for(k=0;k<P.length;k++)if(Math.hypot(P[k][0]-x,P[k][1]+12-y)<(m?78:92))return false;return true}
@@ -796,7 +796,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     var pin=el('g',{},svg),inner=el('g',{},pin),ps=m?.9:1.05;
     if(true){var S=m?.2:.245,fl=el('g',{},inner);pin.flip=fl;
       el('ellipse',{cx:0,cy:0,rx:m?24:30,ry:5,fill:'rgba(0,0,0,.15)'},pin);
-      var BH=m?100:96,BW=BH*517/914;el('image',{href:'img-kids/conill-joc.webp?v=1',x:-BW*.5,y:-BH+4,width:BW,height:BH},fl);
+      var BH=m?80:72,BW=BH*517/914;el('image',{href:'img-kids/conill-joc.webp?v=1',x:-BW*.5,y:-BH+4,width:BW,height:BH},fl);
       var crown=el('g',{class:'crown'+(still?' on':'')},fl);pin.crown=crown;var cg2=el('g',{transform:'translate('+(-0.16*BW)+','+(-0.79*BH+2)+') rotate(-8) scale('+(m?.75:.9)+')'},crown);
       el('path',{d:'M-16,0 L-17,-15 L-8,-7 L0,-20 L8,-7 L17,-15 L16,0 Z',fill:'#FFC23D',stroke:'#C98E10','stroke-width':2,'stroke-linejoin':'round'},cg2);el('rect',{x:-16,y:-3,width:32,height:5,rx:2,fill:'#F0A800'},cg2);
       [[-17,-15,'#2547D9'],[0,-20,'#E8521F'],[17,-15,'#2547D9']].forEach(function(g){el('circle',{cx:g[0],cy:g[1],r:2.6,fill:g[2]},cg2)});
@@ -809,7 +809,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     pin.setAttribute('transform','translate('+top[0][0]+','+(top[0][1]-60)+')');pin.style.opacity=0;
     later(function(){pin.style.opacity=1;hopTo(pin,[top[0][0],top[0][1]-60],top[0],0,350,function(){land(0);var i=0;
       (function step(){if(i>=4){if(pin.crown)later(function(){pin.crown.classList.add('on')},350);if(carrot){carrot.classList.add('got');spark.forEach(function(x){x.style.display='none'})}later(function(){confs.forEach(function(q){q.classList.add('go')});inner.classList.add('bob')},250);return}
-        var a=top[i],b=top[i+1];i++;later(function(){if(pin.flip)pin.flip.setAttribute('transform',b[0]<a[0]?'scale(-1,1)':'');hopTo(pin,a,b,m?55:40,650,function(){land(i);step()})},450)})()})},400);
+        var a=top[i],b=top[i+1];i++;later(function(){if(pin.flip)pin.flip.setAttribute('transform',b[0]<a[0]?'scale(-1,1)':'');hopTo(pin,a,b,m?55:20,650,function(){land(i);step()})},450)})()})},400);
   }
 
   var box=document.getElementById('kg-stage');if(!box)return;var on=false;
