@@ -275,6 +275,42 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .rb-btns{order:7;align-self:center}
 }
 @media(prefers-reduced-motion:reduce){.rb-card{transition:none}}
+
+/* Revisió: etiquetes alineades amb el títol i mateix espai etiqueta-títol-subtítol a totes les seccions */
+.section .section-label::before{display:none}
+#metode .section-label,#rainbow .section-label,#nivells .section-label,#horaris .section-label{margin-bottom:12px}
+#metode h2,#rainbow h2,#nivells h2,#horaris h2{margin-top:0;margin-bottom:16px}
+#horaris .hs-side{padding-top:0}
+@media(max-width:960px){#rainbow .section-label{margin-bottom:-6px}#rainbow h2{margin-bottom:-2px}}
+/* Nivells: la línia acaba a l'última parada, targetes iguals i la de Kids com a "següent pas" clar */
+@media(min-width:961px){
+  .kp-path::before{right:calc((100% - 56px) * .2982 - 29px)}
+  .kp-step{display:flex;flex-direction:column}
+  .ks-next .ks-link{margin-top:auto;padding-top:0}
+  .ks-next .ks-desc{margin-bottom:18px}
+}
+.ks-2{--ks-bg:#FBE3EF}
+.ks-next{background:#FFF1E8;border:2px solid rgba(224,83,30,.22)}
+.ks-next:hover{transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(255,107,53,.5)}
+.ks-next .ks-link{align-self:flex-start;background:#fff;border:0;border-radius:99px;padding:10px 18px;box-shadow:0 6px 16px -8px rgba(184,63,18,.45)}
+.ks-next .ks-link:hover{background:#E0531E;color:#fff}
+/* Ritme de la pàgina (igual que a Kids): portada (dividida) → metodologia (centrada, 4 targetes en fila)
+   → Aula Rainbow (invertida: fotos a l'esquerra) → nivells (centrada) → horaris (dividida) → final */
+@media(min-width:1101px){
+  #metode .section-label{justify-content:center}
+  .metodo-wrap{grid-template-columns:1fr;gap:48px}
+  .metodo-side{position:static;text-align:center;max-width:760px;margin:0 auto}
+  .metodo-side .section-lead{margin-left:auto;margin-right:auto}
+  .metodo-grid{grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:0}
+  .metodo-card:nth-child(even){transform:none}
+  .metodo-card:nth-child(even):hover{transform:translateY(-5px) rotate(1deg)}
+  #nivells .section-label{justify-content:center}
+  #nivells h2,#nivells .section-lead{text-align:center;margin-left:auto;margin-right:auto}
+}
+@media(min-width:961px){
+  .rb-wrap{grid-template-columns:1.15fr .85fr}
+  .rb-deck{order:-1}
+}
 </style>
 
   <!-- SEO: Open Graph -->

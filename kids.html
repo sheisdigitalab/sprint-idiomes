@@ -441,6 +441,25 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:760px){.kc-doodles .kd3,.kc-doodles .kd4,.kc-doodles .kd5{display:none}.kc-doodles{opacity:.25}}
 @media(prefers-reduced-motion:reduce){.kc-doodles .kd{animation:none}}
 .cta-band .cta-hl{transform:rotate(-1deg)}
+
+/* Ritme de la pàgina: no totes les seccions amb el títol a l'esquerra i el contingut a la dreta
+   portada (dividida) → metodologia (centrada, 4 targetes en fila) → classes (invertida: fotos a l'esquerra)
+   → nivells (dividida) → horaris (dividida) → final (centrat) */
+@media(min-width:1101px){
+  #metode .section-label{justify-content:center}
+  .metodo-wrap-kids{grid-template-columns:1fr;gap:48px}
+  .metodo-side-kids{position:static;text-align:center;max-width:760px;margin:0 auto}
+  .metodo-side-kids .section-lead{margin-left:auto;margin-right:auto}
+  .metodo-cards-kids{grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:0}
+  .metodo-card-kids:nth-child(even){transform:none}
+  .metodo-card-kids:nth-child(even):hover{transform:translateY(-5px) rotate(1deg)}
+  .metodo-card-kids{padding:28px 24px 30px}
+  .mck-title{font-size:20px}.mck-text{font-size:16px}
+}
+@media(min-width:961px){
+  .fotos-wrap{grid-template-columns:1.15fr .85fr}
+  .fotos-deck{order:-1}
+}
 </style>
 
   <!-- SEO: Open Graph -->
