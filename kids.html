@@ -376,6 +376,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .cf-b:nth-child(n+8):nth-child(-n+11){display:none}
   .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
   .kp-bunny{bottom:30px}
+}
 
 /* ── WHATSAPP FLOTANT ── */
 .wa-float{
@@ -422,7 +423,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 #horaris .hs-side{padding-top:0}
 .section .section-label::before{display:none}
 @media(max-width:960px){#aula .section-label{margin-bottom:-6px}#aula h2{margin-bottom:-2px}}
-@media(max-width:760px){section.cta-band{padding-bottom:210px}}
+/* Kids: mateixa estructura que Kids Planet però menys infantil (sense bombolles, estrelles ni notes; paraules més tranquil·les) */
+.cta-band .cf-b,.cta-band .cf-star,.cta-band .cf-s{display:none}
+.cta-band .cf-w{color:rgba(255,255,255,.16);animation:cf-float 12s ease-in-out infinite}
+.cta-band .cf-1{left:5%;top:14%}
+.cta-band{animation:none}
+/* mateixa alçada que la de Kids Planet: el text ocupa el mateix espai encara que sigui més curt */
+.cta-band .cta-band-inner p{min-height:calc(2 * 1.6em)}
+@media(max-width:960px){section.cta-band{padding-top:80px}}
+@media(max-width:760px){section.cta-band{padding-bottom:210px}.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -651,7 +660,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
   <div class="cta-float" aria-hidden="true">
-    <span class="cf-w cf-1">Hello!</span><span class="cf-w cf-2">ABC</span><span class="cf-w cf-3">Hi!</span>
+    <span class="cf-w cf-1">Hello!</span><span class="cf-w cf-2">Let's go!</span><span class="cf-w cf-3">Great!</span>
     <span class="cf-s cf-5"></span><span class="cf-s cf-7"></span>
     <span class="cf-b" style="--x:8%;--d:0s;--t:9s;--z:18px"></span><span class="cf-b" style="--x:18%;--d:-3s;--t:11s;--z:10px"></span><span class="cf-b" style="--x:31%;--d:-6s;--t:8s;--z:26px"></span><span class="cf-b" style="--x:44%;--d:-1s;--t:12s;--z:12px"></span><span class="cf-b" style="--x:57%;--d:-4s;--t:9s;--z:20px"></span><span class="cf-b" style="--x:69%;--d:-7s;--t:10s;--z:14px"></span><span class="cf-b" style="--x:80%;--d:-2s;--t:8s;--z:24px"></span><span class="cf-b" style="--x:91%;--d:-5s;--t:11s;--z:12px"></span>
     <span class="cf-star cf-s1">★</span><span class="cf-star cf-s2">★</span><span class="cf-star cf-s3">♪</span>
