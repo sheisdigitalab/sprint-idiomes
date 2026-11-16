@@ -312,6 +312,24 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .rb-wrap{grid-template-columns:1.15fr .85fr}
   .rb-deck{order:-1}
 }
+
+/* Responsive (revisió): a tablet el conill no tapa el text; botons sense salts de línia estranys */
+@media(max-width:1100px){
+  section.cta-band{padding-bottom:230px}
+  .kp-bunny{left:50%;margin-left:-62px;width:125px;bottom:30px}
+  .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
+}
+@media(max-width:480px){
+  .hs-ctas{flex-direction:column;align-items:stretch;gap:14px}
+  .hs-ctas .btn-kp{justify-content:center;text-align:center;font-size:16px;padding:16px 20px}
+  .hs-ctas .hs-phone{align-self:flex-start}
+  .cta-band-btns{flex-direction:column;align-items:stretch}
+  .cta-band-btns a{justify-content:center;text-align:center}
+  .cta-band-btns .btn-wa{font-size:15px;padding:16px 16px;white-space:nowrap}
+}
+@media(min-width:400px){.ks-next .ks-link{white-space:nowrap}}
+@media(max-width:960px){.kp-path{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:360px){.hs-ctas .btn-kp{font-size:15px;padding:15px 16px}}
 </style>
 
   <!-- SEO: Open Graph -->
