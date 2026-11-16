@@ -201,7 +201,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Nivells de Kids: mapa de joc amb el conill de Sprint */
 .k-section .section-inner{display:block}
-.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/360}
+.kg-stage{margin-top:40px;border-radius:32px;overflow:hidden;background:#DCEFFF;box-shadow:0 24px 50px -30px rgba(21,32,61,.45);aspect-ratio:1000/310}
 .kg-stage svg{width:100%;height:auto;display:block}
 .kg-stage text{font-family:var(--font-display);font-weight:800;text-anchor:middle;dominant-baseline:central;fill:#15203D}
 .kg-stage .lv{transform-box:fill-box;transform-origin:center;transition:filter .4s,opacity .4s}
@@ -229,7 +229,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @keyframes kg-cbob{to{translate:0 -8px}}
 @keyframes kg-cgot{0%{scale:1;opacity:1}40%{scale:1.4}100%{scale:0;opacity:0}}
 @keyframes kg-conf{0%{opacity:1;translate:0 0;rotate:0deg}80%{opacity:1}100%{opacity:0;translate:var(--dx) var(--dy);rotate:var(--r)}}
-@media(max-width:639px){.kg-stage{aspect-ratio:360/920;border-radius:24px;margin-top:28px}}
+@media(max-width:639px){.kg-stage{aspect-ratio:360/830;border-radius:24px;margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.kg-stage *{transition:none!important;animation:none!important}}
 
 /* ── HORARIS ── */
@@ -658,7 +658,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       </div>
     </div>
     <div class="cb-photos" aria-hidden="true">
-      <figure class="cb-ph cb-ph1"><img src="img-kids/kids-foto-2-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
+      <figure class="cb-ph cb-ph1"><img src="img-kids/kids-foto-3-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
       <figure class="cb-ph cb-ph2"><img src="img-kids/kids-foto-4-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
       <figure class="cb-ph cb-ph3"><img src="img-kids/kids-foto-5-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
       <span class="cb-bub cb-b1">Hello!</span>
@@ -740,8 +740,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   function build(id){
     var my=(runs[id]=(runs[id]||0)+1);function later(fn,ms){setTimeout(function(){if(my===runs[id])fn()},ms)}
     var box=document.getElementById(id);box.innerHTML='';var m=mob();
-    var W=m?360:1000,H=m?920:360;
-    var P=m?[[105,230],[255,380],[105,530],[255,680],[175,825]]:[[110,292],[305,204],[505,280],[705,196],[890,260]];
+    var W=m?360:1000,H=m?830:310;
+    var P=m?[[105,140],[255,290],[105,440],[255,590],[175,735]]:[[110,242],[305,154],[505,230],[705,146],[890,210]];
     var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Cinc nivells de Kids: K2, K3, K4, K5 i K6. El conill de Sprint avança de nivell en nivell fins a K6.'},box);
     var defs=el('defs',{},svg),pre=id+'-';
     COL.forEach(function(c,i){var g=el('radialGradient',{id:pre+'b'+i,cx:.4,cy:.3,r:.75},defs);el('stop',{offset:0,'stop-color':LIGHT[i]},g);el('stop',{offset:1,'stop-color':c},g)});
@@ -752,7 +752,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     var sx=m?300:600,sy=m?58:40;
     el('circle',{cx:sx,cy:sy,r:46,fill:'#FFE07A',opacity:.35,class:'sunhalo'},svg);el('circle',{cx:sx,cy:sy,r:30,fill:'#FFD04A'},svg);
     if(m){cloud(svg,22,42,.5,'cloud');cloud(svg,170,62,.45,'cloud c2')}else{cloud(svg,70,50,.8,'cloud');cloud(svg,400,34,.65,'cloud c2');}
-    var hd=m?['M0 430 Q 140 350 360 440','M0 620 Q 220 530 360 620','M0 800 Q 160 740 360 790']:['M0 248 Q 230 183 500 242 T 1000 224','M0 295 Q 280 248 580 295 T 1000 277','M0 336 Q 300 307 640 336 T 1000 327'];
+    var hd=m?['M0 340 Q 140 260 360 350','M0 530 Q 220 440 360 530','M0 710 Q 160 650 360 700']:['M0 198 Q 230 133 500 192 T 1000 174','M0 245 Q 280 198 580 245 T 1000 227','M0 286 Q 300 257 640 286 T 1000 277'];
     var hc=['#D3F0C2','#BDE7A6','#A6DC8C'],tc=[['#6DB85A','#8FD17A'],['#55AC43','#7CC864'],['#43A033','#6CC052']];
     var road=[],rp=el('path',{d:d,fill:'none'},svg),rl=rp.getTotalLength();for(var q=0;q<=rl;q+=8)road.push(rp.getPointAtLength(q));rp.remove();
     function clear(x,y,pad){for(var k=0;k<road.length;k++)if(Math.hypot(road[k].x-x,road[k].y-y)<pad)return false;for(k=0;k<P.length;k++)if(Math.hypot(P[k][0]-x,P[k][1]+12-y)<(m?78:92))return false;return true}
@@ -809,7 +809,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     pin.setAttribute('transform','translate('+top[0][0]+','+(top[0][1]-60)+')');pin.style.opacity=0;
     later(function(){pin.style.opacity=1;hopTo(pin,[top[0][0],top[0][1]-60],top[0],0,350,function(){land(0);var i=0;
       (function step(){if(i>=4){if(pin.crown)later(function(){pin.crown.classList.add('on')},350);if(carrot){carrot.classList.add('got');spark.forEach(function(x){x.style.display='none'})}later(function(){confs.forEach(function(q){q.classList.add('go')});inner.classList.add('bob')},250);return}
-        var a=top[i],b=top[i+1];i++;later(function(){if(pin.flip)pin.flip.setAttribute('transform',b[0]<a[0]?'scale(-1,1)':'');hopTo(pin,a,b,m?55:58,650,function(){land(i);step()})},450)})()})},400);
+        var a=top[i],b=top[i+1];i++;later(function(){if(pin.flip)pin.flip.setAttribute('transform',b[0]<a[0]?'scale(-1,1)':'');hopTo(pin,a,b,m?55:40,650,function(){land(i);step()})},450)})()})},400);
   }
 
   var box=document.getElementById('kg-stage');if(!box)return;var on=false;
