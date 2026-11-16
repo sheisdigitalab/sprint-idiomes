@@ -291,97 +291,91 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .btn-ghost-white:hover{border-color:rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.18)}
 
 /* ── CTA BAND ── */
-.cta-band{
-  background:linear-gradient(120deg,#D2460A,#C8420A,#CF450C,#C8420A);
-  background-size:300% 300%;
-  animation:cb-grad 14s ease infinite;
-  padding:110px 40px;text-align:center;
-  position:relative;overflow:hidden;
-}
-@keyframes cb-grad{50%{background-position:100% 50%}}
-/* CTA final de Kids: text + collage de fotos amb moviment */
-.cta-band{text-align:left}
-.cb-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
-.cb-text h2{font-size:clamp(34px,4.4vw,60px)}
-.cb-hl{display:inline-block;background:var(--yellow);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
-.cta-band .cb-text p{font-size:18px;color:#fff;max-width:480px}
-.cta-band .cta-band-btns{justify-content:flex-start}
-/* formes de fons que es mouen a poc a poc */
-.cb-shapes i{position:absolute;border-radius:50%;pointer-events:none}
-.cb-s1{width:520px;height:520px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(255,184,0,.28),transparent 65%);animation:cb-drift 16s ease-in-out infinite}
-.cb-s2{width:380px;height:380px;left:-120px;bottom:-160px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 65%);animation:cb-drift 20s ease-in-out infinite reverse}
-.cb-s3{width:14px;height:14px;left:46%;top:18%;background:var(--yellow);box-shadow:120px 260px 0 -3px rgba(255,255,255,.5),-260px 200px 0 -4px rgba(255,184,0,.7);animation:cb-bob 5s ease-in-out infinite}
-@keyframes cb-drift{50%{transform:translate(-40px,30px) scale(1.08)}}
-/* collage */
-.cb-photos{position:relative;height:440px}
-.cb-ph{position:absolute;margin:0;background:#fff;padding:10px 10px 34px;border-radius:6px;box-shadow:0 22px 50px -14px rgba(0,0,0,.45)}
-.cb-ph img{display:block;width:100%;height:100%;object-fit:cover;border-radius:3px}
-.cb-ph1{width:300px;height:250px;left:2%;top:40px;--r:-7deg;transform:rotate(var(--r));animation:cb-float 7s ease-in-out infinite}
-.cb-ph2{width:270px;height:225px;right:4%;top:0;--r:6deg;transform:rotate(var(--r));animation:cb-float 8s ease-in-out -2s infinite}
-.cb-ph3{width:290px;height:240px;left:30%;bottom:0;--r:-2deg;transform:rotate(var(--r));animation:cb-float 9s ease-in-out -4s infinite;z-index:2}
-@keyframes cb-float{50%{transform:rotate(calc(var(--r) * -0.4)) translateY(-12px)}}
-.cb-bub{position:absolute;z-index:3;font-family:var(--font-display);font-weight:800;font-size:20px;color:var(--ink);background:#fff;padding:10px 18px;border-radius:22px;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);animation:cb-bob 4s ease-in-out infinite}
-.cb-bub::after{content:"";position:absolute;bottom:-8px;left:22px;border:9px solid transparent;border-top-color:#fff;border-bottom:0}
-.cb-b1{left:-4%;top:6px;transform:rotate(-6deg)}
-.cb-b2{right:0;bottom:70px;background:var(--yellow);transform:rotate(5deg);animation-delay:-1.3s}
-.cb-b2::after{border-top-color:var(--yellow);left:auto;right:24px}
-.cb-b3{left:44%;top:-10px;transform:rotate(3deg);animation-delay:-2.6s}
-@keyframes cb-bob{50%{translate:0 -8px}}
-.cb-plane{position:absolute;left:-12%;bottom:24px;width:220px;opacity:.9;z-index:1}
-.cb-trail{animation:cb-dash 3s linear infinite}
-@keyframes cb-dash{to{stroke-dashoffset:-48}}
-/* entrada de les fotos */
-.cb-photos .cb-ph,.cb-photos .cb-bub{opacity:0;scale:.85;transition:opacity .7s ease,scale .8s cubic-bezier(.3,1.5,.5,1)}
-.cta-band.is-in .cb-photos .cb-ph,.cta-band.is-in .cb-photos .cb-bub{opacity:1;scale:1}
-.cta-band.is-in .cb-ph2{transition-delay:.15s}.cta-band.is-in .cb-ph3{transition-delay:.3s}
-.cta-band.is-in .cb-b1{transition-delay:.5s}.cta-band.is-in .cb-b3{transition-delay:.65s}.cta-band.is-in .cb-b2{transition-delay:.8s}
-@media(max-width:960px){
-  .cb-grid{grid-template-columns:1fr;gap:36px}
-  .cb-photos{order:-1;height:300px;max-width:440px;width:100%;margin:0 auto}
-  .cb-ph1{width:200px;height:170px}.cb-ph2{width:180px;height:155px}.cb-ph3{width:200px;height:165px;left:22%}
-  .cb-bub{font-size:16px;padding:8px 14px}
-  .cb-plane{display:none}
-}
-@media(prefers-reduced-motion:reduce){.cb-shapes i,.cb-ph,.cb-bub,.cb-trail{animation:none!important}.cb-photos .cb-ph,.cb-photos .cb-bub{opacity:1;scale:1;transition:none}}
-.cta-band h2{
-  color:#fff;font-family:var(--font-display);font-weight:800;
-  font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;
-  margin-bottom:18px;
-}
-.cta-band p{font-size:16px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:32px}
-.cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.cta-band .btn-white{background:#fff;color:var(--kids-dark);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.cta-band .btn-white{background:#fff;color:#B53300;box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
-/* taronja viu amb contrast AA per al text blanc (mínim 4,5:1 a tot el degradat), com el fúcsia de Kids Planet */
-.cta-band h2,.cta-band .cb-text p{color:#fff}
-.cta-band .btn-white{color:#B53300;box-shadow:0 6px 24px rgba(90,25,0,.3)}
-.btn-wa{
-  display:inline-flex;align-items:center;gap:10px;
-  background:#128049;color:#fff;
-  font-family:var(--font-body);font-size:17px;font-weight:800;
-  border-radius:50px;padding:16px 28px;
-  box-shadow:0 6px 24px rgba(0,0,0,.18);
-  transition:transform .2s,box-shadow .2s,background .2s;
-  animation:wa-pulse 2.6s ease-out infinite;
+
+.cta-band{background:linear-gradient(135deg,#4C0836 0%,#8A0F4A 50%,#4C0836 100%);padding:88px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-band-inner{max-width:580px;margin:0 auto}
+.cta-band p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:32px}
+.cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+/* Secció final: igual que a Kids Planet (mateixa estructura), en taronja de Kids */
+.cta-band{background:linear-gradient(120deg,#D2460A,#C8420A,#CF450C,#C8420A);background-size:300% 300%;animation:cb-grad 14s ease infinite;padding:110px 40px}
+@keyframes cb-grad{50%{background-position:100% 50%}}
+.cta-band h2{color:#fff;font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
+.cta-hl{display:inline-block;background:var(--yellow,#FFB800);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
+.cta-band p{color:rgba(255,255,255,.95);font-size:18px}
+.cta-band-inner{max-width:700px;position:relative;z-index:2}
+.cta-band .btn-white{color:#B53300}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:16px 28px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.cta-float{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.cf-w{position:absolute;font-family:var(--font-display);font-weight:800;color:rgba(255,255,255,.22);font-size:clamp(28px,4vw,56px);letter-spacing:-0.03em;animation:cf-float 9s ease-in-out infinite}
+.cf-s{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:cf-float 11s ease-in-out infinite}
+.cf-1{left:6%;top:18%;transform:rotate(-8deg)}
+.cf-2{right:8%;top:14%;animation-delay:-3s}
+.cf-3{right:12%;bottom:16%;animation-delay:-5s}
+.cf-4{right:12%;bottom:18%;animation-delay:-2s}
+.cf-5{width:90px;height:90px;left:28%;top:-30px}
+.cf-6{width:40px;height:40px;right:30%;bottom:22%;animation-delay:-4s;background:rgba(255,184,0,.55)}
+.cf-7{width:22px;height:22px;left:22%;top:58%;animation-delay:-6s;background:rgba(255,255,255,.5)}
+.cf-8{width:130px;height:130px;right:-30px;top:40%;animation-delay:-2s}
+@keyframes cf-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -18px;rotate:4deg}}
+@media(max-width:960px){
+  .cta-band{padding:80px 22px}
+  .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}.cf-4{bottom:6%}
 }
-.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25);background:#0F6E3F}
-@keyframes wa-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
-/* El conill de Sprint a la secció final (com a Kids Planet): treu el cap, salta i diu "Us esperem!" */
-.kc-bunny{position:absolute;left:max(20px,calc(50% - 690px));bottom:34px;width:190px;height:auto;z-index:3;transform-origin:50% 100%;transform:translateY(130%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(120,40,0,.3))}
-.cta-band.is-in .kc-bunny{transform:none;animation:kc-hop 3.4s ease-in-out 1.6s infinite}
-.kc-bunny:hover{animation:kc-wiggle .6s ease-in-out}
-.kc-ground{position:absolute;left:calc(max(20px,calc(50% - 690px)) - 30px);bottom:22px;width:250px;height:auto;z-index:2}
-.cb-grid{padding-left:240px}
-.cb-text h2{font-size:clamp(30px,3.3vw,50px)}.cb-hl{white-space:nowrap}
-@keyframes kc-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
-@keyframes kc-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
-@media(max-width:1300px){.kc-bunny{width:160px}.kc-ground{width:210px}.cb-grid{padding-left:190px;gap:40px}}
-@media(max-width:1100px){.cb-grid{padding-left:0}section.cta-band{padding-bottom:300px}.kc-bunny{left:50%;margin-left:-75px;width:150px;bottom:30px}.kc-ground{left:50%;margin-left:-110px;width:220px;bottom:18px}}
-@media(max-width:760px){section.cta-band{padding-bottom:250px}.kc-bunny{width:125px;margin-left:-62px}.kc-ground{width:190px;margin-left:-95px}}
-@media(prefers-reduced-motion:reduce){.kc-bunny{transform:none;transition:none}.cta-band.is-in .kc-bunny{animation:none}}
-.cb-in{opacity:0;transform:translateY(28px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.2,1);transition-delay:calc(var(--i)*.15s)}
+@media(prefers-reduced-motion:reduce){.cta-band,.cf-w,.cf-s{animation:none}}
+
+/* Secció final: més moviment */
+.cf-w{animation:cf-drift 7s ease-in-out infinite}
+@keyframes cf-drift{0%,100%{translate:0 0;rotate:-6deg;scale:1}25%{translate:14px -22px;rotate:4deg;scale:1.08}50%{translate:-6px -34px;rotate:-2deg;scale:1}75%{translate:-16px -12px;rotate:6deg;scale:1.06}}
+.cf-b{position:absolute;bottom:-40px;left:var(--x);width:var(--z);height:var(--z);border-radius:50%;border:2px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);animation:cf-rise var(--t) linear infinite;animation-delay:var(--d)}
+@keyframes cf-rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(18px,-260px)}90%{opacity:.9}100%{transform:translate(-10px,-560px);opacity:0}}
+.cf-star{position:absolute;color:#FFE27A;font-size:30px;animation:cf-twinkle 2.4s ease-in-out infinite;text-shadow:0 0 12px rgba(255,226,122,.8)}
+.cf-s1{left:22%;top:20%}.cf-s2{right:24%;top:30%;animation-delay:-.8s;font-size:22px}.cf-s3{left:30%;bottom:16%;animation-delay:-1.6s;color:#fff;font-size:34px}
+@keyframes cf-twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.4}50%{transform:scale(1.25) rotate(20deg);opacity:1}}
+.cta-hl{animation:cb-wiggle 3.2s ease-in-out infinite}
+@keyframes cb-wiggle{0%,70%,100%{transform:rotate(-2deg) scale(1)}78%{transform:rotate(3deg) scale(1.08)}86%{transform:rotate(-4deg) scale(1.04)}94%{transform:rotate(1deg) scale(1)}}
+.btn-wa{animation:cb-pulse 2.6s ease-out infinite}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.cta-band .btn-white{animation:cb-bob 3s ease-in-out infinite}
+@keyframes cb-bob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.cb-in{opacity:0;transform:translateY(34px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.25,1.3);transition-delay:calc(var(--i)*.15s)}
 .cta-band.is-in .cb-in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.cta-band,.btn-wa{animation:none}.cb-in{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.cf-w,.cf-b,.cf-star,.cta-hl,.btn-wa,.cta-band .btn-white{animation:none}.cf-b{display:none}.cb-in{opacity:1;transform:none;transition:none}}
+
+/* El conill de Sprint (del web actual): treu el cap i salta */
+.kp-bunny{position:absolute;left:5%;bottom:0;width:190px;height:auto;z-index:2;transform-origin:50% 100%;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(90,25,0,.3))}
+.cta-band.is-in .kp-bunny{transform:none;animation:kp-hop 3.4s ease-in-out 1.6s infinite}
+.kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
+@keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
+@keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
+@media(max-width:1100px){.kp-bunny{width:150px;left:2%}}
+@media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
+@media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
+
+/* Revisió secció final */
+/* 1) taronja viu amb contrast AA per al text blanc (mínim 4,5:1 a tot el degradat) */
+.cta-band{background:linear-gradient(120deg,#D2460A,#C8420A,#CF450C,#C8420A);background-size:300% 300%}
+/* 2) WhatsApp en un verd amb prou contrast */
+.btn-wa{background:#128049}
+@media(max-width:480px){.btn-wa{font-size:16px;padding:16px 22px}}
+.btn-wa:hover{background:#0F6E3F}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+/* 6) el conill de peu sobre un terra dibuixat */
+.kp-bunny{bottom:34px}
+.kp-ground{position:absolute;left:calc(5% - 30px);bottom:22px;width:250px;height:auto;z-index:2}
+@media(max-width:1100px){.kp-ground{left:calc(2% - 26px);width:200px}}
+/* 7) menys moviment a la vegada: el protagonisme és del conill i del WhatsApp */
+.cta-hl,.cta-band .btn-white{animation:none}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+/* 3) mòbil: sense paraules ni estrelles, i bombolles només als costats, per darrere del text */
+@media(max-width:760px){
+  .cf-w,.cf-star,.cf-s{display:none}
+  .cf-b:nth-child(n+8):nth-child(-n+11){display:none}
+  .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
+  .kp-bunny{bottom:30px}
 
 /* ── WHATSAPP FLOTANT ── */
 .wa-float{
@@ -419,6 +413,16 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* --- kids orange btn override for hs section --- */
 .hs .btn-kp{background:var(--kids);color:var(--ink);box-shadow:0 8px 28px rgba(255,107,53,.4)}
+
+/* Revisió: mateixes mides i espais a totes les seccions, i igual que a Kids Planet */
+.kids-hero-sub{font-size:20px;max-width:560px}
+.hero-stat-num{font-size:26px}.hero-stat-label{font-size:15px}
+#metode .section-label,#aula .section-label,#kids-712 .section-label,#horaris .section-label{margin-bottom:12px}
+#metode h2,#aula h2,#kids-712 h2,#horaris h2{margin-top:0;margin-bottom:16px}
+#horaris .hs-side{padding-top:0}
+.section .section-label::before{display:none}
+@media(max-width:960px){#aula .section-label{margin-bottom:-6px}#aula h2{margin-bottom:-2px}}
+@media(max-width:760px){section.cta-band{padding-bottom:210px}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -613,7 +617,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <h2>Trobeu l'horari que us <em style="color:var(--kids-dark);font-style:normal">encaixi millor</em></h2>
         <p class="section-lead">De dilluns a divendres, a la tarda. Dues hores de classe a la setmana.</p>
         <div class="hs-ctas">
-          <a href="index.html#contacte" class="btn-kp">Reserva una plaça →</a>
+          <a href="#contacte" class="btn-kp">Reserva la teva classe de prova →</a>
           <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
         </div>
       </div>
@@ -646,26 +650,20 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
-  <div class="cb-shapes" aria-hidden="true"><i class="cb-s1"></i><i class="cb-s2"></i><i class="cb-s3"></i></div>
-  <svg class="kc-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
-  <img class="kc-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
-  <div class="cb-grid">
-    <div class="cb-text">
-      <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cb-hl">sense compromís</span></h2>
-      <p class="cb-in" style="--i:1">Voleu saber més sobre Kids? Contacteu amb nosaltres i us informarem.</p>
-      <div class="cta-band-btns cb-in" style="--i:2">
-        <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-        <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
-      </div>
-    </div>
-    <div class="cb-photos" aria-hidden="true">
-      <figure class="cb-ph cb-ph1"><img src="img-kids/kids-foto-3-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
-      <figure class="cb-ph cb-ph2"><img src="img-kids/kids-foto-4-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
-      <figure class="cb-ph cb-ph3"><img src="img-kids/kids-foto-5-700.webp" alt="" loading="lazy" width="700" height="467"></figure>
-      <span class="cb-bub cb-b1">Hello!</span>
-      <span class="cb-bub cb-b2">Let's go!</span>
-      <span class="cb-bub cb-b3">Hi! 👋</span>
-      <svg class="cb-plane" viewBox="0 0 220 120" fill="none"><path class="cb-trail" d="M6 110 C 60 100, 70 40, 120 50 S 190 70, 196 20" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 10"/><path d="M188 12 l26 -6 -12 24 -5 -10z" fill="#fff"/></svg>
+  <div class="cta-float" aria-hidden="true">
+    <span class="cf-w cf-1">Hello!</span><span class="cf-w cf-2">ABC</span><span class="cf-w cf-3">Hi!</span>
+    <span class="cf-s cf-5"></span><span class="cf-s cf-7"></span>
+    <span class="cf-b" style="--x:8%;--d:0s;--t:9s;--z:18px"></span><span class="cf-b" style="--x:18%;--d:-3s;--t:11s;--z:10px"></span><span class="cf-b" style="--x:31%;--d:-6s;--t:8s;--z:26px"></span><span class="cf-b" style="--x:44%;--d:-1s;--t:12s;--z:12px"></span><span class="cf-b" style="--x:57%;--d:-4s;--t:9s;--z:20px"></span><span class="cf-b" style="--x:69%;--d:-7s;--t:10s;--z:14px"></span><span class="cf-b" style="--x:80%;--d:-2s;--t:8s;--z:24px"></span><span class="cf-b" style="--x:91%;--d:-5s;--t:11s;--z:12px"></span>
+    <span class="cf-star cf-s1">★</span><span class="cf-star cf-s2">★</span><span class="cf-star cf-s3">♪</span>
+  </div>
+  <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
+  <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
+  <div class="cta-band-inner">
+    <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cta-hl">sense compromís</span></h2>
+    <p class="cb-in" style="--i:1">Voleu saber més sobre Kids? Contacteu amb nosaltres i us informarem.</p>
+    <div class="cta-band-btns cb-in" style="--i:2">
+      <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
+      <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
     </div>
   </div>
 </section>
