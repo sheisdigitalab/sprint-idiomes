@@ -615,4 +615,29 @@ ${cursosDropdown}
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+
+  /* ── WHATSAPP FLOTANT a tota la web (si la pàgina ja en té un de propi, es fa servir aquell) ── */
+  function addWa(){
+    if (document.querySelector('.wa-float')) return;
+    var p = location.pathname.split('/').pop() || 'index.html';
+    var fam = { 'kids-planet.html':'Kids Planet', 'kids.html':'Kids', 'teens.html':'Teens' };
+    var adu = { 'adults.html':'Adults', 'cambridge.html':'Cambridge i IELTS', 'frances.html':"francès de L'École de Français", 'business.html':'BLA Business', 'particular.html':'classes particulars' };
+    var msg = fam[p] ? "Hola! Estem interessats en les classes d'anglès de " + fam[p] + " i ens agradaria rebre més informació sobre els horaris i les places disponibles. Moltes gràcies!"
+            : adu[p] ? "Hola! M'interessen les classes " + (/^[AEIOUÀÈÉÍÒÓÚaeiou]/.test(adu[p]) ? "d'" : "de ") + adu[p] + " i m'agradaria rebre més informació sobre els horaris i les places disponibles. Moltes gràcies!"
+            : "Hola! M'agradaria rebre més informació sobre els cursos de Sprint Idiomes. Moltes gràcies!";
+    var css = document.createElement('style');
+    css.textContent = '.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#128049;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,background .2s;animation:wa-float-pulse 2.8s ease-out infinite;text-decoration:none}'
+      + '.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(0,0,0,.35);background:#0F6E3F}'
+      + '.wa-float:focus-visible{outline:3px solid #2547D9;outline-offset:3px}'
+      + '@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,0)}}'
+      + '@media(max-width:540px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}}'
+      + '@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}';
+    document.head.appendChild(css);
+    var a = document.createElement('a');
+    a.href = 'https://wa.me/34640679888?text=' + encodeURIComponent(msg);
+    a.target = '_blank'; a.rel = 'noopener'; a.className = 'wa-float'; a.setAttribute('aria-label', 'Contactar per WhatsApp');
+    a.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>';
+    document.body.appendChild(a);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addWa); else addWa();
 })();
