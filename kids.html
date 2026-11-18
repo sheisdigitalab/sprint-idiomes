@@ -442,20 +442,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(prefers-reduced-motion:reduce){.kc-doodles .kd{animation:none}}
 .cta-band .cta-hl{transform:rotate(-1deg)}
 
-/* Ritme de la pàgina: no totes les seccions amb el títol a l'esquerra i el contingut a la dreta
-   portada (dividida) → metodologia (centrada, 4 targetes en fila) → classes (invertida: fotos a l'esquerra)
+/* Ritme de la pàgina: portada (dividida) → metodologia (dividida) → classes (invertida: fotos a l'esquerra)
    → nivells (dividida) → horaris (dividida) → final (centrat) */
-@media(min-width:1101px){
-  #metode .section-label{justify-content:center}
-  .metodo-wrap-kids{grid-template-columns:1fr;gap:48px}
-  .metodo-side-kids{position:static;text-align:center;max-width:760px;margin:0 auto}
-  .metodo-side-kids .section-lead{margin-left:auto;margin-right:auto}
-  .metodo-cards-kids{grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:0}
-  .metodo-card-kids:nth-child(even){transform:none}
-  .metodo-card-kids:nth-child(even):hover{transform:translateY(-5px) rotate(1deg)}
-  .metodo-card-kids{padding:28px 24px 30px}
-  .mck-title{font-size:20px}.mck-text{font-size:16px}
-}
 @media(min-width:961px){
   .fotos-wrap{grid-template-columns:1.15fr .85fr}
   .fotos-deck{order:-1}
@@ -551,7 +539,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=28"></script>
+<script src="nav.js?v=29"></script>
 
 <!-- ── WHATSAPP FLOTANT ── -->
 <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
@@ -604,7 +592,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           <span class="mck-num" aria-hidden="true">02</span>
           <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <div class="mck-title">Aprenentatge dinàmic</div>
-          <p class="mck-text">Combinem jocs, activitats participatives i projectes de classe relacionats amb la cultura anglosaxona per fer de l'aprenentatge una experiència participativa i motivadora.</p>
+          <p class="mck-text">Combinem jocs, activitats participatives i projectes de classe relacionats amb la cultura anglosaxona.</p>
         </div>
         <div class="metodo-card-kids mck-3">
           <span class="mck-num" aria-hidden="true">03</span>
@@ -656,7 +644,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <span class="section-label-dot" style="background:var(--kids)"></span>
       Fins a 5 nivells
     </div>
-    <h2>Cada pas compta en <em style="color:var(--kids-dark);font-style:normal">l'aprenentatge</em></h2>
+    <h2>Cada pas <em style="color:var(--kids-dark);font-style:normal">compta</em></h2>
     <p class="section-lead">Cinc nivells per avançar en l'aprenentatge de l'anglès, respectant el punt de partida de cada alumne.</p>
     </div>
 
@@ -669,7 +657,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 <section class="section" id="horaris">
   <div class="section-inner">
     <div class="section-label" style="color:var(--kids-dark)"><span class="section-label-dot" style="background:var(--kids)"></span>Horaris</div>
-    <div class="hs hs-wrap" style="--hs-c:var(--kids)">
+    <div class="hs hs-wrap" style="--hs-c:var(--kids)" data-grups>
       <div class="hs-side">
         <h2>Trobeu l'horari que us <em style="color:var(--kids-dark);font-style:normal">encaixi millor</em></h2>
         <p class="section-lead">De dilluns a divendres, a la tarda. Dues hores de classe a la setmana.</p>

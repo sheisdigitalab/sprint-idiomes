@@ -593,6 +593,24 @@ ${cursosDropdown}
           .sort(function(a, b){ return a.localeCompare(b); });
         return t.map(function(x){ return '<span class="hs-t">' + x.replace('–', ' – ') + '</span>'; }).join('');
       }
+      /* Amb data-grups a .hs: columnes = grups de dies tal com es fan les classes (p. ex. "Dilluns i dimecres"),
+         perquè quedi clar que no es poden triar els dies per separat. Sense: un dia per columna. */
+      var ORDER = DAYS.map(function(D){ return D[0]; }), NAME = {};
+      DAYS.forEach(function(D){ NAME[D[0]] = D[2]; });
+      var COLS = [], seen = {};
+      levels.forEach(function(n){ by[n].opts.forEach(function(o){
+        var ds = o.days.filter(function(d){ return NAME[d]; }).sort(function(a, b){ return ORDER.indexOf(a) - ORDER.indexOf(b); });
+        o.key = ds.join(' ');
+        if (ds.length && !seen[o.key]) { seen[o.key] = 1; var nm = ds.map(function(d){ return NAME[d]; });
+          COLS.push([o.key, '', nm.length > 1 ? nm[0] + nm.slice(1, -1).map(function(x){ return ', ' + x.toLowerCase(); }).join('') + ' i ' + nm[nm.length - 1].toLowerCase() : nm[0], ORDER.indexOf(ds[0])]); }
+      }); });
+      COLS.sort(function(a, b){ return a[3] - b[3]; });
+      if (hs.hasAttribute('data-grups')) DAYS = COLS; else levels.forEach(function(n){ by[n].opts.forEach(function(o){ o.key = null; }); });
+      function cell(L, k){
+        var t = L.opts.filter(function(o){ return o.key ? o.key === k : o.days.indexOf(k) >= 0; }).map(function(o){ return o.time; })
+          .sort(function(a, b){ return a.localeCompare(b); });
+        return t.map(function(x){ return '<span class="hs-t">' + x.replace('–', ' – ') + '</span>'; }).join('');
+      }
       var head = '<thead><tr><th>Nivell</th>' + DAYS.map(function(D){ return '<th>' + D[2] + '</th>'; }).join('') + '</tr></thead>';
       var body = levels.map(function(name, i){
         var L = by[name];
