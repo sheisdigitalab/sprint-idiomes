@@ -4,149 +4,518 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat</title>
-<meta name="description" content="Anglès per a joves d'ESO a Sant Cugat. Junior, Level 2, Level 3, Pre-First i preparació Cambridge First, Advanced i Proficiency. Sprint Idiomes des de 1973." />
+<meta name="description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge." />
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="shared.css?v=11">
 <style>
 :root{
-  --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;--blue:#2547D9;--yellow:#FFB800;
-  --teens:#26A69A;--teens-dark:#0F766E;--teens-soft:#DFF7F3;
-  --line:rgba(21,32,61,.1);--line-strong:rgba(21,32,61,.2);
+  --cream:#FAF5EA;
+  --ink:#15203D;
+  --ink-soft:#4A5878;
+  --blue:#2547D9;
+  --yellow:#FFB800;
+  --line:rgba(21,32,61,.1);
+  --line-strong:rgba(21,32,61,.2);
   --font-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --font-body:"Nunito",ui-sans-serif,system-ui,sans-serif;
+  --kp:#EC1E8C;
+  --teens:#26A69A;
+  --teens-dark:#0F766E;
+  --teens-soft:#DFF7F3;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--cream);color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden;font-weight:500}
+body{font-family:var(--font-body);background:#F2F7FF;color:var(--ink);line-height:1.55;font-size:16px;overflow-x:hidden;font-weight:500}
+img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
-/* COURSE NAV */
+/* ── CURSO SUBNAV ── */
 .course-nav-link.active{color:var(--ink);border-bottom-color:var(--teens)}
-
-/* SUBNAV */
 .subnav-link.active{color:var(--ink);border-bottom-color:var(--yellow)}
 
-.nivel-card:nth-child(1){background:#fff}
-.nivel-card:nth-child(2){background:#fff}
-.nivel-card:nth-child(3){background:#fff}
-.nivel-card:nth-child(4){background:#fff}
-.nivel-card:nth-child(1) .nc-cefr{background:rgba(38,166,154,.12);color:var(--teens);font-size:14px}
-.nivel-card:nth-child(2) .nc-cefr{background:rgba(124,58,237,.12);color:#7C3AED;font-size:14px}
-.nivel-card:nth-child(3) .nc-cefr{background:rgba(194,65,12,.12);color:#C2410C;font-size:14px}
-.nivel-card:nth-child(4) .nc-cefr{background:rgba(162,28,175,.12);color:#A21CAF;font-size:14px}
-.nivel-card:nth-child(1):hover{border-color:rgba(38,166,154,.35);box-shadow:0 20px 44px rgba(21,32,61,.1)}
-.nivel-card:nth-child(2):hover{border-color:rgba(124,58,237,.35);box-shadow:0 20px 44px rgba(21,32,61,.1)}
-.nivel-card:nth-child(3):hover{border-color:rgba(194,65,12,.35);box-shadow:0 20px 44px rgba(21,32,61,.1)}
-.nivel-card:nth-child(4):hover{border-color:rgba(162,28,175,.35);box-shadow:0 20px 44px rgba(21,32,61,.1)}
-
-/* HERO */
-.hero{
-  background:linear-gradient(180deg,var(--teens-soft) 0%,var(--cream) 100%);
+/* ── PAGE HERO ── */
+.teens-hero{
+  background:linear-gradient(180deg, #E3F6F2 0%, var(--cream) 100%);
   border-bottom:1px solid var(--line);
-  padding:72px 32px 64px;position:relative;overflow:hidden;
+  padding:88px 32px 80px;
+  position:relative;overflow:hidden;
 }
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teens-dark);margin-bottom:16px}
-.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--teens)}
-h1{font-family:var(--font-display);font-size:var(--fs-h1);font-weight:800;letter-spacing:-0.03em;line-height:1.02;color:var(--ink);margin-bottom:22px}
-h1 em{font-style:normal;color:var(--teens)}
-.hero-sub{font-size:18px;color:var(--ink-soft);line-height:1.65;max-width:560px;margin-bottom:36px}
+.teens-hero-photo{
+  position:absolute;top:0;right:0;bottom:0;width:52%;
+  background:url('img-teens/teens-hero.webp') 30% 30%/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 32%);
+  z-index:0;
+}
+.teens-hero-inner{max-width:1480px;margin:0 auto;position:relative;z-index:2}
+.teens-hero-grid{max-width:min(600px,46%)}
+.hero-stats{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
+.hero-stat{background:#fff;border:1px solid rgba(15,118,110,.1);box-shadow:0 4px 16px rgba(15,118,110,.06);border-radius:16px;padding:14px 20px}
+.hero-stat-num{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-0.02em;color:var(--teens-dark);line-height:1}
+.hero-stat-label{font-size:12px;color:var(--ink-soft);margin-top:3px;font-weight:600}
+.teens-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teens-dark);margin-bottom:16px;
+}
+.teens-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--teens)}
+.teens-hero h1{
+  font-family:var(--font-display);
+  font-size:var(--fs-h1);
+  font-weight:800;letter-spacing:-0.02em;line-height:1.04;
+  color:var(--ink);margin-bottom:22px;
+}
+.teens-hero h1 em{font-style:normal;color:var(--teens-dark)}
+.teens-hero-sub{
+  font-size:17px;color:var(--ink-soft);line-height:1.65;
+  max-width:520px;margin-bottom:32px;
+}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
-.btn-teens{display:inline-flex;align-items:center;gap:10px;background:var(--teens);color:var(--ink);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:17px 34px;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 24px rgba(38,166,154,.32)}
-.btn-teens:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(38,166,154,.42)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);font-family:var(--font-body);font-size:17px;font-weight:700;border-radius:50px;padding:17px 34px;border:2px solid var(--line-strong);transition:border-color .2s,background .2s}
+.btn-teens{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--teens);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;font-weight:800;
+  border-radius:50px;padding:16px 32px;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 4px 20px rgba(38,166,154,.3);
+}
+.btn-teens:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 36px rgba(38,166,154,.5)}
+
+/* --- botó turquesa de Teens --- */
+.teens-hero .btn-teens,.cta-band .btn-teens{background:var(--teens);color:var(--ink);box-shadow:0 8px 28px rgba(38,166,154,.4)}
+.teens-hero .btn-teens:hover,.cta-band .btn-teens:hover{box-shadow:0 14px 40px rgba(38,166,154,.55)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:var(--ink);
+  font-family:var(--font-body);font-size:17px;font-weight:700;
+  border-radius:50px;padding:16px 32px;
+  border:2px solid var(--line-strong);
+  transition:border-color .2s,background .2s;
+}
 .btn-outline:hover{border-color:var(--ink);background:var(--cream)}
 
-.hero-stats{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap}
-.hero-stat{background:#fff;border:1px solid rgba(15,118,110,.14);box-shadow:0 4px 16px rgba(15,118,110,.07);border-radius:16px;padding:14px 22px}
-.hero-stat-num{font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:-0.02em;color:var(--teens);line-height:1}
-.hero-stat-label{font-size:12px;color:var(--ink-soft);margin-top:5px;font-weight:600}
-
-/* SECTIONS */
+/* ── SECTION SHARED ── */
 .section{padding:80px 32px;border-bottom:1px solid var(--line)}
-.section-lead{font-size:18px;color:var(--ink-soft);line-height:1.6;max-width:620px;margin-bottom:48px}
+.section-lead{
+  font-size:18px;color:var(--ink-soft);line-height:1.6;
+  max-width:620px;margin-bottom:48px;
+}
 
-/* NIVELLS GRID */
-.nivells-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px}
-.nivel-card{border-radius:22px;padding:28px;border:1px solid var(--line);background:#fff;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
-.nivel-card:hover{transform:translateY(-6px)}
-.nc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.nc-cefr{font-size:13px;font-weight:800;border-radius:20px;padding:6px 14px}
-.nc-age{font-size:12px;font-weight:700;color:var(--ink-soft);background:var(--cream);border-radius:20px;padding:6px 12px}
-.nc-name{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px;color:var(--ink)}
-.nc-desc{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px}
-.nc-pills{display:flex;flex-wrap:wrap;gap:6px}
-.nc-pills span{font-size:var(--fs-label);font-weight:700;padding:4px 10px;border-radius:20px;background:var(--cream);color:var(--ink-soft);border:none}
-
-/* METODOLOGIA */
-.metodo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.metodo-card{padding:32px;border-radius:22px;border:1px solid var(--line);border-top:3px solid;background:#fff;transition:transform .25s,box-shadow .25s}
-.metodo-card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(21,32,61,.08)}
-
-.metodo-card:nth-child(1){border-top-color:var(--teens)}
-.metodo-card:nth-child(2){border-top-color:#7C3AED}
-.metodo-card:nth-child(3){border-top-color:#A21CAF}
-.metodo-card:nth-child(4){border-top-color:#16A34A}
-
-.metodo-num{font-family:var(--font-display);font-size:72px;font-weight:900;letter-spacing:-0.06em;color:rgba(21,32,61,.08);line-height:1;margin-bottom:18px}
-.metodo-title{font-weight:800;font-size:16px;margin-bottom:8px;color:var(--ink)}
-.metodo-text{font-size:14px;color:var(--ink-soft);line-height:1.6}
-
-/* HORARIS */
-.horaris-wrap{background:var(--teens-soft);border-radius:28px;padding:48px;color:var(--ink);border:1px solid rgba(15,118,110,.14)}
-.horaris-title{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-0.03em;color:var(--ink);margin-bottom:6px}
-.horaris-sub{font-size:14px;color:var(--ink-soft);margin-bottom:32px}
+/* ── HORARIS ── */
+.horaris-wrap{
+  background:linear-gradient(135deg,#0B4F4A 0%,#0F766E 100%);border-radius:28px;
+  padding:48px;color:#fff;
+  margin-top:48px;
+  box-shadow:0 20px 60px rgba(38,166,154,.32);
+}
+.horaris-title{
+  font-family:var(--font-display);
+  font-size:26px;font-weight:800;letter-spacing:-0.03em;
+  color:#fff;margin-bottom:6px;
+}
+.horaris-sub{font-size:14px;color:rgba(255,255,255,.78);margin-bottom:32px}
 .horaris-table-wrap{overflow-x:auto}
 .horaris-table{width:100%;border-collapse:collapse;min-width:560px}
-.horaris-table th{font-size:var(--fs-label);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding:0 16px 14px;text-align:left}
-.horaris-table td{padding:14px 16px;font-size:14px;font-weight:600;color:var(--ink);border-top:1px solid rgba(15,118,110,.14);vertical-align:middle}
-.nivel-name{font-weight:800;color:var(--ink);font-size:14px}
-.hora-pill{display:inline-flex;align-items:center;background:#fff;color:var(--teens-dark);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;white-space:nowrap}
-.horaris-note{margin-top:20px;font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
-.horaris-cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
-.btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;transition:transform .15s,box-shadow .2s}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(21,32,61,.25)}
-.btn-ghost-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-soft);font-family:var(--font-body);font-size:17px;font-weight:700;border-radius:50px;padding:14px 28px;border:1px solid var(--line-strong);transition:border-color .2s,color .2s}
-.btn-ghost-white:hover{border-color:var(--ink);color:var(--ink)}
+.horaris-table th{
+  font-size:var(--fs-label);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);padding:0 16px 14px;text-align:left;
+}
+.horaris-table td{
+  padding:14px 16px;
+  font-size:14px;font-weight:600;color:rgba(255,255,255,.92);
+  border-top:1px solid rgba(255,255,255,.08);
+  vertical-align:middle;
+}
+.horaris-table tr:last-child td{border-bottom:1px solid rgba(255,255,255,.08)}
+.horaris-table .nivel-name{
+  font-weight:800;color:#fff;font-size:15px;
+}
+.hora-pill{
+  display:inline-flex;align-items:center;
+  background:rgba(255,255,255,.3);
+  border-radius:20px;padding:6px 14px;
+  font-size:13px;font-weight:800;
+  white-space:nowrap;
+}
+.horaris-cta{
+  margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;
+}
+.btn-white{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--teens-dark);
+  font-family:var(--font-body);font-size:17px;font-weight:800;
+  border-radius:50px;padding:15px 30px;
+  transition:transform .15s,box-shadow .2s;
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.btn-ghost-white{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.1);color:#fff;
+  font-family:var(--font-body);font-size:17px;font-weight:700;
+  border-radius:100px;padding:13px 24px;
+  border:1.5px solid rgba(255,255,255,.55);
+  transition:border-color .2s,color .2s,background .2s;
+}
+.btn-ghost-white:hover{border-color:rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.18)}
 
-/* dins la banda fosca final, els botons blancs/ghost recuperen l'estil fosc original */
-.cta-band .btn-white{background:linear-gradient(135deg,#26A69A,#0F766E);color:#060F36}
-.cta-band .btn-white:hover{box-shadow:0 0 40px rgba(38,166,154,.4)}
-.cta-band .btn-ghost-white{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.55)}
-.cta-band .btn-ghost-white:hover{color:#fff;border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.18)}
+/* ── CTA BAND ── */
+.cta-band .btn-white{background:#fff;color:#0B5F58;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
 
-/* CTA BAND */
-.cta-band{background:linear-gradient(135deg,#0D0A2E 0%,#0D1855 35%,#1A0A3E 70%,#0D0A2E 100%);padding:92px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-band{background:linear-gradient(135deg,#4C0836 0%,#8A0F4A 50%,#4C0836 100%);padding:88px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-band-inner{max-width:580px;margin:0 auto}
+.cta-band p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:32px}
+.cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+/* Secció final: igual que a Teens Planet (mateixa estructura), en taronja de Teens */
+.cta-band{background:linear-gradient(120deg,#0E8278,#0D7C73,#10807A,#0D7C73);background-size:300% 300%;animation:cb-grad 14s ease infinite;padding:110px 40px}
+@keyframes cb-grad{50%{background-position:100% 50%}}
+.cta-band h2{color:#fff;font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
+.cta-hl{display:inline-block;background:var(--yellow,#FFB800);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
+.cta-band p{color:rgba(255,255,255,.95);font-size:18px}
+.cta-band-inner{max-width:700px;position:relative;z-index:2}
+.cta-band .btn-white{color:#0B5F58}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:16px 28px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
+.btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.cta-float{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.cf-w{position:absolute;font-family:var(--font-display);font-weight:800;color:rgba(255,255,255,.22);font-size:clamp(28px,4vw,56px);letter-spacing:-0.03em;animation:cf-float 9s ease-in-out infinite}
+.cf-s{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:cf-float 11s ease-in-out infinite}
+.cf-1{left:6%;top:18%;transform:rotate(-8deg)}
+.cf-2{right:8%;top:14%;animation-delay:-3s}
+.cf-3{right:12%;bottom:16%;animation-delay:-5s}
+.cf-4{right:12%;bottom:18%;animation-delay:-2s}
+.cf-5{width:90px;height:90px;left:28%;top:-30px}
+.cf-6{width:40px;height:40px;right:30%;bottom:22%;animation-delay:-4s;background:rgba(255,184,0,.55)}
+.cf-7{width:22px;height:22px;left:22%;top:58%;animation-delay:-6s;background:rgba(255,255,255,.5)}
+.cf-8{width:130px;height:130px;right:-30px;top:40%;animation-delay:-2s}
+@keyframes cf-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -18px;rotate:4deg}}
+@media(max-width:960px){
+  .cta-band{padding:80px 22px}
+  .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}.cf-4{bottom:6%}
+}
+@media(prefers-reduced-motion:reduce){.cta-band,.cf-w,.cf-s{animation:none}}
 
-.cta-band::before{
-  content:"";position:absolute;
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(225,0,15,.2) 0%,rgba(38,166,154,.06) 50%,transparent 70%);
-  top:-100px;left:50%;transform:translateX(-50%);
-  pointer-events:none;border-radius:50%;
+/* Secció final: més moviment */
+.cf-w{animation:cf-drift 7s ease-in-out infinite}
+@keyframes cf-drift{0%,100%{translate:0 0;rotate:-6deg;scale:1}25%{translate:14px -22px;rotate:4deg;scale:1.08}50%{translate:-6px -34px;rotate:-2deg;scale:1}75%{translate:-16px -12px;rotate:6deg;scale:1.06}}
+.cf-b{position:absolute;bottom:-40px;left:var(--x);width:var(--z);height:var(--z);border-radius:50%;border:2px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);animation:cf-rise var(--t) linear infinite;animation-delay:var(--d)}
+@keyframes cf-rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(18px,-260px)}90%{opacity:.9}100%{transform:translate(-10px,-560px);opacity:0}}
+.cf-star{position:absolute;color:#FFE27A;font-size:30px;animation:cf-twinkle 2.4s ease-in-out infinite;text-shadow:0 0 12px rgba(255,226,122,.8)}
+.cf-s1{left:22%;top:20%}.cf-s2{right:24%;top:30%;animation-delay:-.8s;font-size:22px}.cf-s3{left:30%;bottom:16%;animation-delay:-1.6s;color:#fff;font-size:34px}
+@keyframes cf-twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.4}50%{transform:scale(1.25) rotate(20deg);opacity:1}}
+.cta-hl{animation:cb-wiggle 3.2s ease-in-out infinite}
+@keyframes cb-wiggle{0%,70%,100%{transform:rotate(-2deg) scale(1)}78%{transform:rotate(3deg) scale(1.08)}86%{transform:rotate(-4deg) scale(1.04)}94%{transform:rotate(1deg) scale(1)}}
+.btn-wa{animation:cb-pulse 2.6s ease-out infinite}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.cta-band .btn-white{animation:cb-bob 3s ease-in-out infinite}
+@keyframes cb-bob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.cb-in{opacity:0;transform:translateY(34px) scale(.96);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.25,1.3);transition-delay:calc(var(--i)*.15s)}
+.cta-band.is-in .cb-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.cf-w,.cf-b,.cf-star,.cta-hl,.btn-wa,.cta-band .btn-white{animation:none}.cf-b{display:none}.cb-in{opacity:1;transform:none;transition:none}}
+
+/* El conill de Sprint (del web actual): treu el cap i salta */
+.kp-bunny{position:absolute;left:5%;bottom:0;width:190px;height:auto;z-index:2;transform-origin:50% 100%;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(0,50,45,.3))}
+.cta-band.is-in .kp-bunny{transform:none;animation:kp-hop 3.4s ease-in-out 1.6s infinite}
+.kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
+@keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
+@keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
+@media(max-width:1100px){.kp-bunny{width:150px;left:2%}}
+@media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
+@media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
+
+/* Revisió secció final */
+/* 1) taronja viu amb contrast AA per al text blanc (mínim 4,5:1 a tot el degradat) */
+.cta-band{background:linear-gradient(120deg,#0E8278,#0D7C73,#10807A,#0D7C73);background-size:300% 300%}
+/* 2) WhatsApp en un verd amb prou contrast */
+.btn-wa{background:#128049}
+@media(max-width:480px){.btn-wa{font-size:16px;padding:16px 22px}}
+.btn-wa:hover{background:#0F6E3F}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+/* 6) el conill de peu sobre un terra dibuixat */
+.kp-bunny{bottom:34px}
+.kp-ground{position:absolute;left:calc(5% - 30px);bottom:22px;width:250px;height:auto;z-index:2}
+@media(max-width:1100px){.kp-ground{left:calc(2% - 26px);width:200px}}
+/* 7) menys moviment a la vegada: el protagonisme és del conill i del WhatsApp */
+.cta-hl,.cta-band .btn-white{animation:none}
+.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
+/* 3) mòbil: sense paraules ni estrelles, i bombolles només als costats, per darrere del text */
+@media(max-width:760px){
+  .cf-w,.cf-star,.cf-s{display:none}
+  .cf-b:nth-child(n+8):nth-child(-n+11){display:none}
+  .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
+  .kp-bunny{bottom:30px}
 }
 
-.cta-band-inner{max-width:580px;margin:0 auto;position:relative;z-index:1}
-.cta-band p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:32px}
-.cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.cta-band .btn-white{background:linear-gradient(135deg,#26A69A,#0F766E);color:#060F36;box-shadow:0 0 36px rgba(38,166,154,.35);border-radius:50px;padding:17px 34px;font-size:17px;font-weight:800}
-.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 56px rgba(38,166,154,.5)}
-.cta-band .btn-ghost-white{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.1)}
+/* ── WHATSAPP FLOTANT ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:60px;height:60px;border-radius:50%;
+  background:#128049;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);
+  transition:transform .2s,box-shadow .2s,background .2s;
+  animation:wa-float-pulse 2.8s ease-out infinite;
+  text-decoration:none;
+}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(0,0,0,.35);background:#0F6E3F}
+@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,0)}}
+@media(max-width:540px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
 
-
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .hero{padding:48px 22px 40px}
+  .teens-hero{padding:0 0 48px}
+  .teens-hero-photo{position:relative;width:auto;height:280px;margin-bottom:32px;
+    -webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);
+    mask-image:linear-gradient(180deg,#000 70%,transparent);
+    background-position:center 30%;
+  }
+  .teens-hero-grid{max-width:none;padding:0 22px}
   .section{padding:56px 22px}
-  .nivells-grid{grid-template-columns:1fr}
-  .metodo-grid{grid-template-columns:1fr 1fr}
   .horaris-wrap{padding:32px 22px;border-radius:16px}
-  .cta-band{padding:56px 22px}
+  .cta-band{padding:80px 22px}
 }
 @media(max-width:540px){
-  .metodo-grid{grid-template-columns:1fr}
+  .cta-band{padding:56px 22px}
 }
+@media(max-width:480px){.btn-wa{font-size:16px;padding:16px 22px}}
+
+/* --- teens orange btn override for hs section --- */
+.hs .btn-teens{background:var(--teens);color:var(--ink);box-shadow:0 8px 28px rgba(38,166,154,.4)}
+
+/* Revisió: mateixes mides i espais a totes les seccions, i igual que a Teens Planet */
+.teens-hero-sub{font-size:20px;max-width:560px}
+.hero-stat-num{font-size:26px}.hero-stat-label{font-size:15px}
+#nivells .section-label,#prova .section-label,#aula .section-label,#classes .section-label,#horaris .section-label{margin-bottom:12px}
+#nivells h2,#prova h2,#classes h2,#aula h2,#horaris h2{margin-top:0;margin-bottom:16px}
+#horaris .hs-side{padding-top:0}
+.section .section-label::before{display:none}
+/* Teens: mateixa estructura que Teens Planet però menys infantil (sense bombolles, estrelles ni notes; paraules més tranquil·les) */
+.cta-band .cf-b,.cta-band .cf-star,.cta-band .cf-s{display:none}
+.cta-band .cf-w{color:rgba(255,255,255,.16);animation:cf-float 12s ease-in-out infinite}
+.cta-band .cf-1{left:5%;top:14%}
+.cta-band{animation:none}
+/* mateixa alçada que la de Teens Planet: el text ocupa el mateix espai encara que sigui més curt */
+.cta-band .cta-band-inner p{min-height:calc(2 * 1.6em)}
+@media(max-width:960px){section.cta-band{padding-top:80px}}
+@media(max-width:760px){section.cta-band{padding-bottom:210px}.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
+/* Teens: decoració de línia (com el traç del conill), menys infantil però amb aire escolar */
+.cta-band .cta-float{display:none}
+.kc-doodles{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.32;pointer-events:none}
+.kc-doodles .kd{animation:kd-float 9s ease-in-out infinite}
+.kc-doodles .kd2{animation-delay:-3s}.kc-doodles .kd3{animation-delay:-5s}.kc-doodles .kd4{animation-delay:-2s}.kc-doodles .kd5{animation-delay:-6s}
+@keyframes kd-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@media(max-width:760px){.kc-doodles .kd3,.kc-doodles .kd4,.kc-doodles .kd5{display:none}.kc-doodles{opacity:.25}}
+@media(prefers-reduced-motion:reduce){.kc-doodles .kd{animation:none}}
+.cta-band .cta-hl{transform:rotate(-1deg)}
+
+/* Responsive (revisió): a tablet el conill no tapa el text; botons sense salts de línia estranys */
+@media(max-width:1100px){
+  section.cta-band{padding-bottom:230px}
+  .kp-bunny{left:50%;margin-left:-62px;width:125px;bottom:30px}
+  .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
+}
+@media(max-width:480px){
+  .hs-ctas{flex-direction:column;align-items:stretch;gap:14px}
+  .hs-ctas .btn-teens{justify-content:center;text-align:center;font-size:16px;padding:16px 20px}
+  .hs-ctas .hs-phone{align-self:flex-start}
+  .cta-band-btns{flex-direction:column;align-items:stretch}
+  .cta-band-btns a{justify-content:center;text-align:center}
+  .cta-band-btns .btn-wa{font-size:15px;padding:16px 16px;white-space:nowrap}
+}
+@media(max-width:360px){.hs-ctas .btn-teens{font-size:15px;padding:15px 16px}}
+@media(max-width:1100px){.kc-doodles .kd2,.kc-doodles .kd4,.kc-doodles .kd5{display:none}}
+
+/* ══ TEENS (canvis de Paula) ══ */
+.btn-ghost-teens{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--teens-dark);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;border:2px solid var(--teens);transition:transform .2s,background .2s}
+.btn-ghost-teens:hover{transform:translateY(-3px);background:var(--teens-soft)}
+@media(max-width:480px){.teens-hero .hero-ctas a{width:100%;justify-content:center}}
+.teens-hero .hero-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:540px}
+@media(max-width:420px){.teens-hero .hero-stats{gap:10px}.teens-hero .hero-stat{padding:12px 14px}.teens-hero .hero-stat-num{font-size:21px}}
+.hero-stat-label{max-width:190px}
+
+/* Nivells: escala que la bola puja graó a graó (versió Teens del conill de Kids) */
+#nivells{background:#fff;border-bottom:0}
+.tn-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.tn-wrap .section-lead{margin-bottom:0}
+.tn-stairs{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:end;gap:10px;height:430px;list-style:none;margin:0;padding:0}
+.tn-step{position:relative;border-radius:18px 18px 6px 6px;padding:16px 14px;display:flex;flex-direction:column;background:#EEF4F3;color:#5E716E;border:3px solid #DCE7E5;transition:background .4s,color .4s,border-color .4s,box-shadow .4s}
+.tn-step:nth-child(1){height:32%}.tn-step:nth-child(2){height:46%}.tn-step:nth-child(3){height:60%}.tn-step:nth-child(4){height:74%}.tn-step:nth-child(5){height:88%}
+.tn-n{font-family:"Caveat",cursive;font-weight:700;font-size:26px;line-height:1}
+.tn-nm{font-family:var(--font-display);font-weight:800;font-size:clamp(17px,1.7vw,24px);letter-spacing:-0.02em;line-height:1.05;margin:4px 0 8px}
+.tn-cf{align-self:flex-start;font-weight:800;font-size:13px;border-radius:99px;padding:3px 10px;background:#fff}
+.tn-step.on{border-color:var(--ink);box-shadow:5px 5px 0 var(--ink);color:var(--ink)}
+.tn-step.on:nth-child(1){background:#C9F5EE}.tn-step.on:nth-child(2){background:#8FE3D7}.tn-step.on:nth-child(3){background:var(--teens-dark);color:#fff}.tn-step.on:nth-child(4){background:#0B5F58;color:#fff}.tn-step.on:nth-child(5){background:#FFD23F}
+.tn-step.on .tn-cf{background:var(--ink);color:#fff}
+.tn-end .tn-nm{font-size:clamp(14px,1.45vw,20px);overflow-wrap:anywhere}
+.tn-ic{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;margin-bottom:6px;color:var(--teens-dark)}
+.tn-end a{font-family:"Caveat",cursive;font-weight:700;font-size:22px;color:inherit;margin-top:auto}
+.tn-ball{position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#FFD23F;border:4px solid var(--ink);box-shadow:0 6px 12px rgba(0,0,0,.2);z-index:5;pointer-events:none;opacity:0;will-change:transform}
+.tn-up{position:absolute;left:0;top:0;font-family:var(--font-display);font-weight:800;font-size:14px;color:var(--teens-dark);background:#fff;border:2px solid var(--ink);border-radius:99px;padding:3px 10px;white-space:nowrap;z-index:6;pointer-events:none;opacity:0}
+.tn-up.go{animation:tn-up 1s ease-out forwards}
+@keyframes tn-up{0%{opacity:0;transform:translate(-50%,0) scale(.6)}20%{opacity:1;transform:translate(-50%,-14px) scale(1.05)}100%{opacity:0;transform:translate(-50%,-46px) scale(1)}}
+.tn-replay{margin-top:22px;font:800 13px var(--font-body);color:var(--teens-dark);background:none;border:2px solid currentColor;border-radius:99px;padding:6px 14px;cursor:pointer}
+@media(max-width:960px){.tn-wrap{grid-template-columns:1fr;gap:32px}}
+@media(max-width:640px){
+  .tn-stairs{display:flex;flex-direction:column-reverse;align-items:flex-start;height:auto;gap:10px;padding-top:44px}
+  .tn-step:nth-child(n){height:auto}
+  .tn-step{flex-direction:row;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;min-height:58px}
+  .tn-step:nth-child(1){width:100%}.tn-step:nth-child(2){width:91%}.tn-step:nth-child(3){width:82%}.tn-step:nth-child(4){width:73%}.tn-step:nth-child(5){width:64%}
+  .tn-n{font-size:22px}.tn-nm{font-size:18px;margin:0;flex:1;white-space:nowrap}.tn-cf{align-self:center;font-size:12px}
+  .tn-ic{width:30px;height:30px;margin:0}.tn-ic svg{width:18px;height:18px}
+  .tn-end .tn-nm{font-size:18px;writing-mode:horizontal-tb;transform:none;overflow-wrap:normal}
+  .tn-end a{margin:0;font-size:20px;white-space:nowrap}.tn-end a span{display:none}
+  .tn-step.on{box-shadow:4px 4px 0 var(--ink)}
+}
+@media(max-width:380px){.tn-end a span{display:none}.tn-n{font-size:20px}.tn-nm,.tn-end .tn-nm{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.tn-step{transition:none}.tn-replay,.tn-ball,.tn-up{display:none}}
+
+/* ── METODOLOGIA (secció nova) ── */
+.metodo-wrap-teens{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start;
+}
+.metodo-side-teens{position:sticky;top:170px}
+.metodo-side-teens h2{margin-bottom:20px}
+.metodo-side-teens .section-lead{margin-bottom:28px;font-size:18px}
+.metodo-link-teens{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:800;font-size:15px;color:var(--teens-dark);
+  border-bottom:2px solid rgba(15,118,110,.3);padding-bottom:3px;
+  transition:gap .2s,border-color .2s;
+}
+.metodo-link-teens:hover{gap:14px;border-color:var(--teens)}
+.metodo-cards-teens{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding-bottom:48px}
+.metodo-card-teens{
+  position:relative;padding:30px 30px 34px;border-radius:30px;
+  background:var(--mck-bg);overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.metodo-card-teens:nth-child(even){transform:translateY(32px)}
+.metodo-card-teens:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 22px 44px -18px var(--mck-shadow)}
+.metodo-card-teens:nth-child(even):hover{transform:translateY(26px) rotate(1deg)}
+.mck-num{
+  position:absolute;top:14px;right:22px;
+  font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;
+  letter-spacing:-0.04em;color:var(--mck-color);opacity:.16;
+}
+.mck-icon{
+  margin-bottom:22px;width:62px;height:62px;border-radius:50%;
+  background:#fff;color:var(--mck-color);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px -8px var(--mck-shadow);
+  transform:rotate(-8deg);transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.metodo-card-teens:hover .mck-icon{transform:rotate(0) scale(1.08)}
+.mck-title{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-0.01em;margin-bottom:10px;color:var(--ink)}
+.mck-text{font-size:17px;color:var(--ink-soft);line-height:1.6}
+.mck-1{--mck-color:#0F766E;--mck-bg:#DDF5F0;--mck-shadow:rgba(15,118,110,.4)}
+.mck-2{--mck-color:#9B6A00;--mck-bg:#FFF0C7;--mck-shadow:rgba(230,160,0,.45)}
+.mck-3{--mck-color:#23408E;--mck-bg:#E7ECFA;--mck-shadow:rgba(35,64,142,.35)}
+@media(max-width:1100px){.metodo-wrap-teens{grid-template-columns:1fr;gap:40px}.metodo-side-teens{position:static}}
+@media(max-width:960px){
+  .metodo-cards-teens{grid-template-columns:1fr;gap:16px;padding-bottom:0}
+  .metodo-card-teens:nth-child(even),.metodo-card-teens:nth-child(even):hover{transform:none}
+  .metodo-card-teens{padding:26px 24px 28px}
+  .mck-num{font-size:52px}
+}
+@media(prefers-reduced-motion:reduce){.metodo-card-teens,.mck-icon{transition:none}}
+
+/* Teens: tres targetes; la tercera ocupa tot l'ample, amb la icona al costat del text */
+.metodo-card-teens.mck-3{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:22px;align-items:center}
+.metodo-card-teens.mck-3 .mck-icon{grid-row:span 2;margin-bottom:0}
+.metodo-card-teens.mck-3 .mck-title{align-self:end}.metodo-card-teens.mck-3 .mck-text{align-self:start}
+@media(max-width:960px){.metodo-card-teens.mck-3{display:block}.metodo-card-teens.mck-3 .mck-icon{margin-bottom:22px}}
+#classes{background:#F2FBF9}
+/* Teens: mateixa estructura que Kids però amb estil Teens (vora marcada, ombra recta, sense girs) */
+.metodo-card-teens{border:3px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 var(--ink);padding:28px 26px 30px}
+.metodo-card-teens:nth-child(even){transform:translateY(28px)}
+.metodo-card-teens:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.metodo-card-teens:nth-child(even):hover{transform:translate(-3px,25px)}
+.metodo-card-teens .mck-num{top:12px;right:18px;font-size:58px;opacity:1;color:transparent;-webkit-text-stroke:2px var(--mck-color)}
+.metodo-card-teens .mck-icon{transform:none;border-radius:14px;width:54px;height:54px;border:2px solid var(--ink);box-shadow:none;background:#fff}
+.metodo-card-teens:hover .mck-icon{transform:none}
+.metodo-card-teens .mck-title{font-size:22px}
+.mck-1{--mck-color:#0F766E;--mck-bg:#C9F5EE}
+.mck-2{--mck-color:#8A5A00;--mck-bg:#FFE58A}
+.mck-3{--mck-color:#15203D;--mck-bg:#8FE3D7}
+@media(min-width:961px){.metodo-card-teens.mck-3{margin-top:28px}.metodo-card-teens.mck-3:hover{transform:translate(-3px,25px)}}
+@media(max-width:960px){.metodo-card-teens:nth-child(even),.metodo-card-teens:nth-child(even):hover,.metodo-card-teens.mck-3:hover{transform:none}.metodo-card-teens{box-shadow:5px 5px 0 var(--ink)}}
+
+/* Coherència amb l'escala de nivells: mateixos colors, vora, ombra i número a mà */
+.metodo-card-teens{border:3px solid var(--ink);border-radius:18px;box-shadow:5px 5px 0 var(--ink)}
+.metodo-card-teens .mck-num{position:static;display:block;font-family:"Caveat",cursive;font-weight:700;font-size:30px;line-height:1;letter-spacing:0;-webkit-text-stroke:0;opacity:1;color:var(--teens-dark);margin-bottom:10px}
+.metodo-card-teens .mck-icon{position:absolute;top:20px;right:20px;margin:0;width:48px;height:48px;border-radius:12px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.metodo-card-teens .mck-title{padding-right:56px}
+.mck-1{--mck-bg:#C9F5EE}.mck-2{--mck-bg:#8FE3D7}
+.mck-3{--mck-bg:#0F766E}
+.metodo-card-teens.mck-3,.metodo-card-teens.mck-3 .mck-title,.metodo-card-teens.mck-3 .mck-text{color:#fff}
+.metodo-card-teens.mck-3 .mck-num{color:#FFD23F}
+.metodo-card-teens.mck-3{display:block}
+.metodo-card-teens.mck-3 .mck-icon{grid-row:auto}
+
+/* Prova de nivell: bloc fosc amb una pregunta de mostra de la prova real */
+.tp-section.section{padding-top:0;background:#fff}
+.tp-box{max-width:1480px;margin:0 auto;position:relative;overflow:hidden;background:linear-gradient(135deg,#0B4F4A,#0F766E 60%,#14877C);border-radius:36px;padding:80px 88px;display:grid;grid-template-columns:1fr 500px;gap:72px;align-items:center;color:#fff}
+.tp-box::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(125,240,224,.22),transparent 70%);top:-140px;left:-120px;pointer-events:none}
+.tp-box .section-label{margin-bottom:12px;color:#7DF0E0!important}
+.tp-box .section-label-dot{background:#7DF0E0!important}
+.tp-box h2{margin:0 0 18px;color:#fff;font-size:clamp(36px,4.2vw,60px)}
+.tp-box h2 em{color:#FFD23F!important}
+.tp-box p.tp-lead{font-size:20px;color:rgba(255,255,255,.88);line-height:1.6;max-width:540px}
+.tp-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px;list-style:none;padding:0}
+.tp-chips li{font-weight:800;font-size:15px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px}
+.tp-btn{display:inline-flex;align-items:center;gap:10px;background:#FFD23F;color:var(--ink);font-family:var(--font-body);font-size:18px;font-weight:800;border-radius:50px;padding:18px 34px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
+.tp-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 32px rgba(0,0,0,.3)}
+.tp-quiz{position:relative;z-index:1;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:28px;padding:32px;box-shadow:10px 10px 0 #FFD23F;transform:rotate(1.5deg)}
+.tp-q-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--teens-dark);margin-bottom:10px}
+.tp-q-bar{height:6px;border-radius:6px;background:#E4EEEC;overflow:hidden;margin-bottom:18px}.tp-q-bar i{display:block;height:100%;width:1.7%;background:var(--teens);transition:width .5s}
+.tp-q{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-0.02em;margin-bottom:16px}
+.tp-q span{display:inline-block;min-width:70px;border-bottom:3px dashed var(--teens);text-align:center;color:var(--teens-dark);transition:all .3s}
+.tp-opts{display:grid;gap:10px;list-style:none;padding:0;margin:0}
+.tp-opt{width:100%;text-align:left;font:700 18px var(--font-body);color:var(--ink);background:#F3FBF9;border:2px solid #D5E4E1;border-radius:14px;padding:15px 18px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px}
+.tp-opt b{width:28px;height:28px;flex:none;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid #D5E4E1;font-size:13px}
+.tp-opt:hover{border-color:var(--teens);transform:translateX(3px)}
+.tp-opt.ok{background:#C9F5EE;border-color:var(--teens-dark)}.tp-opt.ok b{background:var(--teens-dark);border-color:var(--teens-dark);color:#fff}
+.tp-opt.ko{background:#FFE9E6;border-color:#D9534F}.tp-opt.ko b{background:#D9534F;border-color:#D9534F;color:#fff}
+.tp-opt:disabled{cursor:default}.tp-opt:disabled:hover{transform:none}
+.tp-fb{min-height:24px;margin-top:14px;font-family:"Caveat",cursive;font-weight:700;font-size:24px;color:var(--teens-dark)}
+@media(max-width:1280px){.tp-box{grid-template-columns:1fr 420px;gap:48px;padding:60px 56px}}
+@media(max-width:1100px){.tp-box{grid-template-columns:1fr 380px;gap:40px;padding:48px 44px}}
+@media(max-width:900px){.tp-section.section{padding-top:0}.tp-box{grid-template-columns:1fr;padding:36px 24px 40px;gap:34px;border-radius:24px}.tp-quiz{transform:none;max-width:460px}}
+@media(max-width:480px){.tp-btn{width:100%;justify-content:center;text-align:center}.tp-quiz{padding:18px;box-shadow:6px 6px 0 #FFD23F}.tp-q{font-size:22px}.tp-opt{font-size:16px;padding:12px 14px}.tp-box p.tp-lead{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.tp-btn,.tp-opt,.tp-q-bar i{transition:none}}
+
+/* Com són les classes: foto + tres blocs horitzontals (icona i text al costat) */
+#aula{background:linear-gradient(135deg,#EFFAF7,#FFFBEA)}
+.ta-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.ta-side .section-lead{margin-bottom:28px}
+.tc-media{position:relative}
+.tc-deck{position:relative;aspect-ratio:3/2;width:calc(100% - 40px);cursor:pointer;touch-action:pan-y;outline:none;margin-bottom:30px}
+.tc-card{position:absolute;inset:0;margin:0;border-radius:22px;overflow:hidden;background:#fff;padding:10px;box-shadow:0 18px 40px -14px rgba(21,32,61,.35);transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.tc-card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;user-select:none;-webkit-user-drag:none}
+.tc-card.out{transform:translate(120%,-8%) rotate(16deg)!important;opacity:0}
+.tc-ctrl{display:flex;align-items:center;gap:14px}
+.tc-count{font-family:var(--font-display);font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.04em;color:var(--teens-dark);font-variant-numeric:tabular-nums;margin-right:6px}
+.tc-count span{font-size:18px;color:var(--ink-soft);letter-spacing:0}
+.tc-arrow{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teens-dark);border:1.5px solid rgba(15,118,110,.25);box-shadow:0 6px 18px rgba(38,166,154,.15);cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.tc-arrow:hover{background:var(--teens);color:#fff;transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){.tc-card{transition:none}}
+@media(max-width:960px){.ta-wrap{grid-template-columns:1fr;gap:18px}.ta-side{display:contents}.ta-side>*{order:1}.tc-media{order:2}.ta-side .tc-ctrl{order:3}.tc-deck{width:calc(100% - 36px);margin-bottom:24px}.ta-side .section-lead{margin-bottom:6px}}
+
+/* Horaris */
+#horaris{background:#fff}
+
+/* WhatsApp amb el verd real de la marca (#25D366). Text fosc perquè es llegeixi bé (el blanc no arriba al contrast mínim) */
+.btn-wa{background:#25D366!important;color:#0B2E1C!important}
+.btn-wa svg{color:#0B2E1C}
+.btn-wa:hover{background:#1EBE5A!important}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.wa-float{background:#25D366!important;color:#fff}
+.wa-float:hover{background:#1EBE5A!important}
+@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -155,14 +524,14 @@ h1 em{font-style:normal;color:var(--teens)}
   <meta property="og:site_name" content="Sprint Idiomes">
   <meta property="og:url" content="https://www.sprintidiomes.com/teens/">
   <meta property="og:title" content="Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat">
-  <meta property="og:description" content="Anglès per a joves d'ESO a Sant Cugat. Preparació B1, B2, First Certificate i accés a Cambridge. Professors nadius especialitzats en adolescents.">
+  <meta property="og:description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.">
   <meta property="og:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat">
-  <meta name="twitter:description" content="Anglès per a l'ESO a Sant Cugat. B1, B2, First Certificate, professors nadius.">
+  <meta name="twitter:description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.">
   <meta name="twitter:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.sprintidiomes.com/teens/">
@@ -176,12 +545,12 @@ h1 em{font-style:normal;color:var(--teens)}
     {
       "@type": "Course",
       "name": "Teens — Anglès per a joves d'ESO",
-      "description": "Anglès per a joves d'ESO a Sant Cugat del Vallès. Preparació B1 i B2, accés a First Certificate, professors nadius especialitzats en adolescents.",
+      "description": "Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.",
       "url": "https://www.sprintidiomes.com/teens/",
       "provider": {
         "@id": "https://www.sprintidiomes.com/#school"
       },
-      "educationalLevel": "B1 to B2",
+      "educationalLevel": "A2 to B1+",
       "audience": {
         "@type": "EducationalAudience",
         "audienceType": "Teenagers (secondary school, ESO)"
@@ -218,151 +587,262 @@ h1 em{font-style:normal;color:var(--teens)}
   </script>
 </head>
 <body>
-<script src="nav.js?v=29"></script>
+<script src="nav.js?v=30"></script>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow"><span class="eyebrow-dot"></span>ESO</div>
-    <h1>L'anglès que<br>t'obre <em>portes</em>.</h1>
-    <p class="hero-sub">4 nivells pensats per a tu. Professors que t'entenen, un mètode que et motiva i la preparació Cambridge que et pot obrir qualsevol porta.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">nivells progressius</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Màx. 12</div><div class="hero-stat-label">alumnes per grup</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Cambridge</div><div class="hero-stat-label">centre preparador oficial</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">Des de 1973</div><div class="hero-stat-label">més de 50 anys d'experiència</div></div>
-    </div>
-    <div class="hero-ctas">
-      <a href="#horaris" class="btn-teens">Veure horaris →</a>
+<!-- ── WHATSAPP FLOTANT ── -->
+<a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Teens%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
+   target="_blank" rel="noopener" class="wa-float" aria-label="Contactar per WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>
+</a>
+
+<main id="contingut" tabindex="-1">
+
+<!-- ── HERO ── -->
+<section class="teens-hero">
+  <div class="teens-hero-photo" aria-hidden="true"></div>
+  <div class="teens-hero-inner">
+    <div class="teens-hero-grid">
+      <div class="teens-eyebrow">
+        <span class="teens-eyebrow-dot"></span>1r a 4t d'ESO
+      </div>
+      <h1>L'anglès que t'obre <em>portes</em></h1>
+      <p class="teens-hero-sub">Al departament de Teens, portem l'anglès un pas més enllà, guanyant fluïdesa, autonomia i confiança per comunicar-nos en situacions reals.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">Màxim 12</div><div class="hero-stat-label">alumnes</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">Trieu entre 4</div><div class="hero-stat-label">nivells de TEENS</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">Camí cap als títols</div><div class="hero-stat-label">de Cambridge</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">ESO</div><div class="hero-stat-label">Educació Secundària Obligatòria</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#horaris" class="btn-teens">Veure horaris →</a>
+        <a href="#prova" class="btn-ghost-teens">Fes la prova de nivell</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NIVELLS -->
+<!-- ── COM SÓN LES CLASSES ── -->
+<section class="section" id="classes">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Metodologia</div>
+    <div class="metodo-wrap-teens">
+      <div class="metodo-side-teens">
+        <h2>Com són les classes de <em style="color:var(--teens-dark);font-style:normal">Teens</em>?</h2>
+        <p class="section-lead">Formació adaptada als adolescents, orientada als exàmens oficials de Cambridge.</p>
+        <a href="index.html#contacte" class="metodo-link-teens">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="metodo-cards-teens">
+        <div class="metodo-card-teens mck-1">
+          <span class="mck-num" aria-hidden="true">#01</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="mck-title">Grups reduïts</div>
+          <p class="mck-text">Classes de màxim 12 alumnes per garantir una atenció propera i fomentar la participació.</p>
+        </div>
+        <div class="metodo-card-teens mck-2">
+          <span class="mck-num" aria-hidden="true">#02</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="mck-title">Classes de 75 o 90 minuts</div>
+          <p class="mck-text">Sessions d'1 hora i 15 minuts o d'1 hora i 30 minuts, segons el grup.</p>
+        </div>
+        <div class="metodo-card-teens mck-3">
+          <span class="mck-num" aria-hidden="true">#03</span>
+          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+          <div class="mck-title">Orientació cap a Cambridge</div>
+          <p class="mck-text">Introduïm activitats i continguts orientats als exàmens oficials de Cambridge, preparant els estudiants per a la següent etapa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LES NOSTRES CLASSES (fotos) ── -->
+<section class="section" id="aula">
+  <div class="section-inner">
+    <div class="ta-wrap">
+      <div class="tc-media">
+        <div class="tc-deck" aria-roledescription="carrusel" aria-label="Fotos de les classes de Teens" tabindex="0">
+          <figure class="tc-card"><img src="img-teens/teens-foto-1-700.webp" srcset="img-teens/teens-foto-1-700.webp 700w, img-teens/teens-foto-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dos alumnes de Teens rient durant la classe" draggable="false"></figure>
+          <figure class="tc-card"><img src="img-teens/teens-classe-700.webp" srcset="img-teens/teens-classe-700.webp 700w, img-teens/teens-classe.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dues alumnes de Teens treballant juntes a classe" draggable="false"></figure>
+          <figure class="tc-card"><img src="img-teens/teens-foto-2-700.webp" srcset="img-teens/teens-foto-2-700.webp 700w, img-teens/teens-foto-2.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Un grup de Teens treballant amb la professora al voltant de la taula" draggable="false"></figure>
+          <figure class="tc-card"><img src="img-teens/teens-foto-3-700.webp" srcset="img-teens/teens-foto-3-700.webp 700w, img-teens/teens-foto-3.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una alumna de Teens somrient amb una companya" draggable="false"></figure>
+          <figure class="tc-card"><img src="img-teens/teens-foto-4-700.webp" srcset="img-teens/teens-foto-4-700.webp 700w, img-teens/teens-foto-4.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Una alumna de Teens somrient a classe" draggable="false"></figure>
+          <figure class="tc-card"><img src="img-teens/teens-foto-5-700.webp" srcset="img-teens/teens-foto-5-700.webp 700w, img-teens/teens-foto-5.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="Dos alumnes de Teens atents a la classe" draggable="false"></figure>
+        </div>
+      </div>
+      <div class="ta-side">
+        <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Les nostres classes</div>
+        <h2>Un cop d'ull a les nostres <em style="color:var(--teens-dark);font-style:normal">classes</em></h2>
+        <p class="section-lead">Grups reduïts de màxim 12 alumnes.</p>
+        <div class="tc-ctrl">
+          <div class="tc-count" aria-live="polite"><b>01</b><span> / 06</span></div>
+          <button class="tc-arrow tc-prev" type="button" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="tc-arrow tc-next" type="button" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NIVELLS ── -->
 <section class="section" id="nivells">
   <div class="section-inner">
-    <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Nivells Teens</div>
-    <h2>4 nivells, un <em style="color:var(--teens);font-style:normal">camí clar</em>.</h2>
-    <p class="section-lead">De Junior a Pre-First. Cada nivell construeix sobre l'anterior fins a deixar-te llest per superar els exàmens Cambridge amb confiança.</p>
-    <div class="nivells-grid">
-
-      <div class="nivel-card">
-        <div class="nc-top"><span class="nc-cefr">A2–B1</span><span class="nc-age">1r d'ESO</span></div>
-        <div class="nc-name">Junior</div>
-        <p class="nc-desc">Primer nivell Teens. Consolidació de les bases gramaticals i comunicatives. Vocabulari actiu en contextos propers als joves: vida quotidiana, aficions, tecnologia i relacions socials.</p>
-        <div class="nc-pills"><span>A2–B1</span><span>KET</span><span>Màx. 12</span></div>
+    <div class="tn-wrap">
+      <div>
+        <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Nivells</div>
+        <h2>Un pas més en el teu <em style="color:var(--teens-dark);font-style:normal">anglès</em></h2>
+        <p class="section-lead">Cada nivell, de Junior a Pre-First, permet consolidar coneixements i avançar progressivament cap a la preparació dels exàmens oficials de Cambridge.</p>
       </div>
-
-      <div class="nivel-card">
-        <div class="nc-top"><span class="nc-cefr">B1</span><span class="nc-age">2n d'ESO</span></div>
-        <div class="nc-name">Level 2</div>
-        <p class="nc-desc">Consolidació B1. Comprensió lectora i expressió oral en situacions reals. Gramàtica en context, redacció guiada i conversa activa sobre temes d'actualitat.</p>
-        <div class="nc-pills"><span>B1</span><span>PET</span><span>Màx. 12</span></div>
-      </div>
-
-      <div class="nivel-card">
-        <div class="nc-top"><span class="nc-cefr">B1–B2</span><span class="nc-age">3r d'ESO</span></div>
-        <div class="nc-name">Level 3</div>
-        <p class="nc-desc">Transició cap al B2. Textos més llargs i complexos, producció escrita autònoma i debat oral. Inici de la preparació per al Cambridge B2 First.</p>
-        <div class="nc-pills"><span>B1–B2</span><span>B2 First prep</span><span>Màx. 12</span></div>
-      </div>
-
-      <div class="nivel-card">
-        <div class="nc-top"><span class="nc-cefr">B2</span><span class="nc-age">4t d'ESO</span></div>
-        <div class="nc-name">Pre-First</div>
-        <p class="nc-desc">Preparació intensiva per al Cambridge B2 First Certificate. Totes les competències de l'examen: Reading, Writing, Listening, Speaking i Use of English.</p>
-        <div class="nc-pills"><span>B2</span><span>FCE prep</span><span>Màx. 12</span></div>
-      </div>
-
-    </div>
-    <p style="font-size:14px;color:var(--ink-soft);text-align:center">
-      Quan acabes els Teens, el pas natural és la <a href="cambridge.html" style="color:var(--teens);font-weight:700;text-decoration:underline">preparació Cambridge oficial →</a>
-    </p>
-  </div>
-</section>
-
-<!-- METODOLOGIA -->
-<section class="section" id="metode">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>El nostre mètode</div>
-    <h2>Fet <em style="color:var(--teens);font-style:normal">per a tu</em>.</h2>
-    <p class="section-lead">Tu aprens diferent. El nostre mètode ho sap i dissenya cada classe per mantenir-te actiu, involucrat i amb ganes de tornar.</p>
-    <div class="metodo-grid">
-      <div class="metodo-card">
-        <div class="metodo-num">01</div>
-        <div class="metodo-title">Professors que et pillen</div>
-        <p class="metodo-text">No tots els professors saben com parlar amb un teen. Els nostres sí: formats per mantenir la teva atenció i motivació durant tota l'ESO.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">02</div>
-        <div class="metodo-title">Temes que et mouen</div>
-        <p class="metodo-text">Xarxes socials, música, cinema, esports, videojocs i debats d'actualitat. L'anglès entra quan el tema et mou. No hi ha excuses per no parlar.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">03</div>
-        <div class="metodo-title">El teu grup, la teva zona</div>
-        <p class="metodo-text">Màxim 12 alumnes. Els mateixos companys any rere any: un ambient on t'atreveixes a parlar sense por a quedar malament.</p>
-      </div>
-      <div class="metodo-card">
-        <div class="metodo-num">04</div>
-        <div class="metodo-title">Cambridge? Part del pla des del dia 1</div>
-        <p class="metodo-text">El Cambridge no és un plus: és part del camí. La preparació s'integra des del primer dia, sense classes extra ni l'estrès d'última hora.</p>
-      </div>
+      <ol class="tn-stairs" id="tnStairs" role="list">
+        <li class="tn-step"><span class="tn-n">#01</span><span class="tn-nm">Junior</span><span class="tn-cf">A2</span></li>
+        <li class="tn-step"><span class="tn-n">#02</span><span class="tn-nm">Level 2</span><span class="tn-cf">A2+</span></li>
+        <li class="tn-step"><span class="tn-n">#03</span><span class="tn-nm">Level 3</span><span class="tn-cf">B1</span></li>
+        <li class="tn-step"><span class="tn-n">#04</span><span class="tn-nm">Pre First</span><span class="tn-cf">B1+</span></li>
+        <li class="tn-step tn-end"><span class="tn-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="tn-nm">Cambridge</span><a href="cambridge.html" aria-label="Cambridge, següent etapa"><span>següent etapa </span>→</a></li>
+        <li aria-hidden="true" style="display:contents"><span class="tn-ball"></span><span class="tn-up">Level up!</span></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- HORARIS -->
+<!-- ── PROVA DE NIVELL ── -->
+<section class="section tp-section" id="prova">
+  <div class="tp-box">
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Prova de nivell</div>
+      <h2>Saps quin és el teu <em style="font-style:normal">nivell d'anglès</em>?</h2>
+      <p class="tp-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
+      <ul class="tp-chips"><li>60 preguntes</li><li>Gratuïta</li><li>Sense compromís</li></ul>
+      <a href="https://sprintidiomes.com/teens-english-test/" target="_blank" rel="noopener" class="tp-btn">Fes la prova de nivell →</a>
+    </div>
+    <div class="tp-quiz" id="tpQuiz">
+      <div class="tp-q-top"><span>Pregunta de mostra</span><span>1 / 60</span></div>
+      <div class="tp-q-bar"><i></i></div>
+      <p class="tp-q" id="tpQ">Are you <span>&nbsp;</span>?</p>
+      <ul class="tp-opts" role="list">
+        <li><button type="button" class="tp-opt" data-ok="1"><b>A</b>a student</button></li>
+        <li><button type="button" class="tp-opt"><b>B</b>a students</button></li>
+        <li><button type="button" class="tp-opt"><b>C</b>student</button></li>
+      </ul>
+      <p class="tp-fb" id="tpFb" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── HORARIS ── -->
 <section class="section" id="horaris">
   <div class="section-inner">
     <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Horaris</div>
-    <div class="hs hs-wrap" style="--hs-c:var(--teens)">
+    <div class="hs hs-wrap" style="--hs-c:var(--teens)" data-grups>
       <div class="hs-side">
-        <h2>Horaris.</h2>
-        <p class="section-lead">De dilluns a divendres, a la tarda. Tria l'horari que et va millor.</p>
+        <h2>Trobeu l'horari que us <em style="color:var(--teens-dark);font-style:normal">encaixi millor</em></h2>
+        <p class="section-lead">Consulteu els horaris disponibles per a Junior, Level 2, Level 3 i Pre First.</p>
         <div class="hs-ctas">
-          <a href="index.html#contacte" class="btn-teens">Prova una classe gratuïta →</a>
+          <a href="index.html#contacte" class="btn-teens">Reserva la teva classe de prova →</a>
           <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
         </div>
       </div>
       <div class="hs-main">
-        <!-- Horaris: una fila per grup. data-days = dies (dl dt dc dj dv). Al WordPress serà un repetidor amb aquests mateixos camps. -->
+        <!-- Horaris: una fila per opció. data-days = dies (dl dt dc dj dv). Es mostren en columnes Dilluns i dimecres / Dimarts i dijous / Divendres, una fila per nivell. -->
         <table class="hs-source">
           <caption class="sr-only">Horaris setmanals de Teens</caption>
           <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
           <tbody>
             <tr data-days="dl dc"><td>Junior</td><td>Dilluns i dimecres</td><td>16:15–17:30</td></tr>
-            <tr data-days="dt dj"><td>Junior</td><td>Dimarts i dijous</td><td>18:15–19:30</td></tr>
             <tr data-days="dv"><td>Junior</td><td>Divendres</td><td>17:30–19:30</td></tr>
             <tr data-days="dl dc"><td>Level 2</td><td>Dilluns i dimecres</td><td>16:15–17:30</td></tr>
             <tr data-days="dl dc"><td>Level 2</td><td>Dilluns i dimecres</td><td>18:30–20:00</td></tr>
             <tr data-days="dt dj"><td>Level 2</td><td>Dimarts i dijous</td><td>16:00–17:15</td></tr>
-            <tr data-days="dt dj"><td>Level 2</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
-            <tr data-days="dv"><td>Level 2</td><td>Divendres</td><td>18:00–20:00</td></tr>
-            <tr data-days="dl dc"><td>Level 3 – Pre First</td><td>Dilluns i dimecres</td><td>16:00–17:30</td></tr>
-            <tr data-days="dl dc"><td>Level 3 – Pre First</td><td>Dilluns i dimecres</td><td>18:30–20:00</td></tr>
-            <tr data-days="dt dj"><td>Level 3 – Pre First</td><td>Dimarts i dijous</td><td>15:45–17:15</td></tr>
-            <tr data-days="dt dj"><td>Level 3 – Pre First</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
-            <tr data-days="dv"><td>Level 3 – Pre First</td><td>Divendres</td><td>17:30–20:00</td></tr>
+            <tr data-days="dl dc"><td>Level 3</td><td>Dilluns i dimecres</td><td>16:00–17:30</td></tr>
+            <tr data-days="dt dj"><td>Level 3</td><td>Dimarts i dijous</td><td>15:45–17:15</td></tr>
+            <tr data-days="dt dj"><td>Level 3</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
+            <tr data-days="dv"><td>Level 3</td><td>Divendres</td><td>17:30–20:00</td></tr>
+            <tr data-days="dl dc"><td>Pre First</td><td>Dilluns i dimecres</td><td>16:00–17:30</td></tr>
+            <tr data-days="dl dc"><td>Pre First</td><td>Dilluns i dimecres</td><td>18:30–20:00</td></tr>
+            <tr data-days="dt dj"><td>Pre First</td><td>Dimarts i dijous</td><td>15:45–17:15</td></tr>
+            <tr data-days="dt dj"><td>Pre First</td><td>Dimarts i dijous</td><td>17:45–19:15</td></tr>
+            <tr data-days="dv"><td>Pre First</td><td>Divendres</td><td>17:30–20:00</td></tr>
           </tbody>
         </table>
-        <p class="hs-note">Els horaris poden variar. Contacta'ns per confirmar disponibilitat i nivell.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
+  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <g class="kd kd1"><path d="M1110 118 v-14 a50 50 0 0 1 100 0 v14"/><rect x="1098" y="112" width="24" height="40" rx="10"/><rect x="1198" y="112" width="24" height="40" rx="10"/></g>
+    <g class="kd kd2"><rect x="1190" y="290" width="74" height="122" rx="14"/><path d="M1214 300 h26"/><rect x="1202" y="320" width="50" height="26" rx="10"/><text x="1227" y="339" fill="#fff" stroke="none" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="16" text-anchor="middle">OK!</text><path d="M1206 362 h30 M1206 374 h20"/></g>
+    <g class="kd kd3"><path d="M300 64 h56 v18 a28 28 0 0 1 -56 0 z M300 72 h-14 a12 12 0 0 0 14 18 M356 72 h14 a12 12 0 0 1 -14 18 M328 110 v14 M312 132 h32"/></g>
+    <g class="kd kd4"><path d="M346 380 l-30 50 h24 l-10 40 36 -56 h-24 l14 -34 z"/></g>
+    <g class="kd kd5"><path d="M1030 440 c 30 -40, 70 10, 110 -20" /><path d="M1128 410 l14 10 -14 12"/></g>
+  </svg>
+  <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
+  <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cta-band-inner">
-    <h2>El teu anglès,<br>al pròxim nivell.</h2>
-    <p>Test de nivell gratuït i primera classe sense compromís. Et contactem en menys de 24h per trobar el grup que et toca. Zero pressió.</p>
-    <div class="cta-band-btns">
+    <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cta-hl">sense compromís</span></h2>
+    <p class="cb-in" style="--i:1">Voleu saber més sobre Teens? Contacteu amb nosaltres i us informarem.</p>
+    <div class="cta-band-btns cb-in" style="--i:2">
       <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
-      <a href="tel:+34935892264" class="btn-ghost-white">93 589 22 64</a>
+      <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Teens%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
     </div>
   </div>
 </section>
 
+</main>
+
+<script>
+/* CTA band: entra amb animació */
+(function(){
+  var band = document.querySelector('.cta-band'); if (!band) return;
+  if (!('IntersectionObserver' in window)) { band.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { band.classList.add('is-in'); io.disconnect(); } }); }, {threshold:.25});
+  io.observe(band);
+})();
+</script>
+<script>
+/* Fotos Teens: baralla de fotos que passa sola (com a Kids) */
+(function(){
+  var deck=document.querySelector('.tc-deck');if(!deck)return;
+  var cards=[].slice.call(deck.children),order=cards.map(function(_,i){return i}),num=document.querySelector('.tc-count b'),ROT=[-2,5,-4,3,-6],
+      T=4000,t=null,busy=false,paused=false,visible=false,still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function lay(){order.forEach(function(ci,pos){var c=cards[ci];c.style.zIndex=10-pos;c.setAttribute('aria-hidden',pos?'true':'false');
+    c.style.transform=pos===0?'rotate(-2deg)':'translate('+(pos*14)+'px,'+(pos*10)+'px) rotate('+ROT[pos%ROT.length]+'deg) scale('+(1-pos*.04)+')';c.style.opacity=pos>3?0:1});
+    num.textContent=String(order[0]+1).padStart(2,'0')}
+  function next(){if(busy)return;busy=true;var top=cards[order[0]];top.classList.add('out');setTimeout(function(){order.push(order.shift());top.classList.remove('out');lay();busy=false},still?0:450);restart()}
+  function prev(){if(busy)return;order.unshift(order.pop());lay();restart()}
+  function restart(){clearTimeout(t);if(!paused&&visible&&!still)t=setTimeout(next,T)}
+  document.querySelector('.tc-next').addEventListener('click',next);document.querySelector('.tc-prev').addEventListener('click',prev);
+  var x0=null,moved=false;deck.addEventListener('pointerdown',function(e){x0=e.clientX;moved=false});
+  deck.addEventListener('pointerup',function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40){moved=true;dx<0?prev():next()}});
+  deck.addEventListener('click',function(){if(!moved)next()});
+  deck.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
+  deck.addEventListener('mouseenter',function(){paused=true;clearTimeout(t)});deck.addEventListener('mouseleave',function(){paused=false;restart()});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;visible?restart():clearTimeout(t)})},{threshold:.3}).observe(deck);else{visible=true;restart()}
+  lay();
+})();
+/* Prova de nivell: pregunta de mostra */
+(function(){var q=document.getElementById('tpQuiz');if(!q)return;var bs=[].slice.call(q.querySelectorAll('.tp-opt')),fb=document.getElementById('tpFb'),gap=q.querySelector('.tp-q span'),bar=q.querySelector('.tp-q-bar i');
+  bs.forEach(function(b){b.addEventListener('click',function(){var ok=b.hasAttribute('data-ok');bs.forEach(function(x){x.disabled=true;if(x.hasAttribute('data-ok'))x.classList.add('ok')});if(!ok)b.classList.add('ko');gap.textContent='a student';bar.style.width='100%';fb.textContent=ok?'Correcte! Ara, a per les altres 59 →':'Gairebé! La bona és "a student". Prova la resta →'})})})();
+/* Nivells Teens: la bola puja l'escala graó a graó */
+(function(){
+  var st=document.getElementById('tnStairs');if(!st)return;
+  var steps=[].slice.call(st.querySelectorAll('.tn-step')),ball=st.querySelector('.tn-ball'),up=st.querySelector('.tn-up'),btn=document.querySelector('.tn-replay'),
+      still=matchMedia('(prefers-reduced-motion: reduce)').matches,timers=[],raf,done=false;
+  function pt(s){var R=st.getBoundingClientRect(),r=s.getBoundingClientRect(),m=innerWidth<=640;return[(m?r.right-28:r.left+r.width/2)-R.left,r.top-R.top-16]}
+  function place(x,y){ball.style.transform='translate('+x+'px,'+y+'px)'}
+  function pop(x,y){up.style.left=x+'px';up.style.top=(y-34)+'px';up.classList.remove('go');void up.offsetWidth;up.classList.add('go')}
+  function run(){timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf);steps.forEach(function(s){s.classList.remove('on')});
+    if(still){steps.forEach(function(s){s.classList.add('on')});return}
+    var pts=steps.map(pt),k=0;ball.style.opacity=1;place(pts[0][0],pts[0][1]);steps[0].classList.add('on');
+    function hop(){if(k>=steps.length-1)return;var a=pts[k],b=pts[k+1],t0=performance.now(),D=650;
+      (function f(now){var q=Math.min(1,(now-t0)/D),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;place(a[0]+(b[0]-a[0])*e,a[1]+(b[1]-a[1])*e-Math.sin(Math.PI*q)*(innerWidth<=640?40:70));
+        if(q<1)raf=requestAnimationFrame(f);else{k++;steps[k].classList.add('on');pop(b[0],b[1]);timers.push(setTimeout(hop,420))}})(t0)}
+    timers.push(setTimeout(hop,500))}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;io.disconnect();run()}},{threshold:.4});io.observe(st)}else{done=true;run()}
+  if(btn)btn.addEventListener('click',run);
+  var w=innerWidth;addEventListener('resize',function(){if(Math.abs(innerWidth-w)>40){w=innerWidth;if(done)run()}});
+})();
+</script>
 </body>
 </html>

@@ -314,6 +314,20 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:960px){.kp-path{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:360px){.hs-ctas .btn-kp{font-size:15px;padding:15px 16px}}
 
+
+/* WhatsApp amb el verd real de la marca (#25D366). Text fosc perquè es llegeixi bé (el blanc no arriba al contrast mínim) */
+.btn-wa{background:#25D366!important;color:#0B2E1C!important}
+.btn-wa svg{color:#0B2E1C}
+.btn-wa:hover{background:#1EBE5A!important}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.wa-float{background:#25D366!important;color:#fff}
+.wa-float:hover{background:#1EBE5A!important}
+@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
+
+/* Bàner final: tots els elements decoratius queden dins del requadre */
+.cta-band .cf-5{top:18px}
+.cta-band .cf-b{bottom:12px}
+@keyframes cf-rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(18px,-190px)}80%{opacity:.7}100%{transform:translate(-10px,-360px);opacity:0}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -386,7 +400,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=29"></script>
+<script src="nav.js?v=30"></script>
 
 <main id="contingut" tabindex="-1">
 <section class="kp-hero">

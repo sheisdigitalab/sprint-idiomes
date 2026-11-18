@@ -644,10 +644,10 @@ ${cursosDropdown}
             : adu[p] ? "Hola! M'interessen les classes " + (/^[AEIOUÀÈÉÍÒÓÚaeiou]/.test(adu[p]) ? "d'" : "de ") + adu[p] + " i m'agradaria rebre més informació sobre els horaris i les places disponibles. Moltes gràcies!"
             : "Hola! M'agradaria rebre més informació sobre els cursos de Sprint Idiomes. Moltes gràcies!";
     var css = document.createElement('style');
-    css.textContent = '.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#128049;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,background .2s;animation:wa-float-pulse 2.8s ease-out infinite;text-decoration:none}'
-      + '.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(0,0,0,.35);background:#0F6E3F}'
+    css.textContent = '.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,background .2s;animation:wa-float-pulse 2.8s ease-out infinite;text-decoration:none}'
+      + '.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(0,0,0,.35);background:#1EBE5A}'
       + '.wa-float:focus-visible{outline:3px solid #2547D9;outline-offset:3px}'
-      + '@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(18,128,73,0)}}'
+      + '@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}'
       + '@media(max-width:540px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}}'
       + '@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}';
     document.head.appendChild(css);

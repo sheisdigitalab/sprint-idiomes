@@ -468,6 +468,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Fotos alineades amb la resta de seccions: comencen al mateix marge esquerre */
 @media(min-width:961px){.fotos-deck{justify-self:stretch;max-width:none;width:calc(100% - 30px)}}
+
+/* WhatsApp amb el verd real de la marca (#25D366). Text fosc perquè es llegeixi bé (el blanc no arriba al contrast mínim) */
+.btn-wa{background:#25D366!important;color:#0B2E1C!important}
+.btn-wa svg{color:#0B2E1C}
+.btn-wa:hover{background:#1EBE5A!important}
+@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
+.wa-float{background:#25D366!important;color:#fff}
+.wa-float:hover{background:#1EBE5A!important}
+@keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -539,7 +548,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=29"></script>
+<script src="nav.js?v=30"></script>
 
 <!-- ── WHATSAPP FLOTANT ── -->
 <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
@@ -695,7 +704,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
-  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <g class="kd kd1"><path d="M1130 92 l70 -30 -22 66 -16 -22z M1162 106 l38 -44"/><path d="M1128 96 C 1060 120, 1040 70, 980 96" stroke-dasharray="2 10"/></g>
     <g class="kd kd2"><rect x="1180" y="300" width="120" height="64" rx="18"/><path d="M1206 364 l-6 22 24 -22"/><text x="1240" y="342" fill="#fff" stroke="none" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="28" text-anchor="middle">Hi!</text></g>
     <g class="kd kd3"><path d="M330 70 l8 18 20 2 -15 13 5 20 -18 -11 -18 11 5 -20 -15 -13 20 -2z"/></g>
