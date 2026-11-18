@@ -874,9 +874,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   var G={H:600,k:1.25,r:42,font:32,BH:118,hop:72,sun:[560,90],clouds:[[50,120,1.2],[290,70,1]],
       P:[[120,500],[320,395],[520,450],[715,330],[875,255]],
       hills:['M0 360 Q 230 250 500 340 T 1000 300','M0 450 Q 280 380 580 450 T 1000 420','M0 535 Q 300 495 640 535 T 1000 520'],trees:[[975,560],[60,420],[40,330,640,960]]};
-  var box=document.getElementById('kg-stage');if(!box)return;var on=false;
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!on){on=true;io.disconnect();build('kg-stage',G)}},{threshold:.3});io.observe(box)}else{on=true;build('kg-stage',G)}
-  var w=mob();addEventListener('resize',function(){if(mob()!==w){w=mob();if(on)build('kg-stage',G)}});
+  var box=document.getElementById('kg-stage');if(!box)return;
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){build('kg-stage',G)}else{box.innerHTML=''}},{threshold:.3});io.observe(box)}else{build('kg-stage',G)}
+  var w=mob();addEventListener('resize',function(){if(mob()!==w){w=mob();build('kg-stage',G)}});
 })();
 </script>
 </body>

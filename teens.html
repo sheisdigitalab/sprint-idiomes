@@ -469,7 +469,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .tp-chips li{font-weight:800;font-size:15px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px}
 .tp-btn{display:inline-flex;align-items:center;gap:10px;background:#FFD23F;color:var(--ink);font-family:var(--font-body);font-size:18px;font-weight:800;border-radius:50px;padding:18px 34px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
 .tp-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 32px rgba(0,0,0,.3)}
-.tp-quiz{position:relative;z-index:1;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:28px;padding:32px;box-shadow:10px 10px 0 #FFD23F;transform:rotate(1.5deg)}
+.tp-quiz{position:relative;z-index:1;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:28px;padding:32px;box-shadow:10px 10px 0 #FFD23F}
 .tp-q-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--teens-dark);margin-bottom:10px}
 .tp-q-bar{height:6px;border-radius:6px;background:#E4EEEC;overflow:hidden;margin-bottom:18px}.tp-q-bar i{display:block;height:100%;width:1.7%;background:var(--teens);transition:width .5s}
 .tp-q{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-0.02em;margin-bottom:16px}
@@ -828,7 +828,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 (function(){
   var st=document.getElementById('tnStairs');if(!st)return;
   var steps=[].slice.call(st.querySelectorAll('.tn-step')),ball=st.querySelector('.tn-ball'),up=st.querySelector('.tn-up'),btn=document.querySelector('.tn-replay'),
-      still=matchMedia('(prefers-reduced-motion: reduce)').matches,timers=[],raf,done=false;
+      still=matchMedia('(prefers-reduced-motion: reduce)').matches,timers=[],raf;
   function pt(s){var R=st.getBoundingClientRect(),r=s.getBoundingClientRect(),m=innerWidth<=640;return[(m?r.right-28:r.left+r.width/2)-R.left,r.top-R.top-16]}
   function place(x,y){ball.style.transform='translate('+x+'px,'+y+'px)'}
   function pop(x,y){up.style.left=x+'px';up.style.top=(y-34)+'px';up.classList.remove('go');void up.offsetWidth;up.classList.add('go')}
@@ -839,9 +839,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       (function f(now){var q=Math.min(1,(now-t0)/D),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;place(a[0]+(b[0]-a[0])*e,a[1]+(b[1]-a[1])*e-Math.sin(Math.PI*q)*(innerWidth<=640?40:70));
         if(q<1)raf=requestAnimationFrame(f);else{k++;steps[k].classList.add('on');pop(b[0],b[1]);timers.push(setTimeout(hop,420))}})(t0)}
     timers.push(setTimeout(hop,500))}
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;io.disconnect();run()}},{threshold:.4});io.observe(st)}else{done=true;run()}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){run()}else{timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf);ball.style.opacity=0;steps.forEach(function(s){s.classList.remove('on')})}},{threshold:.4});io.observe(st)}else{run()}
   if(btn)btn.addEventListener('click',run);
-  var w=innerWidth;addEventListener('resize',function(){if(Math.abs(innerWidth-w)>40){w=innerWidth;if(done)run()}});
+  var w=innerWidth;addEventListener('resize',function(){if(Math.abs(innerWidth-w)>40){w=innerWidth;run()}});
 })();
 </script>
 </body>
