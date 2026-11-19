@@ -586,6 +586,34 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 .tc-pause .i-play{display:none}.tc-pause.is-stopped .i-play{display:block}.tc-pause.is-stopped .i-pause{display:none}
 .tc-deck:focus-visible{outline:3px solid #2547D9;outline-offset:6px;border-radius:24px}
+
+/* ── El mètode: recorregut (línia que avança i encén cada targeta) ── */
+.mt-route-wrap{position:relative;padding-top:56px}
+.mt-route{position:absolute;left:0;right:0;top:0;height:56px;pointer-events:none}
+.mt-rail,.mt-fill{position:absolute;top:26px;height:4px;border-radius:4px;left:var(--x0,50px)}
+.mt-rail{width:var(--len,0);background:repeating-linear-gradient(90deg,rgba(184,0,12,.28) 0 10px,transparent 10px 18px)}
+.mt-fill{width:var(--fill,0);background:linear-gradient(90deg,#FF5A61,var(--camb))}
+.mt-runner{position:absolute;top:14px;left:calc(var(--x0,50px) + var(--fill,0px) - 14px);width:28px;height:28px;border-radius:50%;background:var(--camb);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(225,0,15,.16),0 6px 14px -4px rgba(184,0,12,.6)}
+.mt-card{transition:transform .45s cubic-bezier(.3,1.5,.5,1),box-shadow .45s}
+/* Abans d'arribar-hi la targeta es llegeix igual; només la icona i el número esperen en un vermell més suau */
+.mt-card:not(.on) .mt-icon{background:#F6B3B7}
+.mt-card:not(.on) .mt-num{color:#D9545B}
+.mt-icon,.mt-num{transition:background .4s,color .4s}
+.mt-card::after{content:"";position:absolute;left:var(--nx,50px);top:-30px;width:2px;height:30px;background:rgba(184,0,12,.25)}
+.mt-card.on{opacity:1;transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(184,0,12,.45)}
+.mt-card.on::before{border-color:var(--camb)}
+.mt-card.on .mt-num{animation:mt-pop .5s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes mt-pop{0%{transform:scale(.6) rotate(-12deg)}100%{transform:none}}
+@media(max-width:1100px){
+  .mt-route-wrap{padding-top:0;padding-left:44px}
+  .mt-route{left:0;top:0;bottom:0;right:auto;width:44px;height:auto}
+  .mt-rail,.mt-fill{left:14px;width:4px;top:var(--x0,50px);height:var(--len,0)}
+  .mt-fill{height:var(--fill,0);width:4px;background:linear-gradient(180deg,#FF5A61,var(--camb))}
+  .mt-runner{left:2px;top:calc(var(--x0,50px) + var(--fill,0px) - 14px)}
+  .mt-card::after{left:-28px;top:var(--ny,56px);width:28px;height:2px}
+  .mt-list{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){.mt-card{transition:none}.mt-card.on .mt-num{animation:none}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -713,12 +741,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       </div>
       <a href="index.html#contacte" class="metodo-link-camb">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
     </div>
+    <div class="mt-route-wrap">
+    <div class="mt-route" aria-hidden="true"><i class="mt-rail"></i><i class="mt-fill"></i><span class="mt-runner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div>
     <ul class="mt-list" role="list">
       <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="mt-num" aria-hidden="true">#01</span></div><h3 class="mt-title">Preparació específica</h3><p class="mt-text">Treballem les diferents parts de l'examen (Reading, Writing, Listening, Speaking i Use of English) amb estratègies adaptades a cada nivell.</p></li>
       <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></span><span class="mt-num" aria-hidden="true">#02</span></div><h3 class="mt-title">Simulacres d'examen</h3><p class="mt-text">Familiaritzem els alumnes amb el format de les proves i realitzem exercicis de preparació per afrontar l'examen amb seguretat.</p></li>
       <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span class="mt-num" aria-hidden="true">#03</span></div><h3 class="mt-title">Seguiment personalitzat</h3><p class="mt-text">Acompanyem cada alumne durant la seva preparació, identificant els aspectes que necessita reforçar. Mantenim una comunicació propera amb les famílies i entreguem informes trimestrals per fer un seguiment del seu progrés.</p></li>
       <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="mt-num" aria-hidden="true">#04</span></div><h3 class="mt-title">Professorat especialitzat</h3><p class="mt-text">El nostre equip docent compta amb una àmplia experiència en la preparació dels exàmens Cambridge. A més, el professorat està supervisat pel cap de departament corresponent per garantir la qualitat de l'ensenyament.</p></li>
     </ul>
+    </div>
   </div>
 </section>
 
@@ -872,6 +903,19 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.cla
 /* Convocatòries: els mesos apareixen quan la secció entra a la pantalla */
 (function(){var y=document.querySelector('.ya-year');if(!y)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){y.classList.add('on');return}
 new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.3}).observe(y)})();
+</script>
+<script>
+/* El mètode: el recorregut avança amb el scroll i encén cada targeta quan hi arriba */
+(function(){var w=document.querySelector('.mt-route-wrap');if(!w)return;var cards=[].slice.call(w.querySelectorAll('.mt-card')),still=matchMedia('(prefers-reduced-motion: reduce)').matches,pts=[],vert=false;
+function measure(){vert=innerWidth<=1100;var wr=w.getBoundingClientRect();pts=cards.map(function(c){var ic=c.querySelector('.mt-icon').getBoundingClientRect(),cr=c.getBoundingClientRect();
+  c.style.setProperty('--nx',(ic.left+ic.width/2-cr.left-1)+'px');c.style.setProperty('--ny',(ic.top+ic.height/2-cr.top-1)+'px');
+  return vert?(ic.top+ic.height/2-wr.top):(ic.left+ic.width/2-wr.left)});
+  w.style.setProperty('--x0',pts[0]+'px');w.style.setProperty('--len',(pts[pts.length-1]-pts[0])+'px');upd()}
+function upd(){var r=w.getBoundingClientRect(),vh=innerHeight,p;
+  if(still){p=1}else if(vert){var y=vh*.62-r.top;p=(y-pts[0])/(pts[pts.length-1]-pts[0])}else{p=(vh*.85-r.top)/(vh*.5)}
+  p=Math.max(0,Math.min(1,p));var len=pts[pts.length-1]-pts[0],x=pts[0]+p*len;w.style.setProperty('--fill',(p*len)+'px');
+  cards.forEach(function(c,i){c.classList.toggle('on',x>=pts[i]-2)})}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',measure);addEventListener('load',measure);measure()})();
 </script>
 </body>
 </html>
