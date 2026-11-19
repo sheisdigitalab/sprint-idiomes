@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=11">
+<link rel="stylesheet" href="shared.css?v=12">
 <style>
 :root{
   --cream:#FAF5EA;
@@ -477,6 +477,12 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wa-float{background:#25D366!important;color:#fff}
 .wa-float:hover{background:#1EBE5A!important}
 @keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
+
+/* ── Escala tipogràfica comuna a tota la web (DESIGN.md · revisió 18/11/2026) ── */
+.mck-title{font-size:22px}
+
+/* Botó per aturar les fotos (accessibilitat) */
+.fotos-pause .i-play{display:none}.fotos-pause.is-stopped .i-play{display:block}.fotos-pause.is-stopped .i-pause{display:none}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -548,7 +554,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=30"></script>
+<script src="nav.js?v=31"></script>
 
 <!-- ── WHATSAPP FLOTANT ── -->
 <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Kids%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
@@ -594,25 +600,25 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <div class="metodo-card-kids mck-1">
           <span class="mck-num" aria-hidden="true">01</span>
           <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <div class="mck-title">Comunicació en anglès</div>
+          <h3 class="mck-title">Comunicació en anglès</h3>
           <p class="mck-text">Fomentem la interacció oral perquè els alumnes guanyin confiança i aprenguin a comunicar-se en anglès.</p>
         </div>
         <div class="metodo-card-kids mck-2">
           <span class="mck-num" aria-hidden="true">02</span>
           <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div class="mck-title">Aprenentatge dinàmic</div>
+          <h3 class="mck-title">Aprenentatge dinàmic</h3>
           <p class="mck-text">Combinem jocs, activitats participatives i projectes de classe relacionats amb la cultura anglosaxona.</p>
         </div>
         <div class="metodo-card-kids mck-3">
           <span class="mck-num" aria-hidden="true">03</span>
           <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="mck-title">Grups reduïts</div>
+          <h3 class="mck-title">Grups reduïts</h3>
           <p class="mck-text">Màxim 12 alumnes. Cada estudiant té temps de parlar i participar.</p>
         </div>
         <div class="metodo-card-kids mck-4">
           <span class="mck-num" aria-hidden="true">04</span>
           <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <div class="mck-title">Aprenentatge estructurat</div>
+          <h3 class="mck-title">Aprenentatge estructurat</h3>
           <p class="mck-text">Treballem amb llibres de text adaptats a cada nivell, que complementem amb activitats audiovisuals i dinàmiques.</p>
         </div>
       </div>
@@ -631,7 +637,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <div class="fotos-count" aria-live="polite"><b>01</b><span> / 05</span></div>
         <div class="fotos-btns">
           <button class="fotos-arrow fotos-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button class="fotos-arrow fotos-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <button class="fotos-arrow fotos-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><button class="fotos-arrow fotos-pause" type="button" aria-label="Atura el pas automàtic de les fotos" aria-pressed="false"><svg class="i-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
         </div>
       </div>
       <div class="fotos-deck" aria-roledescription="carrusel" aria-label="Fotos de les classes de Kids" tabindex="0">
@@ -771,8 +777,14 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     if (Math.abs(dx) > 40) { moved = true; dx < 0 ? prev() : next(); } });
   deck.addEventListener('click', function(){ if (!moved) next(); });
   deck.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') { e.preventDefault(); next(); } if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); } });
-  deck.addEventListener('mouseenter', function(){ paused = true; clearTimeout(t); });
-  deck.addEventListener('mouseleave', function(){ paused = false; restart(); });
+  /* Accessibilitat: es pot aturar amb el botó, i es para amb el ratolí o el focus a sobre */
+  var stopped = still, hover = false, focus = false, pb = document.querySelector('.fotos-pause');
+  function sync(){ paused = stopped || hover || focus; paused ? clearTimeout(t) : restart(); }
+  deck.addEventListener('mouseenter', function(){ hover = true; sync(); });
+  deck.addEventListener('mouseleave', function(){ hover = false; sync(); });
+  deck.addEventListener('focusin', function(){ focus = true; sync(); });
+  deck.addEventListener('focusout', function(){ focus = false; sync(); });
+  if (pb) { if (still) pb.hidden = true; pb.addEventListener('click', function(){ stopped = !stopped; pb.setAttribute('aria-pressed', stopped); pb.setAttribute('aria-label', stopped ? 'Reprèn el pas automàtic de les fotos' : 'Atura el pas automàtic de les fotos'); pb.classList.toggle('is-stopped', stopped); sync(); }); }
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
   else { visible = true; restart(); }
   lay();

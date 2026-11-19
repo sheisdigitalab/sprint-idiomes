@@ -167,6 +167,51 @@ Seven steps, audited and consolidated from the shipped code (index.html + nav.js
 **The Seven-Step Rule.** Every new size must land on Display, Headline, Title, Lead, Body, Small, or Label — never introduce a one-off value (a 17px, a 14.5px) to split the difference between two existing steps.
 **The Watermark Exception.** Two background-text elements sit outside the seven steps by design, confirmed with the user on 2026-09-29: the "1973" numeral behind the hero (`clamp(180px,28vw,400px)`, desktop; `clamp(120px,22vw,260px)`, tablet) and the footer's "Hello, Hi, Hola." (`clamp(48px,9vw,120px)`). Both render at near-zero opacity purely as oversized background texture, not as legible copy — forcing them onto the reading scale (max 64px) would shrink them into ordinary, legible-sized text and delete the watermark effect that is their entire purpose. Never resize these to match Display; if a future watermark is added, it follows this same exception, not the seven-step scale.
 
+### Escala comuna verificada (18/11/2026) — obligatòria per a totes les pàgines, també les noves
+Revisió de Home, Qui som, Kids Planet, Kids i Teens mesurada al navegador a 375 i 1440 px. Qualsevol pàgina nova (Cambridge, Adults, Français, Business, Particulars…) ha de sortir ja amb aquesta escala; si un disseny demana una mida nova, primer s'encaixa en un d'aquests graons.
+
+| Rol | Etiqueta | Mòbil → escriptori | On |
+|---|---|---|---|
+| Títol de portada | H1 (un per pàgina) | `clamp(44px,6.4vw,76px)` | totes les pàgines interiors; la Home usa `clamp(40px,5.4vw,76px)` |
+| Títol de secció | H2 | `clamp(28px,4vw,48px)` | totes les seccions; la Home usa `clamp(30px,4vw,56px)` |
+| Títol del bàner final | H2 | `clamp(32px,4.4vw,56px)` | `.cta-band` i el CTA de Qui som |
+| Nom de nivell o curs dins targeta | H3 | 24px | Kids Planet `.ks-name`, Teens `.tn-nm`, Home `.b-name` |
+| Títol de targeta/bloc | H3 | 22px | metodologia, "Per què Sprint", línia del temps |
+| Subtítol de portada | p | 20px | `*-hero-sub` |
+| Entradeta de secció | p | 18px | `.section-lead` |
+| Text de targeta | p | 17px | textos dins targetes de curs |
+| Text general | p | 16px | paràgrafs, formularis |
+| Botons i enllaços d'acció | a/button | 15–17px | |
+| Etiqueta de secció | div | 13px, majúscules | `.section-label`, eyebrows |
+| Etiquetes petites | span | 12px | tags, xips |
+
+Regles:
+- **Jerarquia sempre visible:** H1 > H2 > H3 a totes les amplades. Mai un H2 més gran que l'H1 ni en mòbil ni en escriptori.
+- **Tots els H2 d'una pàgina mesuren igual** (excepte el del bàner final, que és el graó de dalt). No es redueix un H2 perquè la columna sigui estreta: es deixa que faci més línies.
+- **Títols de targeta amb etiqueta real `<h3>`**, no `<div>`: ajuda a Google i als lectors de pantalla. Visualment no canvia res.
+- Els números decoratius (01, 02…), el "Hello, Bonjour, Hola" del peu i la cita gran de Qui som queden fora de l'escala perquè són decoració (`aria-hidden` o efecte de lectura).
+
+### Responsive (mobile-first) — comprovació obligatòria abans de donar una pàgina per acabada
+- Revisar a 320, 360, 390, 414, 600, 768, 820, 1024, 1280, 1440 i 1920 px: cap scroll lateral.
+- Imatges amb `max-width:100%; height:auto` (o `object-fit` dins d'un contenidor amb proporció fixa). Si una imatge és més ampla que la pantalla, ha d'estar retallada a propòsit per un contenidor (p. ex. el mapa de la Home).
+- Graelles amb `grid`/`flex` que passen a una columna en mòbil.
+- Menú hamburguesa de `nav.js`: botó de 44×44 px, s'obre i es tanca també amb Esc. El logo no s'encongeix mai (`.nav .logo{flex-shrink:0}`); per sota de 400 px el botó "Prova gratuïta" es fa més petit.
+- Zones tàctils de mínim 24×24 px (WCAG 2.5.8); millor 44×44 en botons i fletxes. Els enllaços dins d'una frase en queden exempts.
+
+### Espais, botons i detalls de disseny (revisió 19/11/2026) — també obligatori per a pàgines noves
+- **Ritme entre seccions:** 56px de padding vertical en mòbil i 80px en escriptori. Quan dues seccions seguides tenen el mateix fons, els marges se sumen: s'ha de reduir el de dalt de la segona perquè l'espai entre blocs no passi de ~80px en mòbil i ~120px en escriptori (cas corregit: Qui som, "L'equip" → "Com treballem").
+- **Que respiri dins de cada bloc:** entre l'entradeta i el botó, ~34px; entre dos botons o entre botó i telèfon apilats, ~30px; entre el bloc de text i la taula/targeta de sota, ~52px en mòbil (cas corregit: horaris de Kids Planet, Kids i Teens).
+- **Botons en mòbil:** tots de la mateixa alçada, ~50–54px (padding vertical 14px, line-height 1.4). En una sola línia sempre que es pugui; a 360px o menys, lletra de 15px. Si un text de botó és tan llarg que fa dues línies a 375px, es proposa a la clienta una versió més curta (no s'escurça pel nostre compte).
+- **Res surt del seu requadre:** números decoratius grans (el "50" de Qui som), dibuixos dels bàners finals, cercles i formes decoratives han de quedar sencers dins del seu bloc a totes les amplades.
+- **Fotos netes:** cap forma, cercle o vel de color translúcid per sobre de les fotos (es va treure el cercle blau de "Molt més que una escola d'idiomes").
+- **Cap scroll lateral, tampoc dins de blocs:** ni mapes ni taules que s'hagin d'arrossegar de costat. Si un element necessita més mida per llegir-se (p. ex. el plànol de com arribar), es veu sencer a l'amplada de la pantalla i es pot clicar per obrir-lo en gran en un diàleg (tancar amb ×, Esc o clic fora).
+- **Barra de cursos enganxada just a sota del menú:** `top:var(--nav-h)`, que `nav.js` calcula amb l'alçada real del menú; mai un valor fix en píxels.
+
+### Accessibilitat — mínim WCAG 2.2 AA
+- Passar axe (wcag2a, wcag2aa, wcag21aa, wcag22aa) a 375 i 1440 px i provar la pàgina sencera amb el tabulador: focus visible a tot.
+- Tot el que es mou sol més de 5 segons (carrusels de fotos) té botó per aturar-lo i es para amb el ratolí o el focus a sobre. Amb "reduir moviment" activat no es mou.
+- Contrast AA a tots els textos llegibles; la decoració porta `aria-hidden="true"`.
+
 ## Layout
 
 Interior pages share `shared.css`'s spatial rhythm: 32px side gutter on desktop, dropping to 22px under 960px; section vertical padding is 80px desktop, 56px mobile. Content max-width is 1480px, centered. The homepage (`index.html`) is the one standalone exception with its own campaign-scale spacing, not shared.css's rhythm.

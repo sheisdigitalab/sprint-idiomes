@@ -100,7 +100,7 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
 .course-nav{
   background:#fff;
   border-bottom:1px solid var(--line);
-  position:sticky;top:78px;z-index:91;
+  position:sticky;top:var(--nav-h,78px);z-index:91;
 }
 .course-nav-inner{
   max-width:1480px;margin:0 auto;padding:0 32px;
@@ -203,6 +203,19 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
   .hs-li .hs-t{display:inline-block;padding:6px 10px;font-size:15px}
   .hs-li .hs-t + .hs-t{margin-top:0}
   .hs-ctas{flex-direction:column;align-items:flex-start;gap:18px}
+  /* Més aire entre el text, el botó, el telèfon i la taula (19/11/2026) */
+  .hs-side .section-lead{margin-bottom:34px}
+  .hs-side .hs-ctas{gap:30px}
+  .hs-phone{padding:6px 0 5px}
+  .hs-wrap{gap:52px}
 }
 @media(prefers-reduced-motion:reduce){.hs.is-anim .hs-grid tbody tr,.hs.is-anim .hs-lv{transition:none!important;translate:none!important;opacity:1}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ── Botons en mòbil: tots amb la mateixa alçada (~52px) i en una sola línia sempre que es pugui (19/11/2026) ── */
+@media(max-width:600px){
+  main a[class*="btn"],main button[class*="btn"]{padding-top:14px!important;padding-bottom:14px!important;line-height:1.4!important}
+}
+@media(max-width:360px){
+  main a[class*="btn"],main button[class*="btn"]{font-size:15px!important;padding-left:18px!important;padding-right:18px!important}
+}

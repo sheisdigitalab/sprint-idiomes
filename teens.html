@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat</title>
-<meta name="description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge." />
+<title>Anglès per a l'ESO a Sant Cugat | Teens · Sprint Idiomes</title>
+<meta name="description" content="Anglès per a l'ESO a Sant Cugat: 4 nivells, de Junior a Pre First, en grups de màxim 12 alumnes i camí cap a Cambridge. Prova de nivell gratuïta." />
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=11">
+<link rel="stylesheet" href="shared.css?v=12">
 <style>
 :root{
   --cream:#FAF5EA;
@@ -516,6 +516,45 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wa-float{background:#25D366!important;color:#fff}
 .wa-float:hover{background:#1EBE5A!important}
 @keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
+
+/* Com són les classes: tres blocs horitzontals amb la icona al costat del text (canvi de Paula) */
+.tb-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:44px}
+.tb-head .section-lead{margin-bottom:0;max-width:620px}
+.tb-head .metodo-link-teens{flex:none;margin-bottom:6px}
+.tb-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tb-item{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start;background:var(--tb-bg);border:3px solid var(--ink);border-radius:18px;box-shadow:5px 5px 0 var(--ink);padding:26px 24px 28px;transition:transform .25s,box-shadow .25s}
+.tb-item:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.tb-icon{width:62px;height:62px;border-radius:14px;border:2px solid var(--ink);background:#fff;color:var(--teens-dark);display:grid;place-items:center}
+.tb-title{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-0.01em;line-height:1.2;color:var(--ink);margin:4px 0 8px}
+.tb-text{font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+.tb-1{--tb-bg:#C9F5EE}.tb-2{--tb-bg:#8FE3D7}
+.tb-3{--tb-bg:#0F766E}.tb-3 .tb-title{color:#fff}.tb-3 .tb-text{color:rgba(255,255,255,.92)}
+@media(max-width:1100px){.tb-list{grid-template-columns:1fr;gap:18px}.tb-head{flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:32px}}
+@media(max-width:640px){.tb-item{grid-template-columns:52px 1fr;gap:14px;padding:20px 18px 22px}.tb-icon{width:52px;height:52px}.tb-title{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.tb-item{transition:none}}
+
+/* Mida dels textos igual que a la resta de cursos (Kids i Kids Planet) */
+.tp-box h2{font-size:clamp(28px,4vw,48px)}
+.tp-box p.tp-lead{font-size:18px}
+.tp-btn{font-size:17px}
+.tb-text{font-size:17px}
+.tc-count{font-size:64px}
+.tc-count span{font-size:22px}
+@media(max-width:960px){.tc-count{font-size:40px}}
+@media(max-width:640px){.tb-title{font-size:21px}}
+
+/* Accessibilitat: botó per aturar les fotos i focus visible a la baralla */
+.tc-pause .i-play{display:none}.tc-pause.is-stopped .i-play{display:block}.tc-pause.is-stopped .i-pause{display:none}
+.tc-deck:focus-visible{outline:3px solid #2547D9;outline-offset:6px;border-radius:24px}
+
+/* Subtítols H3 (nivells i metodologia): sense marges per defecte del navegador */
+h3.tn-nm,h3.tb-title{letter-spacing:-0.01em}
+
+/* ── Escala tipogràfica comuna a tota la web (DESIGN.md · revisió 18/11/2026) ── */
+.tb-title{font-size:22px}
+@media(max-width:640px){.tb-title{font-size:22px}}
+/* Zona tàctil de la fletxa de Cambridge en mòbil */
+@media(max-width:640px){.tn-end a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -523,15 +562,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   <meta property="og:locale" content="ca_ES">
   <meta property="og:site_name" content="Sprint Idiomes">
   <meta property="og:url" content="https://www.sprintidiomes.com/teens/">
-  <meta property="og:title" content="Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat">
-  <meta property="og:description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.">
+  <meta property="og:title" content="Anglès per a l'ESO a Sant Cugat | Teens · Sprint Idiomes">
+  <meta property="og:description" content="Anglès per a l'ESO a Sant Cugat: 4 nivells, de Junior a Pre First, en grups de màxim 12 alumnes i camí cap a Cambridge. Prova de nivell gratuïta.">
   <meta property="og:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Teens · Anglès per a l'ESO · Sprint Idiomes Sant Cugat">
-  <meta name="twitter:description" content="Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.">
+  <meta name="twitter:title" content="Anglès per a l'ESO a Sant Cugat | Teens · Sprint Idiomes">
+  <meta name="twitter:description" content="Anglès per a l'ESO a Sant Cugat: 4 nivells, de Junior a Pre First, en grups de màxim 12 alumnes i camí cap a Cambridge. Prova de nivell gratuïta.">
   <meta name="twitter:image" content="https://www.sprintidiomes.com/assets/images/og-sprint-idiomes.jpg">
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.sprintidiomes.com/teens/">
@@ -545,7 +584,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     {
       "@type": "Course",
       "name": "Teens — Anglès per a joves d'ESO",
-      "description": "Anglès per a joves d'ESO a Sant Cugat. Quatre nivells, de Junior a Pre First, en grups de màxim 12 alumnes i amb el camí cap als títols de Cambridge.",
+      "description": "Anglès per a l'ESO a Sant Cugat: 4 nivells, de Junior a Pre First, en grups de màxim 12 alumnes i camí cap a Cambridge. Prova de nivell gratuïta.",
       "url": "https://www.sprintidiomes.com/teens/",
       "provider": {
         "@id": "https://www.sprintidiomes.com/#school"
@@ -587,7 +626,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=30"></script>
+<script src="nav.js?v=31"></script>
 
 <!-- ── WHATSAPP FLOTANT ── -->
 <a href="https://wa.me/34640679888?text=Hola%21%20Estem%20interessats%20en%20les%20classes%20d%27angl%C3%A8s%20de%20Teens%20i%20ens%20agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
@@ -611,7 +650,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <div class="hero-stat"><div class="hero-stat-num">Màxim 12</div><div class="hero-stat-label">alumnes</div></div>
         <div class="hero-stat"><div class="hero-stat-num">Trieu entre 4</div><div class="hero-stat-label">nivells de TEENS</div></div>
         <div class="hero-stat"><div class="hero-stat-num">Camí cap als títols</div><div class="hero-stat-label">de Cambridge</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">ESO</div><div class="hero-stat-label">Educació Secundària Obligatòria</div></div>
+        <div class="hero-stat" style="display:flex;align-items:center"><div class="hero-stat-num">ESO</div></div>
       </div>
       <div class="hero-ctas">
         <a href="#horaris" class="btn-teens">Veure horaris →</a>
@@ -621,37 +660,67 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </div>
 </section>
 
+<!-- ── NIVELLS ── -->
+<section class="section" id="nivells">
+  <div class="section-inner">
+    <div class="tn-wrap">
+      <div>
+        <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Nivells</div>
+        <h2>Un pas més en el teu <em style="color:var(--teens-dark);font-style:normal">anglès</em></h2>
+        <p class="section-lead">Cada nivell, de Junior a Pre-First, permet consolidar coneixements i avançar progressivament cap a la preparació dels exàmens oficials de Cambridge.</p>
+      </div>
+      <ol class="tn-stairs" id="tnStairs" role="list">
+        <li class="tn-step"><span class="tn-n">#01</span><h3 class="tn-nm">Junior</h3><span class="tn-cf">A2</span></li>
+        <li class="tn-step"><span class="tn-n">#02</span><h3 class="tn-nm">Level 2</h3><span class="tn-cf">A2+</span></li>
+        <li class="tn-step"><span class="tn-n">#03</span><h3 class="tn-nm">Level 3</h3><span class="tn-cf">B1</span></li>
+        <li class="tn-step"><span class="tn-n">#04</span><h3 class="tn-nm">Pre First</h3><span class="tn-cf">B1+</span></li>
+        <li class="tn-step tn-end"><span class="tn-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="tn-nm">Cambridge</span><a href="cambridge.html" aria-label="Cambridge, següent etapa"><span>següent etapa </span>→</a></li>
+        <li aria-hidden="true" style="display:contents"><span class="tn-ball"></span><span class="tn-up">Level up!</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROVA DE NIVELL ── -->
+<section class="section tp-section" id="prova">
+  <div class="tp-box">
+    <div style="position:relative;z-index:1">
+      <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Prova de nivell</div>
+      <h2>Saps quin és el teu <em style="font-style:normal">nivell d'anglès</em>?</h2>
+      <p class="tp-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
+      <ul class="tp-chips"><li>60 preguntes</li><li>Gratuïta</li><li>Sense compromís</li></ul>
+      <a href="https://sprintidiomes.com/teens-english-test/" target="_blank" rel="noopener" class="tp-btn">Fes la prova de nivell →</a>
+    </div>
+    <div class="tp-quiz" id="tpQuiz">
+      <div class="tp-q-top"><span>Pregunta de mostra</span><span>1 / 60</span></div>
+      <div class="tp-q-bar"><i></i></div>
+      <p class="tp-q" id="tpQ">Are you <span>&nbsp;</span><b class="sr-only">(espai en blanc)</b>?</p>
+      <ul class="tp-opts" role="list">
+        <li><button type="button" class="tp-opt" data-ok="1"><b>A</b>a student</button></li>
+        <li><button type="button" class="tp-opt"><b>B</b>a students</button></li>
+        <li><button type="button" class="tp-opt"><b>C</b>student</button></li>
+      </ul>
+      <p class="tp-fb" id="tpFb" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 <!-- ── COM SÓN LES CLASSES ── -->
 <section class="section" id="classes">
   <div class="section-inner">
-    <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Metodologia</div>
-    <div class="metodo-wrap-teens">
-      <div class="metodo-side-teens">
+    <div class="tb-head">
+      <div>
+        <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Metodologia</div>
         <h2>Com són les classes de <em style="color:var(--teens-dark);font-style:normal">Teens</em>?</h2>
         <p class="section-lead">Formació adaptada als adolescents, orientada als exàmens oficials de Cambridge.</p>
-        <a href="index.html#contacte" class="metodo-link-teens">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
       </div>
-      <div class="metodo-cards-teens">
-        <div class="metodo-card-teens mck-1">
-          <span class="mck-num" aria-hidden="true">#01</span>
-          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="mck-title">Grups reduïts</div>
-          <p class="mck-text">Classes de màxim 12 alumnes per garantir una atenció propera i fomentar la participació.</p>
-        </div>
-        <div class="metodo-card-teens mck-2">
-          <span class="mck-num" aria-hidden="true">#02</span>
-          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <div class="mck-title">Classes de 75 o 90 minuts</div>
-          <p class="mck-text">Sessions d'1 hora i 15 minuts o d'1 hora i 30 minuts, segons el grup.</p>
-        </div>
-        <div class="metodo-card-teens mck-3">
-          <span class="mck-num" aria-hidden="true">#03</span>
-          <div class="mck-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-          <div class="mck-title">Orientació cap a Cambridge</div>
-          <p class="mck-text">Introduïm activitats i continguts orientats als exàmens oficials de Cambridge, preparant els estudiants per a la següent etapa.</p>
-        </div>
-      </div>
+      <a href="index.html#contacte" class="metodo-link-teens">La primera classe és gratuïta <span aria-hidden="true">→</span></a>
     </div>
+    <ul class="tb-list" role="list">
+        <li class="tb-item tb-1"><div class="tb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h3 class="tb-title">Grups reduïts</h3><p class="tb-text">Classes de màxim 12 alumnes per garantir una atenció propera i fomentar la participació.</p></div></li>
+        <li class="tb-item tb-2"><div class="tb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3 class="tb-title">Classes de 75 o 90 minuts</h3><p class="tb-text">Sessions d'1 hora i 15 minuts o d'1 hora i 30 minuts, segons el grup.</p></div></li>
+        <li class="tb-item tb-3"><div class="tb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div><div><h3 class="tb-title">Orientació cap a Cambridge</h3><p class="tb-text">Introduïm activitats i continguts orientats als exàmens oficials de Cambridge, preparant els estudiants per a la següent etapa.</p></div></li>
+    </ul>
   </div>
 </section>
 
@@ -677,53 +746,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           <div class="tc-count" aria-live="polite"><b>01</b><span> / 06</span></div>
           <button class="tc-arrow tc-prev" type="button" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
           <button class="tc-arrow tc-next" type="button" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          <button class="tc-arrow tc-pause" type="button" aria-label="Atura el pas automàtic de les fotos" aria-pressed="false"><svg class="i-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── NIVELLS ── -->
-<section class="section" id="nivells">
-  <div class="section-inner">
-    <div class="tn-wrap">
-      <div>
-        <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Nivells</div>
-        <h2>Un pas més en el teu <em style="color:var(--teens-dark);font-style:normal">anglès</em></h2>
-        <p class="section-lead">Cada nivell, de Junior a Pre-First, permet consolidar coneixements i avançar progressivament cap a la preparació dels exàmens oficials de Cambridge.</p>
-      </div>
-      <ol class="tn-stairs" id="tnStairs" role="list">
-        <li class="tn-step"><span class="tn-n">#01</span><span class="tn-nm">Junior</span><span class="tn-cf">A2</span></li>
-        <li class="tn-step"><span class="tn-n">#02</span><span class="tn-nm">Level 2</span><span class="tn-cf">A2+</span></li>
-        <li class="tn-step"><span class="tn-n">#03</span><span class="tn-nm">Level 3</span><span class="tn-cf">B1</span></li>
-        <li class="tn-step"><span class="tn-n">#04</span><span class="tn-nm">Pre First</span><span class="tn-cf">B1+</span></li>
-        <li class="tn-step tn-end"><span class="tn-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="tn-nm">Cambridge</span><a href="cambridge.html" aria-label="Cambridge, següent etapa"><span>següent etapa </span>→</a></li>
-        <li aria-hidden="true" style="display:contents"><span class="tn-ball"></span><span class="tn-up">Level up!</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROVA DE NIVELL ── -->
-<section class="section tp-section" id="prova">
-  <div class="tp-box">
-    <div style="position:relative;z-index:1">
-      <div class="section-label" style="color:var(--teens-dark)"><span class="section-label-dot" style="background:var(--teens)"></span>Prova de nivell</div>
-      <h2>Saps quin és el teu <em style="font-style:normal">nivell d'anglès</em>?</h2>
-      <p class="tp-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
-      <ul class="tp-chips"><li>60 preguntes</li><li>Gratuïta</li><li>Sense compromís</li></ul>
-      <a href="https://sprintidiomes.com/teens-english-test/" target="_blank" rel="noopener" class="tp-btn">Fes la prova de nivell →</a>
-    </div>
-    <div class="tp-quiz" id="tpQuiz">
-      <div class="tp-q-top"><span>Pregunta de mostra</span><span>1 / 60</span></div>
-      <div class="tp-q-bar"><i></i></div>
-      <p class="tp-q" id="tpQ">Are you <span>&nbsp;</span>?</p>
-      <ul class="tp-opts" role="list">
-        <li><button type="button" class="tp-opt" data-ok="1"><b>A</b>a student</button></li>
-        <li><button type="button" class="tp-opt"><b>B</b>a students</button></li>
-        <li><button type="button" class="tp-opt"><b>C</b>student</button></li>
-      </ul>
-      <p class="tp-fb" id="tpFb" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -817,7 +842,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   deck.addEventListener('pointerup',function(e){if(x0===null)return;var dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40){moved=true;dx<0?prev():next()}});
   deck.addEventListener('click',function(){if(!moved)next()});
   deck.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
-  deck.addEventListener('mouseenter',function(){paused=true;clearTimeout(t)});deck.addEventListener('mouseleave',function(){paused=false;restart()});
+  var stopped=still,hover=false,focus=false,pb=document.querySelector('.tc-pause');function sync(){paused=stopped||hover||focus;paused?clearTimeout(t):restart()}deck.addEventListener('mouseenter',function(){hover=true;sync()});deck.addEventListener('mouseleave',function(){hover=false;sync()});deck.addEventListener('focusin',function(){focus=true;sync()});deck.addEventListener('focusout',function(){focus=false;sync()});if(pb){if(still)pb.hidden=true;pb.addEventListener('click',function(){stopped=!stopped;pb.setAttribute('aria-pressed',stopped);pb.setAttribute('aria-label',stopped?'Reprèn el pas automàtic de les fotos':'Atura el pas automàtic de les fotos');pb.classList.toggle('is-stopped',stopped);sync()})}
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;visible?restart():clearTimeout(t)})},{threshold:.3}).observe(deck);else{visible=true;restart()}
   lay();
 })();

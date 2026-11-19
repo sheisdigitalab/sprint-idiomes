@@ -205,8 +205,17 @@
       .nav-inner{padding:14px 22px}
       .nav-burger{display:flex}
     }
+    @media(max-width:960px){.nav-inner{gap:16px}}
+    /* El logo no s'encongeix mai (a 320-375px quedava aixafat) */
+    .nav .logo{flex-shrink:0}
     @media(max-width:400px){
-      .nav .btn-primary{padding:11px 16px}
+      .nav-inner{padding:12px 16px;gap:10px}
+      .nav .btn-primary{padding:10px 14px;font-size:14px;gap:6px}
+      .nav-cta{gap:6px}
+    }
+    @media(max-width:350px){
+      .nav .logo img{height:32px}
+      .nav .btn-primary svg{display:none}
     }
 
     /* ── FOOTER (compartit a totes les pagines) ── */
@@ -463,6 +472,11 @@ ${cursosDropdown}
   document.body.appendChild(mobilePanel);
 
   const burgerBtn = nav.querySelector('.nav-burger');
+
+  /* La barra de cursos s'enganxa just a sota del menú: mesurem l'alçada real del menú (canvia segons l'amplada) */
+  function setNavH(){ document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px'); }
+  setNavH(); addEventListener('resize', setNavH);
+  if (window.ResizeObserver) new ResizeObserver(setNavH).observe(nav);
 
   function headerBottom(){
     let bottom = nav.getBoundingClientRect().bottom;

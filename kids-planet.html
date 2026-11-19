@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=11">
+<link rel="stylesheet" href="shared.css?v=12">
 <style>
 :root{
   --cream:#FAF5EA;--ink:#15203D;--ink-soft:#4A5878;--blue:#2547D9;--yellow:#FFB800;
@@ -328,6 +328,13 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .cta-band .cf-5{top:18px}
 .cta-band .cf-b{bottom:12px}
 @keyframes cf-rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(18px,-190px)}80%{opacity:.7}100%{transform:translate(-10px,-360px);opacity:0}}
+
+/* ── Escala tipogràfica comuna a tota la web (DESIGN.md · revisió 18/11/2026) ── */
+.ks-name{font-size:24px}
+.metodo-title{font-size:22px}
+
+/* Botó per aturar les fotos (accessibilitat) */
+.rb-pause .i-play{display:none}.rb-pause.is-stopped .i-play{display:block}.rb-pause.is-stopped .i-pause{display:none}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -400,7 +407,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=30"></script>
+<script src="nav.js?v=31"></script>
 
 <main id="contingut" tabindex="-1">
 <section class="kp-hero">
@@ -435,22 +442,22 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <div class="metodo-grid">
       <div class="metodo-card mc-1"><span class="metodo-num" aria-hidden="true">01</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div>
-        <div class="metodo-title">Grups reduïts</div>
+        <h3 class="metodo-title">Grups reduïts</h3>
         <p class="metodo-text">Classes d'un màxim de 8 infants que afavoreixen la participació i una atenció propera.</p>
       </div>
       <div class="metodo-card mc-2"><span class="metodo-num" aria-hidden="true">02</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-        <div class="metodo-title">Aprenem jugant</div>
+        <h3 class="metodo-title">Aprenem jugant</h3>
         <p class="metodo-text">Jocs, cançons, contes i activitats dinàmiques per descobrir l'anglès d'una manera divertida.</p>
       </div>
       <div class="metodo-card mc-3"><span class="metodo-num" aria-hidden="true">03</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></div>
-        <div class="metodo-title">Entorn proper i acollidor</div>
+        <h3 class="metodo-title">Entorn proper i acollidor</h3>
         <p class="metodo-text">Un ambient agradable on els infants poden participar, experimentar i guanyar confiança. Les famílies poden acompanyar l'infant durant els primers dies.</p>
       </div>
       <div class="metodo-card mc-4"><span class="metodo-num" aria-hidden="true">04</span>
         <div class="metodo-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
-        <div class="metodo-title">Progressió natural</div>
+        <h3 class="metodo-title">Progressió natural</h3>
         <p class="metodo-text">Activitats pensades per a les diferents etapes, des d'Infantil fins a 1r de Primària.</p>
       </div>
     </div>
@@ -466,7 +473,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <h2>L'Aula <em style="color:var(--kp);font-style:normal">Rainbow</em></h2>
     <p class="section-lead">Un espai pensat per als més petits, ple de colors i recursos que conviden a jugar i aprendre anglès en un ambient acollidor i estimulant.</p>
         <div class="rb-count" aria-live="polite"><b>01</b><span> / 05</span></div>
-        <div class="rb-btns"><button class="rb-arrow rb-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="rb-arrow rb-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+        <div class="rb-btns"><button class="rb-arrow rb-prev" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="rb-arrow rb-next" aria-label="Foto següent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><button class="rb-arrow rb-pause" type="button" aria-label="Atura el pas automàtic de les fotos" aria-pressed="false"><svg class="i-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
       </div>
       <div class="rb-deck" aria-roledescription="carrusel" aria-label="Fotos de l'Aula Rainbow" tabindex="0">
         <figure class="rb-card"><img src="img-kids-planet/kp-aula-1-700.webp" srcset="img-kids-planet/kp-aula-1-700.webp 700w, img-kids-planet/kp-aula-1.webp 1200w" sizes="(max-width:960px) 90vw, 45vw" width="1200" height="800" loading="lazy" alt="La professora jugant amb els infants de Kids Planet al voltant d'una taula" draggable="false"></figure>
@@ -596,8 +603,14 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     if (Math.abs(dx) > 40) { moved = true; dx < 0 ? prev() : next(); } });
   deck.addEventListener('click', function(){ if (!moved) next(); });
   deck.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight') { e.preventDefault(); next(); } if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); } });
-  deck.addEventListener('mouseenter', function(){ paused = true; clearTimeout(t); });
-  deck.addEventListener('mouseleave', function(){ paused = false; restart(); });
+  /* Accessibilitat: es pot aturar amb el botó, i es para amb el ratolí o el focus a sobre */
+  var stopped = still, hover = false, focus = false, pb = document.querySelector('.rb-pause');
+  function sync(){ paused = stopped || hover || focus; paused ? clearTimeout(t) : restart(); }
+  deck.addEventListener('mouseenter', function(){ hover = true; sync(); });
+  deck.addEventListener('mouseleave', function(){ hover = false; sync(); });
+  deck.addEventListener('focusin', function(){ focus = true; sync(); });
+  deck.addEventListener('focusout', function(){ focus = false; sync(); });
+  if (pb) { if (still) pb.hidden = true; pb.addEventListener('click', function(){ stopped = !stopped; pb.setAttribute('aria-pressed', stopped); pb.setAttribute('aria-label', stopped ? 'Reprèn el pas automàtic de les fotos' : 'Atura el pas automàtic de les fotos'); pb.classList.toggle('is-stopped', stopped); sync(); }); }
   if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; visible ? restart() : clearTimeout(t); }); }, {threshold:.3}).observe(deck);
   else { visible = true; restart(); }
   lay();

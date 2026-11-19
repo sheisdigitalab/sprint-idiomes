@@ -8,7 +8,7 @@
 <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="shared.css?v=11">
+<link rel="stylesheet" href="shared.css?v=12">
 <style>
 /* ==========================================================================
    QUI SOM — pàgina editorial: la història de l'escola com a fil conductor.
@@ -205,6 +205,21 @@ body.is-scrolled .nav .logo img{height:30px}
   .tl{--p:1 !important}
   .tl-year,.tl-dot{transition:none}
 }
+
+/* ── Escala tipogràfica comuna a tota la web (DESIGN.md · revisió 18/11/2026) ── */
+.qs-hero h1{font-size:clamp(44px,6.4vw,76px)}
+.h2{font-size:clamp(28px,4vw,48px);line-height:1.05}
+.qs-cta h2{font-size:clamp(32px,4.4vw,56px)}
+.tl-body h3,.why-list h3{font-size:22px;line-height:1.15}
+.story-intro{font-size:18px}
+.tl-body p{font-size:16px}
+/* El "50" decoratiu queda sencer dins del requadre */
+.qs-quote::before{right:32px;font-size:clamp(220px,26vw,360px)}
+@media(max-width:600px){.qs-quote::before{font-size:150px;right:22px;top:24px}}
+/* Menys espai buit entre "L'equip" i "Com treballem" (les dues seccions són blanques i se sumava el marge) */
+#equip{padding-bottom:80px}
+#per-que{padding-top:40px}
+@media(max-width:600px){#equip{padding-top:72px;padding-bottom:56px}#per-que{padding-top:24px;padding-bottom:72px}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -294,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </head>
 <body>
 
-<script src="nav.js?v=30"></script>
+<script src="nav.js?v=31"></script>
 
 <!-- ===================== HERO ===================== -->
 <main id="contingut" tabindex="-1">
