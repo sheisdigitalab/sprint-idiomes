@@ -306,7 +306,7 @@
           <span class="nav-dd-dot" style="background:#26A69A"></span>Teens <span style="font-size:13px;opacity:.72;font-weight:600">ESO</span>
         </a>
         <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}>
-          <span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge &amp; IELTS
+          <span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge
         </a>
         <a href="adults.html"${page==='adults.html'?' class="active"':''}>
           <span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults <span style="font-size:13px;opacity:.72;font-weight:600">+18 anys</span>
@@ -464,7 +464,7 @@ ${cursosDropdown}
         <a href="kids-planet.html"${page==='kids-planet.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#EC1E8C"></span>Kids Planet · Infantil i 1r Primària</a>
         <a href="kids.html"${page==='kids.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#FF6B35"></span>Kids · Primària</a>
         <a href="teens.html"${page==='teens.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#26A69A"></span>Teens · ESO</a>
-        <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge &amp; IELTS</a>
+        <a href="cambridge.html"${page==='cambridge.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#E1000F"></span>Cambridge</a>
         <a href="adults.html"${page==='adults.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#1B5E3A"></span>Adults · +18 anys</a>
         <a href="frances.html"${page==='frances.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#FFB800"></span>L'École de Français</a>
         <a href="business.html"${page==='business.html'?' class="active"':''}><span class="nav-dd-dot" style="background:#9B72CF"></span>BLA Business</a>
@@ -547,7 +547,7 @@ ${cursosDropdown}
             <li><a href="kids-planet.html">Kids Planet · Infantil i 1r de Primària</a></li>
             <li><a href="kids.html">Kids · Primària</a></li>
             <li><a href="teens.html">Teens · ESO</a></li>
-            <li><a href="cambridge.html">Cambridge &amp; IELTS</a></li>
+            <li><a href="cambridge.html">Cambridge</a></li>
             <li><a href="adults.html">Adults · +18 anys</a></li>
             <li><a href="frances.html">L'École de Français</a></li>
             <li><a href="business.html">BLA Business</a></li>
@@ -662,7 +662,7 @@ ${cursosDropdown}
     if (document.querySelector('.wa-float')) return;
     var p = location.pathname.split('/').pop() || 'index.html';
     var fam = { 'kids-planet.html':'Kids Planet', 'kids.html':'Kids', 'teens.html':'Teens' };
-    var adu = { 'adults.html':'Adults', 'cambridge.html':'Cambridge i IELTS', 'frances.html':"francès de L'École de Français", 'business.html':'BLA Business', 'particular.html':'classes particulars' };
+    var adu = { 'adults.html':'Adults', 'cambridge.html':'preparació Cambridge', 'frances.html':"francès de L'École de Français", 'business.html':'BLA Business', 'particular.html':'classes particulars' };
     var msg = fam[p] ? "Hola! Estem interessats en les classes d'anglès de " + fam[p] + " i ens agradaria rebre més informació sobre els horaris i les places disponibles. Moltes gràcies!"
             : adu[p] ? "Hola! M'interessen les classes " + (/^[AEIOUÀÈÉÍÒÓÚaeiou]/.test(adu[p]) ? "d'" : "de ") + adu[p] + " i m'agradaria rebre més informació sobre els horaris i les places disponibles. Moltes gràcies!"
             : "Hola! M'agradaria rebre més informació sobre els cursos de Sprint Idiomes. Moltes gràcies!";
