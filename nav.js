@@ -412,6 +412,15 @@ ${cursosDropdown}
   }
 
   nav.after.apply(nav, [courseNavEl, subnavEl].filter(Boolean));
+  /* Mòbil: la pestanya del curs on som queda sempre a la vista (abans Cambridge, Adults... quedaven amagades a la dreta) */
+  if (courseNavEl) {
+    var cni = courseNavEl.querySelector('.course-nav-inner'), act = courseNavEl.querySelector('.course-nav-link.active');
+    function centraActiu(){ if (!cni || !act) return; var x = act.offsetLeft - (cni.clientWidth - act.offsetWidth) / 2; cni.scrollLeft = Math.max(0, x); }
+    function vores(){ if (!cni) return; courseNavEl.classList.toggle('can-left', cni.scrollLeft > 4); courseNavEl.classList.toggle('can-right', cni.scrollLeft + cni.clientWidth < cni.scrollWidth - 4); }
+    centraActiu(); vores();
+    if (cni) cni.addEventListener('scroll', vores, { passive: true });
+    addEventListener('resize', function(){ centraActiu(); vores(); });
+  }
 
   /* ── DROPDOWN escriptori amb delay per no tancar-se al instant ── */
   const wrap = nav.querySelector('.nav-dropdown-wrap');

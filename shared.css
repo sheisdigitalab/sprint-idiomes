@@ -219,3 +219,9 @@ footer :focus-visible,.qs-cta-in :focus-visible,.hB :focus-visible{outline-color
 @media(max-width:360px){
   main a[class*="btn"],main button[class*="btn"]{font-size:15px!important;padding-left:18px!important;padding-right:18px!important}
 }
+
+/* Barra de cursos en mòbil: ombra suau al costat on hi ha més pestanyes (19/11/2026) */
+.course-nav::before,.course-nav::after{content:"";position:absolute;top:0;bottom:0;width:36px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:2}
+.course-nav::before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}
+.course-nav::after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
+.course-nav.can-left::before,.course-nav.can-right::after{opacity:1}
