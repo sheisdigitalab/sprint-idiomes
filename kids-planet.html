@@ -27,16 +27,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 .kp-hero{background:linear-gradient(160deg,#FFD6EC 0%,#FFEDD6 28%,#D6F0FF 58%,#D6FFE2 82%,#F5D6FF 100%);border-bottom:4px solid #fff;padding:88px 32px 80px;position:relative;overflow:hidden}
 .kp-hero::before{content:'Hi!';position:absolute;right:32px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-size:clamp(120px,20vw,260px);font-weight:900;letter-spacing:-0.06em;color:rgba(236,30,140,.12);pointer-events:none;user-select:none;line-height:1}
-.kp-hero-inner{max-width:1480px;margin:0 auto;position:relative;z-index:1}
+.kp-hero-inner{max-width:1480px;margin:0 auto;position:relative}
 .kp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--kp-dark);margin-bottom:16px}
 .kp-eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--kp)}
 .kp-hero h1{font-family:var(--font-display);font-size:var(--fs-h1);font-weight:800;letter-spacing:-0.03em;line-height:1.0;color:var(--ink);margin-bottom:20px}
 .kp-hero h1 em{font-style:normal;color:var(--kp)}
-.kp-hero-sub{font-size:20px;color:var(--ink-soft);line-height:1.65;max-width:580px;margin-bottom:36px}
+.kp-hero-sub{font-size:20px;color:var(--ink-soft);line-height:1.65;margin-bottom:36px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .btn-kp{display:inline-flex;align-items:center;gap:10px;background:var(--kp);color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:18px 36px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 28px rgba(236,30,140,.4)}
 .btn-kp:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 36px rgba(236,30,140,.55)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);font-family:var(--font-body);font-size:17px;font-weight:700;border-radius:50px;padding:18px 36px;border:2px solid var(--line-strong);transition:border-color .2s,background .2s,box-shadow .2s}
 .btn-outline:hover{border-color:var(--ink);background:var(--cream)}
 .hero-stats{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
 .hero-stat{background:#fff;border-radius:20px;padding:16px 22px;box-shadow:0 4px 16px rgba(236,30,140,.12);border:2px solid rgba(236,30,140,.15)}
@@ -62,7 +61,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .metodo-num{position:absolute;top:14px;right:22px;font-family:var(--font-display);font-weight:800;font-size:64px;line-height:1;letter-spacing:-0.04em;color:var(--mc-color);opacity:.16}
 .metodo-icon{margin-bottom:22px;width:62px;height:62px;border-radius:50%;background:#fff;color:var(--mc-color);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px var(--mc-shadow);transform:rotate(-8deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .metodo-card:hover .metodo-icon{transform:rotate(0) scale(1.08)}
-.metodo-title{font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-0.01em;margin-bottom:10px;color:var(--ink)}
+.metodo-title{font-family:var(--font-display);font-weight:800;letter-spacing:-0.01em;margin-bottom:10px;color:var(--ink)}
 .metodo-text{font-size:17px;color:var(--ink);opacity:.78;line-height:1.6}
 /* entrada en fer scroll */
 .metodo-grid.js .metodo-card{opacity:0;translate:0 30px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .7s ease,translate .7s cubic-bezier(.2,.8,.2,1)}
@@ -74,38 +73,26 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(prefers-reduced-motion:reduce){.metodo-card,.metodo-icon,.metodo-grid.js .metodo-card{transition:none;opacity:1;translate:none}}
 
 .rainbow-section{background:linear-gradient(135deg,#FFF0F9,#FFFAE0)}
-.rainbow-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.rainbow-visual{background:linear-gradient(135deg,#FFB7D5,#FFCF86,#A8E6CF,#87CEEB,#D4A8E8);border-radius:32px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 16px 48px rgba(236,30,140,.2)}
-.rainbow-badge{position:absolute;bottom:-16px;right:-16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(21,32,61,.08)}
-.rb-text{font-size:13px;color:var(--ink-soft);font-weight:600}
-.rb-addr{font-weight:800;font-size:14px;color:var(--ink);margin-top:2px}
-.rainbow-features{display:flex;flex-direction:column;gap:16px}
-.rf-item{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:14px;background:#fff;border-left:3px solid var(--kp)}
-.rf-icon{width:48px;height:48px;border-radius:16px;background:rgba(236,30,140,.12);color:var(--kp);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rf-title{font-weight:800;font-size:14px;margin-bottom:3px}
-.rf-text{font-size:13px;color:var(--ink-soft);line-height:1.5}
 
 
 .btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--kp);color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:16px 32px;transition:transform .15s,box-shadow .2s}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(236,30,140,.3)}
-.cta-band .btn-white{background:#fff;color:var(--kp);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.cta-band .btn-white{background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .cta-band .btn-white:hover{box-shadow:0 10px 32px rgba(0,0,0,.32)}
 
-.cta-band{background:linear-gradient(135deg,#4C0836 0%,#8A0F4A 50%,#4C0836 100%);padding:88px 40px;text-align:center;position:relative;overflow:hidden}
-.cta-band-inner{max-width:580px;margin:0 auto}
-.cta-band p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:32px}
+.cta-band{text-align:center;position:relative;overflow:hidden}
+.cta-band-inner{margin:0 auto}
+.cta-band p{line-height:1.6;margin-bottom:32px}
 .cta-band-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 
 
 @media(max-width:960px){
   .kp-hero{padding:48px 22px 40px}
   .section{padding:56px 22px}
-  .rainbow-grid{grid-template-columns:1fr}
   .metodo-grid{grid-template-columns:1fr;gap:16px;padding-bottom:0}
   .metodo-card:nth-child(even),.metodo-card:nth-child(even):hover{transform:none}
   .metodo-card{padding:26px 24px 28px}
   .metodo-num{font-size:52px}
-  .cta-band{padding:56px 22px}
 }
 
 .kp-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
@@ -126,15 +113,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   font-family:var(--font-display);font-weight:800;font-size:24px;color:#fff;background:var(--ks-c);
   border:5px solid #F0FBFF;box-shadow:0 8px 20px -6px var(--ks-sh)}
 .ks-1{--ks-c:#DE137F;--ks-t:#B0125F;--ks-sh:rgba(236,30,140,.55);--ks-bg:#FFE1EF}
-.ks-2{--ks-c:#B0125F;--ks-sh:rgba(176,18,95,.5);--ks-bg:#F9DCEB}
+.ks-2{--ks-c:#B0125F;--ks-sh:rgba(176,18,95,.5)}
 .ks-next{--ks-c:#E0531E;--ks-t:#B83F12;--ks-sh:rgba(255,107,53,.5)}
 .ks-age{display:inline-block;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ks-t,var(--ks-c));margin-bottom:8px}
-.ks-name{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 12px;color:var(--ink)}
+.ks-name{font-family:var(--font-display);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0 0 12px;color:var(--ink)}
 .ks-desc{font-size:17px;line-height:1.6;color:var(--ink-soft);margin:0;max-width:440px}
 .ks-1,.ks-2{background:var(--ks-bg);border-radius:30px;padding:30px 30px 32px;margin-top:78px}
 .ks-1 .ks-dot,.ks-2 .ks-dot{top:-78px;left:0}
 .ks-1{padding-top:30px}.ks-2{padding-top:30px}
-.ks-next{margin-top:78px;padding:28px 28px 30px;border-radius:30px;border:2px dashed rgba(224,83,30,.4);background:rgba(255,255,255,.6)}
+.ks-next{margin-top:78px;padding:28px 28px 30px;border-radius:30px}
 .ks-next .ks-dot{top:-78px;left:0}
 .ks-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:800;font-size:15px;color:#B83F12;border-bottom:2px solid rgba(224,83,30,.35);padding-bottom:3px;transition:gap .2s,border-color .2s}
 .ks-link:hover{gap:14px;border-color:#E0531E}
@@ -148,7 +135,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-path.js.is-in .ks-2{transition-delay:.3s,.3s,0s,0s}
 .kp-path.js.is-in .ks-next{transition-delay:.6s,.6s,0s,0s}
 @media(max-width:960px){
-  .kp-path{grid-template-columns:1fr;gap:20px;padding-left:0}
+  .kp-path{gap:20px;padding-left:0}
   .kp-path::before{left:27px;right:auto;top:28px;bottom:60px;width:4px;height:auto;background:linear-gradient(180deg,#EC1E8C,#B0125F 55%,#FF6B35)}
   .kp-path.js::before{transform:scaleY(0);transform-origin:top}
   .kp-step{margin-top:0!important;margin-left:76px}
@@ -171,33 +158,29 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* Aula Rainbow: mosaic de fotos */
 /* Nivells i horaris */
 /* Secció final: fúcsia, amb paraules i bombolles que suren */
-.cta-band{background:linear-gradient(120deg,#EC1E8C,#FF5FA8,#F0359A,#FF7AB8);background-size:300% 300%;animation:cb-grad 14s ease infinite;padding:110px 40px}
+.cta-band{animation:cb-grad 14s ease infinite;padding:110px 40px}
 @keyframes cb-grad{50%{background-position:100% 50%}}
 .cta-band h2{color:#fff;font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
 .cta-hl{display:inline-block;background:var(--yellow,#FFB800);color:var(--ink);padding:0 .25em;border-radius:.2em;transform:rotate(-2deg)}
 .cta-band p{color:rgba(255,255,255,.95);font-size:18px}
 .cta-band-inner{max-width:700px;position:relative;z-index:2}
 .cta-band .btn-white{color:var(--kp)}
-.cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:16px 28px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:16px 28px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
 .btn-wa:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.25)}
 .cta-float{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.cf-w{position:absolute;font-family:var(--font-display);font-weight:800;color:rgba(255,255,255,.22);font-size:clamp(28px,4vw,56px);letter-spacing:-0.03em;animation:cf-float 9s ease-in-out infinite}
+.cf-w{position:absolute;font-family:var(--font-display);font-weight:800;color:rgba(255,255,255,.22);font-size:clamp(28px,4vw,56px);letter-spacing:-0.03em}
 .cf-s{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:cf-float 11s ease-in-out infinite}
 .cf-1{left:6%;top:18%;transform:rotate(-8deg)}
 .cf-2{right:8%;top:14%;animation-delay:-3s}
 .cf-3{right:12%;bottom:16%;animation-delay:-5s}
-.cf-4{right:12%;bottom:18%;animation-delay:-2s}
 .cf-5{width:90px;height:90px;left:28%;top:-30px}
-.cf-6{width:40px;height:40px;right:30%;bottom:22%;animation-delay:-4s;background:rgba(255,184,0,.55)}
 .cf-7{width:22px;height:22px;left:22%;top:58%;animation-delay:-6s;background:rgba(255,255,255,.5)}
-.cf-8{width:130px;height:130px;right:-30px;top:40%;animation-delay:-2s}
 @keyframes cf-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -18px;rotate:4deg}}
 @media(max-width:960px){
   .kp-hero{padding-top:0}
   .kp-hero-photo{position:relative;width:auto;height:300px;margin:0 -22px 32px;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent);background-image:url('img-kids-planet/kp-portada-960.webp');background-position:center 30%}
   .cta-band{padding:80px 22px}
-  .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}.cf-4{bottom:6%}
+  .cf-w{font-size:26px}.cf-1{top:6%}.cf-2{top:5%}.cf-3{bottom:5%}
 }
 @media(prefers-reduced-motion:reduce){.cta-band,.cf-w,.cf-s{animation:none}}
 
@@ -220,12 +203,11 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(prefers-reduced-motion:reduce){.cf-w,.cf-b,.cf-star,.cta-hl,.btn-wa,.cta-band .btn-white{animation:none}.cf-b{display:none}.cb-in{opacity:1;transform:none;transition:none}}
 
 /* El conill de Sprint (del web actual): treu el cap i salta */
-.kp-bunny{position:absolute;left:5%;bottom:0;width:190px;height:auto;z-index:2;transform-origin:50% 100%;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(76,8,54,.25))}
+.kp-bunny{position:absolute;left:5%;width:190px;height:auto;z-index:2;transform-origin:50% 100%;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.9,.3,1.25) .5s;filter:drop-shadow(0 6px 10px rgba(76,8,54,.25))}
 .cta-band.is-in .kp-bunny{transform:none;animation:kp-hop 3.4s ease-in-out 1.6s infinite}
 .kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
 @keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
 @keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
-@media(max-width:1100px){.kp-bunny{width:150px;left:2%}}
 @media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
 @media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
 
@@ -233,14 +215,11 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* 1) fúcsia una mica més fosc perquè el text blanc es llegeixi bé */
 .cta-band{background:linear-gradient(120deg,#D4157C,#E0197F,#C21174,#DA1A82);background-size:300% 300%}
 /* 2) WhatsApp en un verd amb prou contrast */
-.btn-wa{background:#128049}
 @media(max-width:480px){.btn-wa{font-size:16px;padding:16px 22px}}
-.btn-wa:hover{background:#0F6E3F}
-@keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,.75)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(18,128,73,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(18,128,73,0)}}
+
 /* 6) el conill de peu sobre un terra dibuixat */
 .kp-bunny{bottom:34px}
 .kp-ground{position:absolute;left:calc(5% - 30px);bottom:22px;width:250px;height:auto;z-index:2}
-@media(max-width:1100px){.kp-ground{left:calc(2% - 26px);width:200px}}
 /* 7) menys moviment a la vegada: el protagonisme és del conill i del WhatsApp */
 .cta-hl,.cta-band .btn-white{animation:none}
 .cta-band .btn-white:hover{transform:translateY(-3px) scale(1.03)}
@@ -265,7 +244,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .rb-card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:14px;user-select:none;-webkit-user-drag:none}
 .rb-card.out{transform:translate(120%,-8%) rotate(16deg)!important;opacity:0}
 @media(max-width:960px){
-  .rb-wrap{grid-template-columns:1fr;gap:28px}
   .rb-side{display:contents}
   .rainbow-section{overflow-x:clip}
   .rb-wrap{grid-template-columns:1fr auto;gap:18px 12px}
@@ -316,12 +294,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 
 /* WhatsApp amb el verd real de la marca (#25D366). Text fosc perquè es llegeixi bé (el blanc no arriba al contrast mínim) */
-.btn-wa{background:#25D366!important;color:#0B2E1C!important}
+.btn-wa{background:#25D366;color:#0B2E1C}
 .btn-wa svg{color:#0B2E1C}
-.btn-wa:hover{background:#1EBE5A!important}
+.btn-wa:hover{background:#1EBE5A}
 @keyframes cb-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,0)}}
-.wa-float{background:#25D366!important;color:#fff}
-.wa-float:hover{background:#1EBE5A!important}
 @keyframes wa-float-pulse{0%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.65)}70%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,0)}}
 
 /* Bàner final: tots els elements decoratius queden dins del requadre */
