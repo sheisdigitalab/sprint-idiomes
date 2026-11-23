@@ -82,6 +82,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .btn-camb:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 36px rgba(225,0,15,.5)}
 
+.btn-camb-ol{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:10px;background:#fff;color:var(--camb-dark);border:2px solid var(--camb-dark);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;transition:background .2s,color .2s}
+.btn-camb-ol:hover{background:var(--camb-dark);color:#fff}
+@media(max-width:480px){.camb-hero .hero-ctas a{width:100%;justify-content:center}}
 /* --- camb orange btn override --- */
 .camb-hero .btn-camb,.cta-band .btn-camb{background:var(--camb);color:#fff;box-shadow:0 8px 28px rgba(225,0,15,.4)}
 .camb-hero .btn-camb:hover,.cta-band .btn-camb:hover{box-shadow:0 14px 40px rgba(225,0,15,.55)}
@@ -443,7 +446,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     {
       "@type": "Course",
       "name": "Preparació Cambridge",
-      "description": "Preparació oficial per als exàmens Cambridge (FCE, CAE, CPE) a Sant Cugat. Centre preparador oficial, amb seguiment i orientació durant tot el procés.",
+      "description": "Preparació oficial per als exàmens Cambridge (First, Advanced i Proficiency) a Sant Cugat. Centre preparador oficial, amb seguiment i orientació durant tot el procés.",
       "url": "https://www.sprintidiomes.com/cambridge/",
       "provider": {
         "@id": "https://www.sprintidiomes.com/#school"
@@ -498,7 +501,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   <div class="camb-hero-inner">
     <div class="camb-hero-grid">
       <div class="camb-eyebrow">
-        <span class="camb-eyebrow-dot"></span>Centre preparador oficial Cambridge
+        <span class="camb-eyebrow-dot"></span>Centre preparador oficial de Cambridge
       </div>
       <h1>Experts en <em>Cambridge</em><span class="h1-2">First, Advanced i Proficiency</span></h1>
       <p class="camb-hero-sub">Preparem els alumnes per als exàmens oficials de Cambridge, des del B2 (First) fins al C2 (Proficiency), amb classes especialitzades, grups reduïts i simulacres en condicions reals.</p>
@@ -510,6 +513,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       </div>
       <div class="hero-ctas">
         <a href="#horaris" class="btn-camb">Veure horaris →</a>
+        <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20que%20m%27envieu%20la%20prova%20de%20nivell%20gratu%C3%AFta%20de%20Cambridge.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-camb-ol">Demana'ns que t'enviem la prova de nivell gratuïta</a>
       </div>
     </div>
   </div>
@@ -544,10 +548,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <div class="mt-route-wrap">
     <div class="mt-route" aria-hidden="true"><i class="mt-rail"></i><i class="mt-fill"></i><span class="mt-runner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span></div>
     <ul class="mt-list" role="list">
-      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="mt-num" aria-hidden="true">#01</span></div><h3 class="mt-title">Preparació específica</h3><p class="mt-text">Treballem les diferents parts de l'examen (Reading, Writing, Listening, Speaking i Use of English) amb estratègies adaptades a cada nivell.</p></li>
-      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></span><span class="mt-num" aria-hidden="true">#02</span></div><h3 class="mt-title">Simulacres d'examen</h3><p class="mt-text">Familiaritzem els alumnes amb el format de les proves i realitzem exercicis de preparació per afrontar l'examen amb seguretat.</p></li>
-      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span class="mt-num" aria-hidden="true">#03</span></div><h3 class="mt-title">Seguiment personalitzat</h3><p class="mt-text">Acompanyem cada alumne durant la seva preparació, identificant els aspectes que necessita reforçar. Mantenim una comunicació propera amb les famílies i entreguem informes trimestrals per fer un seguiment del seu progrés.</p></li>
-      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span class="mt-num" aria-hidden="true">#04</span></div><h3 class="mt-title">Professorat especialitzat</h3><p class="mt-text">El nostre equip docent compta amb una àmplia experiència en la preparació dels exàmens Cambridge. A més, el professorat està supervisat pel cap de departament corresponent per garantir la qualitat de l'ensenyament.</p></li>
+      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span></div><h3 class="mt-title">Preparació específica</h3><p class="mt-text">Treballem les diferents parts de l'examen (Reading, Writing, Listening, Speaking i Use of English) amb estratègies adaptades a cada nivell.</p></li>
+      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></span></div><h3 class="mt-title">Simulacres d'examen</h3><p class="mt-text">Familiaritzem els alumnes amb el format de les proves i realitzem exercicis de preparació per afrontar l'examen amb seguretat.</p></li>
+      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span></div><h3 class="mt-title">Seguiment personalitzat</h3><p class="mt-text">Acompanyem cada alumne durant la seva preparació, identificant els aspectes que necessita reforçar. Mantenim una comunicació propera amb les famílies i us fem arribar informes trimestrals per fer un seguiment del seu progrés.</p></li>
+      <li class="mt-card"><div class="mt-top"><span class="mt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span></div><h3 class="mt-title">Professorat especialitzat</h3><p class="mt-text">El nostre equip docent compta amb una àmplia experiència en la preparació dels exàmens Cambridge. A més, el professorat està supervisat pel cap de departament corresponent per garantir la qualitat de l'ensenyament.</p></li>
     </ul>
     </div>
   </div>
@@ -612,25 +616,25 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           <caption class="sr-only">Horaris setmanals de Cambridge</caption>
           <thead><tr><th>Nivell</th><th>Dies</th><th>Hora</th></tr></thead>
           <tbody>
-            <tr data-days="dl dc"><td>FCE 1</td><td>Dilluns i dimecres</td><td>16:00–18:00</td></tr>
-            <tr data-days="dl dc"><td>FCE 1</td><td>Dilluns i dimecres</td><td>18:00–19:30</td></tr>
-            <tr data-days="dt dj"><td>FCE 1</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
-            <tr data-days="dt dj"><td>FCE 1</td><td>Dimarts i dijous</td><td>18:15–19:45</td></tr>
-            <tr data-days="dv"><td>FCE 1</td><td>Divendres</td><td>16:30–19:30</td></tr>
-            <tr data-days="dt dj"><td>FCE 2</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
-            <tr data-days="dt dj"><td>FCE 2</td><td>Dimarts i dijous</td><td>18:15–19:45</td></tr>
-            <tr data-days="dv"><td>FCE 2</td><td>Divendres</td><td>16:30–19:30</td></tr>
-            <tr data-days="dl dc"><td>FCE Adults</td><td>Dilluns i dimecres</td><td>11:00–12:30</td></tr>
-            <tr data-days="dl dc"><td>FCE Adults</td><td>Dilluns i dimecres</td><td>19:30–21:00</td></tr>
-            <tr data-days="dl dc"><td>CAE 1</td><td>Dilluns i dimecres</td><td>18:30–21:30 (dl)</td></tr>
-            <tr data-days="dt dj"><td>CAE 1</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
-            <tr data-days="dt dj"><td>CAE 1</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
-            <tr data-days="dv"><td>CAE 1</td><td>Divendres</td><td>16:30–19:30</td></tr>
-            <tr data-days="dl dc"><td>CAE 2</td><td>Dilluns i dimecres</td><td>16:00–18:00</td></tr>
-            <tr data-days="dl dc"><td>CAE 2</td><td>Dilluns i dimecres</td><td>18:30–21:30 (dc)</td></tr>
-            <tr data-days="dt dj"><td>CAE 2</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
-            <tr data-days="dl dc"><td>CAE Adults</td><td>Dilluns i dimecres</td><td>9:30–11:00</td></tr>
-            <tr data-days="dt dj"><td>CPE</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
+            <tr data-days="dl dc"><td>First 1</td><td>Dilluns i dimecres</td><td>16:00–18:00</td></tr>
+            <tr data-days="dl dc"><td>First 1</td><td>Dilluns i dimecres</td><td>18:00–19:30</td></tr>
+            <tr data-days="dt dj"><td>First 1</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
+            <tr data-days="dt dj"><td>First 1</td><td>Dimarts i dijous</td><td>18:15–19:45</td></tr>
+            <tr data-days="dv"><td>First 1</td><td>Divendres</td><td>16:30–19:30</td></tr>
+            <tr data-days="dt dj"><td>First 2</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
+            <tr data-days="dt dj"><td>First 2</td><td>Dimarts i dijous</td><td>18:15–19:45</td></tr>
+            <tr data-days="dv"><td>First 2</td><td>Divendres</td><td>16:30–19:30</td></tr>
+            <tr data-days="dl dc"><td>First Adults</td><td>Dilluns i dimecres</td><td>11:00–12:30</td></tr>
+            <tr data-days="dl dc"><td>First Adults</td><td>Dilluns i dimecres</td><td>19:30–21:00</td></tr>
+            <tr data-days="dl dc"><td>Advanced 1</td><td>Dilluns i dimecres</td><td>18:30–21:30 (dl)</td></tr>
+            <tr data-days="dt dj"><td>Advanced 1</td><td>Dimarts i dijous</td><td>15:45–17:45</td></tr>
+            <tr data-days="dt dj"><td>Advanced 1</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
+            <tr data-days="dv"><td>Advanced 1</td><td>Divendres</td><td>16:30–19:30</td></tr>
+            <tr data-days="dl dc"><td>Advanced 2</td><td>Dilluns i dimecres</td><td>16:00–18:00</td></tr>
+            <tr data-days="dl dc"><td>Advanced 2</td><td>Dilluns i dimecres</td><td>18:30–21:30 (dc)</td></tr>
+            <tr data-days="dt dj"><td>Advanced 2</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
+            <tr data-days="dl dc"><td>Advanced Adults</td><td>Dilluns i dimecres</td><td>9:30–11:00</td></tr>
+            <tr data-days="dt dj"><td>Proficiency</td><td>Dimarts i dijous</td><td>19:15–20:45</td></tr>
           </tbody>
         </table>
       </div>
