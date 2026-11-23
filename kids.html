@@ -742,7 +742,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     var my=(runs[id]=(runs[id]||0)+1);function later(fn,ms){setTimeout(function(){if(my===runs[id])fn()},ms)}
     var box=document.getElementById(id);box.innerHTML='';var m=mob();
     var W=m?360:1000,H=m?820:G.H;
-    var P=m?[[105,130],[255,280],[105,430],[255,580],[175,725]]:G.P;
+    var P=m?[[105,690],[255,540],[105,390],[255,240],[175,95]]:G.P;
     var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Cinc nivells de Kids: K2, K3, K4, K5 i K6. El conill de Sprint avança de nivell en nivell fins a K6.'},box);
     var defs=el('defs',{},svg),pre=id+'-';
     COL.forEach(function(c,i){var g=el('radialGradient',{id:pre+'b'+i,cx:.4,cy:.3,r:.75},defs);el('stop',{offset:0,'stop-color':LIGHT[i]},g);el('stop',{offset:1,'stop-color':c},g)});
