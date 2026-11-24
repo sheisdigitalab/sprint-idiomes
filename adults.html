@@ -301,36 +301,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* Abans d'arribar-hi la targeta es llegeix igual; només la icona i el número esperen en un vermell més suau */
 @keyframes mt-pop{0%{transform:scale(.6) rotate(-12deg)}100%{transform:none}}
 /* Prova de nivell: bloc fosc amb una pregunta de mostra de la prova real */
-.tp-section.section{padding-top:0;background:#fff}
-.tp-box{max-width:1480px;margin:0 auto;position:relative;overflow:hidden;background:linear-gradient(135deg,#0E3A22,#144B2E 60%,#1B5E3A);border-radius:36px;padding:80px 88px;display:grid;grid-template-columns:1fr 500px;gap:72px;align-items:center;color:#fff}
-.tp-box::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(166,232,192,.22),transparent 70%);top:-140px;left:-120px;pointer-events:none}
-.tp-box .section-label{margin-bottom:12px;color:#A6E8C0!important}
-.tp-box .section-label-dot{background:#A6E8C0!important}
-.tp-box h2{margin:0 0 18px;color:#fff}
-.tp-box h2 em{color:#FFD23F!important}
-.tp-box p.tp-lead{color:rgba(255,255,255,.88);line-height:1.6;max-width:540px}
-.tp-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px;list-style:none;padding:0}
-.tp-chips li{font-weight:800;font-size:15px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px}
-.tp-btn{display:inline-flex;align-items:center;gap:10px;background:#FFD23F;color:var(--ink);font-family:var(--font-body);font-weight:800;border-radius:50px;padding:18px 34px;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
-.tp-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 32px rgba(0,0,0,.3)}
-.tp-quiz{position:relative;z-index:1;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:28px;padding:32px;box-shadow:10px 10px 0 #FFD23F}
-.tp-q-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--adults-dark);margin-bottom:10px}
-.tp-q-bar{height:6px;border-radius:6px;background:#E3EEE7;overflow:hidden;margin-bottom:18px}.tp-q-bar i{display:block;height:100%;width:1.7%;background:var(--adults);transition:width .5s}
-.tp-q{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:-0.02em;margin-bottom:16px}
-.tp-q span{display:inline-block;min-width:70px;border-bottom:3px dashed var(--adults);text-align:center;color:var(--adults-dark);transition:all .3s}
-.tp-opts{display:grid;gap:10px;list-style:none;padding:0;margin:0}
-.tp-opt{width:100%;text-align:left;font:700 18px var(--font-body);color:var(--ink);background:#F3FAF5;border:2px solid #D3E6DA;border-radius:14px;padding:15px 18px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px}
-.tp-opt b{width:28px;height:28px;flex:none;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid #D3E6DA;font-size:13px}
-.tp-opt:hover{border-color:var(--adults);transform:translateX(3px)}
-.tp-opt.ok{background:#CDEFD9;border-color:var(--adults-dark)}.tp-opt.ok b{background:var(--adults-dark);border-color:var(--adults-dark);color:#fff}
-.tp-opt.ko{background:#FFE9E6;border-color:#D9534F}.tp-opt.ko b{background:#D9534F;border-color:#D9534F;color:#fff}
-.tp-opt:disabled{cursor:default}.tp-opt:disabled:hover{transform:none}
-.tp-fb{min-height:24px;margin-top:14px;font-family:"Caveat",cursive;font-weight:700;font-size:24px;color:var(--adults-dark)}
-@media(max-width:1280px){.tp-box{grid-template-columns:1fr 420px;gap:48px;padding:60px 56px}}
-@media(max-width:1100px){.tp-box{grid-template-columns:1fr 380px;gap:40px;padding:48px 44px}}
-@media(max-width:900px){.tp-section.section{padding-top:0}.tp-box{grid-template-columns:1fr;padding:36px 24px 40px;gap:34px;border-radius:24px}.tp-quiz{transform:none;max-width:460px}}
-@media(max-width:480px){.tp-btn{width:100%;justify-content:center;text-align:center}.tp-quiz{padding:18px;box-shadow:6px 6px 0 #FFD23F}.tp-q{font-size:22px}.tp-opt{font-size:16px;padding:12px 14px}.tp-box p.tp-lead{font-size:18px}}
-@media(prefers-reduced-motion:reduce){.tp-btn,.tp-opt,.tp-q-bar i{transition:none}}
 
 /* Portada: 3 dades */
 .ad-hero .hero-stats-3{grid-template-columns:repeat(3,minmax(0,1fr));max-width:600px}
@@ -402,8 +372,49 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .af-bar div{display:flex;gap:10px}
 .af-btn{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center}
 .af-btn:focus-visible{outline:3px solid #8FD9AE;outline-offset:3px}
-@media(max-width:900px){.af-head{grid-template-columns:1fr;gap:12px;margin-bottom:28px}.af-band{grid-template-columns:1fr 1fr;height:auto}.af-f{aspect-ratio:1}.af-foot span:last-child{display:none}}
+@media(max-width:900px){.af-head{grid-template-columns:1fr;gap:12px;margin-bottom:28px}.af-band{grid-template-columns:1fr 1fr;height:auto}.af-f{aspect-ratio:1}}
 @media(prefers-reduced-motion:reduce){.af-f img{transition:none}.af-f:hover img{transform:none}}
+
+/* Prova de nivell (Adults): sòbria, amb escala MCER, fulls apilats i un toc de groc */
+.pv-section.section{padding-top:0;background:#fff}
+.pv-box{max-width:1480px;margin:0 auto;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 0% 0%,#1F6B43 0%,#0E3A22 55%,#0A2C1A 100%);border-radius:28px;padding:80px 88px;display:grid;grid-template-columns:1fr 500px;gap:80px;align-items:center;color:#fff}
+.pv-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
+.pv-box>*{position:relative}
+.pv-lab{color:#A6E8C0!important;margin-bottom:12px}.pv-lab .section-label-dot{background:#FFB800!important}
+.pv-box h2{color:#fff;margin:0 0 18px}
+.pv-box h2 em{font-style:normal;color:#fff;background:linear-gradient(transparent 84%,#FFB800 84%,#FFB800 94%,transparent 94%)}
+.pv-lead{color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;max-width:540px}
+.pv-scale{margin:30px 0 34px;max-width:540px}
+.pv-scale-t{display:flex;justify-content:space-between;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#A6E8C0;margin-bottom:10px}
+.pv-scale ol{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0;margin:0}
+.pv-scale li{position:relative;text-align:center;font-family:var(--font-display);font-weight:800;font-size:15px;padding:12px 0 10px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);transition:background .9s ease,color .9s ease,border-color .9s ease}
+.pv-scale li small{display:block;font-family:var(--font-body);font-weight:700;font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.pv-scale li.lit{background:#fff;color:#0E3A22;border-color:#fff}.pv-scale li.lit small{color:#144B2E}
+.pv-scale li.lit::after{content:"";position:absolute;left:50%;bottom:-9px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#FFB800}
+.pv-btn{display:inline-flex;align-items:center;gap:10px;background:#FFB800;color:#0E3A22;font-family:var(--font-body);font-weight:800;font-size:17px;border-radius:50px;padding:17px 32px;box-shadow:0 10px 26px -10px rgba(0,0,0,.45);transition:transform .2s,background .2s}
+.pv-btn:hover{transform:translateY(-2px);background:#FFC633}
+.pv-stack{position:relative}
+.pv-stack::before,.pv-stack::after{content:"";position:absolute;border-radius:16px;border:1px solid rgba(255,255,255,.18)}
+.pv-stack::before{left:18px;right:18px;top:-14px;bottom:14px;background:rgba(255,255,255,.14)}
+.pv-stack::after{left:36px;right:36px;top:-26px;bottom:26px;background:rgba(255,255,255,.07)}
+.pv-q{position:relative;z-index:1;background:#fff;color:var(--ink);border-radius:16px;padding:30px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.pv-q-top{display:flex;justify-content:space-between;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#144B2E;margin-bottom:10px}.pv-q-top span:last-child{color:var(--ink-soft)}
+.pv-bar{height:3px;border-radius:3px;background:#E3EEE7;overflow:hidden;margin-bottom:22px}.pv-bar i{display:block;height:100%;width:10%;background:var(--adults);transition:width .5s}
+.pv-qt{font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1.35;margin-bottom:20px}
+.pv-gap{display:inline-block;min-width:64px;border-bottom:2px solid var(--adults);color:var(--adults);text-align:center;margin:0 6px;line-height:1.1}
+.pv-opts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0;margin:0}
+.pv-opt{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 16px;border-radius:10px;border:1.5px solid #DCE7E0;background:#fff;font-weight:700;font-size:17px;color:var(--ink);transition:border-color .2s,background .2s}
+.pv-opt b{width:26px;height:26px;flex:none;border-radius:6px;display:grid;place-items:center;font-size:12px;background:#F1F6F3;color:#144B2E}
+.pv-opt:hover{border-color:var(--adults)}
+.pv-opt:focus-visible,.pv-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.pv-opt.ok{border-color:var(--adults);background:#EAF6EE}.pv-opt.ok b{background:var(--adults);color:#fff}
+.pv-opt.ko{border-color:#C24A3B;background:#FDF1EF}.pv-opt.ko b{background:#C24A3B;color:#fff}
+.pv-opt:disabled{cursor:default}
+.pv-fb{min-height:24px;margin-top:14px;font-weight:700;font-size:15px;color:#144B2E}
+@media(max-width:1280px){.pv-box{grid-template-columns:1fr 440px;gap:56px;padding:64px 56px}}
+@media(max-width:1000px){.pv-box{grid-template-columns:1fr;gap:56px;padding:48px 32px}.pv-stack{max-width:520px}}
+@media(max-width:600px){.pv-box{padding:36px 20px 40px;border-radius:22px}.pv-lead{font-size:16px}.pv-scale li{font-size:14px;padding:10px 0 8px}.pv-scale li small{display:none}.pv-btn{width:100%;justify-content:center;text-align:center}.pv-opts{grid-template-columns:1fr}.pv-q{padding:22px}.pv-qt{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.pv-scale li,.pv-bar i,.pv-btn{transition:none}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -546,26 +557,30 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 </section>
 
 <!-- ── PROVA DE NIVELL ── -->
-<section class="section tp-section" id="prova">
-  <div class="tp-box">
-    <div style="position:relative;z-index:1">
-      <div class="section-label" style="color:var(--adults-dark)"><span class="section-label-dot" style="background:var(--adults)"></span>Prova de nivell</div>
-      <h2>Saps quin és el teu <em style="font-style:normal">nivell d'anglès</em>?</h2>
-      <p class="tp-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
-      <ul class="tp-chips"><li>De l'A1 al C1</li><li>Gratuïta</li><li>Sense compromís</li></ul>
-      <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="tp-btn">Demana'ns la prova de nivell →</a>
+<section class="section pv-section" id="prova">
+  <div class="pv-box">
+    <div class="pv-text">
+      <div class="section-label pv-lab"><span class="section-label-dot"></span>Prova de nivell</div>
+      <h2>Saps quin és el teu <em>nivell d'anglès</em>?</h2>
+      <p class="pv-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
+      <div class="pv-scale" aria-hidden="true"><div class="pv-scale-t"><span>Nivells</span><span>Marc europeu (MCER)</span></div>
+        <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. alt</small></li><li>C1<small>Avançat</small></li></ol></div>
+      <p class="sr-only">Prova de nivell gratuïta i sense compromís, de l'A1 al C1.</p>
+      <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="pv-btn">Demana'ns la prova de nivell →</a>
     </div>
-    <div class="tp-quiz" id="tpQuiz">
-      <div class="tp-q-top"><span>Pregunta de mostra</span><span>5 / 50</span></div>
-      <div class="tp-q-bar"><i></i></div>
-      <p class="tp-q" id="tpQ">Where are you going <span>&nbsp;</span><b class="sr-only">(espai en blanc)</b> Friday?</p>
-      <ul class="tp-opts" role="list">
-        <li><button type="button" class="tp-opt" data-ok="1"><b>A</b>on</button></li>
-        <li><button type="button" class="tp-opt"><b>B</b>at</button></li>
-        <li><button type="button" class="tp-opt"><b>C</b>in</button></li>
-        <li><button type="button" class="tp-opt"><b>D</b>the</button></li>
-      </ul>
-      <p class="tp-fb" id="tpFb" aria-live="polite"></p>
+    <div class="pv-stack">
+      <div class="pv-q" id="tpQuiz">
+        <div class="pv-q-top"><span>Pregunta de mostra</span><span>5 / 50</span></div>
+        <div class="pv-bar"><i></i></div>
+        <p class="pv-qt">Where are you going<span class="pv-gap">&nbsp;</span><span class="sr-only">(espai en blanc)</span>Friday?</p>
+        <ul class="pv-opts" role="list">
+          <li><button type="button" class="pv-opt" data-ok><b>A</b>on</button></li>
+          <li><button type="button" class="pv-opt"><b>B</b>at</button></li>
+          <li><button type="button" class="pv-opt"><b>C</b>in</button></li>
+          <li><button type="button" class="pv-opt"><b>D</b>the</button></li>
+        </ul>
+        <p class="pv-fb" aria-live="polite"></p>
+      </div>
     </div>
   </div>
 </section>
@@ -586,7 +601,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <figure class="af-f"><img src="img-adults/adults-foto-4-700.webp" srcset="img-adults/adults-foto-4-700.webp 700w, img-adults/adults-foto-4.webp 1200w" sizes="(max-width:900px) 50vw, 30vw" width="1200" height="800" loading="lazy" alt="Una professora de Sprint Idiomes somrient a l'aula amb el llibre de text"><button type="button" class="af-open" data-i="2" aria-label="Veure la foto en gran: Una professora de Sprint Idiomes somrient a l'aula amb el llibre de text"></button></figure>
       <figure class="af-f"><img src="img-adults/adults-foto-2-700.webp" srcset="img-adults/adults-foto-2-700.webp 700w, img-adults/adults-foto-2.webp 1200w" sizes="(max-width:900px) 50vw, 30vw" width="1200" height="800" loading="lazy" alt="Un alumne parlant en anglès a classe, davant de l'ordinador"><button type="button" class="af-open" data-i="3" aria-label="Veure la foto en gran: Un alumne parlant en anglès a classe, davant de l'ordinador"></button></figure>
     </div>
-    <div class="af-foot"><span><i aria-hidden="true"></i>Fotos de les classes a Sprint Idiomes</span><span>Clica una foto per veure-la en gran</span></div>
+    <div class="af-foot"><span><i aria-hidden="true"></i>Fotos de les classes a Sprint Idiomes</span></div>
   </div>
   <dialog class="af-dlg" aria-label="Foto en gran">
     <div class="af-lb">
@@ -711,9 +726,15 @@ d.addEventListener('close',function(){if(from)from.focus()})})();
   [].forEach.call(document.querySelectorAll('.ct-link[data-hs]'),function(a){a.addEventListener('click',function(){var t=document.getElementById('hs-t'+a.getAttribute('data-hs'));if(t&&showHs)showHs(t)})});
 })();
 /* Prova de nivell: pregunta de mostra */
-(function(){var q=document.getElementById('tpQuiz');if(!q)return;var bs=[].slice.call(q.querySelectorAll('.tp-opt')),fb=document.getElementById('tpFb'),gap=q.querySelector('.tp-q span'),bar=q.querySelector('.tp-q-bar i');
-  var good=q.querySelector('.tp-opt[data-ok]').lastChild.textContent.trim();
-  bs.forEach(function(b){b.addEventListener('click',function(){var ok=b.hasAttribute('data-ok');bs.forEach(function(x){x.disabled=true;if(x.hasAttribute('data-ok'))x.classList.add('ok')});if(!ok)b.classList.add('ko');gap.textContent=good;bar.style.width='100%';fb.textContent=ok?'Correcte! Demana\'ns la prova completa →':'Gairebé! La bona és "'+good+'". Demana\'ns la prova completa →'})})})();
+(function(){var q=document.getElementById('tpQuiz');if(!q)return;var bs=[].slice.call(q.querySelectorAll('.pv-opt')),fb=q.querySelector('.pv-fb'),gap=q.querySelector('.pv-gap'),bar=q.querySelector('.pv-bar i');
+  var good=q.querySelector('.pv-opt[data-ok]').lastChild.textContent.trim();
+  bs.forEach(function(b){b.addEventListener('click',function(){var ok=b.hasAttribute('data-ok');bs.forEach(function(x){x.disabled=true;if(x.hasAttribute('data-ok'))x.classList.add('ok')});if(!ok)b.classList.add('ko');gap.textContent=good;bar.style.width='100%';
+    fb.textContent=ok?'Correcte. Demana\'ns la prova completa per saber el teu nivell.':'La resposta correcta és «'+good+'». Demana\'ns la prova completa per saber el teu nivell.'})})})();
+/* Escala de nivells: s'encén a poc a poc (A1, A2, B1) un sol cop */
+(function(){var sc=document.querySelector('.pv-scale');if(!sc)return;var li=[].slice.call(sc.querySelectorAll('li'));
+  function set(k){li.forEach(function(x,i){x.classList.toggle('lit',i===k)})}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){set(2);return}
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();[0,1,2].forEach(function(k,j){setTimeout(function(){set(k)},400+j*1100)})}},{threshold:.5});io.observe(sc)})();
 </script>
 
 <script>
