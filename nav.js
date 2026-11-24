@@ -599,9 +599,12 @@ ${cursosDropdown}
    Cada fila de la taula: data-days="dl dc" (dies), 1a cel·la = nivell (+ <small> opcional), 3a cel·la = hora.
    Es mostra com una graella: nivells a les files, dies de la setmana a dalt (en mòbil, llista per nivell). */
 (function(){
+  /* hores en minuts, perquè les 9:30 vagin abans de les 18:30 */
+  function mins(x){ var m = x.match(/(\d{1,2})[:.](\d{2})/); return m ? m[1] * 60 + +m[2] : 0; }
   function build(){
-    var DAYS = [['dl','Dl','Dilluns'],['dt','Dt','Dimarts'],['dc','Dc','Dimecres'],['dj','Dj','Dijous'],['dv','Dv','Divendres']];
     [].forEach.call(document.querySelectorAll('.hs'), function(hs){
+      /* dins de cada bloc, perquè una pàgina pugui tenir més d'una taula d'horaris */
+      var DAYS = [['dl','Dl','Dilluns'],['dt','Dt','Dimarts'],['dc','Dc','Dimecres'],['dj','Dj','Dijous'],['dv','Dv','Divendres']];
       var src = hs.querySelector('.hs-source'); if (!src || hs.classList.contains('is-built')) return;
       var levels = [], by = {};
       [].forEach.call(src.querySelectorAll('tbody tr'), function(tr){
@@ -613,7 +616,7 @@ ${cursosDropdown}
       var card = document.createElement('div'); card.className = 'hs-card'; card.setAttribute('aria-hidden', 'true');
       function cell(L, d){
         var t = L.opts.filter(function(o){ return o.days.indexOf(d) >= 0; }).map(function(o){ return o.time; })
-          .sort(function(a, b){ return a.localeCompare(b); });
+          .sort(function(a, b){ return mins(a) - mins(b); });
         return t.map(function(x){ return '<span class="hs-t">' + x.replace('–', ' – ') + '</span>'; }).join('');
       }
       /* Amb data-grups a .hs: columnes = grups de dies tal com es fan les classes (p. ex. "Dilluns i dimecres"),
@@ -631,7 +634,7 @@ ${cursosDropdown}
       if (hs.hasAttribute('data-grups')) DAYS = COLS; else levels.forEach(function(n){ by[n].opts.forEach(function(o){ o.key = null; }); });
       function cell(L, k){
         var t = L.opts.filter(function(o){ return o.key ? o.key === k : o.days.indexOf(k) >= 0; }).map(function(o){ return o.time; })
-          .sort(function(a, b){ return a.localeCompare(b); });
+          .sort(function(a, b){ return mins(a) - mins(b); });
         return t.map(function(x){ return '<span class="hs-t">' + x.replace('–', ' – ') + '</span>'; }).join('');
       }
       var head = '<thead><tr><th>Nivell</th>' + DAYS.map(function(D){ return '<th>' + D[2] + '</th>'; }).join('') + '</tr></thead>';
