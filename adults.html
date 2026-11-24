@@ -307,51 +307,70 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:480px){.ad-hero .hero-stats-3{grid-template-columns:1fr}.ad-hero .hero-stats-3 .hero-stat{display:flex;align-items:baseline;gap:10px}}
 .btn-adults-ol{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:10px;background:#fff;color:var(--adults-dark);border:2px solid var(--adults-dark);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;transition:background .2s,color .2s}
 .btn-adults-ol:hover{background:var(--adults-dark);color:#fff}
-/* Els nostres cursos: caixa gran amb 3 pestanyes */
-.ct-box{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 24px 60px -36px rgba(14,58,34,.35)}
-.ct-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:#F6FBF7}
-.ct-tab{display:flex;align-items:center;gap:14px;padding:22px 26px;text-align:left;border-right:1px solid var(--line);position:relative;transition:background .2s;color:var(--ink)}
-.ct-tab:last-child{border-right:0}
-.ct-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--adults);transform:scaleX(0);transition:transform .3s}
-.ct-tab[aria-selected="true"]{background:#fff}.ct-tab[aria-selected="true"]::after{transform:none}
-.ct-tab:hover{background:#fff}
-.ct-tab:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
-.ct-ic{width:48px;height:48px;flex:none;border-radius:14px;display:grid;place-items:center;background:#E6F3EA;color:var(--adults-dark);transition:background .2s,color .2s}
-.ct-tab[aria-selected="true"] .ct-ic{background:var(--adults);color:#fff}
-.ct-tt b{display:block;font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-0.02em;line-height:1.15}
-.ct-tt small{display:block;font-size:14px;font-weight:700;color:var(--ink-soft);margin-top:2px}
-.ct-panel{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;padding:48px 52px 52px}
+/* Els nostres cursos: pestanyes en targeta (com als horaris) i escala de nivells */
+.ct-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:36px 0 18px}
+.ct-tab{position:relative;display:flex;align-items:center;gap:12px;text-align:left;padding:14px 16px;border:1px solid #D3E4D9;border-radius:14px;background:#fff;color:var(--ink);transition:transform .2s,border-color .2s,box-shadow .2s,background .25s}
+.ct-tab:hover{border-color:var(--adults);transform:translateY(-1px);box-shadow:0 8px 18px -14px rgba(27,94,58,.6)}
+.ct-ic{width:40px;height:40px;flex:none;border-radius:10px;display:grid;place-items:center;background:#EEF5F0;color:var(--adults-dark);transition:background .25s,color .25s}
+.ct-tt b{display:block;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2}
+.ct-tt small{display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-top:2px}
+.ct-tab[aria-selected="true"]{background:var(--adults);border-color:var(--adults);color:#fff;transform:none;box-shadow:0 10px 22px -14px rgba(27,94,58,.9);cursor:default}
+.ct-tab[aria-selected="true"] .ct-ic{background:rgba(255,255,255,.16);color:#fff}.ct-tab[aria-selected="true"] small{color:#CDEFD9}
+.ct-tab[aria-selected="true"]::after{content:"";position:absolute;left:50%;bottom:-7px;width:13px;height:13px;margin-left:-6.5px;background:var(--adults);transform:rotate(45deg);border-radius:2px}
+.ct-tab:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.ct-box{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -40px rgba(14,58,34,.35)}
+.ct-panel{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;padding:44px 48px;align-items:center}
 .ct-panel[hidden]{display:none}
-.ct-panel:focus-visible{outline:3px solid var(--blue);outline-offset:-6px}
+.ct-panel:focus{outline:none}.ct-panel:focus-visible{outline:3px solid var(--blue);outline-offset:-6px;border-radius:22px}
 .ct-panel.is-in .ct-text,.ct-panel.is-in .ct-side{animation:ct-in .45s ease both}.ct-panel.is-in .ct-side{animation-delay:.08s}
-@keyframes ct-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.ct-title{font-family:var(--font-display);font-weight:800;font-size:24px;letter-spacing:-0.02em;margin-bottom:14px}
-.ct-intro{font-size:18px;font-weight:700;color:var(--ink);line-height:1.55;margin-bottom:14px}
-.ct-text p{color:var(--ink-soft);font-size:17px;line-height:1.65}.ct-text p+p{margin-top:12px}.ct-text .ct-intro{color:var(--ink)}
-.ct-fact{display:flex;align-items:center;gap:16px;margin-top:22px!important;padding:16px 18px;border-radius:16px;background:#EAF6EE;color:var(--ink)!important}
+@keyframes ct-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ct-title{font-family:var(--font-display);font-weight:800;font-size:24px;letter-spacing:-0.02em;margin-bottom:12px}
+.ct-intro{font-size:18px;font-weight:700;color:var(--ink);line-height:1.55;margin-bottom:12px}
+.ct-text p{color:var(--ink-soft);font-size:17px;line-height:1.65}.ct-text p+p{margin-top:10px}.ct-text .ct-intro{color:var(--ink)}
+.ct-fact{display:flex;align-items:center;gap:14px;margin-top:20px!important;padding:12px 14px;border-radius:14px;background:#EAF6EE;color:var(--ink)!important;font-size:16px!important}
 .ct-fact b{color:var(--adults-dark)}
-.ct-fact-n{flex:none;width:52px;height:52px;border-radius:50%;background:var(--adults);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:26px}
-.ct-side{background:#F6FBF7;border:1px solid #DCEDE2;border-radius:20px;padding:26px 26px 24px;align-self:start}
-.ct-lab{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--adults-dark);margin-bottom:14px}
-.ct-lv{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px}
-.ct-lv li{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #DCEDE2;border-radius:12px;padding:10px 14px;font-weight:700;font-size:16px}
-.ct-lv b{flex:none;min-width:40px;text-align:center;font-family:var(--font-display);font-weight:800;font-size:15px;background:var(--adults-dark);color:#fff;border-radius:8px;padding:3px 8px}
+.ct-fact-n{flex:none;width:42px;height:42px;border-radius:50%;background:var(--adults);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:21px}
+.ct-side{background:#F6FBF7;border:1px solid #DCEDE2;border-radius:18px;padding:24px}
+.ct-lab{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--adults-dark);margin-bottom:14px}.ct-lab span{text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink-soft)}
+.ct-scale{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.ct-scale li{text-align:center;padding:11px 2px 9px;border-radius:10px;background:#fff;border:1px dashed #CFE0D5;color:#93A39A}
+.ct-scale li b{display:block;font-family:var(--font-display);font-weight:800;font-size:17px;line-height:1.1}
+.ct-scale li small{display:block;font-size:11.5px;font-weight:700;margin-top:3px;line-height:1.2}
+.ct-scale li.on{background:var(--adults);border:1px solid var(--adults);color:#fff}.ct-scale li.on small{color:#CDEFD9}
 .ct-btn{display:flex;justify-content:center;text-align:center;margin-bottom:14px}
 .ct-link{display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--adults-dark);border-bottom:2px solid currentColor;padding-bottom:2px;min-height:24px}
-@media(max-width:1100px){.ct-panel{grid-template-columns:1fr;gap:32px;padding:40px 36px}.ct-tab{padding:18px 18px;gap:12px}.ct-tt b{font-size:18px}}
-@media(max-width:760px){.ct-tabs{grid-template-columns:1fr}.ct-tab{border-right:0;border-bottom:1px solid var(--line);padding:14px 18px}.ct-tab:last-child{border-bottom:0}
-  .ct-tab::after{left:0;top:0;bottom:0;right:auto;width:4px;height:auto;transform:scaleY(0)}.ct-tab[aria-selected="true"]::after{transform:none}
-  .ct-ic{width:40px;height:40px;border-radius:12px}.ct-panel{padding:28px 20px 30px}.ct-box{border-radius:22px;margin-top:32px}.ct-side{padding:20px}.ct-intro{font-size:17px}.ct-text p{font-size:16px}}
-@media(prefers-reduced-motion:reduce){.ct-panel.is-in .ct-text,.ct-panel.is-in .ct-side{animation:none}.ct-tab::after{transition:none}}
-/* Horaris: pestanyes */
-.hs-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.hs-tab{padding:10px 18px;border-radius:99px;border:2px solid #CFE3D6;background:#fff;font-weight:800;font-size:15px;color:var(--ink);min-height:44px;transition:background .2s,border-color .2s,color .2s}
-.hs-tab:hover{border-color:var(--adults)}
-.hs-tab[aria-selected="true"]{background:var(--adults);border-color:var(--adults);color:#fff}
+@media(max-width:1100px){.ct-panel{grid-template-columns:1fr;gap:28px;padding:36px 32px}.ct-tab{padding:12px}.ct-tt b{font-size:16px}.ct-ic{width:34px;height:34px}}
+@media(max-width:600px){.ct-tabs{gap:6px;margin-top:28px}.ct-tab{flex-direction:column;align-items:center;text-align:center;gap:6px;padding:10px 4px}.ct-tt b{font-size:13.5px}.ct-tt small{font-size:11px}
+  .ct-panel{padding:26px 18px 28px}.ct-box{border-radius:18px}.ct-side{padding:18px 14px}.ct-intro{font-size:17px}.ct-text p{font-size:16px}.ct-scale li small{font-size:10px}.ct-scale li b{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.ct-panel.is-in .ct-text,.ct-panel.is-in .ct-side{animation:none}.ct-tab{transition:none}}
+/* Horaris: pestanyes en targeta, que conviden a clicar */
+.hs-pick{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-weight:800;font-size:14px;color:var(--ink);margin:0 0 12px}
+.hs-pick svg{color:var(--adults)}.hs-pick span{font-weight:600;color:var(--ink-soft)}
+.hs-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.hs-tab{position:relative;display:flex;flex-direction:column;gap:8px;text-align:left;padding:12px 14px 10px;border:1px solid #D3E4D9;border-radius:12px;background:#fff;color:var(--ink-soft);transition:transform .2s,border-color .2s,box-shadow .2s,background .25s,color .25s}
+.hs-tab-row{display:flex;align-items:center;gap:10px}
+.hs-tab:hover{border-color:var(--adults);transform:translateY(-1px);box-shadow:0 8px 18px -14px rgba(27,94,58,.6);color:var(--ink)}
+.hs-tab-ic{width:30px;height:30px;flex:none;border-radius:8px;display:grid;place-items:center;background:#EEF5F0;color:var(--adults-dark);transition:background .25s,color .25s}
+.hs-tab-tx b{display:block;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:-0.01em;line-height:1.2;color:var(--ink)}
+.hs-tab-tx small{display:block;font-size:12.5px;font-weight:600;margin-top:1px}
+.hs-tab-cta{font-size:12.5px;font-weight:700;letter-spacing:.01em}
+.cta-off{color:var(--adults)}.cta-on{display:none}
+.hs-tab[aria-selected="true"]{background:var(--adults);border-color:var(--adults);transform:none;box-shadow:0 8px 20px -14px rgba(27,94,58,.9);cursor:default}
+.hs-tab[aria-selected="true"] .hs-tab-ic{background:rgba(255,255,255,.16);color:#fff}
+.hs-tab[aria-selected="true"] .hs-tab-tx b{color:#fff}.hs-tab[aria-selected="true"] .hs-tab-tx small{color:#CDEFD9}
+.hs-tab[aria-selected="true"] .cta-off{display:none}.hs-tab[aria-selected="true"] .cta-on{display:inline;color:#CDEFD9}
+.hs-tab[aria-selected="true"]::after{content:"";position:absolute;left:50%;bottom:-6px;width:11px;height:11px;margin-left:-5.5px;background:var(--adults);transform:rotate(45deg);border-radius:2px}
 .hs-tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.hs-tab.nudge{animation:hs-nudge 1.2s ease 1}
+@keyframes hs-nudge{0%,100%{transform:none}35%{transform:translateY(-3px)}}
 .hs-panel[hidden]{display:none}
-.hs-panel .hs-note{margin-top:14px}
-@media(max-width:600px){.hs-tabs{display:grid;grid-template-columns:1fr 1fr}.hs-tab:last-child{grid-column:1/-1}}
+.hs-panel .hs-note{margin-top:12px}
+.hs-more{margin-top:14px;padding-top:12px;border-top:1px solid rgba(21,32,61,.08);font-size:14px;font-weight:600;color:var(--ink-soft);text-align:center}
+.hs-more-b{font-weight:800;color:var(--adults-dark);min-height:32px;padding:0 2px}
+.hs-more-b:hover{color:var(--adults);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.hs-tabs{gap:6px}.hs-tab{align-items:center;text-align:center;padding:10px 6px 9px}.hs-tab-row{flex-direction:column;gap:6px}
+  .hs-tab-tx b{font-size:13.5px}.hs-tab-tx small{font-size:11px}.hs-tab-cta{font-size:11px}.hs-pick span{display:block;width:100%;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.hs-tab.nudge{animation:none}.hs-tab{transition:none}}
 
 /* Les nostres classes: franja de fotos de cantó a cantó */
 .af-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:36px}
@@ -378,7 +397,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* Prova de nivell (Adults): sòbria, amb escala MCER, fulls apilats i un toc de groc */
 .pv-section.section{padding-top:0;background:#fff}
 .pv-box{max-width:1480px;margin:0 auto;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 0% 0%,#1F6B43 0%,#0E3A22 55%,#0A2C1A 100%);border-radius:28px;padding:80px 88px;display:grid;grid-template-columns:1fr 500px;gap:80px;align-items:center;color:#fff}
-.pv-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 70%);mask-image:linear-gradient(90deg,#000,transparent 70%);pointer-events:none}
 .pv-box>*{position:relative}
 .pv-lab{color:#A6E8C0!important;margin-bottom:12px}.pv-lab .section-label-dot{background:#FFB800!important}
 .pv-box h2{color:#fff;margin:0 0 18px}
@@ -390,7 +408,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .pv-scale li{position:relative;text-align:center;font-family:var(--font-display);font-weight:800;font-size:15px;padding:12px 0 10px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);transition:background .9s ease,color .9s ease,border-color .9s ease}
 .pv-scale li small{display:block;font-family:var(--font-body);font-weight:700;font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
 .pv-scale li.lit{background:#fff;color:#0E3A22;border-color:#fff}.pv-scale li.lit small{color:#144B2E}
-.pv-scale li.lit::after{content:"";position:absolute;left:50%;bottom:-9px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#FFB800}
+.pv-scale ol{position:relative}
+.pv-dot{position:absolute;left:0;bottom:-11px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#FFB800;box-shadow:0 0 0 4px rgba(255,184,0,.18);transition:left 1s cubic-bezier(.45,.05,.3,1);pointer-events:none}
 .pv-btn{display:inline-flex;align-items:center;gap:10px;background:#FFB800;color:#0E3A22;font-family:var(--font-body);font-weight:800;font-size:17px;border-radius:50px;padding:17px 32px;box-shadow:0 10px 26px -10px rgba(0,0,0,.45);transition:transform .2s,background .2s}
 .pv-btn:hover{transform:translateY(-2px);background:#FFC633}
 .pv-stack{position:relative}
@@ -415,6 +434,10 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:1000px){.pv-box{grid-template-columns:1fr;gap:56px;padding:48px 32px}.pv-stack{max-width:520px}}
 @media(max-width:600px){.pv-box{padding:36px 20px 40px;border-radius:22px}.pv-lead{font-size:16px}.pv-scale li{font-size:14px;padding:10px 0 8px}.pv-scale li small{display:none}.pv-btn{width:100%;justify-content:center;text-align:center}.pv-opts{grid-template-columns:1fr}.pv-q{padding:22px}.pv-qt{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.pv-scale li,.pv-bar i,.pv-btn{transition:none}}
+
+.hs-lvl{margin-top:10px;text-align:center;font-size:14.5px;font-weight:700;color:var(--ink-soft)}
+.hs-lvl a{color:var(--adults-dark);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.hs-lvl a:hover{color:var(--adults)}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -528,29 +551,29 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <div class="section-label" style="color:var(--adults-dark)"><span class="section-label-dot" style="background:var(--adults)"></span>Els nostres cursos</div>
     <h2>Què vols aconseguir amb el teu <em style="color:var(--adults-dark);font-style:normal">anglès</em>?</h2>
     <p class="section-lead">Tant si vols començar a aprendre anglès com perfeccionar els teus coneixements, a Sprint Idiomes t'oferim diferents opcions formatives segons els teus objectius.</p>
+    <div class="ct-tabs" role="tablist" aria-label="Tipus de curs"><button type="button" role="tab" class="ct-tab" id="ct-t1" aria-controls="ct-p1" aria-selected="true" tabindex="0"><span class="ct-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="ct-tt"><b>Anglès general</b><small>De l'A1 al C1</small></span></button><button type="button" role="tab" class="ct-tab" id="ct-t2" aria-controls="ct-p2" aria-selected="false" tabindex="-1"><span class="ct-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span class="ct-tt"><b>Classes de conversa</b><small>B1, B2 i C1</small></span></button><button type="button" role="tab" class="ct-tab" id="ct-t3" aria-controls="ct-p3" aria-selected="false" tabindex="-1"><span class="ct-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2L7 22l5-3 5 3-1.2-8.8"/></svg></span><span class="ct-tt"><b>Preparació Cambridge</b><small>First i Advanced</small></span></button></div>
     <div class="ct-box">
-      <div class="ct-tabs" role="tablist" aria-label="Tipus de curs"><button type="button" role="tab" class="ct-tab" id="ct-t1" aria-controls="ct-p1" aria-selected="true" tabindex="0"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="ct-tt"><b>Anglès general</b><small>De l'A1 al C1</small></span></button><button type="button" role="tab" class="ct-tab" id="ct-t2" aria-controls="ct-p2" aria-selected="false" tabindex="-1"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span class="ct-tt"><b>Classes de conversa</b><small>B1, B2 i C1</small></span></button><button type="button" role="tab" class="ct-tab" id="ct-t3" aria-controls="ct-p3" aria-selected="false" tabindex="-1"><span class="ct-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2L7 22l5-3 5 3-1.2-8.8"/></svg></span><span class="ct-tt"><b>Preparació Cambridge</b><small>First i Advanced</small></span></button></div>
       <div class="ct-panel" role="tabpanel" id="ct-p1" aria-labelledby="ct-t1" tabindex="0">
   <div class="ct-text"><h3 class="ct-title">Anglès general</h3>
     <p class="ct-intro">Classes regulars d'anglès per aprendre des de zero, reprendre l'idioma o continuar perfeccionant-lo.</p>
     <p>Treballem la comprensió i l'expressió oral i escrita amb activitats pràctiques adaptades a cada nivell. L'objectiu és consolidar els coneixements i comunicar-se en anglès amb més confiança i autonomia.</p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><ul class="ct-lv" role="list"><li><b>A1</b>Inicial</li><li><b>A2</b>Elemental</li><li><b>B1</b>Intermedi</li><li><b>B2</b>Intermedi alt</li><li><b>C1</b>Avançat</li></ul>
-    <a href="#horaris" class="ct-link" data-hs="1">Veure els horaris →</a></div>
+  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: A1 Inicial, A2 Elemental, B1 Intermedi, B2 Intermedi alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class="on"><b>A1</b><small>Inicial</small></li><li class="on"><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
+    <a href="#horaris-general" class="ct-link" data-hs="1">Veure els horaris →</a></div>
 </div><div class="ct-panel" role="tabpanel" id="ct-p2" aria-labelledby="ct-t2" tabindex="0" hidden>
   <div class="ct-text"><h3 class="ct-title">Classes de conversa</h3>
     <p class="ct-intro">Classes enfocades a la pràctica de l'anglès oral, pensades per a persones que volen guanyar fluïdesa a l'hora de comunicar-se.</p>
     <p>A través de converses, debats i activitats sobre temes diversos, ampliem el vocabulari i millorem l'expressió i la comprensió oral.</p>
     <p class="ct-fact"><span class="ct-fact-n">7</span><span>Per afavorir la participació de tothom, els grups són d'un <b>màxim de 7 persones</b>.</span></p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><ul class="ct-lv" role="list"><li><b>B1</b>Intermedi</li><li><b>B2</b>Intermedi alt</li><li><b>C1</b>Avançat</li></ul>
-    <a href="#horaris" class="ct-link" data-hs="2">Veure els horaris →</a></div>
+  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: B1 Intermedi, B2 Intermedi alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
+    <a href="#horaris-conversa" class="ct-link" data-hs="2">Veure els horaris →</a></div>
 </div><div class="ct-panel" role="tabpanel" id="ct-p3" aria-labelledby="ct-t3" tabindex="0" hidden>
   <div class="ct-text"><h3 class="ct-title">Preparació Cambridge</h3>
     <p class="ct-intro">Cursos de preparació per als exàmens oficials de Cambridge, específicament per a adults.</p>
     <p>Treballem les diferents parts de l'examen (Reading, Writing, Listening, Speaking i Use of English), combinant activitats de preparació, simulacres d'examen i estratègies adaptades a cada certificat.</p>
     <p>A més, us orientem sobre les convocatòries i gestionem la inscripció a l'examen oficial si ho desitgeu.</p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><ul class="ct-lv" role="list"><li><b>B2</b>First</li><li><b>C1</b>Advanced</li></ul>
+  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: B2 First, C1 Advanced.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class=""><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>First</small></li><li class="on"><b>C1</b><small>Advanced</small></li></ol>
     <a href="cambridge.html" class="btn-adults ct-btn">Més sobre la preparació Cambridge →</a>
-    <a href="#horaris" class="ct-link" data-hs="3">Veure els horaris →</a></div>
+    <a href="#horaris-cambridge" class="ct-link" data-hs="3">Veure els horaris →</a></div>
 </div>
     </div>
   </div>
@@ -563,8 +586,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <div class="section-label pv-lab"><span class="section-label-dot"></span>Prova de nivell</div>
       <h2>Saps quin és el teu <em>nivell d'anglès</em>?</h2>
       <p class="pv-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
-      <div class="pv-scale" aria-hidden="true"><div class="pv-scale-t"><span>Nivells</span><span>Marc europeu (MCER)</span></div>
-        <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. alt</small></li><li>C1<small>Avançat</small></li></ol></div>
+      <div class="pv-scale" aria-hidden="true"><div class="pv-scale-t"><span>Nivells</span></div>
+        <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. alt</small></li><li>C1<small>Avançat</small></li><span class="pv-dot" aria-hidden="true"></span></ol></div>
       <p class="sr-only">Prova de nivell gratuïta i sense compromís, de l'A1 al C1.</p>
       <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="pv-btn">Demana'ns la prova de nivell →</a>
     </div>
@@ -627,7 +650,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         </div>
       </div>
       <div class="hs-main">
-        <div class="hs-tabs" role="tablist" aria-label="Tipus de curs"><button type="button" role="tab" class="hs-tab" id="hs-t1" aria-controls="hs-p1" aria-selected="true" tabindex="0">Anglès general</button><button type="button" role="tab" class="hs-tab" id="hs-t2" aria-controls="hs-p2" aria-selected="false" tabindex="-1">Conversa</button><button type="button" role="tab" class="hs-tab" id="hs-t3" aria-controls="hs-p3" aria-selected="false" tabindex="-1">Preparació Cambridge</button></div>
+        <p class="hs-pick" id="hs-pick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Tria el tipus de curs <span>· clica cada pestanya per veure els seus horaris</span></p>
+        <div class="hs-tabs" role="tablist" aria-labelledby="hs-pick"><button type="button" role="tab" class="hs-tab" id="hs-t1" data-slug="horaris-general" aria-controls="hs-p1" aria-selected="true" tabindex="0"><span class="hs-tab-row"><span class="hs-tab-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="hs-tab-tx"><b>Anglès general</b><small>A1 – B2</small></span></span><span class="hs-tab-cta" aria-hidden="true"><span class="cta-off">Veure horaris →</span><span class="cta-on">✓ Estàs veient aquests</span></span></button><button type="button" role="tab" class="hs-tab" id="hs-t2" data-slug="horaris-conversa" aria-controls="hs-p2" aria-selected="false" tabindex="-1"><span class="hs-tab-row"><span class="hs-tab-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span class="hs-tab-tx"><b>Conversa</b><small>B1 – C1</small></span></span><span class="hs-tab-cta" aria-hidden="true"><span class="cta-off">Veure horaris →</span><span class="cta-on">✓ Estàs veient aquests</span></span></button><button type="button" role="tab" class="hs-tab" id="hs-t3" data-slug="horaris-cambridge" aria-controls="hs-p3" aria-selected="false" tabindex="-1"><span class="hs-tab-row"><span class="hs-tab-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2L7 22l5-3 5 3-1.2-8.8"/></svg></span><span class="hs-tab-tx"><b>Preparació Cambridge</b><small>First i Advanced</small></span></span><span class="hs-tab-cta" aria-hidden="true"><span class="cta-off">Veure horaris →</span><span class="cta-on">✓ Estàs veient aquests</span></span></button></div>
         <div class="hs hs-panel" id="hs-p1" role="tabpanel" aria-labelledby="hs-t1" style="--hs-c:var(--adults)" data-grups>
         <table class="hs-source">
           <caption class="sr-only">Horaris d'anglès general per a adults</caption>
@@ -646,6 +670,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           </tbody>
         </table>
         <p class="hs-note">Cada grup fa classe els dos dies indicats. Els horaris poden variar.</p>
+        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
+        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="2">Conversa →</button> · <button type="button" class="hs-more-b" data-go="3">Preparació Cambridge →</button></p>
       </div>
         <div class="hs hs-panel" id="hs-p2" role="tabpanel" aria-labelledby="hs-t2" style="--hs-c:var(--adults)" data-grups hidden>
         <table class="hs-source">
@@ -661,6 +687,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           </tbody>
         </table>
         <p class="hs-note">Grups de màxim 7 persones. Els horaris poden variar.</p>
+        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
+        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="1">Anglès general →</button> · <button type="button" class="hs-more-b" data-go="3">Preparació Cambridge →</button></p>
       </div>
         <div class="hs hs-panel" id="hs-p3" role="tabpanel" aria-labelledby="hs-t3" style="--hs-c:var(--adults)" data-grups hidden>
         <table class="hs-source">
@@ -673,6 +701,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
           </tbody>
         </table>
         <p class="hs-note">Cada grup fa classe els dos dies indicats. Els horaris poden variar.</p>
+        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
+        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="1">Anglès general →</button> · <button type="button" class="hs-more-b" data-go="2">Conversa →</button></p>
       </div>
       </div>
     </div>
@@ -703,6 +733,20 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 </main>
 <script>
+/* Horaris: enllaços directes a cada pestanya (adults.html#horaris-conversa) */
+(function(){
+  function go(){
+    /* enllaços directes: adults.html#horaris-conversa obre aquesta pestanya */
+    var tabs=[].slice.call(document.querySelectorAll('.hs-tab[data-slug]'));
+    function fromHash(scroll){var h=location.hash.slice(1),t=tabs.filter(function(x){return x.dataset.slug===h})[0];if(!t)return;t.click();
+      if(scroll){var sec=document.getElementById('horaris');setTimeout(function(){sec.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})},50)}}
+    tabs.forEach(function(t){t.addEventListener('click',function(){if(history.replaceState&&location.hash.slice(1)!==t.dataset.slug&&/^#?(horaris)/.test(location.hash||'#horaris'))history.replaceState(null,'','#'+t.dataset.slug)})});
+    addEventListener('hashchange',function(){fromHash(true)});fromHash(true);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+})();
+</script>
+<script>
 /* Fotos: al clicar s'obre en gran, amb fletxes, teclat i Esc per tancar */
 (function(){var d=document.querySelector('.af-dlg');if(!d||!d.showModal)return;var bs=[].slice.call(document.querySelectorAll('.af-open')),big=d.querySelector('.af-big'),n=d.querySelector('.af-n'),i=0,from=null;
 function show(k){i=(k+bs.length)%bs.length;var im=bs[i].previousElementSibling;big.src=im.getAttribute('srcset').split(',').pop().trim().split(' ')[0];big.alt=im.alt;n.textContent=(i+1)+' / '+bs.length}
@@ -724,17 +768,24 @@ d.addEventListener('close',function(){if(from)from.focus()})})();
   var cl=document.querySelector('.ct-tabs');if(cl)tabs(cl);
   /* "Veure els horaris" obre la pestanya del mateix curs */
   [].forEach.call(document.querySelectorAll('.ct-link[data-hs]'),function(a){a.addEventListener('click',function(){var t=document.getElementById('hs-t'+a.getAttribute('data-hs'));if(t&&showHs)showHs(t)})});
+  /* "També hi ha horaris de…" sota cada taula */
+  [].forEach.call(document.querySelectorAll('.hs-more-b'),function(b){b.addEventListener('click',function(){var t=document.getElementById('hs-t'+b.getAttribute('data-go'));if(t&&showHs){showHs(t);t.focus({preventScroll:true});hl.scrollIntoView({behavior:'smooth',block:'center'})}})});
+  /* la primera vegada, les pestanyes no triades fan un saltet suau */
+  if(hl&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();setTimeout(function(){[].forEach.call(hl.querySelectorAll('.hs-tab[aria-selected="false"]'),function(t,k){setTimeout(function(){t.classList.add('nudge')},k*220)})},600)}},{threshold:.6});io.observe(hl)}
 })();
 /* Prova de nivell: pregunta de mostra */
 (function(){var q=document.getElementById('tpQuiz');if(!q)return;var bs=[].slice.call(q.querySelectorAll('.pv-opt')),fb=q.querySelector('.pv-fb'),gap=q.querySelector('.pv-gap'),bar=q.querySelector('.pv-bar i');
   var good=q.querySelector('.pv-opt[data-ok]').lastChild.textContent.trim();
   bs.forEach(function(b){b.addEventListener('click',function(){var ok=b.hasAttribute('data-ok');bs.forEach(function(x){x.disabled=true;if(x.hasAttribute('data-ok'))x.classList.add('ok')});if(!ok)b.classList.add('ko');gap.textContent=good;bar.style.width='100%';
     fb.textContent=ok?'Correcte. Demana\'ns la prova completa per saber el teu nivell.':'La resposta correcta és «'+good+'». Demana\'ns la prova completa per saber el teu nivell.'})})})();
-/* Escala de nivells: s'encén a poc a poc (A1, A2, B1) un sol cop */
-(function(){var sc=document.querySelector('.pv-scale');if(!sc)return;var li=[].slice.call(sc.querySelectorAll('li'));
-  function set(k){li.forEach(function(x,i){x.classList.toggle('lit',i===k)})}
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){set(2);return}
-  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();[0,1,2].forEach(function(k,j){setTimeout(function(){set(k)},400+j*1100)})}},{threshold:.5});io.observe(sc)})();
+/* Escala de nivells: el punt llisca a poc a poc d'A1 a B1 cada cop que la secció entra a la pantalla */
+(function(){var sc=document.querySelector('.pv-scale');if(!sc)return;var li=[].slice.call(sc.querySelectorAll('li')),dot=sc.querySelector('.pv-dot'),t=[],cur=0;
+  function set(k,anim){cur=k;li.forEach(function(x,i){x.classList.toggle('lit',i===k)});var r=li[k];if(!anim)dot.style.transition='none';dot.style.left=(r.offsetLeft+r.offsetWidth/2)+'px';if(!anim){void dot.offsetWidth;dot.style.transition=''}}
+  function stop(){t.forEach(clearTimeout);t=[]}
+  addEventListener('resize',function(){set(cur,false)});
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){set(2,false);return}
+  set(0,false);
+  new IntersectionObserver(function(e){if(e[0].isIntersecting){stop();set(0,false);[1,2].forEach(function(k,j){t.push(setTimeout(function(){set(k,true)},900+j*1300))})}else{stop();set(0,false)}},{threshold:.5}).observe(sc)})();
 </script>
 
 <script>
