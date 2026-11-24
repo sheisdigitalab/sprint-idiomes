@@ -343,6 +343,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:600px){.ct-tabs{gap:6px;margin-top:28px}.ct-tab{flex-direction:column;align-items:center;text-align:center;gap:6px;padding:10px 4px}.ct-tt b{font-size:13.5px}.ct-tt small{font-size:11px}
   .ct-panel{padding:26px 18px 28px}.ct-box{border-radius:18px}.ct-side{padding:18px 14px}.ct-intro{font-size:17px}.ct-text p{font-size:16px}.ct-scale li small{font-size:10px}.ct-scale li b{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.ct-panel.is-in .ct-text,.ct-panel.is-in .ct-side{animation:none}.ct-tab{transition:none}}
+/* Horaris en mòbil i tauleta: primer la taula, després el botó i el telèfon */
+@media(max-width:1100px){#horaris .hs-wrap{display:flex;flex-direction:column;gap:0}#horaris .hs-side{display:contents}#horaris .hs-main{order:2;margin-top:28px}#horaris .hs-ctas{order:3;margin-top:32px}}
 /* Horaris: pestanyes en targeta, que conviden a clicar */
 .hs-pick{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-weight:800;font-size:14px;color:var(--ink);margin:0 0 12px}
 .hs-pick svg{color:var(--adults)}.hs-pick span{font-weight:600;color:var(--ink-soft)}
@@ -364,8 +366,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .hs-tab.nudge{animation:hs-nudge 1.2s ease 1}
 @keyframes hs-nudge{0%,100%{transform:none}35%{transform:translateY(-3px)}}
 .hs-panel[hidden]{display:none}
-.hs-panel .hs-note{margin-top:12px}
-.hs-more{margin-top:14px;padding-top:12px;border-top:1px solid rgba(21,32,61,.08);font-size:14px;font-weight:600;color:var(--ink-soft);text-align:center}
 .hs-more-b{font-weight:800;color:var(--adults-dark);min-height:32px;padding:0 2px}
 .hs-more-b:hover{color:var(--adults);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.hs-tabs{gap:6px}.hs-tab{align-items:center;text-align:center;padding:10px 6px 9px}.hs-tab-row{flex-direction:column;gap:6px}
@@ -395,7 +395,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(prefers-reduced-motion:reduce){.af-f img{transition:none}.af-f:hover img{transform:none}}
 
 /* Prova de nivell (Adults): sòbria, amb escala MCER, fulls apilats i un toc de groc */
-.pv-section.section{padding-top:0;background:#fff}
+.pv-section.section{background:#fff}
 .pv-box{max-width:1480px;margin:0 auto;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 0% 0%,#1F6B43 0%,#0E3A22 55%,#0A2C1A 100%);border-radius:28px;padding:80px 88px;display:grid;grid-template-columns:1fr 500px;gap:80px;align-items:center;color:#fff}
 .pv-box>*{position:relative}
 .pv-lab{color:#A6E8C0!important;margin-bottom:12px}.pv-lab .section-label-dot{background:#FFB800!important}
@@ -433,11 +433,17 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:1280px){.pv-box{grid-template-columns:1fr 440px;gap:56px;padding:64px 56px}}
 @media(max-width:1000px){.pv-box{grid-template-columns:1fr;gap:56px;padding:48px 32px}.pv-stack{max-width:520px}}
 @media(max-width:600px){.pv-box{padding:36px 20px 40px;border-radius:22px}.pv-lead{font-size:16px}.pv-scale li{font-size:14px;padding:10px 0 8px}.pv-scale li small{display:none}.pv-btn{width:100%;justify-content:center;text-align:center}.pv-opts{grid-template-columns:1fr}.pv-q{padding:22px}.pv-qt{font-size:22px}}
+@media(max-width:600px){.pv-box{gap:32px}.pv-stack::before,.pv-stack::after{display:none}.pv-q{padding:18px;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}.pv-q-top{margin-bottom:8px}.pv-bar{margin-bottom:14px}.pv-qt{font-size:20px;margin-bottom:14px}.pv-opts{grid-template-columns:1fr 1fr;gap:8px}.pv-opt{padding:11px 12px;font-size:16px}.pv-fb{min-height:0;margin-top:10px}.pv-fb:empty{display:none}.pv-scale{margin:22px 0 26px}}
 @media(prefers-reduced-motion:reduce){.pv-scale li,.pv-bar i,.pv-btn{transition:none}}
 
-.hs-lvl{margin-top:10px;text-align:center;font-size:14.5px;font-weight:700;color:var(--ink-soft)}
-.hs-lvl a{color:var(--adults-dark);font-weight:800;text-decoration:underline;text-underline-offset:3px}
-.hs-lvl a:hover{color:var(--adults)}
+.hs-lvl{display:flex;align-items:center;gap:16px;margin-top:16px;padding:16px 18px;border-radius:16px;background:#FFF7E0;border:1px solid #FFE3A1}
+.hs-lvl-ic{width:44px;height:44px;flex:none;border-radius:50%;background:#FFB800;color:#0E3A22;display:grid;place-items:center}
+.hs-lvl p{flex:1;margin:0;font-size:15px;color:var(--ink-soft);line-height:1.4}.hs-lvl p b{display:block;font-family:var(--font-display);font-size:18px;color:var(--ink);letter-spacing:-0.01em}
+.hs-lvl-btn{flex:none;display:inline-flex;align-items:center;background:#FFB800;color:#0E3A22;font-weight:800;font-size:15px;border-radius:50px;padding:12px 20px;transition:transform .2s,background .2s}
+.hs-lvl-btn:hover{background:#FFC633;transform:translateY(-1px)}
+.hs-lvl-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+@media(max-width:700px){.hs-lvl{flex-wrap:wrap}.hs-lvl p{min-width:0;flex:1 1 200px}.hs-lvl-btn{width:100%;justify-content:center;text-align:center}}
+@media(prefers-reduced-motion:reduce){.hs-lvl-btn{transition:none}}
 </style>
 
   <!-- SEO: Open Graph -->
@@ -535,8 +541,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <div class="hero-stat"><div class="hero-stat-num">Fins a 3</div><div class="hero-stat-label">modalitats</div></div>
       </div>
       <div class="hero-ctas">
-        <a href="#horaris" class="btn-adults">Veure horaris →</a>
-        <a href="#cursos" class="btn-adults-ol">Descobreix els cursos</a>
+        <a href="#prova" class="btn-adults">Demana la prova de nivell gratuïta →</a>
+        <a href="#horaris" class="btn-adults-ol">Veure horaris</a>
       </div>
     </div>
   </div>
@@ -589,7 +595,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <div class="pv-scale" aria-hidden="true"><div class="pv-scale-t"><span>Nivells</span></div>
         <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. alt</small></li><li>C1<small>Avançat</small></li><span class="pv-dot" aria-hidden="true"></span></ol></div>
       <p class="sr-only">Prova de nivell gratuïta i sense compromís, de l'A1 al C1.</p>
-      <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="pv-btn">Demana'ns la prova de nivell →</a>
+      <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="pv-btn">Demana la prova de nivell gratuïta →</a>
     </div>
     <div class="pv-stack">
       <div class="pv-q" id="tpQuiz">
@@ -645,7 +651,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
         <h2>Troba l'horari que millor <em style="color:var(--adults-dark);font-style:normal">s'adapta a tu</em></h2>
         <p class="section-lead">Consulta els horaris dels nostres cursos d'anglès per a adults. Disposem de grups de matí i tarda, amb diferents opcions segons el nivell i la tipologia de curs.</p>
         <div class="hs-ctas">
-          <a href="index.html#contacte" class="btn-adults">Reserva la teva classe de prova →</a>
+          <a href="index.html#contacte" class="btn-adults">Reserva la classe de prova gratuïta →</a>
           <a href="tel:+34935892264" class="hs-phone"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>93 589 22 64</a>
         </div>
       </div>
@@ -669,9 +675,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
             <tr data-days="dt dj"><td>B2 <small>Upper-intermediate</small></td><td>Dimarts i dijous</td><td>11:00–12:30</td></tr>
           </tbody>
         </table>
-        <p class="hs-note">Cada grup fa classe els dos dies indicats. Els horaris poden variar.</p>
-        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
-        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="2">Conversa →</button> · <button type="button" class="hs-more-b" data-go="3">Preparació Cambridge →</button></p>
+        <div class="hs-lvl"><span class="hs-lvl-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4.5"/><path d="M12 17.5h.01"/></svg></span><p><b>No saps quin és el teu nivell?</b><span>Fes la prova i t'ajudarem a triar el grup.</span></p><a href="#prova" class="hs-lvl-btn">Demana la prova de nivell gratuïta →</a></div>
       </div>
         <div class="hs hs-panel" id="hs-p2" role="tabpanel" aria-labelledby="hs-t2" style="--hs-c:var(--adults)" data-grups hidden>
         <table class="hs-source">
@@ -686,9 +690,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
             <tr data-days="dl"><td>Conversa C1</td><td>Dilluns</td><td>18:30–20:00</td></tr>
           </tbody>
         </table>
-        <p class="hs-note">Grups de màxim 7 persones. Els horaris poden variar.</p>
-        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
-        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="1">Anglès general →</button> · <button type="button" class="hs-more-b" data-go="3">Preparació Cambridge →</button></p>
+        <div class="hs-lvl"><span class="hs-lvl-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4.5"/><path d="M12 17.5h.01"/></svg></span><p><b>No saps quin és el teu nivell?</b><span>Fes la prova i t'ajudarem a triar el grup.</span></p><a href="#prova" class="hs-lvl-btn">Demana la prova de nivell gratuïta →</a></div>
       </div>
         <div class="hs hs-panel" id="hs-p3" role="tabpanel" aria-labelledby="hs-t3" style="--hs-c:var(--adults)" data-grups hidden>
         <table class="hs-source">
@@ -700,9 +702,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
             <tr data-days="dl dc"><td>Advanced <small>C1</small></td><td>Dilluns i dimecres</td><td>9:30–11:00</td></tr>
           </tbody>
         </table>
-        <p class="hs-note">Cada grup fa classe els dos dies indicats. Els horaris poden variar.</p>
-        <p class="hs-lvl">No saps quin és el teu nivell? <a href="#prova">Fes la prova de nivell gratuïta →</a></p>
-        <p class="hs-more">També hi ha horaris de: <button type="button" class="hs-more-b" data-go="1">Anglès general →</button> · <button type="button" class="hs-more-b" data-go="2">Conversa →</button></p>
+        <div class="hs-lvl"><span class="hs-lvl-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4.5"/><path d="M12 17.5h.01"/></svg></span><p><b>No saps quin és el teu nivell?</b><span>Fes la prova i t'ajudarem a triar el grup.</span></p><a href="#prova" class="hs-lvl-btn">Demana la prova de nivell gratuïta →</a></div>
       </div>
       </div>
     </div>
@@ -725,7 +725,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <h2 class="cb-in" style="--i:0">La primera classe és <span class="cta-hl">gratuïta</span></h2>
     <p class="cb-in" style="--i:1">Fes la prova de nivell i prova una classe, sense compromís</p>
     <div class="cta-band-btns cb-in" style="--i:2">
-      <a href="index.html#contacte" class="btn-white">Prova una classe gratuïta →</a>
+      <a href="index.html#contacte" class="btn-white">Reserva la classe de prova gratuïta →</a>
       <a href="https://wa.me/34640679888?text=Hola%21%20M%27interessen%20les%20classes%20d%27angl%C3%A8s%20per%20a%20adults%20i%20m%27agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.45 1.32-2 1.36-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg>Demana informació per WhatsApp</a>
     </div>
   </div>
