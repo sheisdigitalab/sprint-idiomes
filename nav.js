@@ -85,6 +85,8 @@
       transition:all .2s;
     }
     .nav .btn-lang:hover{border-color:#15203D;color:#15203D}
+    .nav .cta-short{display:none}
+    @media(max-width:1180px){.nav .cta-long{display:none}.nav .cta-short{display:inline}}
     .nav .btn-nivel{
       display:inline-flex;align-items:center;gap:8px;
       background:transparent;color:#4A5878;
@@ -341,9 +343,9 @@ ${cursosDropdown}
         <button class="nav-burger" type="button" aria-label="Obrir menú" aria-expanded="false">
           <span class="nav-burger-lines" aria-hidden="true"><i></i><i></i></span>
         </button>
-        <a href="${nivellHref}" class="btn-nivel">Descobreix el teu nivell</a>
+        <a href="${nivellHref}" class="btn-nivel">Prova de nivell gratuïta</a>
         <a href="${contactHref}" class="btn-primary">
-          Prova gratuïta
+          <span class="cta-long">Classe de prova gratuïta</span><span class="cta-short">Classe gratuïta</span>
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -473,8 +475,8 @@ ${cursosDropdown}
     </div>
     <a class="nav-mobile-item" href="${contactHref}">Contacte</a>
     <div class="nav-mobile-item nav-mobile-cta">
-      <a href="${nivellHref}" class="btn-nivel">Descobreix el teu nivell</a>
-      <a href="${contactHref}" class="btn-primary">Prova gratuïta</a>
+      <a href="${nivellHref}" class="btn-nivel">Prova de nivell gratuïta</a>
+      <a href="${contactHref}" class="btn-primary">Classe de prova gratuïta</a>
     </div>
   `;
 

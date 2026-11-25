@@ -214,12 +214,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @media(max-width:960px){section.cta-band{padding-top:80px}}
 @media(max-width:760px){section.cta-band{padding-bottom:210px}.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
 /* Cambridge: decoració de línia (com el traç del conill), menys infantil però amb aire escolar */
-.kc-doodles{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.32;pointer-events:none}
-.kc-doodles .kd{animation:kd-float 9s ease-in-out infinite}
-.kc-doodles .kd2{animation-delay:-3s}.kc-doodles .kd3{animation-delay:-5s}.kc-doodles .kd4{animation-delay:-2s}.kc-doodles .kd5{animation-delay:-6s}
 @keyframes kd-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
-@media(max-width:760px){.kc-doodles .kd3,.kc-doodles .kd4,.kc-doodles .kd5{display:none}.kc-doodles{opacity:.25}}
-@media(prefers-reduced-motion:reduce){.kc-doodles .kd{animation:none}}
 .cta-band .cta-hl{transform:rotate(-1deg)}
 
 /* Responsive (revisió): a tablet el conill no tapa el text; botons sense salts de línia estranys */
@@ -237,7 +232,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .cta-band-btns .btn-wa{font-size:15px;padding:16px 16px;white-space:nowrap}
 }
 @media(max-width:360px){.hs-ctas .btn-adults{font-size:15px;padding:15px 16px}}
-@media(max-width:1100px){.kc-doodles .kd2,.kc-doodles .kd4,.kc-doodles .kd5{display:none}}
 
 /* ══ CAMBRIDGE (canvis de Paula) · estil Gen Z: tipografia gran, blocs de colors i cinta en moviment ══ */
 .ad-hero .hero-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:540px}
@@ -270,7 +264,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* ── Bàner final de Cambridge: més sobri (públic de batxillerat, universitat i adults) ── */
 .cta-band{background:linear-gradient(135deg,#144B2E 0%,#0E3A22 100%)!important;animation:none!important}
-.cta-band .kc-doodles{display:none}
 .cta-hl{background:none!important;color:#fff!important;padding:0!important;transform:none!important;animation:none!important;border-radius:0!important;display:inline!important;box-shadow:inset 0 -.14em 0 #FFD23F;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cta-band h2{letter-spacing:-0.035em}
 .cta-band p{color:rgba(255,255,255,.9)}
@@ -320,6 +313,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .ct-tab:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .ct-box{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -40px rgba(14,58,34,.35)}
 .ct-panel{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;padding:44px 48px;align-items:center}
+.ct-panel>*{min-width:0}
 .ct-panel[hidden]{display:none}
 .ct-panel:focus{outline:none}.ct-panel:focus-visible{outline:3px solid var(--blue);outline-offset:-6px;border-radius:22px}
 .ct-panel.is-in .ct-text,.ct-panel.is-in .ct-side{animation:ct-in .45s ease both}.ct-panel.is-in .ct-side{animation-delay:.08s}
@@ -521,7 +515,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   </script>
 </head>
 <body>
-<script src="nav.js?v=34"></script>
+<script src="nav.js?v=35"></script>
 
 <!-- ── WHATSAPP FLOTANT ── -->
 <a href="https://wa.me/34640679888?text=Hola%21%20M%27interessen%20les%20classes%20d%27angl%C3%A8s%20per%20a%20adults%20i%20m%27agradaria%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20els%20horaris%20i%20les%20places%20disponibles.%20Moltes%20gr%C3%A0cies%21"
@@ -543,7 +537,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <p class="ad-hero-sub">Aprèn anglès amb classes presencials en grups reduïts, adaptades al teu nivell i als teus objectius. Oferim cursos d'anglès general, classes de conversa i de preparació d'exàmens oficials, amb horaris de matí i tarda.</p>
       <div class="hero-stats hero-stats-3">
         <div class="hero-stat"><div class="hero-stat-num">A1–C1</div><div class="hero-stat-label">tots els nivells</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">Conversa</div><div class="hero-stat-label">classes de conversa</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">Classes</div><div class="hero-stat-label">de conversa</div></div>
         <div class="hero-stat"><div class="hero-stat-num">Fins a 3</div><div class="hero-stat-label">modalitats</div></div>
       </div>
       <div class="hero-ctas">
@@ -569,21 +563,21 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   <div class="ct-text"><h3 class="ct-title">Anglès general</h3>
     <p class="ct-intro">Classes regulars d'anglès per aprendre des de zero, reprendre l'idioma o continuar perfeccionant-lo.</p>
     <p>Treballem la comprensió i l'expressió oral i escrita amb activitats pràctiques adaptades a cada nivell. L'objectiu és consolidar els coneixements i comunicar-se en anglès amb més confiança i autonomia.</p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: A1 Inicial, A2 Elemental, B1 Intermedi, B2 Intermedi alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class="on"><b>A1</b><small>Inicial</small></li><li class="on"><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
+  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><p class="sr-only">Nivells disponibles: A1 Inicial, A2 Elemental, B1 Intermedi, B2 Intermedi Alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class="on"><b>A1</b><small>Inicial</small></li><li class="on"><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi Alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
     <a href="#horaris-general" class="ct-link" data-hs="1">Veure els horaris →</a></div>
 </div><div class="ct-panel" role="tabpanel" id="ct-p2" aria-labelledby="ct-t2" tabindex="0" hidden>
   <div class="ct-text"><h3 class="ct-title">Classes de conversa</h3>
     <p class="ct-intro">Classes enfocades a la pràctica de l'anglès oral, pensades per a persones que volen guanyar fluïdesa a l'hora de comunicar-se.</p>
-    <p>A través de converses, debats i activitats sobre temes diversos, ampliem el vocabulari i millorem l'expressió i la comprensió oral.</p>
+    <p>A través de converses, debats i activitats sobre temes diversos, ampliem el vocabulari, millorem l'expressió i la comprensió oral.</p>
     <p class="ct-fact"><span class="ct-fact-n">7</span><span>Per afavorir la participació de tothom, els grups són d'un <b>màxim de 7 persones</b>.</span></p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: B1 Intermedi, B2 Intermedi alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
+  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><p class="sr-only">Nivells disponibles: B1 Intermedi, B2 Intermedi Alt, C1 Avançat.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class="on"><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>Intermedi Alt</small></li><li class="on"><b>C1</b><small>Avançat</small></li></ol>
     <a href="#horaris-conversa" class="ct-link" data-hs="2">Veure els horaris →</a></div>
 </div><div class="ct-panel" role="tabpanel" id="ct-p3" aria-labelledby="ct-t3" tabindex="0" hidden>
   <div class="ct-text"><h3 class="ct-title">Preparació Cambridge</h3>
-    <p class="ct-intro">Cursos de preparació per als exàmens oficials de Cambridge, específicament per a adults.</p>
+    <p class="ct-intro">Cursos de preparació per als exàmens oficials de Cambridge específicament per a adults.</p>
     <p>Treballem les diferents parts de l'examen (Reading, Writing, Listening, Speaking i Use of English), combinant activitats de preparació, simulacres d'examen i estratègies adaptades a cada certificat.</p>
     <p>A més, us orientem sobre les convocatòries i gestionem la inscripció a l'examen oficial si ho desitgeu.</p></div>
-  <div class="ct-side"><p class="ct-lab">Nivells del curs</p><p class="sr-only">Nivells disponibles: B2 First, C1 Advanced.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class=""><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>First</small></li><li class="on"><b>C1</b><small>Advanced</small></li></ol>
+  <div class="ct-side"><p class="ct-lab">Nivells disponibles</p><p class="sr-only">Nivells disponibles: B2 First, C1 Advanced.</p><ol class="ct-scale" aria-hidden="true"><li class=""><b>A1</b><small>Inicial</small></li><li class=""><b>A2</b><small>Elemental</small></li><li class=""><b>B1</b><small>Intermedi</small></li><li class="on"><b>B2</b><small>First</small></li><li class="on"><b>C1</b><small>Advanced</small></li></ol>
     <a href="cambridge.html" class="btn-adults ct-btn">Més sobre la preparació Cambridge →</a>
     <a href="#horaris-cambridge" class="ct-link" data-hs="3">Veure els horaris →</a></div>
 </div>
@@ -599,7 +593,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
       <h2>Saps quin és el teu <em>nivell d'anglès</em>?</h2>
       <p class="pv-lead">Descobreix quin nivell s'adapta millor als teus coneixements amb la nostra prova de nivell, gratuïta i sense compromís.</p>
       <div class="pv-scale" aria-hidden="true"><div class="pv-scale-t"><span>Nivells</span></div>
-        <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. alt</small></li><li>C1<small>Avançat</small></li><span class="pv-dot" aria-hidden="true"></span></ol></div>
+        <ol><li>A1<small>Inicial</small></li><li>A2<small>Elemental</small></li><li>B1<small>Intermedi</small></li><li>B2<small>Int. Alt</small></li><li>C1<small>Avançat</small></li><span class="pv-dot" aria-hidden="true"></span></ol></div>
       <p class="sr-only">Prova de nivell gratuïta i sense compromís, de l'A1 al C1.</p>
       <a href="https://wa.me/34640679888?text=Hola%21%20M%27agradaria%20fer%20la%20prova%20de%20nivell%20d%27angl%C3%A8s%20per%20a%20adults.%20Moltes%20gr%C3%A0cies%21" target="_blank" rel="noopener" class="pv-btn">Demana la prova de nivell gratuïta →</a>
     </div>
@@ -717,13 +711,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
-  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <g class="kd kd1"><rect x="1110" y="60" width="96" height="86" rx="12"/><path d="M1110 88 h96 M1134 50 v20 M1182 50 v20"/><path d="M1136 114 l12 12 24 -24"/></g>
-    <g class="kd kd2"><rect x="1120" y="300" width="180" height="64" rx="18"/><path d="M1146 364 l-6 22 24 -22"/><text x="1210" y="342" fill="#fff" stroke="none" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="26" text-anchor="middle">Good luck!</text></g>
-    <g class="kd kd3"><path d="M300 92 l46 -20 46 20 -46 20z M318 100 v26 q28 16 56 0 v-26 M392 92 v30"/></g>
-    <g class="kd kd4"><path d="M290 392 h110 v66 h-110z M306 410 h78 M306 424 h60 M306 438 h44"/><circle cx="384" cy="446" r="10"/><path d="M378 454 l-4 14 10 -6 10 6 -4 -14"/></g>
-    <g class="kd kd5"><path d="M1060 452 l70 -70 16 16 -70 70 -22 6z M1118 394 l16 16"/></g>
-  </svg>
   <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
   <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cb-stamp" aria-hidden="true"><span>LET'S<br>TALK<small>In English ✓</small></span></div>
