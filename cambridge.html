@@ -161,7 +161,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
 @keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
 @keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
-@media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
+@media(max-width:760px){.kp-bunny{width:120px;left:50%;margin-left:-60px}}
 @media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
 
 /* Revisió secció final */
@@ -226,7 +226,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* mateixa alçada que la de Cambridge Planet: el text ocupa el mateix espai encara que sigui més curt */
 .cta-band .cta-band-inner p{min-height:calc(2 * 1.6em)}
 @media(max-width:960px){section.cta-band{padding-top:80px}}
-@media(max-width:760px){section.cta-band{padding-bottom:210px}.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
+@media(max-width:760px){.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
 /* Cambridge: decoració de línia (com el traç del conill), menys infantil però amb aire escolar */
 .kc-doodles{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.32;pointer-events:none}
 .kc-doodles .kd{animation:kd-float 9s ease-in-out infinite}
@@ -238,7 +238,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Responsive (revisió): a tablet el conill no tapa el text; botons sense salts de línia estranys */
 @media(max-width:1100px){
-  section.cta-band{padding-bottom:230px}
+  
   .kp-bunny{left:50%;margin-left:-62px;width:125px;bottom:30px}
   .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
 }
@@ -359,6 +359,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 @keyframes cb-stamp-in{from{transform:scale(2.2) rotate(-34deg);opacity:0}to{transform:rotate(-14deg);opacity:.9}}
 @media(max-width:1100px){.cb-stamp{top:auto;bottom:48px;margin-top:0;width:130px;height:130px;font-size:23px;right:5%}.cb-stamp small{font-size:11px}}
 @media(max-width:760px){.cb-stamp{top:auto;bottom:56px;margin-top:0;right:22px;width:112px;height:112px;font-size:20px}.cb-stamp small{font-size:10px;margin-top:5px}}
+/* Sense conill (només Kids i Kids Planet): el segell va centrat sota els botons */
+@media(max-width:1100px){section.cta-band{padding-bottom:210px}.cb-stamp{right:50%;margin-right:-65px;bottom:44px}}
+@media(max-width:760px){section.cta-band{padding-bottom:180px}.cb-stamp{margin-right:-56px;bottom:40px}}
 @media(prefers-reduced-motion:reduce){.cta-band .cb-stamp{animation:none!important;transform:rotate(-14deg);opacity:.9}}
 
 /* ── Quan pots presentar-te: la resposta (convocatòries) primer, després l'acompanyament ── */
@@ -657,8 +660,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
     <g class="kd kd4"><path d="M290 392 h110 v66 h-110z M306 410 h78 M306 424 h60 M306 438 h44"/><circle cx="384" cy="446" r="10"/><path d="M378 454 l-4 14 10 -6 10 6 -4 -14"/></g>
     <g class="kd kd5"><path d="M1060 452 l70 -70 16 16 -70 70 -22 6z M1118 394 l16 16"/></g>
   </svg>
-  <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
-  <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cb-stamp" aria-hidden="true"><span>PASSED<small>Cambridge ✓</small></span></div>
   <div class="cta-band-inner">
     <h2 class="cb-in" style="--i:0">Prepara't per a la propera <span class="cta-hl">convocatòria Cambridge</span></h2>

@@ -146,7 +146,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .kp-bunny:hover{animation:kp-wiggle .6s ease-in-out}
 @keyframes kp-hop{0%,62%,100%{translate:0 0;scale:1 1}66%{translate:0 0;scale:1.06 .92}74%{translate:0 -38px;scale:.96 1.05;rotate:-3deg}82%{translate:0 0;scale:1.05 .94;rotate:0deg}88%{scale:1 1}}
 @keyframes kp-wiggle{25%{rotate:-6deg}75%{rotate:6deg}}
-@media(max-width:760px){.cta-band{padding-bottom:210px}.kp-bunny{width:120px;left:50%;margin-left:-60px}}
+@media(max-width:760px){.kp-bunny{width:120px;left:50%;margin-left:-60px}}
 @media(prefers-reduced-motion:reduce){.kp-bunny{transform:none;transition:none}.cta-band.is-in .kp-bunny{animation:none}}
 
 /* Revisió secció final */
@@ -213,7 +213,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* mateixa alçada que la de Teens Planet: el text ocupa el mateix espai encara que sigui més curt */
 .cta-band .cta-band-inner p{min-height:calc(2 * 1.6em)}
 @media(max-width:960px){section.cta-band{padding-top:80px}}
-@media(max-width:760px){section.cta-band{padding-bottom:210px}.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
+@media(max-width:760px){.cta-band .cta-band-inner p{min-height:calc(3 * 1.6em)}}
 /* Teens: decoració de línia (com el traç del conill), menys infantil però amb aire escolar */
 .kc-doodles{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.32;pointer-events:none}
 .kc-doodles .kd{animation:kd-float 9s ease-in-out infinite}
@@ -225,7 +225,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
 /* Responsive (revisió): a tablet el conill no tapa el text; botons sense salts de línia estranys */
 @media(max-width:1100px){
-  section.cta-band{padding-bottom:230px}
+  
   .kp-bunny{left:50%;margin-left:-62px;width:125px;bottom:30px}
   .kp-ground{left:50%;margin-left:-100px;width:200px;bottom:20px}
 }
@@ -239,6 +239,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 @media(max-width:360px){.hs-ctas .btn-teens{font-size:15px;padding:15px 16px}}
 @media(max-width:1100px){.kc-doodles .kd2,.kc-doodles .kd4,.kc-doodles .kd5{display:none}}
+/* Sense conill: a tablet i mòbil els dibuixos van en una franja sota els botons, sense tapar el text */
+@media(max-width:1100px){section.cta-band{padding-bottom:130px}.cta-band .kc-doodles .kd{display:inline}.cta-band .kc-doodles .kd3{transform:translate(-150px,350px)}.cta-band .kc-doodles .kd1{transform:translate(170px,330px)}.cta-band .kc-doodles .kd2{transform:translate(-20px,80px)}}
+@media(max-width:760px){section.cta-band{padding-bottom:96px}}
 
 /* ══ TEENS (canvis de Paula) ══ */
 .btn-ghost-teens{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--teens-dark);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;border:2px solid var(--teens);transition:transform .2s,background .2s}
@@ -649,15 +652,13 @@ h3.tn-nm,h3.tb-title{letter-spacing:-0.01em}
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="contacte">
-  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <svg class="kc-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax meet" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <g class="kd kd1"><path d="M1110 118 v-14 a50 50 0 0 1 100 0 v14"/><rect x="1098" y="112" width="24" height="40" rx="10"/><rect x="1198" y="112" width="24" height="40" rx="10"/></g>
     <g class="kd kd2"><rect x="1190" y="290" width="74" height="122" rx="14"/><path d="M1214 300 h26"/><rect x="1202" y="320" width="50" height="26" rx="10"/><text x="1227" y="339" fill="#fff" stroke="none" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="16" text-anchor="middle">OK!</text><path d="M1206 362 h30 M1206 374 h20"/></g>
     <g class="kd kd3"><path d="M300 64 h56 v18 a28 28 0 0 1 -56 0 z M300 72 h-14 a12 12 0 0 0 14 18 M356 72 h14 a12 12 0 0 1 -14 18 M328 110 v14 M312 132 h32"/></g>
     <g class="kd kd4"><path d="M346 380 l-30 50 h24 l-10 40 36 -56 h-24 l14 -34 z"/></g>
     <g class="kd kd5"><path d="M1030 440 c 30 -40, 70 10, 110 -20" /><path d="M1128 410 l14 10 -14 12"/></g>
   </svg>
-  <svg class="kp-ground" viewBox="0 0 260 24" aria-hidden="true"><path d="M4 14 Q40 8 76 13 T150 12 T226 14 T256 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/><path d="M30 20 Q60 17 92 19" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg>
-  <img class="kp-bunny" src="img-kids-planet/conill.webp" width="368" height="545" alt="El conill de Sprint Idiomes amb un cartell: Us esperem!" loading="lazy">
   <div class="cta-band-inner">
     <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cta-hl">sense compromís</span></h2>
     <p class="cb-in" style="--i:1">Voleu saber més sobre Teens? Contacteu amb nosaltres i us informarem.</p>
