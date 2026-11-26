@@ -242,6 +242,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* Sense conill: a tablet i mòbil els dibuixos van en una franja sota els botons, sense tapar el text */
 @media(max-width:1100px){section.cta-band{padding-bottom:130px}.cta-band .kc-doodles .kd{display:inline}.cta-band .kc-doodles .kd3{transform:translate(-150px,350px)}.cta-band .kc-doodles .kd1{transform:translate(170px,330px)}.cta-band .kc-doodles .kd2{transform:translate(-20px,80px)}}
 @media(max-width:760px){section.cta-band{padding-bottom:96px}}
+/* Dos dibuixos més (només ordinador) */
+.cta-band .kc-doodles .kd6{animation-delay:-4s}.cta-band .kc-doodles .kd7{animation-delay:-7s}
+@media(max-width:1100px){.cta-band .kc-doodles .kd6,.cta-band .kc-doodles .kd7{display:none!important}}
+/* Revisió UX del bàner: dibuixos proporcionats (gran a dalt, mitjà al mig, petit a baix, en mirall a cada costat), la fletxa assenyala el botó principal i dos tocs en groc de marca en diagonal */
+@media(min-width:1101px){.cta-band .kc-doodles{opacity:1}.cta-band .kc-doodles .kd{opacity:.26;transform-box:fill-box;transform-origin:center}.cta-band .kc-doodles .kd1,.cta-band .kc-doodles .kd3{opacity:.22}.cta-band .kc-doodles .kd5{opacity:.6}.cta-band .kc-doodles .kd7,.cta-band .kc-doodles .kd4{stroke:var(--yellow,#FFB800);opacity:.7}.cta-band .kc-doodles .kd3{transform:translate(-188px,12px) rotate(-8deg) scale(1.6)}.cta-band .kc-doodles .kd6{transform:translate(-60px,-2px) rotate(5deg) scale(0.95)}.cta-band .kc-doodles .kd4{transform:translate(-259px,-15px) rotate(12deg) scale(1.05)}.cta-band .kc-doodles .kd1{transform:translate(140px,9px) rotate(7deg) scale(1.25)}.cta-band .kc-doodles .kd7{transform:translate(-85px,50px) rotate(-12deg) scale(1.1)}.cta-band .kc-doodles .kd2{transform:translate(123px,54px) rotate(-9deg) scale(1.2)}.cta-band .kc-doodles .kd5{transform:translate(-863px,-60px) rotate(-4deg) scale(1)}}
+@media(min-width:1280px){.cta-band .kc-doodles .kd5{transform:translate(-805px,-43px) rotate(-4deg) scale(1)}}
+@media(min-width:1440px){.cta-band .kc-doodles .kd5{transform:translate(-762px,-29px) rotate(-4deg) scale(1)}}
+@media(min-width:1536px){.cta-band .kc-doodles .kd3{transform:translate(-228px,12px) rotate(-8deg) scale(1.6)}.cta-band .kc-doodles .kd6{transform:translate(-100px,-2px) rotate(5deg) scale(0.95)}.cta-band .kc-doodles .kd4{transform:translate(-299px,-15px) rotate(12deg) scale(1.05)}.cta-band .kc-doodles .kd1{transform:translate(180px,9px) rotate(7deg) scale(1.25)}.cta-band .kc-doodles .kd7{transform:translate(-45px,50px) rotate(-12deg) scale(1.1)}.cta-band .kc-doodles .kd2{transform:translate(163px,54px) rotate(-9deg) scale(1.2)}.cta-band .kc-doodles .kd5{transform:translate(-762px,-29px) rotate(-4deg) scale(1)}}
+@media(min-width:1700px){.cta-band .kc-doodles .kd3{transform:translate(-308px,12px) rotate(-8deg) scale(1.6)}.cta-band .kc-doodles .kd6{transform:translate(-180px,-2px) rotate(5deg) scale(0.95)}.cta-band .kc-doodles .kd4{transform:translate(-379px,-15px) rotate(12deg) scale(1.05)}.cta-band .kc-doodles .kd1{transform:translate(260px,9px) rotate(7deg) scale(1.25)}.cta-band .kc-doodles .kd7{transform:translate(35px,50px) rotate(-12deg) scale(1.1)}.cta-band .kc-doodles .kd2{transform:translate(243px,54px) rotate(-9deg) scale(1.2)}.cta-band .kc-doodles .kd5{transform:translate(-762px,-29px) rotate(-4deg) scale(1)}}
 
 /* ══ TEENS (canvis de Paula) ══ */
 .btn-ghost-teens{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--teens-dark);font-family:var(--font-body);font-size:17px;font-weight:800;border-radius:50px;padding:14px 28px;border:2px solid var(--teens);transition:transform .2s,background .2s}
@@ -658,6 +667,8 @@ h3.tn-nm,h3.tb-title{letter-spacing:-0.01em}
     <g class="kd kd3"><path d="M300 64 h56 v18 a28 28 0 0 1 -56 0 z M300 72 h-14 a12 12 0 0 0 14 18 M356 72 h14 a12 12 0 0 1 -14 18 M328 110 v14 M312 132 h32"/></g>
     <g class="kd kd4"><path d="M346 380 l-30 50 h24 l-10 40 36 -56 h-24 l14 -34 z"/></g>
     <g class="kd kd5"><path d="M1030 440 c 30 -40, 70 10, 110 -20" /><path d="M1128 410 l14 10 -14 12"/></g>
+    <g class="kd kd6"><path d="M118 214 h104 a16 16 0 0 1 16 16 v40 a16 16 0 0 1 -16 16 h-62 l-22 20 v-20 h-20 a16 16 0 0 1 -16 -16 v-40 a16 16 0 0 1 16 -16 z"/><text x="170" y="263" fill="#fff" stroke="none" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="28" text-anchor="middle">Hi!</text></g>
+    <g class="kd kd7"><path d="M1400 178 l9 20 22 3 -16 15 4 22 -19 -11 -19 11 4 -22 -16 -15 22 -3 z"/></g>
   </svg>
   <div class="cta-band-inner">
     <h2 class="cb-in" style="--i:0">Primera classe gratuïta, <span class="cta-hl">sense compromís</span></h2>
